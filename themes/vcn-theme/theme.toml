@@ -1,0 +1,5 @@
+name = "vcn-theme"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "Custom theme for Volley Club Nogentais"
+min_version = "0.111.0"

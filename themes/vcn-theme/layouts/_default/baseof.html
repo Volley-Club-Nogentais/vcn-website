@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ block "title" . }}{{ .Title }} | VCN{{ end }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Logo VCN" class="logo" />
+      <nav>
+        <a href="#">ACCUEIL</a>
+        <a href="#">EQUIPES</a>
+        <a href="#">PROJECTS</a>
+        <a href="#">HISTOIRE</a>
+        <a href="#">CONTACT</a>
+        <a href="#">INSCRIPTIONS</a>
+        <a href="#">Blog</a>
+      </nav>
+    </header>
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>

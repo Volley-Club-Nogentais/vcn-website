@@ -1,0 +1,9 @@
+services:
+  hugo:
+    image: hugomods/hugo:debian-exts-non-root
+    container_name: volley-hugo
+    ports:
+      - "1313:1313"
+    volumes:
+      - ./:/src
+    command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture

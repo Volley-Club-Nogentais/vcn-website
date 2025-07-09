@@ -1,3 +1,3 @@
-# vcn-website-hugo
+# VCN website Hugo
 
 VCN website using Hugo Framework

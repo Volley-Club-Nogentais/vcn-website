@@ -1,7 +1,7 @@
 {{ define "main" }}
-<ul>
+<ul class="grid-section">
   {{ range .Pages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  <li class="grid-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
   {{ end }}
 </ul>
 {{ end }}

@@ -92,7 +92,7 @@ nav a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(14, 41, 66, 0.7);
+  /* background: rgba(14, 41, 66, 0.7); */
 }
 
 .grid-item.gold::before {
@@ -155,9 +155,11 @@ body {
 /* Titres et accents */
 h1,
 h2,
-h3 {
+h3,
+p {
   color: #003049; /* bleu foncé VCN */
 }
+
 a {
   color: #d62828; /* rogue vif */
 }
@@ -183,6 +185,11 @@ a:hover {
   padding: 6rem 2rem;
   text-align: center;
 }
+
 .hero-background h1 {
   font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+.hero-background p {
+  font-family: "Anton", sans-serif;
 }

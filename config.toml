@@ -1,0 +1,35 @@
+baseURL = "https://volley-club-nogent.fr/"
+languageCode = "fr"
+title = "Volley Club Nogentais"
+theme = "vcn-theme"
+enableRobotsTXT = true
+
+[params]
+  description = "Site officiel du Volley Club Nogentais"
+  mainSections = ["actualites"]
+
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Le club"
+    url = "/club/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Équipes"
+    url = "/equipes/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Infos pratiques"
+    url = "/infos-pratiques/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5

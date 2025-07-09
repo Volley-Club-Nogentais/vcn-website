@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+body {
+  margin: 0;
+  background-color: #0e2942;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  /* background-image: url("http://i.imgur.com/9HMnxKs.png"); */
+  /* background-repeat: repeat-y; */
+  /* background-size: 50% auto; */
+}
+
+header {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px; /* augmente le padding vertical */
+  position: relative;
+  height: auto;
+}
+
+header img.logo {
+  height: 120px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* centre verticalement le logo */
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #0e2942;
+  text-decoration: none;
+  margin-left: 20px;
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.title-section {
+  text-align: center;
+  padding: 3px 20px 3px 20px;
+  background-color: #ffffff;
+  color: #0e2942;
+}
+
+.title-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title-section p {
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
+}
+
+.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 400px;
+}
+
+.grid-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+  font-family: "Anton", sans-serif;
+  text-align: center;
+}
+
+.grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(14, 41, 66, 0.7);
+}
+
+.grid-item.gold::before {
+  background: rgba(222, 164, 65, 0.85);
+}
+
+.grid-item h2 {
+  position: relative;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #ffffff;
+  color: #0e2942;
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #dea441;
+  color: #0e2942;
+}
+.video-container {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white; /* Couleur du cadre */
+  border-radius: 20px; /* Bords arrondis */
+  overflow: hidden; /* Cache les débordements de la vidéo */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ombre portée optionnelle */
+  background: black;
+  pointer-events: none;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Corps de page */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titres et accents */
+h1,
+h2,
+h3 {
+  color: #003049; /* bleu foncé VCN */
+}
+a {
+  color: #d62828; /* rogue vif */
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Barre de navigation */
+.site-header {
+  background-color: #003049;
+  padding: 1em;
+}
+.site-header a {
+  color: #ffffff;
+  margin-right: 1em;
+}
+
+/* Hero (bannière d’accueil) */
+.hero-background {
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.hero-background h1 {
+  font-size: 2.5rem;
+}

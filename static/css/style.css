@@ -11,7 +11,8 @@ body {
   /* background-size: 50% auto; */
 }
 
-header {
+header,
+footer {
   background-color: #ffffff;
   display: flex;
   align-items: center;

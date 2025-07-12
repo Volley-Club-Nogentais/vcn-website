@@ -2,18 +2,28 @@
 <section class="title-section">
   <h1>VOLLEY CLUB NOGENTAIS</h1>
   <p>Rejoignez notre passion du volley-ball</p>
+  <br />
   <h1>EN CONSTRUCTION</h1>
   <p>Fier d'évoluer</p>
 </section>
 <section class="actus">
   <h2>Dernières actualités</h2>
   <div class="grid-section">
-    {{ range first 3 (where .Site.RegularPages "Section" "actualites") }}
-    <article class="grid-item">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Summary }}</p>
-    </article>
-    {{ end }}
+    <div class="row">
+      {{ range first 3 (where .Site.RegularPages "Section" "actualites") }}
+      <div class="col-sm-4 mb-2 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            <p class="card-text">{{ .Content | strings.Truncate 100 }}</p>
+            <a href="{{ .RelPermalink }}" class="btn btn-primary"
+              >Go somewhere</a
+            >
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </section>
 {{ end }}

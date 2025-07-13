@@ -1,0 +1,35 @@
+name: "Generate and deploy"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do a git checkout including submodules
+        uses: actions/checkout@master
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.119.0"
+          # extended: true
+
+      - name: Build
+        run: hugo --minify --buildDrafts --buildFuture
+
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: --archive --verbose --compress --recursive --delete
+          path: public/
+          remote_path: /mnt/datas/vcn-website-public # codespell:ignore datas
+          remote_host: 192.168.2.100
+          remote_user: github
+          remote_key: ${{ secrets.VPS_DEPLOY_KEY }}

@@ -6,7 +6,7 @@ draft: true
 
 ## Présentation de l'Équipe
 
-Notre équipe de volleyball des moins de 18 and est composée de jeunes talents passionnés et déterminés. Chaque membre de l'équipe apporte une énergie unique et un esprit compétitif qui nous permet de nous démarquer sur le terrain. Nous nous entraînons dur pour perfectionner nos compétences et développer une cohésion d'équipe solide. Notre objectif est non seulement de gagner des matches, mais aussi de grandir ensemble, tant sur le plan sportif que personnel.
+Notre équipe de volleyball des moins de 18 ans est composée de jeunes talents passionnés et déterminés. Chaque membre de l'équipe apporte une énergie unique et un esprit compétitif qui nous permet de nous démarquer sur le terrain. Nous nous entraînons dur pour perfectionner nos compétences et développer une cohésion d'équipe solide. Notre objectif est non seulement de gagner des matches, mais aussi de grandir ensemble, tant sur le plan sportif que personnel.
 
 ## Nos Valeurs
 
@@ -22,7 +22,7 @@ Au fil des années, notre équipe a remporté de nombreux titres et distinctions
 
 ## Rejoignez-Nous
 
-Si vous êtes passionné de volleyball et que vous avez moins de 18 and, nous vous invitons à rejoindre notre équipe. Nous recherchons des joueurs talentueux et motivés, prêts à s'engager et à donner le meilleur d'eux-mêmes. Rejoindre notre équipe, c'est faire partie d'une famille où chacun est soutenu et encouragé à atteindre son plein potential. Ensemble, nous pouvons accomplir de grandes choses et créer des souvenirs inoubliables.
+Si vous êtes passionné de volleyball et que vous avez moins de 18 ans, nous vous invitons à rejoindre notre équipe. Nous recherchons des joueurs talentueux et motivés, prêts à s'engager et à donner le meilleur d'eux-mêmes. Rejoindre notre équipe, c'est faire partie d'une famille où chacun est soutenu et encouragé à atteindre son plein potential. Ensemble, nous pouvons accomplir de grandes choses et créer des souvenirs inoubliables.
 
 ## Nos Partenaires
 

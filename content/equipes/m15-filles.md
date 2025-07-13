@@ -6,7 +6,7 @@ draft: true
 
 ## Présentation de l'Équipe
 
-Notre équipe féminine de volleyball des moins de 15 and est un groupe dynamique de jeunes athlètes passionnées et talentueuses. Chaque membre de l'équipe apporte une énergie unique et un esprit compétitif qui nous permet de briller sur le terrain. Nous nous entraînons avec rigueur pour améliorer nos compétences et renforcer notre cohésion d'équipe. Notre objectif est non seulement de remporter des victoires, mais aussi de grandir ensemble, tant sur le plan sportif que personnel.
+Notre équipe féminine de volleyball des moins de 15 ans est un groupe dynamique de jeunes athlètes passionnées et talentueuses. Chaque membre de l'équipe apporte une énergie unique et un esprit compétitif qui nous permet de briller sur le terrain. Nous nous entraînons avec rigueur pour améliorer nos compétences et renforcer notre cohésion d'équipe. Notre objectif est non seulement de remporter des victoires, mais aussi de grandir ensemble, tant sur le plan sportif que personnel.
 
 ## Nos Valeurs
 
@@ -22,7 +22,7 @@ Au fil des années, notre équipe a remporté de nombreux titres et distinctions
 
 ## Rejoignez-Nous
 
-Si vous êtes passionnée de volleyball et que vous avez moins de 15 and, nous vous invitons à rejoindre notre équipe. Nous recherchons des joueuses talentueuses et motivées, prêtes à s'engager et à donner le meilleur d'elles-mêmes. Rejoindre notre équipe, c'est faire partie d'une famille où chacune est soutenue et encouragée à atteindre son plein potential. Ensemble, nous pouvons accomplir de grandes choses et créer des souvenirs inoubliables.
+Si vous êtes passionnée de volleyball et que vous avez moins de 15 ans, nous vous invitons à rejoindre notre équipe. Nous recherchons des joueuses talentueuses et motivées, prêtes à s'engager et à donner le meilleur d'elles-mêmes. Rejoindre notre équipe, c'est faire partie d'une famille où chacune est soutenue et encouragée à atteindre son plein potential. Ensemble, nous pouvons accomplir de grandes choses et créer des souvenirs inoubliables.
 
 ## Nos Partenaires
 

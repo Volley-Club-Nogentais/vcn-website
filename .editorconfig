@@ -1,0 +1,27 @@
+root = true
+
+[*]
+
+[*.md]
+
+
+# EditorConfig is awesome: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+max_line_length = 120
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.{css,html}]
+indent_size = 2
+
+[content/**.md]
+max_line_length = 80
+

@@ -1,4 +1,4 @@
-name: "Generate and deploy"
+name: 'Generate and deploy'
 
 on:
   push:
@@ -18,11 +18,11 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.119.0"
-          # extended: true
+          hugo-version: 'latest'
+          extended: true
 
       - name: Build
-        run: hugo --minify --buildDrafts --buildFuture
+        run: hugo build --minify --buildDrafts --buildFuture
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@7.0.2

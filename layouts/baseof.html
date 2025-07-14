@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html
-  class="h-100"
-  lang="{{ site.Language.LanguageCode }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}"
->
+<!doctype html>
+<html class="h-100" lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
   <head>
     {{ partial "head.html" . }}
   </head>
@@ -11,9 +7,8 @@
     {{ partial "header.html" . }}
     <main class="flex-shrink-0">
       <div class="container">
-        {{ block "main" . }} This will be replaced with content from the
-        corresponding "define" action found in the template to which this base
-        template is applied. {{ end }}
+        {{ block "main" . }} This will be replaced with content from the corresponding "define" action found in the
+        template to which this base template is applied. {{ end }}
       </div>
     </main>
     {{ partial "footer.html" . }}

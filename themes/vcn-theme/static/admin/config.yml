@@ -1,0 +1,41 @@
+backend:
+  name: test-repo
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "actualites"
+    label: "Actualités"
+    folder: "content/actualites"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image principale", name: "image", widget: "image" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Accueil"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "galerie"
+    label: "Galerie"
+    folder: "content/galerie"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - {
+          label: "Photos",
+          name: "images",
+          widget: "list",
+          field: { label: "Image", name: "image", widget: "image" },
+        }

@@ -6,6 +6,9 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ .Title }}</h5>
+          {{ with .Description }}
+          <p class="card-text">{{ . }}</p>
+          {{ end }}
           <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>

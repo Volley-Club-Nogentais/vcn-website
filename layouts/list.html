@@ -1,17 +1,15 @@
 {{ define "main" }}
-  <ul class="grid-section">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      {{ range .Pages }}
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ .Title }}</h5>
-              <p class="card-text">{{ .Content | strings.Truncate 100 }}</p>
-              <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
-            </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {{ range .Pages }}
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            <p class="card-text">{{ .Content | strings.Truncate 100 }}</p>
+            <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
           </div>
         </div>
-      {{ end }}
-    </div>
-  </ul>
+      </div>
+    {{ end }}
+  </div>
 {{ end }}

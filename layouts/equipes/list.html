@@ -1,22 +1,21 @@
 {{ define "main" }}
-<ul class="grid-section">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    {{ range .Pages }}
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ .Title }}</h5>
-          {{ with .Description }}
-          <p class="card-text">{{ . }}</p>
-          {{ end }}
-          <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
-        </div>
-        {{ if isset .Params "tags" }}
-        <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>
+<h1>{{ .Title }}</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {{ range .Pages }}
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ .Title }}</h5>
+        {{ with .Description }}
+        <p class="card-text">{{ . }}</p>
         {{ end }}
+        <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
       </div>
+      {{ if isset .Params "tags" }}
+      <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
-</ul>
+  {{ end }}
+</div>
 {{ end }}

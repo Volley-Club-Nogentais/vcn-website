@@ -193,3 +193,7 @@ a:hover {
 .hero-background p {
   font-family: 'Anton', sans-serif;
 }
+
+.team {
+  text-align: justify;
+}

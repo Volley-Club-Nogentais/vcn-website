@@ -1,8 +1,8 @@
 {{ define "main" }}
 <ul class="grid-section">
-  <div class="row">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
     {{ range .Pages }}
-    <div class="col-mb-4 col-sm-6 col-xs-12">
+    <div class="col">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ .Title }}</h5>

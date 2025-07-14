@@ -1,0 +1,24 @@
+[[main]]
+  name = "Accueil"
+  url = "/"
+  weight = 1
+
+[[main]]
+  name = "Le club"
+  url = "/club/"
+  weight = 2
+
+[[main]]
+  name = "Équipes"
+  url = "/equipes/"
+  weight = 3
+
+[[main]]
+  name = "Actualites"
+  url = "/actualites/"
+  weight = 4
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5

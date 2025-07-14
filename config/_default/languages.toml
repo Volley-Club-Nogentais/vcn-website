@@ -1,0 +1,13 @@
+[fr]
+  languageName = "French"
+  languageCode = "fr-FR"
+  weight = 10
+  [fr.params]
+    languageISO = "FR"
+
+[en]
+  languageName = "English"
+  languageCode = "en-US"
+  weight = 20
+  [en.params]
+    languageISO = "EN"

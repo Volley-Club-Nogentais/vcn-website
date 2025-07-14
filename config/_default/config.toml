@@ -1,0 +1,30 @@
+baseURL = "https://volley-club-nogent.fr/"
+languageCode = "fr-fr"
+title = "Volley Club Nogentais"
+author = "Henri Buyse"
+theme = "vcn-theme"
+
+timeZone = 'Europe/London'
+
+# Multilingual
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = false
+
+disableHugoGeneratorInject = true
+enableRobotsTXT = true
+#enableGitInfo = true
+enableEmoji = true
+#sectionPagesMenu = "main"
+#googleAnalytics = "UA-1511XXXX-X"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.99.1"
+    max = ""
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"

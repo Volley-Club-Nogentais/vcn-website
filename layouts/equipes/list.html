@@ -11,6 +11,9 @@
           {{ end }}
           <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
         </div>
+        {{ if isset .Params "tags" }}
+        <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>
+        {{ end }}
       </div>
     </div>
     {{ end }}

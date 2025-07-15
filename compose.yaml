@@ -9,11 +9,13 @@ services:
       - ./:/src
     command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true
 
-  # proxy:
-  #   build:
-  #     context: ./proxy-gitea
-  #   ports:
-  #     - '3000:3000'
-  #   env_file:
-  #     - .env
-  #   restart: unless-stopped
+  proxy:
+    build:
+      context: ./proxy-gitea
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    volumes:
+      - ./proxy-gitea/server.js:/app/server.js:ro
+    restart: unless-stopped

@@ -1,9 +1,12 @@
 ---
-title: 'M18 Garcons'
-date: 2025-07-09T19:24:12+02:00
+title: M18 Garcons
+date: 2025-07-09T19:24:00
+image: /uploads/20250617_200523.png
+description: FFVB M18 Garcons
 draft: true
-description: 'FFVB M18 Garcons'
-tags: ['ffvb', 'jeunes']
+tags:
+  - ffvb
+  - jeunes
 ---
 
 ## Présentation de l'Équipe

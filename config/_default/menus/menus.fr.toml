@@ -1,24 +1,29 @@
 [[main]]
-  name = "Accueil"
-  url = "/"
-  weight = 1
+name = "Accueil"
+url = "/"
+weight = 10
 
 [[main]]
-  name = "Le club"
-  url = "/club/"
-  weight = 2
+name = "Équipes"
+url = "/equipes/"
+weight = 20
 
 [[main]]
-  name = "Équipes"
-  url = "/equipes/"
-  weight = 3
+name = "Projets"
+url = "/projets/"
+weight = 30
 
 [[main]]
-  name = "Actualites"
-  url = "/actualites/"
-  weight = 4
+name = "Histoire"
+url = "/histoire/"
+weight = 40
 
 [[main]]
-  name = "Contact"
-  url = "/contact/"
-  weight = 5
+name = "Actualites"
+url = "/actualites/"
+weight = 50
+
+[[main]]
+name = "Contact"
+url = "/contact/"
+weight = 60

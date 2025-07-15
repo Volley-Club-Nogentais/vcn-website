@@ -1,7 +1,13 @@
 ---
+<<<<<<< HEAD
 local_backend: true
 
+||||||| parent of b078e2c (wip)
+=======
+local_backend: true
+>>>>>>> b078e2c (wip)
 backend:
+<<<<<<< HEAD
   name: gitea
   repo: hbuyse/vcn-website-hugo
   branch: main
@@ -16,6 +22,15 @@ backend:
     uploadMedia: "feat(media): upload '{{path}}' by {{author-login}}"
     deleteMedia: "feat(media): delete '{{path}}' by {{author-login}}"
     openAuthoring: '{{message}}'
+||||||| parent of b078e2c (wip)
+  name: test-repo
+=======
+  name: gitea
+  repo: hbuyse/vcn-website-hugo
+  branch: main
+  api_root: https://git.hbuyse.ovh/api/v1
+  token: eb60821a6b00aa2661db301b2d3a54743e6d2f32
+>>>>>>> b078e2c (wip)
 
 media_folder: 'static/uploads'
 public_folder: '/uploads'

@@ -8,3 +8,13 @@ services:
     volumes:
       - ./:/src
     command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true
+
+  proxy:
+    build:
+      context: ./proxy-gitea
+    ports:
+      - '4000:4000'
+    environment:
+      - GITEA_TOKEN=${GITEA_TOKEN}
+      - GITEA_API=${GITEA_API}
+    restart: unless-stopped

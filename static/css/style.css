@@ -17,7 +17,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px; /* augmente le padding vertical */
+  /* padding: 50px; */ /* augmente le padding vertical */
   position: relative;
   height: auto;
 }
@@ -35,16 +35,12 @@ nav {
   gap: 20px;
 }
 
-nav a {
+.nav-link {
   color: #0e2942;
   text-decoration: none;
   margin-left: 20px;
   font-family: 'Anton', sans-serif;
   font-size: 20px;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 .title-section {
@@ -197,4 +193,14 @@ a:hover {
 .single,
 .team {
   text-align: justify;
+}
+@media only screen and (min-width: 600px) {
+  .navbar-brand img {
+    height: 90px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navbar-brand img {
+    height: 50px;
+  }
 }

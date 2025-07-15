@@ -2,6 +2,8 @@
   <div class="container text-center">
     {{ with .Site.Copyright }} {{ . | safeHTML }} {{ else }} &copy; Copyright {{ if eq now.Year 2025 }}2025{{ else
     }}2025 - {{ now.Year }}{{ end }} Volley Club Nogentais. All rights reserved. {{ end }}
+    <br />
+    {{ with .GitInfo }} Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
   </div>
 </footer>
 <script

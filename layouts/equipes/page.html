@@ -1,5 +1,10 @@
 {{ define "main" }}
 <article class="team">
+  {{ with .Params.image }}
+  <div class="text-center">
+    <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
+  </div>
+  {{ end }}
   <h1 class="text-capitalize">{{ .Title }}</h1>
   {{ .Content }}
 </article>

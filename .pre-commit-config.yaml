@@ -9,6 +9,7 @@ repos:
       - id: check-yaml
         args: [--unsafe]
       - id: check-added-large-files
+        args: ['--maxkb=4096']
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:

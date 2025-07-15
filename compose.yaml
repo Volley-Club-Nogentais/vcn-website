@@ -13,9 +13,9 @@ services:
     build:
       context: ./proxy-gitea
     ports:
-      - '3000:3000'
+      - '4000:4000'
     env_file:
       - .env
     volumes:
-      - ./proxy-gitea/server.js:/app/server.js:ro
+      - ./proxy-gitea/server.js:/app/server.js
     restart: unless-stopped

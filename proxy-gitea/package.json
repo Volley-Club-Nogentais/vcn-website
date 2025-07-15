@@ -1,15 +1,16 @@
 {
-  "name": "gitea-cms-proxy",
+  "name": "proxy-gitea-oauth",
   "version": "1.0.0",
-  "description": "Proxy sécurisé pour Sveltia CMS avec Gitea",
+  "description": "Proxy OAuth2 entre Sveltia CMS et Gitea auto-hébergé",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "axios": "^1.10.0",
-    "dotenv": "^16.6.1",
-    "express": "^4.21.2"
-  },
-  "type": "module"
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
 }

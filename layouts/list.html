@@ -1,4 +1,7 @@
 {{ define "main" }}
+  {{ with .Title }}
+    <h1>{{ . }}</h1>
+  {{ end }}
   <div class="row row-cols-1 row-cols-md-2 g-4">
     {{ range .Pages }}
       <div class="col">

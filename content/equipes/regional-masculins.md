@@ -1,7 +1,11 @@
 ---
-title: 'Régional Masculins'
-date: 2025-07-09T19:24:12+02:00
+title: Régional Masculins
+description: FFVB Régional Masculins
+date: 2025-07-09T19:24:00
 draft: true
+tags:
+  - ffvb
+  - adultes
 ---
 
 ## Ascension au Niveau Régional

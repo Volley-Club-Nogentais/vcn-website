@@ -1,7 +1,12 @@
 ---
-title: 'Tournoi de rentrée 2025'
+title: Tournoi de rentrée 2025
+description: ''
 date: 2025-09-01
-categories: ['tournament']
+draft: true
+tags:
+  - tournoi
+categories:
+  - tournament
 ---
 
 Le club organise son tournoi de rentrée le 15 septembre ! Inscriptions ouvertes à tous.

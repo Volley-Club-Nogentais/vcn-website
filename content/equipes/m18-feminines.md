@@ -1,7 +1,11 @@
 ---
-title: 'M18 Filles'
-date: 2025-07-09T19:24:07+02:00
+title: M18 Féminines
+description: FFVB Féminines
+date: 2025-07-09T19:24:00
 draft: true
+tags:
+  - ffvb
+  - jeunes
 ---
 
 ## Présentation de l'Équipe

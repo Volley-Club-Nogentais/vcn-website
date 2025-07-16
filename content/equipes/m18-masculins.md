@@ -1,12 +1,12 @@
 ---
-title: M18 Garcons
+title: M18 Masculins
+description: FFVB M18 Masculins
 date: 2025-07-09T19:24:00
-image: /uploads/20250617_200523.png
-description: FFVB M18 Garcons
 draft: true
 tags:
   - ffvb
   - jeunes
+image: /uploads/m18-masculins.png
 ---
 
 ## Présentation de l'Équipe

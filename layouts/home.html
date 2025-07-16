@@ -1,5 +1,14 @@
 {{ define "main" }}
-  {{ partial "banner.html" . }}
+  {{ with .Params.image }}
+    <div class="text-center">
+      <img
+        src="{{ .path }}"
+        {{ with .height }}style="height: {{ . }}px; overflow: hidden;"{{ end }}
+        class="img-fluid"
+        alt="Banner"
+      />
+    </div>
+  {{ end }}
   <section class="title-section homepage">
     <h1 class="text-uppercase">{{ .Title }}</h1>
     {{ .Content }}

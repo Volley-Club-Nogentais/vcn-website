@@ -6,6 +6,4 @@ draft: true
 
 Rejoignez notre passion du volley-ball
 
-# SITE EN CONSTRUCTION
-
 Fier d'évoluer

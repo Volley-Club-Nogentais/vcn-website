@@ -6,6 +6,7 @@
   <body class="d-flex flex-column h-100">
     {{ partial "header.html" . }}
     <main class="flex-shrink-0 container">
+      {{ partial "alert.html" . }}
       {{ block "main" . }}
         This will be replaced with content from the corresponding "define" action found in the template to which this
         base template is applied.

@@ -1,6 +1,13 @@
 {{ define "main" }}
   <article class="single">
     <h1>{{ .Title }}</h1>
+    <p class="blog-post-meta text-italic">
+      <em>
+        Créé le
+        {{ .Date| time.Format ":date_medium" }}
+        {{ with .Params.author }}par {{ . }}{{ end }}
+      </em>
+    </p>
     {{ .Content }}
   </article>
 {{ end }}

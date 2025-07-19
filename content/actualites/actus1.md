@@ -7,6 +7,7 @@ tags:
   - tournoi
 categories:
   - tournament
+author: Henri Buyse
 ---
 
 Le club organise son tournoi de rentrée le 15 septembre ! Inscriptions ouvertes à tous.

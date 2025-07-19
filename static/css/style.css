@@ -135,7 +135,7 @@ video {
 
 /* Corps de page */
 body {
-  font-family: 'Anton', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
   background: #ffffff;
   color: #333333;
   margin: 0;
@@ -149,7 +149,7 @@ h3,
 .nav-link {
   font-weight: bolder;
   text-transform: uppercase;
-  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
 }
 
 h1,

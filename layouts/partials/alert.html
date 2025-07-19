@@ -1,3 +1,5 @@
 {{ with .Site.Params.alert }}
 <div class="alert alert-warning text-center" role="alert">{{ . }}</div>
+{{ end }} {{ with .alert }}
+<div class="alert alert-{{ .class }} text-center" role="alert">{{ .text }}</div>
 {{ end }}

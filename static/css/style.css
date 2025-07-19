@@ -55,6 +55,7 @@ nav {
 
 .title-section p {
   font-size: 18px;
+  font-weight: bold;
 }
 
 .grid-section {
@@ -99,6 +100,7 @@ nav {
 .btn {
   background: #ffffff;
   color: #0e2942;
+  border: 1px solid #0e2942;
   padding: 10px 20px;
   border: none;
   margin: 5px;
@@ -147,8 +149,10 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
 .nav-link {
-  font-weight: bolder;
+  font-weight: 800;
   text-transform: uppercase;
   font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
 }

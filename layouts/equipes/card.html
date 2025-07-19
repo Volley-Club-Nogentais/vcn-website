@@ -7,7 +7,7 @@
     {{ with .Description }}
     <p class="card-text">{{ . }}</p>
     {{ end }}
-    <a href="{{ .RelPermalink }}" class="btn btn-primary">En savoir plus</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-primary stretched-link"> En savoir plus</a>
   </div>
   {{ if isset .Params "tags" }}
   <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>

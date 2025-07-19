@@ -140,6 +140,7 @@ body {
   color: #333333;
   margin: 0;
   padding: 0;
+  color: #003049; /* bleu foncé VCN */
 }
 
 /* Titres et accents */
@@ -152,10 +153,9 @@ h3,
   font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
 }
 
-h1,
-h2,
-h3,
-p {
+.card-title,
+.card-text,
+.card-body {
   color: #003049; /* bleu foncé VCN */
 }
 

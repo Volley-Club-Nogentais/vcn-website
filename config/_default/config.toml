@@ -27,3 +27,7 @@ target = "assets"
 [[module.mounts]]
 source = "static"
 target = "static"
+
+[taxonomies]
+category = "categories"
+tag = "tags"

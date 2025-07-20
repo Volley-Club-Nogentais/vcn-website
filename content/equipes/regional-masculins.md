@@ -3,8 +3,8 @@ title: Régional Masculins
 description: FFVB Régional Masculins
 date: 2025-07-09T19:24:00
 draft: true
+categories: ["FFVB"]
 tags:
-  - ffvb
   - adultes
 ---
 

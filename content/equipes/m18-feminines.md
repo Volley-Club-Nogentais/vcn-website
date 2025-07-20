@@ -3,8 +3,8 @@ title: M18 Féminines
 description: FFVB Féminines
 date: 2025-07-09T19:24:00
 draft: true
+categories: ["FFVB"]
 tags:
-  - ffvb
   - jeunes
 ---
 

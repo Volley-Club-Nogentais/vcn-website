@@ -3,8 +3,8 @@ title: M15 Féminines
 description: FFVB M15 Féminines
 date: 2025-07-09T19:23:00
 draft: true
+categories: ["FFVB"]
 tags:
-  - ffvb
   - jeunes
 ---
 

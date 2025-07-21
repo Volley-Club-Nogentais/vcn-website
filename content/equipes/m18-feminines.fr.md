@@ -8,17 +8,18 @@ tags:
 trainings:
   - gymnasium: Louis Armand
     address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
-    day: Monday
+    day: 2025-07-21
     start_time: 20:00
     end_time: 22:30
   - gymnasium: Louis Armand
     address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
-    day: Thursday
+    day: 2025-07-24
     start_time: 20:00
     end_time: 22:30
 categories:
   - FFVB
 ---
+
 ## Présentation de l'Équipe
 
 Notre équipe féminine de volleyball des moins de 18 ans est composée de jeunes athlètes passionnées et talentueuses.

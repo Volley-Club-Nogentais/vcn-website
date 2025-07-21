@@ -9,7 +9,9 @@
     {{ end }}
     <a href="{{ .RelPermalink }}" class="btn btn-primary stretched-link"> En savoir plus</a>
   </div>
-  {{ if isset .Params "tags" }}
+  {{ if isset .Params "categories" }}
+  <div class="card-footer text-body-secondary">{{ range .Params.categories }} {{ . }} {{ end }}</div>
+  {{ end }} {{ if isset .Params "tags" }}
   <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>
   {{ end }}
 </div>

@@ -3,11 +3,22 @@ title: M18 Féminines
 description: FFVB Féminines
 date: 2025-07-09T19:24:00
 draft: true
-categories: ["FFVB"]
+categories:
+  - FFVB
 tags:
   - jeunes
+trainings:
+  - gymnasium: Louis Armand
+    address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
+    day: Lundi
+    start_time: 20:00
+    end_time: 22:30
+  - gymnasium: Louis Armand
+    address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
+    day: Jeudi
+    start_time: 20:00
+    end_time: 22:30
 ---
-
 ## Présentation de l'Équipe
 
 Notre équipe féminine de volleyball des moins de 18 ans est composée de jeunes athlètes passionnées et talentueuses.

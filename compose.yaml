@@ -7,4 +7,6 @@ services:
       - '1313:1313'
     volumes:
       - ./:/src
-    command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true
+    command:
+      server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true
+      --printI18nWarnings

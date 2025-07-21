@@ -5,9 +5,9 @@
     <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
   </div>
   {{ end }}
-  <h1 class="text-capitalize">{{ .Title }}</h1>
+  <h1>{{ .Title }}</h1>
   {{ .Content }} {{ with .Params.trainings }}
-  <h1 class="text-capitalize">Les entraînements</h1>
+  <h1>Les entraînements</h1>
   <table class="table">
     <thead>
       <tr>

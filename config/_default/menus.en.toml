@@ -1,0 +1,29 @@
+[[main]]
+name = "Home"
+url = "/"
+weight = 10
+
+[[main]]
+name = "Teams"
+url = "/equipes/"
+weight = 20
+
+[[main]]
+name = "Projects"
+url = "/projects/"
+weight = 30
+
+[[main]]
+name = "History"
+url = "/histoire/"
+weight = 40
+
+[[main]]
+name = "News"
+url = "/actualites/"
+weight = 50
+
+[[main]]
+name = "Contact"
+url = "/contact/"
+weight = 60

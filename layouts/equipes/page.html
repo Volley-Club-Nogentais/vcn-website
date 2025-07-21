@@ -7,5 +7,28 @@
   {{ end }}
   <h1 class="text-capitalize">{{ .Title }}</h1>
   {{ .Content }}
+  {{ with .Params.trainings }}
+  <h1 class="text-capitalize">Les entraînements</h1>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Gymnase</th>
+      <th scope="col">Jour de la semaine</th>
+      <th scope="col">Horaire de début</th>
+      <th scope="col">Horaire de fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range . }}
+    <tr>
+      <th scope="row">{{ .gymnasium }}</th>
+      <td>{{ .day }}</td>
+      <td>{{ .start_time }}</td>
+      <td>{{ .end_time }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+  {{ end }}
 </article>
 {{ end }}

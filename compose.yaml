@@ -8,3 +8,4 @@ services:
     volumes:
       - ./:/src
     command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true --disableFastRender
+      --printI18nWarnings

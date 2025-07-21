@@ -2,7 +2,7 @@
   <div class="card-body">
     <h4 class="card-title">{{ .Title }}</h4>
     {{ with .Params.author }}
-    <p class="card-subtitle text-muted">by {{ . }}</p>
+    <p class="card-subtitle text-muted">par {{ . }}</p>
     {{ end }}
     <p class="card-text mt-3">
       {{ with .Params.description }} {{ . }} {{ else }} {{ .Content | truncate 200 }} {{ end }}

@@ -52,3 +52,10 @@ Nous sommes reconnaissants envers nos partenaires qui nous soutiennent dans notr
 contributions nous permettent de disposer des meilleures installations et équipements, et de participer à des
 compétitions de haut niveau. Nous croyons en l'importance de la communauté et nous sommes fiers de représenter nos
 partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons continuer à grandir et à réussir.
+
+# Les entraînements
+
+| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------------ | ------------------ | ---------------- | -------------- |
+| Louis Armand | Lundi              | 20:00            | 22:30          |
+| Louis Armand | Jeudi              | 20:00            | 22:30          |

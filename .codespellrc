@@ -1,5 +1,0 @@
-[codespell]
-skip = *.html,*.md,./.github/workflows/rsync.yml,./public
-count =
-quiet-level = 3
-;  vim: set ts=4 sw=4 tw=120 et ft=dosini :

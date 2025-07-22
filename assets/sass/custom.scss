@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+header, footer {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* padding: 50px; */
+
+  /* augmente le padding vertical */
+  position: relative;
+  height: auto;
+}
+
+header img.logo {
+  height: 120px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* centre verticalement le logo */
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #0e2942;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.title-section {
+  text-align: center;
+  padding: 3px 20px 3px 20px;
+  background-color: #ffffff;
+  color: #0e2942;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  /* height: 400px; */
+}
+
+.grid-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* background: rgba(14, 41, 66, 0.7); */
+  }
+
+  &.gold::before {
+    background: rgba(222, 164, 65, 0.85);
+  }
+
+  h2 {
+    position: relative;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.btn {
+  background: #ffffff;
+  color: #0e2942;
+  border: 1px solid #0e2942;
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: #dea441;
+    color: #0e2942;
+  }
+}
+
+.video-container {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white;
+
+  /* Couleur du cadre */
+  border-radius: 20px;
+
+  /* Bords arrondis */
+  overflow: hidden;
+
+  /* Cache les débordements de la vidéo */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+  /* Ombre portée optionnelle */
+  background: black;
+  pointer-events: none;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Corps de page */
+
+body {
+  font-family: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  color: #003049;
+
+  /* bleu foncé VCN */
+}
+
+/* Titres et accents */
+
+h1, h2, h3, h4, h5, .nav-link {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+}
+
+.card-title, .card-text, .card-body {
+  color: #003049;
+
+  /* bleu foncé VCN */
+}
+
+a {
+  color: #d62828;
+
+  /* rogue vif */
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Barre de navigation */
+
+.site-header {
+  background-color: #003049;
+  padding: 1em;
+
+  a {
+    color: #ffffff;
+    margin-right: 1em;
+  }
+}
+
+/* Hero (bannière d’accueil) */
+
+.hero-background {
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.single, .team {
+  text-align: justify;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-brand img {
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+}

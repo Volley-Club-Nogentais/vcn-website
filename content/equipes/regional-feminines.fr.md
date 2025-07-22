@@ -3,9 +3,10 @@ title: Régional Fémininines
 description: FFVB Régional Féminines
 date: 2025-07-09T19:24:00
 draft: true
-categories: ['FFVB']
 tags:
   - adultes
+categories:
+  - FFVB
 ---
 
 ### Maintien au Niveau Régional

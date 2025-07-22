@@ -1,3 +1,4 @@
+---
 backend:
   name: test-repo
 
@@ -11,10 +12,10 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Titre', name: 'title', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Image principale', name: 'image', widget: 'image' }
-      - { label: 'Contenu', name: 'body', widget: 'markdown' }
+      - {label: 'Titre', name: 'title', widget: 'string'}
+      - {label: 'Date', name: 'date', widget: 'datetime'}
+      - {label: 'Image principale', name: 'image', widget: 'image'}
+      - {label: 'Contenu', name: 'body', widget: 'markdown',}
 
   - name: 'pages'
     label: 'Pages'
@@ -23,8 +24,8 @@ collections:
         name: 'home'
         file: 'content/_index.md'
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string' }
-          - { label: 'Contenu', name: 'body', widget: 'markdown' }
+          - {label: 'Titre', name: 'title', widget: 'string'}
+          - {label: 'Contenu', name: 'body', widget: 'markdown',}
 
   - name: 'galerie'
     label: 'Galerie'
@@ -32,5 +33,5 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Titre', name: 'title', widget: 'string' }
-      - { label: 'Photos', name: 'images', widget: 'list', field: { label: 'Image', name: 'image', widget: 'image' } }
+      - {label: 'Titre', name: 'title', widget: 'string'}
+      - {label: 'Photos', name: 'images', widget: 'list', field: {label: 'Image', name: 'image', widget: 'image'}}

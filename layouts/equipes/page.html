@@ -1,33 +1,34 @@
 {{ define "main" }}
-<article class="team">
-  {{ with .Params.image }}
-  <div class="text-center">
-    <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
-  </div>
-  {{ end }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }} {{ with .Params.trainings }}
-  <h1>Les entraînements</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Gymnase</th>
-        <th scope="col">Jour de la semaine</th>
-        <th scope="col">Horaire de début</th>
-        <th scope="col">Horaire de fin</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range . }}
-      <tr>
-        <th scope="row">{{ .gymnasium }}</th>
-        <td class="text-capitalize">{{ .day | time.Format "Monday" }}</td>
-        <td>{{ .start_time }}</td>
-        <td>{{ .end_time }}</td>
-      </tr>
-      {{ end }}
-    </tbody>
-  </table>
-  {{ end }}
-</article>
+  <article class="team">
+    {{ with .Params.image }}
+      <div class="text-center">
+        <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
+      </div>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ with .Params.trainings }}
+      <h1>Les entraînements</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Gymnase</th>
+            <th scope="col">Jour de la semaine</th>
+            <th scope="col">Horaire de début</th>
+            <th scope="col">Horaire de fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range . }}
+            <tr>
+              <th scope="row">{{ .gymnasium }}</th>
+              <td class="text-capitalize">{{ .day | time.Format "Monday" }}</td>
+              <td>{{ .start_time }}</td>
+              <td>{{ .end_time }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    {{ end }}
+  </article>
 {{ end }}

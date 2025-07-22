@@ -1,17 +1,18 @@
 <div class="card">
   {{ with .Params.image }}
-  <img src="{{ . }}" class="card-img-top" alt="{{ page.Title }} image" />
+    <img src="{{ . }}" class="card-img-top" alt="{{ page.Title }} image" />
   {{ end }}
   <div class="card-body">
     <h5 class="card-title">{{ .Title }}</h5>
     {{ with .Description }}
-    <p class="card-text">{{ . }}</p>
+      <p class="card-text">{{ . }}</p>
     {{ end }}
     <a href="{{ .RelPermalink }}" class="btn btn-primary stretched-link"> En savoir plus</a>
   </div>
   {{ if isset .Params "categories" }}
-  <div class="card-footer text-body-secondary">{{ range .Params.categories }} {{ . }} {{ end }}</div>
-  {{ end }} {{ if isset .Params "tags" }}
-  <div class="card-footer text-body-secondary">{{ range .Params.tags }} {{ . }} {{ end }}</div>
+    <div class="card-footer text-body-secondary">{{ range .Params.categories }}{{ . }}{{ end }}</div>
+  {{ end }}
+  {{ if isset .Params "tags" }}
+    <div class="card-footer text-body-secondary">{{ range .Params.tags }}{{ . }}{{ end }}</div>
   {{ end }}
 </div>

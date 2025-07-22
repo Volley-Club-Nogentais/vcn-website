@@ -11,6 +11,6 @@ proseWrap: always
 plugins:
   - prettier-plugin-go-template
 overrides:
-  - files: 'layouts/**.html'
+  - files: '*.html'
     options:
       parser: go-template

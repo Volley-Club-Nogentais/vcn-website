@@ -1,8 +1,8 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  {{ range .Pages }}
-  <div class="col">{{ .Render "card" }}</div>
-  {{ end }}
-</div>
+  <h1>{{ .Title }}</h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {{ range .Pages }}
+      <div class="col">{{ .Render "card" }}</div>
+    {{ end }}
+  </div>
 {{ end }}

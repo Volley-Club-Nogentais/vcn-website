@@ -1,3 +1,4 @@
+/* Site colors */
 $vcn-primary: #0e2942;
 $vcn-secondary: #053574;
 $vcn-gold: #dea441;
@@ -5,3 +6,10 @@ $vcn-white: #ffffff;
 
 $body-color: $vcn-primary;
 $body-bg: $vcn-white;
+
+/* Body font modification */
+$font-family-sans-serif: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+
+/* Headings (h*) font modification */
+$headings-font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+$headings-font-weight: 800;

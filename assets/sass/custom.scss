@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
-  font-family: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
   background: $body-bg;
   margin: 0;
   padding: 0;
@@ -110,11 +109,14 @@ h1,
 h2,
 h3,
 h4,
-h5,
-.nav-link {
-  font-weight: 800;
+h5 {
   text-transform: uppercase;
-  font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+}
+
+.nav-link {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  text-transform: uppercase;
 }
 
 /* Hero (bannière d’accueil) */

@@ -1,1 +1,3 @@
 archetypes/*.md
+**/*.yml
+**/*.yaml

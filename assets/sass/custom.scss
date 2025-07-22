@@ -131,15 +131,31 @@ h5 {
   background-position: center;
   padding: 6rem 2rem;
   text-align: center;
+}
 
-  h1 {
-    font-size: 2.5rem;
+article {
+  text-align: justify;
+
+  p {
+    // Styles par défaut pour tous les paragraphes
+
+    &:has(img) {
+      // Styles pour les paragraphes qui contiennent une image
+      // Notez que :has() est une fonctionnalité relativement nouvelle et peut ne pas être supportée dans tous les navigateurs
+      text-align: center;
+    }
+    img {
+      width: 300px;
+    }
   }
 }
 
-.single,
-.team {
-  text-align: justify;
+.card-body {
+  // Styles pour la card
+
+  img {
+    display: none; // Cela masquera l'image
+  }
 }
 
 @media only screen and (min-width: 600px) {

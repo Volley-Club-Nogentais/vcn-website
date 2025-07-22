@@ -57,5 +57,5 @@ partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons contin
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Lundi              | 20:00            | 22:30          |
-| Louis Armand | Jeudi              | 20:00            | 22:30          |
+| Louis Armand | Mardi              | 20:00            | 22:30          |
+| Louis Armand | Vendredi           | 20:00            | 22:30          |

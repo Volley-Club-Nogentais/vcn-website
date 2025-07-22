@@ -3,7 +3,7 @@ title: M18 Masculins
 description: FFVB M18 Masculins
 date: 2025-07-09T19:24:00
 draft: true
-categories: ["FFVB"]
+categories: ['FFVB']
 tags:
   - jeunes
 image: /uploads/m18-masculins.png

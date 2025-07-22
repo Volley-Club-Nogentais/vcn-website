@@ -33,8 +33,10 @@ nav {
   margin-left: 20px;
   font-size: 20px;
   color: $body-color;
+
   &:hover {
     text-decoration: underline;
+    color: inherit;
   }
 }
 
@@ -60,14 +62,17 @@ nav {
   padding: 10px 20px;
   margin: 5px;
   font-weight: bold;
-  cursor: pointer;
   color: $body-color;
 
   &:hover {
-    background: #dea441;
+    background: $vcn-gold;
     text-decoration: underline;
-    color: $body-color;
+    color: inherit;
   }
+}
+
+.table {
+  color: $body-color;
 }
 
 .video-container {

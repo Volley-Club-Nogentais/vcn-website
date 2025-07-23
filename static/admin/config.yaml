@@ -43,7 +43,8 @@ collections:
     label: 'Actualités'
     folder: 'content/actualites'
     create: true
-    slug: '{{slug}}'
+    path: "{{year}}/{{month}}/{{slug}}"
+    preview_path: "actualites/{{slug}}"
     fields:
       - label: 'Titre'
         name: 'title'
@@ -61,6 +62,9 @@ collections:
         name: 'date'
         widget: 'datetime'
         required: true
+        default: '{{now}}'
+        date_format: true
+        time_format: false
       - label: 'Brouillon'
         name: 'draft'
         widget: 'boolean'
@@ -90,6 +94,7 @@ collections:
     folder: 'content/equipes'
     create: true
     slug: '{{slug}}'
+    preview_path: "actualites/{{slug}}"
     fields:
       - label: 'Titre'
         name: 'title'

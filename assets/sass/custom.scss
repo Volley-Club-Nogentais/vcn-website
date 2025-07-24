@@ -108,8 +108,10 @@ h5 {
   text-transform: uppercase;
 }
 
+#navbar-vcn {
+  font-family: $navbar-font-family;
+}
 .nav-link {
-  font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   text-transform: uppercase;
 }

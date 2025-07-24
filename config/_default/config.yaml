@@ -1,0 +1,34 @@
+---
+baseURL: https://volley-club-nogent.fr/
+title: Volley Club Nogentais
+author: Henri Buyse
+theme: vcn-theme
+
+timeZone: Europe/Paris
+languageCode: fr-fr
+
+# Multilingual
+defaultContentLanguage: fr
+defaultContentLanguageInSubdir: false
+disableHugoGeneratorInject: true
+
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: true
+# sectionPagesMenu: main
+# googleAnalytics: UA-1511XXXX-X
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.99.1
+    max: ""
+  mounts:
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+
+taxonomies:
+  category: categories
+  tag: tags

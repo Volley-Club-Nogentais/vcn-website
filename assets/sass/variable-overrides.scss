@@ -4,10 +4,12 @@ $vcn-secondary: #053574;
 $vcn-gold: #dea441;
 $vcn-white: #ffffff;
 
+/* Bootstrap variables names will start with vcn */
+$prefix: 'vcn-';
+
+/* Body modification */
 $body-color: $vcn-primary;
 $body-bg: $vcn-white;
-
-/* Body font modification */
 $font-family-sans-serif: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
 
 /* Headings (h*) font modification */

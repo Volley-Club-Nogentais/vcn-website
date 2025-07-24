@@ -23,15 +23,10 @@ footer {
   height: auto;
 }
 
-nav {
-  display: flex;
-  gap: 20px;
-}
-
 .nav-link {
   text-decoration: none;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 1.5em;
   color: $body-color;
 
   &:hover {
@@ -57,8 +52,7 @@ nav {
 }
 
 .btn {
-  background: $body-bg;
-  border: 1px solid $body-color;
+  background: rgba($vcn-primary, 0.1);
   padding: 10px 20px;
   margin: 5px;
   font-weight: bold;

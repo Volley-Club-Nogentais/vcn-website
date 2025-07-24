@@ -4,11 +4,9 @@
     https://realfavicongenerator.net/svg-favicon/
 -->
 {{ if (os.FileExists "static/images/favicon.svg") -}}
-  <link rel="icon" type="image/svg+xml" href="{{ `images/favicon.svg` | absURL }}" />
-{{ end -}}
-{{ if (os.FileExists "static/images/favicon.png") -}}
-  <link rel="icon" type="image/png" href="{{ `images/favicon.png` | absURL }}" />
-{{ end -}}
-{{ if (os.FileExists "static/images/favicon.ico") -}}
-  <link rel="icon" type="image/vnd.icon" href="{{ `images/favicon.ico` | absURL }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ `images/favicon.svg` | relURL }}" />
+{{ else if (os.FileExists "static/images/favicon.png") -}}
+  <link rel="icon" type="image/png" href="{{ `images/favicon.png` | relURL }}" />
+{{ else if (os.FileExists "static/images/favicon.ico") -}}
+  <link rel="icon" type="image/vnd.icon" href="{{ `images/favicon.ico` | relURL }}" />
 {{ end -}}

@@ -1,9 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-lg w-100">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img src="/images/logo.svg" alt="Logo VCN" />
-      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -17,7 +14,11 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbar-vcn">
-        <ul class="navbar-nav ms-auto text-uppercase">
+        <a class="navbar-brand col-lg-1 me-0" href="/">
+          <img src="/images/logo.svg" alt="Logo VCN" />
+        </a>
+
+        <ul class="navbar-nav col-lg-10 text-uppercase justify-content-lg-center">
           {{ partial "menu.html" . }}
         </ul>
       </div>

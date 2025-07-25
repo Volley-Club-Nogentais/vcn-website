@@ -108,16 +108,13 @@ h5 {
   text-transform: uppercase;
 }
 
-#navbar-vcn {
+.navbar {
   font-family: $navbar-font-family;
-}
-.nav-link {
   font-weight: $headings-font-weight;
   text-transform: uppercase;
 }
 
 /* Hero (bannière d’accueil) */
-
 .hero-background {
   background-size: cover;
   background-position: center;

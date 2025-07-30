@@ -8,6 +8,9 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    # Run every day at 7:15 AM
+    - cron: '15 7 * * *'
 
 jobs:
   deploy-website:

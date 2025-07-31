@@ -1,5 +1,8 @@
 {{ define "main" }}
   <article class="single">
+    {{ if .Draft }}
+      <span class="badge bg-warning float-end">Brouillon</span>
+    {{ end }}
     <h1>{{ .Title }}</h1>
     {{ if or .Date .Params.author }}
       <p class="blog-post-meta text-italic">

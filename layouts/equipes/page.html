@@ -5,6 +5,9 @@
         <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
       </div>
     {{ end }}
+    {{ if .Draft }}
+      <span class="badge bg-warning float-end">Brouillon</span>
+    {{ end }}
     <h1>{{ .Title }}</h1>
     {{ .Content }}
   </article>

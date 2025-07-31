@@ -1,23 +1,17 @@
 <!doctype html>
-<html lang="fr">
+<html class="h-100" lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
   <head>
-    <meta charset="UTF-8" />
-    <title>{{ block "title" . }}{{ .Title }} | VCN{{ end }}</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    {{ partial "head.html" . }}
   </head>
-  <body>
-    <header>
-      <img src="logo.png" alt="Logo VCN" class="logo" />
-      <nav>
-        <a href="#">ACCUEIL</a>
-        <a href="#">EQUIPES</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">HISTOIRE</a>
-        <a href="#">CONTACT</a>
-        <a href="#">INSCRIPTIONS</a>
-        <a href="#">Blog</a>
-      </nav>
-    </header>
-    {{ block "main" . }}{{ end }}
+  <body class="d-flex flex-column h-100">
+    {{ partial "header.html" . }}
+    <main class="flex-shrink-0 container">
+      {{ partial "alert.html" . }}
+      {{ block "main" . }}
+        This will be replaced with content from the corresponding "define" action found in the template to which this
+        base template is applied.
+      {{ end }}
+    </main>
+    {{ partial "footer.html" . }}
   </body>
 </html>

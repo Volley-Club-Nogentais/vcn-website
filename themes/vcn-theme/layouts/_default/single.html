@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <article class="single">
+    <span class="badge bg-warning float-end">Brouillon</span>
+    <h1>
+      {{ .Title }}
+    </h1>
+    {{ if or .Date .Params.author }}
+      <p class="blog-post-meta text-italic">
+        <em>
+          Créé
+          {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}
+          {{ with .Params.author }}par {{ . }}{{ end }}
+        </em>
+      </p>
+    {{ end }}
+    {{ .Content }}
+  </article>
+{{ end }}

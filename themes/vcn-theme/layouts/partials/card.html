@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{ .Title }}</h4>
+    {{ with .Params.author }}
+      <p class="card-subtitle text-muted">par {{ . }}</p>
+    {{ end }}
+    <p class="card-text mt-3">{{ with .Params.description }}{{ . }}{{ else }}{{ .Content | truncate 200 }}{{ end }}</p>
+    <a href="{{ .RelPermalink }}" class="btn stretched-link"> En savoir plus</a>
+  </div>
+  {{ with .Date }}
+    <div class="card-footer">
+      <small class="text-muted">{{ . | time.Format ":date_long" }}</small>
+    </div>
+  {{ end }}
+</div>

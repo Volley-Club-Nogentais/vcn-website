@@ -43,7 +43,7 @@ jobs:
         with:
           switches: --archive --verbose --compress --recursive --delete
           path: public/
-          remote_path: /mnt/datas/vcn-website-public  # codespell:ignore datas
-          remote_host: 192.168.2.100
-          remote_user: github
+          remote_path: ${{ vars.VPS_DEPLOY_PATH }}
+          remote_host: ${{ vars.VPS_DEPLOY_HOST }}
+          remote_user: ${{ vars.VPS_DEPLOY_USER }}
           remote_key: ${{ secrets.VPS_DEPLOY_KEY }}

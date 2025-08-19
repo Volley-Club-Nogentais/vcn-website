@@ -6,7 +6,7 @@ draft: true
 tags:
   - loisirs
   - adultes
-image: /uploads/rhinos-feroces.jpg
+image: /uploads/rhinos-feroces.png
 categories:
   - FSGT
 ---

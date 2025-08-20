@@ -16,9 +16,9 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
-        types: [file]
+        types:
+          - file
         files: \.en\.(md|html|toml)$
-
   - repo: local
     hooks:
       - id: app-prettier

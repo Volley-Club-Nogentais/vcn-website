@@ -13,7 +13,8 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -23,11 +24,14 @@ jobs:
       - name: Install Prettier
         run: npm install prettier prettier-plugin-go-template
 
-      - uses: actions/setup-python@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
-      - uses: pre-commit/action@v3.0.1
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.1
 
-      - uses: pre-commit-ci/lite-action@v1.1.0
+      - name: Run pre-commit.ci
+        uses: pre-commit-ci/lite-action@v1.1.0
         if: always()

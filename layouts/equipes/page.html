@@ -11,4 +11,31 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
   </article>
+
+  {{ with .Params.calendarName }}
+    <div class="calendar">
+      <h3>Calendrier des matchs</h3>
+      <div id="loading-message" class="alert alert-info">Chargement des données...</div>
+      <div id="table-container"></div>
+    </div>
+    <script src="/js/load-calendar.js"></script>
+    <script>
+      loadCalendar('/calendars/{{ . }}.json', 'table-container')
+      // Masquer le message de chargement une fois les données chargées
+      document.addEventListener('DOMContentLoaded', function () {
+        const loadingMessage = document.getElementById('loading-message')
+        const tableContainer = document.getElementById('table-container')
+
+        // Observateur pour détecter quand le tableau est chargé
+        const observer = new MutationObserver(function (mutations) {
+          if (tableContainer.children.length > 0) {
+            loadingMessage.style.display = 'none'
+            observer.disconnect()
+          }
+        })
+
+        observer.observe(tableContainer, { childList: true })
+      })
+    </script>
+  {{ end }}
 {{ end }}

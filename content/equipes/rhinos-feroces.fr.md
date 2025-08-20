@@ -9,6 +9,7 @@ tags:
 image: /uploads/rhinos-feroces.png
 categories:
   - FSGT
+calendarName: 'rhinos-feroces'
 ---
 
 Tout simplement les meilleurs!!!

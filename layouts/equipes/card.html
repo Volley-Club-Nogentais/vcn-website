@@ -13,6 +13,9 @@
     <div class="card-footer text-body-secondary">{{ range .Params.categories }}{{ . }}{{ end }}</div>
   {{ end }}
   {{ if isset .Params "tags" }}
-    <div class="card-footer text-body-secondary">{{ range .Params.tags }}{{ . }}{{ end }}</div>
+    <div class="card-footer text-body-secondary">
+      <!-- prettier-ignore -->
+      {{ range $index, $value := .Params.tags }}{{ if $index }}, {{ end }}{{ . }}{{ end }}
+    </div>
   {{ end }}
 </div>

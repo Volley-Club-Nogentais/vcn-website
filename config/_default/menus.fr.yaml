@@ -6,15 +6,12 @@ main:
   - name: Équipes
     url: /equipes/
     weight: 20
-  - name: Projets
-    url: /projets/
-    weight: 30
   - name: Histoire
     url: /histoire/
-    weight: 40
+    weight: 30
   - name: Actualites
     url: /actualites/
-    weight: 50
+    weight: 40
   - name: Contact
     url: /contact/
-    weight: 60
+    weight: 50

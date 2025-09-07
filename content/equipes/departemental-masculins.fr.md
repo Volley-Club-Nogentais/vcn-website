@@ -1,12 +1,11 @@
 ---
-title: Régional Masculins
-description: FFVB Régional Masculins
-date: 2025-08-28T16:00:00
+title: Départemental Masculins
+description: FFVB Départemental Masculins
+date: 2025-09-10T16:00:00
 draft: false
 tags:
   - adultes
   - ffvb
-image: /uploads/senior-masculins.jpg
 categories:
   - FFVB
 ---
@@ -30,7 +29,7 @@ qui vit bien et qui avance ensemble, animé par la même passion et les mêmes o
 
 # Les entraînements
 
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Maudry  | Mardi              | 21:00            | 22:30          |
-| Maudry  | Vendredi           | 21:00            | 22:30          |
+| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------------ | ------------------ | ---------------- | -------------- |
+| Louis Armand | Lundi              | 20:00            | 22:30          |
+| Watteau      | Jeudi              | 21:00            | 22:30          |

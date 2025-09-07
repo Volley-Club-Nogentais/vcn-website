@@ -1,12 +1,12 @@
 ---
-title: Régional Masculins
-description: FFVB Régional Masculins
+title: École de Volley
+description: Le volley dès 7 ans
 date: 2025-08-28T16:00:00
 draft: false
 tags:
   - adultes
+  - jeunes
   - ffvb
-image: /uploads/senior-masculins.jpg
 categories:
   - FFVB
 ---

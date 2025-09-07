@@ -56,7 +56,15 @@ partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons contin
 
 # Les entraînements
 
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Mardi              | 20:00            | 22:30          |
-| Louis Armand | Vendredi           | 20:00            | 22:30          |
+## M18
+
+| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------- | ------------------ | ---------------- | -------------- |
+| Watteau | Mardi              | 19:30            | 21:00          |
+| Watteau | Mardi              | 19:30            | 21:00          |
+
+## M18 PE
+
+| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------- | ------------------ | ---------------- | -------------- |
+| Watteau | Dimanche           | 10:00            | 12:00          |

@@ -1,6 +1,6 @@
 ---
-title: M15 Féminines
-description: FFVB M15 Féminines
+title: M13 Féminines
+description: FFVB M13 Féminines
 date: 2025-07-09T19:23:00
 draft: true
 tags:
@@ -56,14 +56,14 @@ partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons contin
 
 # Les entraînements
 
-## M15
+## M13
 
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Mardi              | 18:00            | 20:00          |
-| Louis Armand | Jeudi              | 18:00            | 20:00          |
+| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------- | ------------------ | ---------------- | -------------- |
+| Watteau | Mardi              | 18:00            | 19:30          |
+| Watteau | Jeudi              | 18:00            | 19:30          |
 
-## M15 PE
+## M13 2
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

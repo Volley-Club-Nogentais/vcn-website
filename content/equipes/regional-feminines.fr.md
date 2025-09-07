@@ -29,3 +29,10 @@ Ce maintien offre à notre équipe féminine sénior de nouvelles opportunités 
 renforcer. Les joueuses sont désormais déterminées à consolider leur place au niveau régional et à viser des objectifs
 encore plus ambitieux. Cette saison réussie est une source de motivation pour l'ensemble de l'équipe, qui est plus que
 jamais prête à relever de nouveaux défis et à écrire de belles pages de l'histoire du volley féminin.
+
+# Les entraînements
+
+| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------------ | ------------------ | ---------------- | -------------- |
+| Louis Armand | Mardi              | 20:00            | 22:30          |
+| Watteau      | Jeudi              | 20:00            | 22:30          |

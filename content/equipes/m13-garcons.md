@@ -1,12 +1,11 @@
 ---
-title: M15 Masculins
-description: FFVB M15 Masculins
+title: M13 Masculins
+description: FFVB M13 Masculins
 date: 2025-08-28T15:48:00
 draft: false
 tags:
   - ffvb
   - jeunes
-image: /uploads/m15-garcons.jpeg
 categories:
   - FFVB
 ---
@@ -26,14 +25,14 @@ posé de solides fondations, et laisse entrevoir de belles perspectives pour la 
 
 # Les entraînements
 
-## M15
+## M13
 
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Mardi              | 18:00            | 20:00          |
-| Louis Armand | Jeudi              | 18:00            | 20:00          |
+| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
+| ------- | ------------------ | ---------------- | -------------- |
+| Watteau | Mardi              | 18:00            | 19:30          |
+| Watteau | Jeudi              | 18:00            | 19:30          |
 
-## M15 PE
+## M13 2
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

@@ -1,23 +1,11 @@
 ---
 title: M18 Féminines
 description: FFVB Féminines
-date: 2025-07-09T19:24:00
 draft: true
-tags:
-  - jeunes
-trainings:
-  - gymnasium: Louis Armand
-    address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
-    day: 2025-07-21
-    start_time: 20:00
-    end_time: 22:30
-  - gymnasium: Louis Armand
-    address: 173 Boulevard d'Alsace Lorraine, 94130 Nogent-Sur-Marne
-    day: 2025-07-24
-    start_time: 20:00
-    end_time: 22:30
+weight: 50
 categories:
   - FFVB
+  - jeunes
 ---
 
 ## Présentation de l'Équipe

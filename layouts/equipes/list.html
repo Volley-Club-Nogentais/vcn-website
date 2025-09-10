@@ -1,8 +1,31 @@
 {{ define "main" }}
+  {{ $ffvb := where .Pages "Params.categories" "intersect" (slice "FFVB") }}
+  {{ $fsgt := where .Pages "Params.categories" "intersect" (slice "FSGT") }}
   <h1>{{ .Title }}</h1>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 g-4">
-    {{ range .Pages }}
+  <h2>FFVB Jeunes</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
+    {{ range (where $ffvb "Params.categories" "intersect" (slice "jeunes")).ByTitle }}
       <div class="col">{{ .Render "card" }}</div>
     {{ end }}
+  </div>
+
+  <h2>FFVB Adultes</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
+    {{ range (where $ffvb "Params.categories" "intersect" (slice "adultes")).ByWeight.Reverse }}
+      <div class="col">{{ .Render "card" }}</div>
+    {{ end }}
+  </div>
+  <h2>FFVB Beach</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
+    {{ range (where $ffvb "Params.categories" "intersect" (slice "beach")).ByTitle }}
+      <div class="col">{{ .Render "card" }}</div>
+    {{ end }}
+  </div>
+  <h2>FSGT</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
+    {{ range $fsgt.ByTitle }}
+      <div class="col">{{ .Render "card" }}</div>
+    {{ end }}
+
   </div>
 {{ end }}

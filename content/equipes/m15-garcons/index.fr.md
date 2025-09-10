@@ -1,14 +1,11 @@
 ---
 title: M15 Masculins
 description: FFVB M15 Masculins
-date: 2025-08-28T15:48:00
 draft: false
-tags:
-  - ffvb
-  - jeunes
-image: /uploads/m15-garcons.jpeg
+weight: 50
 categories:
   - FFVB
+  - jeunes
 ---
 
 Cette saison a été celle de la découverte pour ce tout jeune groupe, composé en grande partie de débutants, accompagnés

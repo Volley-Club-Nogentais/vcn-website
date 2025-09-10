@@ -1,14 +1,11 @@
 ---
 title: École de Volley
 description: Le volley de 7 à 11 ans
-date: 2025-08-28T16:00:00
 draft: false
-tags:
-  - adultes
-  - jeunes
-  - ffvb
+weight: 50
 categories:
   - FFVB
+  - jeunes
 ---
 
 ## Présentation du groupe

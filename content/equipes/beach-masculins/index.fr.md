@@ -1,14 +1,11 @@
 ---
-title: Beach Féminins
-description: FFVB Beach Féminins
-date: 2025-09-10T16:00:00
+title: Beach Masculins
+description: FFVB Beach Masculins
 draft: false
-tags:
-  - adultes
-  - ffvb
-  - beach
+weight: 50
 categories:
   - FFVB
+  - beach
 ---
 
 # Les entraînements

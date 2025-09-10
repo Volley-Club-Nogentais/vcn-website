@@ -1,13 +1,11 @@
 ---
 title: Départemental Féminines
 description: FFVB Départemental Féminines
-date: 2025-09-10T16:00:00
 draft: false
-tags:
-  - adultes
-  - ffvb
+weight: 40
 categories:
   - FFVB
+  - adultes
 ---
 
 # Les entraînements

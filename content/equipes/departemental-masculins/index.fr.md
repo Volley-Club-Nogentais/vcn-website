@@ -1,13 +1,11 @@
 ---
 title: Départemental Masculins
 description: FFVB Départemental Masculins
-date: 2025-09-10T16:00:00
 draft: false
-tags:
-  - adultes
-  - ffvb
+weight: 40
 categories:
   - FFVB
+  - adultes
 ---
 
 Cette saison a vu naître un tout nouveau groupe, construit autour d’un entraîneur revenu au club. Avec lui, un bel

@@ -1,6 +1,6 @@
 <div class="card">
   {{ with .Resources.Get "main.jpg" }}
-    {{ with .Fill "400x400" }}
+    {{ with .Fill "300x300" }}
       <img
         src="{{ .RelPermalink }}"
         width="{{ .Width }}"
@@ -11,7 +11,7 @@
     {{ end }}
   {{ else }}
     {{ with resources.Get "media/logo.svg" }}
-      <img src="/images/logo.svg" alt="Logo VCN" />
+      <img src="/images/logo.svg" width="300" height="300" alt="Logo VCN" class="card-img-top" />
     {{ end }}
   {{ end }}
   <div class="card-body">
@@ -19,15 +19,6 @@
     {{ with .Description }}
       <p class="card-text">{{ . }}</p>
     {{ end }}
-    <a href="{{ .RelPermalink }}" class="btn stretched-link"> En savoir plus</a>
+    <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
   </div>
-  {{ if isset .Params "categories" }}
-    <div class="card-footer text-body-secondary">{{ range .Params.categories }}{{ . }}{{ end }}</div>
-  {{ end }}
-  {{ if isset .Params "tags" }}
-    <div class="card-footer text-body-secondary">
-      <!-- prettier-ignore -->
-      {{ range $index, $value := .Params.tags }}{{ if $index }}, {{ end }}{{ . }}{{ end }}
-    </div>
-  {{ end }}
 </div>

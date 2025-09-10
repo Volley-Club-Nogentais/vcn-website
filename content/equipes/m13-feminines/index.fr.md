@@ -1,12 +1,11 @@
 ---
 title: M13 Féminines
 description: FFVB M13 Féminines
-date: 2025-07-09T19:23:00
 draft: true
-tags:
-  - jeunes
+weight: 50
 categories:
   - FFVB
+  - jeunes
 ---
 
 ## Présentation de l'Équipe

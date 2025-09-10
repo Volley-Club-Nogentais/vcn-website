@@ -1,13 +1,11 @@
 ---
 title: Volley Santé
 description: Reprendre le sport par le volley
-date: 2025-08-28T16:00:00
 draft: false
-tags:
-  - adultes
-  - loisirs
+weight: 10
 categories:
   - FFVB
+  - adultes
 ---
 
 # Les entraînements

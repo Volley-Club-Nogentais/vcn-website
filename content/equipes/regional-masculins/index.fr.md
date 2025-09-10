@@ -1,14 +1,11 @@
 ---
 title: Régional Masculins
 description: FFVB Régional Masculins
-date: 2025-08-28T16:00:00
 draft: false
-tags:
-  - adultes
-  - ffvb
-image: /uploads/senior-masculins.jpg
+weight: 50
 categories:
   - FFVB
+  - adultes
 ---
 
 Cette saison a vu naître un tout nouveau groupe, construit autour d’un entraîneur revenu au club. Avec lui, un bel

@@ -17,8 +17,8 @@ backend:
     deleteMedia: "feat(media): delete '{{path}}' by {{author-login}}"
     openAuthoring: '{{message}}'
 
-media_folder: 'static/uploads'
-public_folder: '/uploads'
+media_folder: 'assets/media'
+public_folder: '/media'
 
 slug:
   encoding: 'ascii'
@@ -94,8 +94,8 @@ collections:
     label: 'Équipes'
     folder: 'content/equipes'
     create: true
-    slug: '{{slug}}'
-    preview_path: "actualites/{{slug}}"
+    path: '{{slug}}/index.fr'
+    preview_path: "equipes/{{slug}}"
     fields:
       - label: 'Titre'
         name: 'title'
@@ -105,34 +105,38 @@ collections:
         name: 'description'
         widget: 'string'
         required: false
-      - label: 'Date'
-        name: 'date'
-        widget: 'datetime'
-        required: true
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - "FFVB"
+          - "FSGT"
+          - "adultes"
+          - "jeunes"
       - label: 'Brouillon'
         name: 'draft'
         widget: 'boolean'
         default: true
         required: true
-      - label: 'Tags'
-        name: 'tags'
-        widget: 'list'
-        default:
-          - 'ffvb'
-          - 'fsgt'
-          - 'loisirs'
-          - 'jeunes'
-          - 'adultes'
-          - 'ecole'
-        required: true
+      - label: 'Positionnement'
+        name: 'weight'
+        widget: 'number'
+        value_type: "int"
+        default: 50
+        min: 0
+        max: 100
+        required: false
       - label: 'Image principale'
         name: 'image'
         widget: 'image'
         required: false
+        allow_multiple: false
+        media_folder: "images"
         media_library:
           config:
             max_file_size: 2048000
       - label: 'Contenu'
         name: 'body'
         widget: 'markdown'
-        required: true
+        required: false

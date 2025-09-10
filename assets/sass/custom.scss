@@ -23,11 +23,6 @@ footer {
   height: auto;
 }
 
-main {
-  // Padding to work with the fixed navbar in header
-  padding-top: 116px;
-}
-
 .nav-link {
   text-decoration: none;
   margin-left: 20px;
@@ -157,10 +152,18 @@ article {
   .navbar-brand img {
     height: 90px;
   }
+  main {
+    // Padding to work with the fixed navbar in header
+    padding-top: 116px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .navbar-brand img {
     height: 50px;
+  }
+  main {
+    // Padding to work with the fixed navbar in header
+    padding-top: 76px;
   }
 }

@@ -1,6 +1,18 @@
 <div class="card">
-  {{ with .Params.image }}
-    <img src="{{ . }}" class="card-img-top" alt="{{ page.Title }} image" />
+  {{ with .Resources.Get "main.jpg" }}
+    {{ with .Fill "400x400" }}
+      <img
+        src="{{ .RelPermalink }}"
+        width="{{ .Width }}"
+        height="{{ .Height }}"
+        alt="{{ page.Title }} image"
+        class="card-img-top"
+      />
+    {{ end }}
+  {{ else }}
+    {{ with resources.Get "media/logo.svg" }}
+      <img src="/images/logo.svg" alt="Logo VCN" />
+    {{ end }}
   {{ end }}
   <div class="card-body">
     <h5 class="card-title">{{ .Title }}</h5>

@@ -63,7 +63,7 @@ partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons contin
 | Watteau | Mardi              | 19:30            | 21:00          |
 | Watteau | Mardi              | 19:30            | 21:00          |
 
-## M18 PE
+## M18 - Pratique encadrée
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------- | ------------------ | ---------------- | -------------- |

@@ -23,6 +23,11 @@ footer {
   height: auto;
 }
 
+main {
+  // Padding to work with the fixed navbar in header
+  padding-top: 116px;
+}
+
 .nav-link {
   text-decoration: none;
   margin-left: 20px;
@@ -112,6 +117,7 @@ h5 {
   font-family: $navbar-font-family;
   font-weight: $headings-font-weight;
   text-transform: uppercase;
+  background-color: white;
 }
 
 /* Hero (bannière d’accueil) */

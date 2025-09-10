@@ -11,9 +11,7 @@
         />
       {{ end }}
     {{ else }}
-      {{ with resources.Get "media/logo.svg" }}
-        <img class="card-img-top" src="/images/logo.svg" alt="Logo VCN" width="300" height="300" />
-      {{ end }}
+      <img class="card-img-top" src="/images/logo.svg" alt="Logo VCN" width="300" height="300" />
     {{ end }}
     <div class="card-body">
       <h5 class="card-title">{{ .Title }}</h5>

@@ -1,24 +1,29 @@
-<div class="card">
-  {{ with .Resources.Get "main.jpg" }}
-    {{ with .Fill "300x300" }}
-      <img
-        src="{{ .RelPermalink }}"
-        width="{{ .Width }}"
-        height="{{ .Height }}"
-        alt="{{ page.Title }} image"
-        class="card-img-top"
-      />
+<div class="swiper-slide">
+  <div class="card freeflow-card shadow-sm">
+    {{ with .Resources.Get "main.jpg" }}
+      {{ with .Fill "300x300" }}
+        <img
+          class="card-img-top"
+          alt="{{ page.Title }} image"
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+        />
+      {{ end }}
+    {{ else }}
+      {{ with resources.Get "media/logo.svg" }}
+        <img class="card-img-top" src="/images/logo.svg" alt="Logo VCN" width="300" height="300" />
+      {{ end }}
     {{ end }}
-  {{ else }}
-    {{ with resources.Get "media/logo.svg" }}
-      <img src="/images/logo.svg" width="300" height="300" alt="Logo VCN" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ .Title }}</h5>
+      {{ with .Description }}
+        <p class="card-text">{{ . }}</p>
+      {{ end }}
+      <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
+    </div>
+    {{ if isset .Params "categories" }}
+      <div class="card-footer text-body-secondary">{{ delimit .Params.categories ", " }}</div>
     {{ end }}
-  {{ end }}
-  <div class="card-body">
-    <h5 class="card-title">{{ .Title }}</h5>
-    {{ with .Description }}
-      <p class="card-text">{{ . }}</p>
-    {{ end }}
-    <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
   </div>
 </div>

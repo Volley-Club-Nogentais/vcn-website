@@ -1,31 +1,92 @@
+{{ define "head" }}
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Le conteneur reste responsive dans la grille Bootstrap */
+    .freeflow-swiper {
+      padding-block: 0.5rem;
+    }
+
+    /* Slides en largeur auto pour un vrai “freeflow” */
+    .freeflow-swiper .swiper-slide {
+      width: auto; /* ← clé pour le freeflow */
+      /* Optionnel: un petit spacing visuel */
+      margin-right: 0.75rem;
+    }
+
+    /* Supprime le dernier margin-right pour un bord propre */
+    .freeflow-swiper .swiper-wrapper .swiper-slide:last-child {
+      margin-right: 0;
+    }
+
+    /* Largeurs mini pour les cards afin d’éviter les reflows */
+    .freeflow-card {
+      min-width: 220px; /* ajuste selon ton design */
+    }
+  </style>
+{{ end }}
+
+{{ define "foot" }}
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const swiper = new Swiper('.freeflow-swiper', {
+        slidesPerView: 'auto', // ← essentiel pour largeur auto
+        freeMode: { enabled: true }, // ← mode libre (= freeflow)
+        mousewheel: { forceToAxis: true },
+        grabCursor: true,
+        // (facultatif) pagination & nav
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        // On ne met PAS de spaceBetween ici, on le gère via CSS (margins)
+      })
+
+      // Boutons externes (compatibles BS)
+      document.getElementById('prevBtn')?.addEventListener('click', () => swiper.slidePrev())
+      document.getElementById('nextBtn')?.addEventListener('click', () => swiper.slideNext())
+    })
+  </script>
+{{ end }}
+
 {{ define "main" }}
   {{ $ffvb := where .Pages "Params.categories" "intersect" (slice "FFVB") }}
   {{ $fsgt := where .Pages "Params.categories" "intersect" (slice "FSGT") }}
   <h1>{{ .Title }}</h1>
   <h2>FFVB Jeunes</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4 mb-4">
-    {{ range (where $ffvb "Params.categories" "intersect" (slice "jeunes")).ByTitle }}
-      <div class="col">{{ .Render "card" }}</div>
-    {{ end }}
+  <div class="swiper freeflow-swiper mb-4">
+    <div class="swiper-wrapper">
+      {{ range (where $ffvb "Params.categories" "intersect" (slice "jeunes")).ByTitle }}
+        {{ .Render "card" }}
+      {{ end }}
+    </div>
   </div>
 
   <h2>FFVB Adultes</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4 mb-4">
-    {{ range (where $ffvb "Params.categories" "intersect" (slice "adultes")).ByWeight.Reverse }}
-      <div class="col">{{ .Render "card" }}</div>
-    {{ end }}
+  <div class="swiper freeflow-swiper mb-4">
+    <div class="swiper-wrapper">
+      {{ range (where $ffvb "Params.categories" "intersect" (slice "adultes")).ByWeight.Reverse }}
+        {{ .Render "card" }}
+      {{ end }}
+    </div>
   </div>
-  <h2>FFVB Beach</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4 mb-4">
-    {{ range (where $ffvb "Params.categories" "intersect" (slice "beach")).ByTitle }}
-      <div class="col">{{ .Render "card" }}</div>
-    {{ end }}
-  </div>
-  <h2>FSGT</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
-    {{ range $fsgt.ByTitle }}
-      <div class="col">{{ .Render "card" }}</div>
-    {{ end }}
 
+  <h2>FFVB Beach</h2>
+  <div class="swiper freeflow-swiper mb-4">
+    <div class="swiper-wrapper">
+      {{ range (where $ffvb "Params.categories" "intersect" (slice "beach")).ByTitle }}
+        {{ .Render "card" }}
+      {{ end }}
+    </div>
+  </div>
+
+  <h2>FSGT</h2>
+  <div class="swiper freeflow-swiper mb-4">
+    <div class="swiper-wrapper">
+      {{ range $fsgt.ByTitle }}
+        {{ .Render "card" }}
+      {{ end }}
+    </div>
   </div>
 {{ end }}

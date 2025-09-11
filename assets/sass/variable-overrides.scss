@@ -1,27 +1,44 @@
 /* Site colors */
-$vcn-primary: #0e2942;
-$vcn-secondary: #053574;
-$vcn-gold: #dea441;
-$vcn-white: #ffffff;
+$blue: #0e2942; // 14, 41, 66
+$yellow: #dea441; // 222, 164, 65
+
+$secondary: #053574; // 5, 53, 116
+$tertiary: $yellow;
+$warning: $yellow;
+
+$body-color: $blue;
 
 /* Bootstrap variables names will start with vcn */
 $prefix: 'vcn-';
 
 /* Body modification */
-$body-color: $vcn-primary;
-$body-bg: $vcn-white;
 $font-family-sans-serif: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
 
 /* Headings (h*) font modification */
-$headings-font-family: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+$headings-font-family: 'Montserrat', $font-family-sans-serif;
 $headings-font-weight: 800;
 
 /* Navbar */
-$navbar-font-family: 'Anton', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
-$navbar-light-brand-color : $vcn-primary;
+$navbar-font-family: 'Anton', $font-family-sans-serif;
+$navbar-light-brand-color: $blue;
+$navbar-light-color: $blue;
+$navbar-light-hover-color: $blue;
+$navbar-nav-link-padding-x: 1em;
 
-$table-color: $vcn-primary;
-$table-border-color: rgba($vcn-secondary, 0.25);
+/* Bav-link */
+$nav-link-font-weight: $headings-font-weight;
+$nav-link-font-size: 1.5em;
 
-$breadcrumb-divider-color: $vcn-secondary;
+/* Table */
+$table-color: $blue;
+$table-border-color: rgba($secondary, 0.25);
+
+/* Breadcrumb */
+$breadcrumb-divider-color: $secondary;
 $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
+
+/* Button */
+$btn-color: $blue;
+$btn-font-weight: bold;
+$btn-padding-x: 20px;
+$btn-padding-y: 10px;

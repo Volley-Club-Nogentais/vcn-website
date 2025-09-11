@@ -2,12 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
-  background: $body-bg;
   margin: 0;
   padding: 0;
-  color: $body-color;
-
-  /* bleu foncé VCN */
 }
 
 header,
@@ -16,8 +12,6 @@ footer {
   align-items: center;
   justify-content: center;
 
-  /* padding: 50px; */
-
   /* augmente le padding vertical */
   position: relative;
   height: auto;
@@ -25,9 +19,6 @@ footer {
 
 .nav-link {
   text-decoration: none;
-  margin-left: 20px;
-  font-size: 1.5em;
-  color: $body-color;
 
   &:hover {
     text-decoration: underline;
@@ -38,7 +29,6 @@ footer {
 .title-section {
   text-align: center;
   padding: 3px 20px 3px 20px;
-  background-color: $body-bg;
 
   h1 {
     font-size: 36px;
@@ -52,48 +42,14 @@ footer {
 }
 
 .btn {
-  background: rgba($vcn-primary, 0.1);
-  padding: 10px 20px;
+  /* background: rgba(var(--vcn-primary-rgb), 0.1); */
+  background: rgba(var(--vcn-primary-rgb), 0.15);
   margin: 5px;
-  font-weight: bold;
-  color: $body-color;
 
   &:hover {
-    background: $vcn-gold;
+    background: rgba(var(--vcn-warning-rgb), 0.9);
     text-decoration: underline;
-    color: inherit;
   }
-}
-
-.video-container {
-  position: fixed;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  max-width: 90%;
-  max-height: 90%;
-  border: 5px solid white;
-
-  /* Couleur du cadre */
-  border-radius: 20px;
-
-  /* Bords arrondis */
-  overflow: hidden;
-
-  /* Cache les débordements de la vidéo */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-
-  /* Ombre portée optionnelle */
-  background: black;
-  pointer-events: none;
-}
-
-video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* Corps de page */
@@ -110,28 +66,18 @@ h5 {
 
 .navbar {
   font-family: $navbar-font-family;
-  font-weight: $headings-font-weight;
   text-transform: uppercase;
   background-color: white;
-}
-
-/* Hero (bannière d’accueil) */
-.hero-background {
-  background-size: cover;
-  background-position: center;
-  padding: 6rem 2rem;
-  text-align: center;
 }
 
 article {
   text-align: justify;
 
+  // Styles par défaut pour tous les paragraphes
   p {
-    // Styles par défaut pour tous les paragraphes
-
+    // Styles pour les paragraphes qui contiennent une image
+    // Notez que :has() est une fonctionnalité relativement nouvelle et peut ne pas être supportée dans tous les navigateurs
     &:has(img) {
-      // Styles pour les paragraphes qui contiennent une image
-      // Notez que :has() est une fonctionnalité relativement nouvelle et peut ne pas être supportée dans tous les navigateurs
       text-align: center;
     }
     img {
@@ -140,9 +86,8 @@ article {
   }
 }
 
+// Styles pour la card
 .card-body {
-  // Styles pour la card
-
   img {
     display: none; // Cela masquera l'image
   }
@@ -167,5 +112,11 @@ article {
 }
 
 .breadcrumb-item a {
-  color: $body-color;
+  color: var(--vcn-body-color);
+}
+
+#social-network {
+  background-color: rgba(var(--vcn-body-color-rgb), 0.9);
+  color: var(--vcn-yellow);
+  border-radius: 50%;
 }

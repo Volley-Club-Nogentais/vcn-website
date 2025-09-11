@@ -1,12 +1,7 @@
-<!--
-    Use SVG Favicon Generator
-    Favicon for the modern web 🤟
-    https://realfavicongenerator.net/svg-favicon/
--->
-{{ if (os.FileExists "static/images/favicon.svg") -}}
-  <link rel="icon" type="image/svg+xml" href="{{ `images/favicon.svg` | relURL }}" />
-{{ else if (os.FileExists "static/images/favicon.png") -}}
-  <link rel="icon" type="image/png" href="{{ `images/favicon.png` | relURL }}" />
-{{ else if (os.FileExists "static/images/favicon.ico") -}}
-  <link rel="icon" type="image/vnd.icon" href="{{ `images/favicon.ico` | relURL }}" />
+{{ with resources.Get "media/favicon.svg" -}}
+  <link rel="icon" type="image/svg+xml" href="{{ .RelPermalink }}" />
+{{ else with resources.Get "media/favicon.png" -}}
+  <link rel="icon" type="image/png" href="{{ .RelPermalink }}" />
+{{ else with resources.Get "media/favicon.ico" -}}
+  <link rel="icon" type="image/vnd.icon" href="{{ .RelPermalink }}" />
 {{ end -}}

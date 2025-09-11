@@ -1,17 +1,21 @@
+{{ $width := 300 }}
+{{ $height := 300 }}
 <div class="swiper-slide">
   <div class="card freeflow-card shadow-sm">
     {{ with .Resources.Get "main.jpg" }}
-      {{ with .Fill "300x300" }}
+      {{ with .Fill (printf "%dx%d" $height $width) }}
         <img
           class="card-img-top"
-          alt="{{ page.Title }} image"
+          alt="{{ $.Title }} image"
           src="{{ .RelPermalink }}"
           width="{{ .Width }}"
           height="{{ .Height }}"
         />
       {{ end }}
     {{ else }}
-      <img class="card-img-top" src="/images/logo.svg" alt="Logo VCN" width="300" height="300" />
+      {{ with resources.Get "media/logo.svg" }}
+        <img class="card-img-top" src="{{ . }}" width="{{ $width }}" height="{{ $height }}" alt="Logo VCN" />
+      {{ end }}
     {{ end }}
     <div class="card-body">
       <h5 class="card-title">{{ .Title }}</h5>

@@ -10,7 +10,7 @@ categories:
   - tournament
 ---
 
-![Tournoi du 2 septembre 2025](/uploads/71f25e8f-f281-486c-a70d-cbb701dd1fcf.jpg 'Tournoi')
+![Tournoi du 2 septembre 2025](/media/71f25e8f-f281-486c-a70d-cbb701dd1fcf.jpg 'Tournoi')
 
 Nous sommes ravis d'annoncer que notre club de volley organise un tournoi passionnant le 2 septembre 2025. Ce sera une
 soirée remplie d'action et de camaraderie, avec le premier match commençant à 20h30. Le tournoi se terminera vers 22h30,

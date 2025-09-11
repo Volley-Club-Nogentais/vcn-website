@@ -149,9 +149,6 @@ article {
 }
 
 @media only screen and (min-width: 600px) {
-  .navbar-brand img {
-    height: 90px;
-  }
   main {
     // Padding to work with the fixed navbar in header
     padding-top: 116px;
@@ -161,6 +158,7 @@ article {
 @media only screen and (max-width: 600px) {
   .navbar-brand img {
     height: 50px;
+    width: 50px;
   }
   main {
     // Padding to work with the fixed navbar in header

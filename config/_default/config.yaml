@@ -24,7 +24,7 @@ module:
     max: ""
   mounts:
     - source: assets
-      target: assets
+      target: static
     - source: static
       target: static
 

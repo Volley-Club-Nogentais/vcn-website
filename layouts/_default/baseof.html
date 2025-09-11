@@ -9,6 +9,9 @@
     {{ partial "header.html" . }}
     <main class="flex-shrink-0 container">
       {{ partial "alert.html" . }}
+      {{ if .Site.Params.hasBreadcrumb }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
       {{ block "main" . }}
         This will be replaced with content from the corresponding "define" action found in the template to which this
         base template is applied.

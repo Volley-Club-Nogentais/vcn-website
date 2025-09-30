@@ -30,7 +30,7 @@ posé de solides fondations, et laisse entrevoir de belles perspectives pour la 
 | Louis Armand | Mardi              | 18:00            | 20:00          |
 | Louis Armand | Jeudi              | 18:00            | 20:00          |
 
-## M15 PE
+## M15 Pratique Encadrée
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

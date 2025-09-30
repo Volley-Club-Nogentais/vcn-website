@@ -1,0 +1,11 @@
+<i
+  class="{{ .Get "class" }}"
+  style="
+  {{ with .Get "font-size" }}font-size:{{ . }}{{ end }};
+  {{ with .Get "border" }}border:{{ . }}{{ end }};
+  {{ with .Get "padding" }}padding:{{ . }}{{ end }};
+  {{ with .Get "border-radius" }}border-radius:{{ . }}{{ end }};
+  {{ with .Get "margin" }}margin:{{ . }}{{ end }};
+  {{ with .Get "color" }}color: {{ . | safeCSS }};{{ end }}
+  {{ with .Get "background-color" }}background-color: {{ . | safeCSS }};{{ end }}"
+></i>

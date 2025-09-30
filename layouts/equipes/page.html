@@ -1,4 +1,17 @@
 {{ define "main" }}
+  {{ $data := dict }}
+  {{ with .Params.calendarName }}
+    {{ $path := printf "calendars/%s.json" . }}
+    {{ with resources.Get $path }}
+      {{ with . | transform.Unmarshal }}
+        {{ $data = . }}
+      {{ end }}
+    {{ else }}
+      {{ errorf "Unable to get global resource %q" $path }}
+    {{ end }}
+  {{ end }}
+
+
   <article class="team">
     {{ with .Params.image }}
       <div class="text-center">
@@ -44,32 +57,40 @@
         </button>
       </div>
     {{ end }}
+
+    {{ with $data }}
+      <div class="calendar">
+        <h3>Calendrier des matchs</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Équipes</th>
+              <th>Date</th>
+              <th>Gymnase</th>
+              <th>Adresse</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range . }}
+              <tr>
+                <td>{{ .local }} VS {{ .visitor }}</td>
+                <td>{{ .date }}</td>
+                {{ with .location }}
+                  <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
+                  <!-- prettier-ignore -->
+                  <td>
+                    {{ with .voie }}{{ . }}{{ end }}
+                    {{ .adresse }},
+                    {{ .ville }}
+                    </td>
+                {{ else }}
+                  <td colspan="2">Inconnu</td>
+                {{ end }}
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    {{ end }}
   </article>
-
-  {{ with .Params.calendarName }}
-    <div class="calendar">
-      <h3>Calendrier des matchs</h3>
-      <div id="loading-message" class="alert alert-info">Chargement des données...</div>
-      <div id="table-container"></div>
-    </div>
-    <script src="/js/load-calendar.js"></script>
-    <script>
-      loadCalendar('/calendars/{{ . }}.json', 'table-container')
-      // Masquer le message de chargement une fois les données chargées
-      document.addEventListener('DOMContentLoaded', function () {
-        const loadingMessage = document.getElementById('loading-message')
-        const tableContainer = document.getElementById('table-container')
-
-        // Observateur pour détecter quand le tableau est chargé
-        const observer = new MutationObserver(function (mutations) {
-          if (tableContainer.children.length > 0) {
-            loadingMessage.style.display = 'none'
-            observer.disconnect()
-          }
-        })
-
-        observer.observe(tableContainer, { childList: true })
-      })
-    </script>
-  {{ end }}
 {{ end }}

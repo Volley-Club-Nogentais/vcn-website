@@ -2,9 +2,13 @@
 
 import json
 import logging
+import pathlib
 import sys
 import urllib.request
 
+WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
+OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
+print(OUTPUT_FOLDER)
 SEASON_ID = 4
 FSGT = {
     "rhinos-feroces": 25,
@@ -56,7 +60,7 @@ def main():
 
         logging.debug(f"Parsing '{team}' schedule")
         calendar = parse_fsgt_team_calendar(data)
-        with open(f"static/calendars/{team}.json", "w") as fd:
+        with open(OUTPUT_FOLDER / f"{team}.json", "w") as fd:
             json.dump(calendar, fd)
             logging.info(f"Wrote {len(calendar['rows'])} matchs in '{team}' JSON")
 

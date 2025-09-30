@@ -367,4 +367,4 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo,node,vim,visualstudiocode,python
 
-static/calendars/*.json
+assets/calendars/*.json

@@ -2,9 +2,12 @@
 
 import json
 import logging
+import pathlib
 import sys
 import urllib.request
 
+WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
+OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
 SEASON_ID = 4
 FSGT = {
     "rhinos-feroces": 25,
@@ -16,34 +19,19 @@ FSGT = {
 
 
 def parse_fsgt_team_calendar(calendar):
-    output = {"headers": ["Équipes", "Date", "Gymnase", "Adresse"], "rows": []}
+    # { "local": ..., "visitor": ..., "date": ..., "gymnasium": {} }
+    output = []
     for match in calendar:
         logging.debug(f"Parsing {match}")
-        name = " VS ".join(
-            (match["team_domicile"]["name"], match["team_exterieur"]["name"])
+        output.append(
+            {
+                "local": match["team_domicile"]["name"],
+                "visitor": match["team_exterieur"]["name"],
+                "date": match["date"],
+                "location": match["gymnase"],
+            }
         )
 
-        # Default value
-        gymnase = {
-            "name": "N/A",
-            "adresse": "N/A",
-            "ville": "N/A",
-        }
-
-        if match["gymnase"]:
-            gymnase = match["gymnase"]
-
-        address = f"{gymnase['adresse']}, {gymnase['ville']}"
-        try:
-            if not gymnase["voie"]:
-                raise KeyError
-
-            address = " ".join([str(gymnase["voie"]), address])
-        except KeyError:
-            logging.warning(
-                f"No street number in the address for match '{match['id']}'"
-            )
-        output["rows"].append((name, match["date"], gymnase["name"], address))
     return output
 
 
@@ -55,10 +43,10 @@ def main():
             data = json.load(url)
 
         logging.debug(f"Parsing '{team}' schedule")
-        calendar = parse_fsgt_team_calendar(data)
-        with open(f"static/calendars/{team}.json", "w") as fd:
-            json.dump(calendar, fd)
-            logging.info(f"Wrote {len(calendar['rows'])} matchs in '{team}' JSON")
+        output = parse_fsgt_team_calendar(data)
+        with open(OUTPUT_FOLDER / f"{team}.json", "w") as fd:
+            json.dump(output, fd, indent=4)
+            logging.info(f"Wrote {len(output)} matchs in '{team}' JSON")
 
 
 if __name__ == "__main__":

@@ -7,8 +7,8 @@ import logging
 import pathlib
 import sys
 import urllib.request
-
 from datetime import datetime
+from datetime import timedelta
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
@@ -54,9 +54,38 @@ def fsgt_store_calendar(team: str, team_id: int):
         logging.info(f"Wrote {len(output)} matchs in '{team}' JSON")
 
 
+def fsgt_next_match_in_weeks(teams: list[str], number_weeks: int = 2):
+    today = datetime.now()
+    weeks_later = today + timedelta(weeks=number_weeks)
+
+    _input = []
+    for team in teams:
+        with open(OUTPUT_FOLDER / f"{team}.json", "r") as fd:
+            tmp = json.load(fd)
+            _input = _input + tmp
+            logging.debug(f"Append {len(tmp)} elements to input")
+
+    # Filter objects by 'date' field
+    _output = list(
+        filter(
+            lambda obj: today <= datetime.strptime(obj["date"], "%Y-%m-%d") <= weeks_later,
+            _input,
+        )
+    )
+    logging.debug(f"Found {len(_output)} matches in the next {number_weeks} weeks")
+
+    # Sort the objects by 'date'
+    _output.sort(key=lambda obj: datetime.strptime(obj["date"], "%Y-%m-%d"))
+
+    with open(OUTPUT_FOLDER / "fsgt-next-weeks.json", "w") as fd:
+        json.dump(_output, fd, indent=4)
+
+
 def main():
     for team, team_id in FSGT.items():
         fsgt_store_calendar(team, team_id)
+
+    fsgt_next_match_in_weeks(FSGT.keys(), 2)
 
 
 if __name__ == "__main__":

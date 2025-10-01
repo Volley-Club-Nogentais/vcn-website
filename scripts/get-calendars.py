@@ -20,7 +20,7 @@ FSGT = {
 }
 
 
-def parse_fsgt_team_calendar(calendar):
+def parse_fsgt_team_calendar(calendar: dict):
     # { "local": ..., "visitor": ..., "date": ..., "gymnasium": {} }
     output = []
     for match in calendar:
@@ -37,18 +37,20 @@ def parse_fsgt_team_calendar(calendar):
     return output
 
 
+def fsgt_store_calendar(team: str, team_id: int):
+    with urllib.request.urlopen(f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}") as url:
+        data = json.load(url)
+
+    logging.debug(f"Parsing '{team}' schedule")
+    output = parse_fsgt_team_calendar(data)
+    with open(OUTPUT_FOLDER / f"{team}.json", "w") as fd:
+        json.dump(output, fd, indent=4)
+        logging.info(f"Wrote {len(output)} matchs in '{team}' JSON")
+
+
 def main():
     for team, team_id in FSGT.items():
-        with urllib.request.urlopen(
-            f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}"
-        ) as url:
-            data = json.load(url)
-
-        logging.debug(f"Parsing '{team}' schedule")
-        output = parse_fsgt_team_calendar(data)
-        with open(OUTPUT_FOLDER / f"{team}.json", "w") as fd:
-            json.dump(output, fd, indent=4)
-            logging.info(f"Wrote {len(output)} matchs in '{team}' JSON")
+        fsgt_store_calendar(team, team_id)
 
 
 if __name__ == "__main__":

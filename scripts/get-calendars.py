@@ -59,6 +59,7 @@ if __name__ == "__main__":
         loglevel = logging.DEBUG
 
     logging.basicConfig(
-        level=loglevel, format="%(asctime)s - %(levelname)s - %(message)s"
+        level=loglevel,
+        format="%(asctime)s - %(levelname)s - %(funcName)s - %(message)s",
     )
     main()

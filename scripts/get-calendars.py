@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+"""Download the FSGT calendars and generate the next weeks calendar."""
+
 import json
 import logging
 import pathlib
@@ -21,6 +23,10 @@ FSGT = {
 
 
 def parse_fsgt_team_calendar(calendar: dict):
+    """Reformat the match object.
+
+    :param: calendar Team calendar.
+    """
     # { "local": ..., "visitor": ..., "date": ..., "gymnasium": {} }
     output = []
     for match in calendar:

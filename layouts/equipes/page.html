@@ -24,6 +24,48 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
+
+    <div class="calendar">
+      <h2>Calendrier des matchs</h2>
+      {{ with $data }}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Équipes</th>
+              <th>Date</th>
+              <th>Gymnase</th>
+              <th>Adresse</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range . }}
+              <tr>
+                <td>{{ .local }} VS {{ .visitor }}</td>
+                <td>{{ .date | time.Format ":date_medium" }}</td>
+                {{ with .location }}
+                  <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
+                  <!-- prettier-ignore -->
+                  <td>
+                    {{ with .voie }}{{ . }}{{ end }}
+                    {{ .adresse }},
+                    {{ .ville }}
+                    </td>
+                {{ else }}
+                  <td colspan="2">Inconnu</td>
+                {{ end }}
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      {{ else }}
+        {{ if in .Params.categories "FSGT" }}
+          <p>Pas de match programmé pour le moment... 😞</p>
+        {{ else }}
+          <p>Votre développeur favori travaille pour récupérer les matchs depuis les bons sites ❤️</p>
+        {{ end }}
+      {{ end }}
+    </div>
+
     {{ $elements := .Resources.Match "images/*.jpg" }}
     {{ with $elements }}
       <h2>Galerie</h2>
@@ -58,39 +100,5 @@
       </div>
     {{ end }}
 
-    {{ with $data }}
-      <div class="calendar">
-        <h3>Calendrier des matchs</h3>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Équipes</th>
-              <th>Date</th>
-              <th>Gymnase</th>
-              <th>Adresse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ range . }}
-              <tr>
-                <td>{{ .local }} VS {{ .visitor }}</td>
-                <td>{{ .date | time.Format ":date_medium" }}</td>
-                {{ with .location }}
-                  <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
-                  <!-- prettier-ignore -->
-                  <td>
-                    {{ with .voie }}{{ . }}{{ end }}
-                    {{ .adresse }},
-                    {{ .ville }}
-                    </td>
-                {{ else }}
-                  <td colspan="2">Inconnu</td>
-                {{ end }}
-              </tr>
-            {{ end }}
-          </tbody>
-        </table>
-      </div>
-    {{ end }}
   </article>
 {{ end }}

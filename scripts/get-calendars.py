@@ -12,7 +12,7 @@ from datetime import timedelta
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
-SEASON_ID = 4
+SEASON_ID = 5
 FSGT = {
     "rhinos-feroces": 25,
     "pingouins-manchots": 100,
@@ -44,7 +44,10 @@ def parse_fsgt_team_calendar(calendar: dict):
 
 
 def fsgt_store_calendar(team: str, team_id: int):
-    with urllib.request.urlopen(f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}") as url:
+    uri = f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}"
+    logging.debug(f"Trying '{uri}'")
+
+    with urllib.request.urlopen(uri) as url:
         data = json.load(url)
 
     logging.debug(f"Parsing '{team}' schedule")

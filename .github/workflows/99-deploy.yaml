@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - feat/push-to-github-pages
   pull_request:
     branches:
       - main
@@ -13,7 +14,7 @@ on:
     - cron: '15 7 * * *'
 
 jobs:
-  deploy-website:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Do a git checkout including submodules
@@ -65,12 +66,20 @@ jobs:
       - name: Build
         run: hugo build --minify --buildDrafts --buildFuture
 
-      - name: rsync deployments
-        uses: burnett01/rsync-deployments@7.0.2
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3  # or specific "vX.X.X" version tag for this action
         with:
-          switches: --archive --verbose --compress --recursive --delete
           path: public/
-          remote_path: ${{ vars.VPS_DEPLOY_PATH }}
-          remote_host: ${{ vars.VPS_DEPLOY_HOST }}
-          remote_user: ${{ vars.VPS_DEPLOY_USER }}
-          remote_key: ${{ secrets.VPS_DEPLOY_KEY }}
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

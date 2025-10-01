@@ -1,13 +1,13 @@
 {{ define "main" }}
-  {{ with .Params.image }}
-    <div class="text-center">
-      <img
-        src="{{ .path }}"
-        {{ with .height }}style="height: {{ . }}px; overflow: hidden;"{{ end }}
-        class="img-fluid"
-        alt="Banner"
-      />
-    </div>
+  {{ if .Site.Params.banner.enable }}
+    {{ $height := 400 }}
+    {{ with resources.Get "media/banner.jpg" }}
+      <div class="text-center">
+        {{ with .Resize (printf "%dx" $height) }}
+          <img class="img-fluid" alt="Banner" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
+        {{ end }}
+      </div>
+    {{ end }}
   {{ end }}
   <section class="title-section homepage">
     <h1 class="text-uppercase">{{ .Title }}</h1>

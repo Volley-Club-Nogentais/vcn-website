@@ -1,2 +1,4 @@
 ---
 alert: "⚠️ Version de pré-production ⚠️"
+banner:
+  enable: true

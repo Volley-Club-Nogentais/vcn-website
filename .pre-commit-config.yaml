@@ -30,7 +30,7 @@ repos:
           - html
           - css
         entry: |
-          prettier -w --
+          npx prettier -w --
 
 ci:
   autofix_commit_msg: |

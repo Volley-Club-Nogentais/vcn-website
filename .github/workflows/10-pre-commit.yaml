@@ -13,21 +13,18 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Do a git checkout including submodules
+        uses: actions/checkout@v4
         with:
-          node-version: 'lts/*'
-
-      - name: Install Prettier
-        run: npm install prettier prettier-plugin-go-template
+          submodules: recursive
 
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.13
+
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
       - name: Cache
         uses: actions/cache@v4

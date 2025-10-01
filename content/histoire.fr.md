@@ -1,6 +1,6 @@
 ---
 title: "L'histoire du club"
-draft: true
+draft: false
 image: ['logo.svg']
 ---
 

@@ -12,6 +12,12 @@ backend:
     uploadMedia: "feat(media): upload '{{path}}' by {{author-login}}"
     deleteMedia: "feat(media): delete '{{path}}' by {{author-login}}"
     openAuthoring: '{{message}}'
+  # When using the Editorial Workflow with the github or GitHub-connected git-gateway backends, Decap CMS creates a
+  # pull request for each unpublished entry. Every time the unpublished entry is changed and saved, a new commit is
+  # added to the pull request. When the entry is published, the pull request is merged, and all of those commits are
+  # added to your project commit history in a merge commit.
+  # Works with publish_mode
+  squash_merges: true
 
 media_folder: 'assets/media'
 public_folder: '/media'
@@ -34,6 +40,9 @@ i18n:
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
   default_locale: fr
+
+# Adds an interface for drafting, reviewing, and approving posts
+publish_mode: "editorial_workflow"
 
 collections:
   - name: 'actualites'

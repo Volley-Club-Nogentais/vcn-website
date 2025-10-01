@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <a class="navbar-brand col-xl-1 me-0" href="/">
         {{ with resources.Get  "media/logo.svg" }}
-          <img src="{{ . }}" width="90" height="90" alt="Logo VCN" />
+          <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
         {{ end }}
         VCN
       </a>

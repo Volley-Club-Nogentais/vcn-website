@@ -22,7 +22,13 @@
       />
     {{ else }}
       {{ with resources.Get "media/logo.svg" }}
-        <img class="card-img-top" src="{{ . }}" width="{{ $width }}" height="{{ $height }}" alt="Logo VCN" />
+        <img
+          class="card-img-top"
+          src="{{ .RelPermalink }}"
+          width="{{ $width }}"
+          height="{{ $height }}"
+          alt="Logo VCN"
+        />
       {{ end }}
     {{ end }}
     <div class="card-body">

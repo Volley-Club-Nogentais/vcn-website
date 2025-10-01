@@ -6,6 +6,7 @@
           <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
         {{ end }}
         VCN
+        {{ if eq (hugo.Environment) "development" -}}Pré-prod{{ end }}
       </a>
       <button
         class="navbar-toggler"

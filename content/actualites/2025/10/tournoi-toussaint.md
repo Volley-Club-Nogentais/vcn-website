@@ -11,6 +11,8 @@ tags:
 Le **Volley Club Nogentais** organise son **tournoi des vacances de la Toussaint** et vous invite à y participer pour
 une soirée 100 % volley, convivialité et compétition !
 
+<!--more-->
+
 ### 📅 Infos pratiques
 
 - **Date**: mardi 21 octobre 2025

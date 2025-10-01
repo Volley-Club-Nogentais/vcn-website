@@ -11,6 +11,8 @@ tags:
 Le **Volley Club Nogentais** est ravi de vous présenter son tout nouveau site web ! Simple, clair et facile à consulter,
 il est désormais en ligne pour vous tenir informés de toute l’actualité du club.
 
+<!--more-->
+
 ### Un site statique, mais toujours à jour
 
 Même si le site est statique, nous nous engageons à le mettre régulièrement à jour pour vous offrir :

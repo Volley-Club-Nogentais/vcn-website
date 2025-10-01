@@ -2,13 +2,9 @@
 local_backend: true
 
 backend:
-  name: gitea
-  repo: hbuyse/vcn-website-hugo
+  name: github
+  repo: Volley-Club-Nogentais/vcn-website
   branch: main
-  api_root: https://git.hbuyse.ovh/api/v1
-  base_url: https://git.hbuyse.ovh
-  auth_endpoint: login/oauth/authorize
-  app_id: 53612cab-ff09-4894-a971-1ad5c5571ad2
   commit_messages:
     create: "feat({{collection}}): create '{{slug}}' by {{author-login}}"
     update: "feat({{collection}}): update '{{slug}}' by {{author-login}}"

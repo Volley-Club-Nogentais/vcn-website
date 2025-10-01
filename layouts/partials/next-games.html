@@ -1,0 +1,49 @@
+{{ $data := dict }}
+{{ with .Params.calendarName }}
+  {{ $path := printf "calendars/fsgt-next-weeks.json" . }}
+  {{ with resources.Get $path }}
+    {{ with . | transform.Unmarshal }}
+      {{ $data = . }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Unable to get global resource %q" $path }}
+  {{ end }}
+{{ end }}
+
+
+<section class="next-games">
+  <h2>Prochains matchs</h2>
+  {{ with $data }}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Équipes</th>
+          <th>Date</th>
+          <th>Gymnase</th>
+          <th>Adresse</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+          <tr>
+            <td>{{ .local }} VS {{ .visitor }}</td>
+            <td>{{ .date | time.Format ":date_medium" }}</td>
+            {{ with .location }}
+              <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
+              <!-- prettier-ignore -->
+              <td>
+                    {{ with .voie }}{{ . }}{{ end }}
+                    {{ .adresse }},
+                    {{ .ville }}
+                    </td>
+            {{ else }}
+              <td colspan="2">Inconnu</td>
+            {{ end }}
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  {{ else }}
+    <p>Pas de matchs programmés dans les deux prochaines semaines 😞</p>
+  {{ end }}
+</section>

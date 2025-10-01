@@ -1,6 +1,6 @@
 ---
 title: Beach Féminins
-description: FFVB Beach Féminins
+summary: FFVB Beach Féminins
 draft: false
 weight: 50
 categories:

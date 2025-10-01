@@ -1,6 +1,6 @@
 ---
 title: M15 Masculins
-description: FFVB M15 Masculins
+summary: FFVB M15 Masculins
 draft: false
 weight: 50
 categories:

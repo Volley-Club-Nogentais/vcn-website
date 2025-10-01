@@ -1,7 +1,7 @@
 ---
 title: M15 Féminines
-description: FFVB M15 Féminines
-draft: true
+summary: FFVB M15 Féminines
+draft: false
 weight: 50
 categories:
   - FFVB

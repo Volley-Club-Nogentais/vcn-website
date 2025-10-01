@@ -1,7 +1,7 @@
 ---
 title: M18 Masculins
-description: FFVB M18 Masculins
-draft: true
+summary: FFVB M18 Masculins
+draft: false
 weight: 50
 categories:
   - FFVB

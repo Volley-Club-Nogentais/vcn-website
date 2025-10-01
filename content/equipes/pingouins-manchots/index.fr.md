@@ -1,6 +1,6 @@
 ---
 title: Pingouins Manchots
-description: FSGT Argent
+summary: FSGT Argent
 draft: false
 weight: 50
 categories:

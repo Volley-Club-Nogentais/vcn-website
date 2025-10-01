@@ -1,6 +1,6 @@
 ---
 title: École de Volley
-description: Le volley de 7 à 11 ans
+summary: Le volley de 7 à 11 ans
 draft: false
 weight: 50
 categories:

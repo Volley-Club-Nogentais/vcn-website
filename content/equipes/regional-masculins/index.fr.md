@@ -1,6 +1,6 @@
 ---
 title: Régional Masculins
-description: FFVB Régional Masculins
+summary: FFVB Régional Masculins
 draft: false
 weight: 50
 categories:

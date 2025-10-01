@@ -1,7 +1,7 @@
 ---
 title: Rhinos Féroces
-description: FSGT Elite
-draft: true
+summary: FSGT Elite
+draft: false
 weight: 50
 categories:
   - FSGT

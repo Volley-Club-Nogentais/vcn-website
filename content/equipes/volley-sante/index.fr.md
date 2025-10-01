@@ -1,6 +1,6 @@
 ---
 title: Volley Santé
-description: Reprendre le sport par le volley
+summary: Reprendre le sport par le volley
 draft: false
 weight: 10
 categories:

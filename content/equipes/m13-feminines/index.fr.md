@@ -1,7 +1,7 @@
 ---
 title: M13 Féminines
-description: FFVB M13 Féminines
-draft: true
+summary: FFVB M13 Féminines
+draft: false
 weight: 50
 categories:
   - FFVB

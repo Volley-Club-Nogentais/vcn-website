@@ -1,7 +1,7 @@
 ---
 title: Loups Phoques
-description: FSGT Hard
-draft: true
+summary: FSGT Hard
+draft: false
 weight: 50
 categories:
   - FSGT

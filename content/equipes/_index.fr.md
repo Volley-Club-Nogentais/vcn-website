@@ -1,4 +1,4 @@
 ---
 title: 'Les Équipes'
-draft: true
+draft: false
 ---

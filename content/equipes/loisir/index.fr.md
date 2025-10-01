@@ -1,6 +1,6 @@
 ---
 title: Loisir
-description: Du volley, du fun
+summary: Du volley, du fun
 categories:
   - FFVB
   - adultes

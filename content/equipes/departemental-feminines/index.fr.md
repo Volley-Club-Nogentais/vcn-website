@@ -1,6 +1,6 @@
 ---
 title: Départemental Féminines
-description: FFVB Départemental Féminines
+summary: FFVB Départemental Féminines
 draft: false
 weight: 40
 categories:

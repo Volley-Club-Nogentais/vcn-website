@@ -1,7 +1,7 @@
 ---
 title: Fatals Furets
-description: FSGT Starter
-draft: true
+summary: FSGT Starter
+draft: false
 weight: 50
 categories:
   - FSGT

@@ -33,7 +33,7 @@
     {{ end }}
     <div class="card-body">
       <h5 class="card-title">{{ .Title }}</h5>
-      {{ with .Description }}
+      {{ with .Summary }}
         <p class="card-text">{{ . }}</p>
       {{ end }}
       <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>

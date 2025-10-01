@@ -1,6 +1,6 @@
 ---
 title: Régional Fémininines
-description: FFVB Régional Féminines
+summary: FFVB Régional Féminines
 draft: false
 weight: 50
 categories:

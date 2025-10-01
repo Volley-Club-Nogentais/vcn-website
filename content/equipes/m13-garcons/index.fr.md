@@ -1,6 +1,6 @@
 ---
 title: M13 Masculins
-description: FFVB M13 Masculins
+summary: FFVB M13 Masculins
 draft: false
 weight: 50
 categories:

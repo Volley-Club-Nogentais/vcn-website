@@ -1,6 +1,6 @@
 ---
 title: Départemental Masculins
-description: FFVB Départemental Masculins
+summary: FFVB Départemental Masculins
 draft: false
 weight: 40
 categories:

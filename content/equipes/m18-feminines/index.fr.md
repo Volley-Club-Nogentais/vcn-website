@@ -1,7 +1,7 @@
 ---
 title: M18 Féminines
-description: FFVB Féminines
-draft: true
+summary: FFVB Féminines
+draft: false
 weight: 50
 categories:
   - FFVB

@@ -1,6 +1,6 @@
 ---
 title: Beach Masculins
-description: FFVB Beach Masculins
+summary: FFVB Beach Masculins
 draft: false
 weight: 50
 categories:

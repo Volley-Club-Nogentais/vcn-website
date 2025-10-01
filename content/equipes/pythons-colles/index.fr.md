@@ -1,6 +1,6 @@
 ---
 title: Pythons Colles
-description: FSGT Easy
+summary: FSGT Easy
 draft: false
 weight: 50
 categories:

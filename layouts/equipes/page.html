@@ -74,7 +74,7 @@
             {{ range . }}
               <tr>
                 <td>{{ .local }} VS {{ .visitor }}</td>
-                <td>{{ .date }}</td>
+                <td>{{ .date | time.Format ":date_medium" }}</td>
                 {{ with .location }}
                   <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
                   <!-- prettier-ignore -->

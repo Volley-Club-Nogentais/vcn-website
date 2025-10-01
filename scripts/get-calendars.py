@@ -6,6 +6,8 @@ import pathlib
 import sys
 import urllib.request
 
+from datetime import datetime
+
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
 SEASON_ID = 4
@@ -27,7 +29,7 @@ def parse_fsgt_team_calendar(calendar):
             {
                 "local": match["team_domicile"]["name"],
                 "visitor": match["team_exterieur"]["name"],
-                "date": match["date"],
+                "date": datetime.strptime(match["date"], "%d/%m/%Y").strftime("%Y-%m-%d"),
                 "location": match["gymnase"],
             }
         )

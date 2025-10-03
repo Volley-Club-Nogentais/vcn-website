@@ -113,8 +113,6 @@ article {
   color: var(--vcn-body-color);
 }
 
-#social-network {
-  background-color: rgba(var(--vcn-body-color-rgb), 0.9);
-  color: var(--vcn-yellow);
-  border-radius: 50%;
+.social-network {
+  font-size: 1.5em;
 }

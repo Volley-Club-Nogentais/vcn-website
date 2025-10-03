@@ -1,31 +1,73 @@
 <header>
-  <nav class="navbar navbar-expand-xl fixed-top w-100">
+  <!-- Navbar-->
+  <nav class="navbar navbar-expand-xl fixed-top w-100 bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand col-xl-1 me-0" href="/">
-        {{ with resources.Get  "media/logo.svg" }}
-          <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
-        {{ end }}
-        VCN
-        {{ if eq (hugo.Environment) "development" -}}Pré-prod{{ end }}
-      </a>
+      <!-- Logo and name -->
+      <div class="d-flex">
+        <a href="/" class="navbar-brand text-decoration-none">
+          {{ with resources.Get "media/logo.svg" }}
+            <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
+          {{ end }}
+          VCN
+          {{ if hugo.IsDevelopment -}}Pré-prod{{ end }}
+        </a>
+      </div>
+
+      <!-- Burger menu for small devices -->
       <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbar-vcn"
-        aria-controls="navbar-vcn"
+        data-bs-target="#navbarVCN"
+        aria-controls="navbarVCN"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse col-xl-10 text-uppercase justify-content-xl-center" id="navbar-vcn">
-        <ul class="navbar-nav">
-          {{ partial "menu.html" . }}
+      <!-- Menu and social networks icons-->
+      <div class="collapse navbar-collapse text-uppercase justify-content-xl-center" id="navbarVCN">
+        <!-- Menu -->
+        <ul class="navbar-nav d-none d-md-flex">
+          {{- range site.Menus.main }}
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link px-2 {{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+          {{- end }}
+          {{ with .Site.Params.adhesionLink }}
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link px-2" target="_blank" rel="noopener noreferrer" href="{{ . }}">Inscriptions</a>
+            </li>
+          {{ end }}
+        </ul>
+
+        <!-- Separator on mobile only -->
+        <hr class="d-xl-none my-2" />
+
+        <!-- Social network icons (only visible in the burger menu) -->
+        <ul class="navbar-nav ms-auto d-xl-none">
+          {{ range $name, $v := .Site.Params.socials }}
+            <li class="nav-item me-1 me-lg-1">
+              <a class="nav-link d-sm-flex align-items-sm-center social-network" href="{{ $v.url }}">
+                <i class="fa-brands fa-{{ $v.icon }}"></i>
+                {{ $name }}
+              </a>
+            </li>
+          {{ end }}
         </ul>
       </div>
-      <div class="d-none d-xl-block col-xl-1"></div>
+
+      <!-- Social network icons (only visible on big screens) -->
+      <ul class="navbar-nav flex-row ms-auto d-none d-xl-flex">
+        {{ range $name, $v := .Site.Params.socials }}
+          <li class="nav-item me-1 me-lg-1">
+            <a class="nav-link d-sm-flex align-items-sm-center social-network" href="{{ $v.url }}">
+              <i class="fa-brands fa-{{ $v.icon }}"></i>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
     </div>
   </nav>
 </header>

@@ -4,3 +4,14 @@ adhesionLink: "https://www.helloasso.com/associations/volley-club-nogentais/adhe
 hasBreadcrumb: false
 banner:
   enable: false
+
+socials:
+  facebook:
+    icon: "facebook-f"
+    url: "https://www.facebook.com/VolleyClubNogent/"
+  instagram:
+    icon: "instagram"
+    url: "https://www.instagram.com/volleyclubnogent/"
+  youtube:
+    icon: "youtube"
+    url: "https://www.youtube.com/@volleyclubnogent"

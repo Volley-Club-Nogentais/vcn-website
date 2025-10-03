@@ -29,7 +29,7 @@
       <!-- Menu and social networks icons-->
       <div class="collapse navbar-collapse text-uppercase justify-content-xl-center" id="navbarVCN">
         <!-- Menu -->
-        <ul class="navbar-nav d-none d-md-flex">
+        <ul class="navbar-nav d-md-flex">
           {{- range site.Menus.main }}
             <li class="nav-item me-3 me-lg-1">
               <a class="nav-link px-2 {{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ .URL }}">{{ .Name }}</a>

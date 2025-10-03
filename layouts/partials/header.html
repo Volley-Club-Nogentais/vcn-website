@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <!-- Logo and name -->
       <div class="d-flex">
-        <a href="/" class="navbar-brand text-decoration-none">
+        <a href="{{ .Site.BaseURL }}" class="navbar-brand text-decoration-none">
           {{ with resources.Get "media/logo.svg" }}
             <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
           {{ end }}

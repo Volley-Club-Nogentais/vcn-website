@@ -1,5 +1,9 @@
 {{ $width := 300 }}
 {{ $height := 300 }}
+{{ $default_img := "media/logo.svg" }}
+{{ if in .Params.categories "beach" }}
+  {{ $default_img = "media/beach_logo_color.svg" }}
+{{ end }}
 <div class="swiper-slide">
   <div class="card freeflow-card shadow-sm">
     {{ with .Resources.Get "main.jpg" }}
@@ -20,16 +24,8 @@
         width="{{ $width }}"
         height="{{ $height }}"
       />
-    {{ else }}
-      {{ with resources.Get "media/logo.svg" }}
-        <img
-          class="card-img-top"
-          src="{{ .RelPermalink }}"
-          width="{{ $width }}"
-          height="{{ $height }}"
-          alt="Logo VCN"
-        />
-      {{ end }}
+    {{ else with resources.Get $default_img }}
+      <img class="card-img-top" src="{{ .RelPermalink }}" width="{{ $width }}" height="{{ $height }}" alt="Logo VCN" />
     {{ end }}
     <div class="card-body">
       <h5 class="card-title">{{ .Title }}</h5>

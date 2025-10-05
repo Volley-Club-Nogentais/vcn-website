@@ -24,7 +24,7 @@ quotidien.
 Que vous utilisiez un **smartphone, une tablette ou un ordinateur**, nous avons ce qu’il vous faut :
 
 - **Fonds d’écran adaptés** à toutes les résolutions (HD, Full HD, 4K).
-- **Plusieurs versions** : logo seul, logo avec slogan, ou intégration dans un design sportif.
+- **Plusieurs versions**: logo du club ou logo du beach.
 - **Disponibles en format horizontal et vertical**.
 
 ### 📥 Comment les télécharger ?
@@ -40,15 +40,17 @@ _(Les fonds d’écran seront bientôt disponibles sur notre site. Restez connec
 ### 💬 Un grand merci à Mattis !
 
 Un immense merci à **Mattis**, le talentueux créateur de notre logo, pour son travail qui donne une **identité visuelle
-forte** à notre club. Son design reflète parfaitement **l’esprit du Volley Club Nogentais** : **dynamique, convivial et
+forte** à notre club. Son design reflète parfaitement **l’esprit du Volley Club Nogentais**: **dynamique, convivial et
 ambitieux**.
 
 ### 📢 Partagez votre passion !
 
-N’hésitez pas à **partager vos écrans personnalisés** sur les réseaux sociaux en nous identifiant :
+N’hésitez pas à **partager vos écrans personnalisés** sur les réseaux sociaux en nous identifiant:
 
-- **Facebook** : [@VolleyClubNogentais](#)
-- **Instagram** : [@volleyclubnogentais](#)
+- **Facebook** {{< fontawesome class="fa-brands fa-facebook-f" font-size="1.5em" >}}:
+  [@VolleyClubNogent](https://www.facebook.com/VolleyClubNogent/)
+- **Instagram** {{< fontawesome class="fa-brands fa-instagram"  font-size="1.5em" >}}:
+  [@volleyclubnogent](https://www.instagram.com/volleyclubnogent/)
 
 Utilisez le hashtag **#FierDêtreVCN** pour montrer votre soutien !
 

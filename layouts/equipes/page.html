@@ -1,14 +1,7 @@
 {{ define "main" }}
   {{ $data := dict }}
-  {{ with .Params.calendarName }}
-    {{ $path := printf "calendars/%s.json" . }}
-    {{ with resources.Get $path }}
-      {{ with . | transform.Unmarshal }}
-        {{ $data = . }}
-      {{ end }}
-    {{ else }}
-      {{ errorf "Unable to get global resource %q" $path }}
-    {{ end }}
+  {{ if .Params.calendarName }}
+    {{ $data := index .Site.Data.calendars .Params.calendarName }}
   {{ end }}
 
 

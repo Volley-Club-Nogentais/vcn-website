@@ -11,7 +11,7 @@ from datetime import datetime
 from datetime import timedelta
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
-OUTPUT_FOLDER = WORKSPACE_PATH / "assets" / "calendars"
+OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"
 SEASON_ID = 5
 FSGT = {
     "rhinos-feroces": 25,

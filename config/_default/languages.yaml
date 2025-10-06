@@ -9,14 +9,3 @@ fr:
     disableAliases: false
     pagerSize: 10
     path: page
-
-en:
-  languageName: English
-  languageCode: en-US
-  weight: 20
-  params:
-    languageISO: EN
-  pagination:
-    disableAliases: false
-    pagerSize: 10
-    path: page

@@ -36,7 +36,6 @@ i18n:
   # Required - a list of locales to show in the editor UI
   locales:
     - fr
-    - en
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
   default_locale: fr

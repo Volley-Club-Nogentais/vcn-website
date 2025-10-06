@@ -5,6 +5,10 @@ fr:
   weight: 10
   params:
     languageISO: FR
+  pagination:
+    disableAliases: false
+    pagerSize: 10
+    path: page
 
 en:
   languageName: English
@@ -12,3 +16,7 @@ en:
   weight: 20
   params:
     languageISO: EN
+  pagination:
+    disableAliases: false
+    pagerSize: 10
+    path: page

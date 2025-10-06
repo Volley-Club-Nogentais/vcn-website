@@ -12,7 +12,7 @@ En fonction de la section, vous pouvez nous retrouver aux différents gymnases a
 ### 📧 Nous envoyer un message
 
 Pour toute question, demande d’inscription ou partenariat, vous pouvez nous écrire à: 📩
-**[contact@volley-club-nogent.fr](contact@volley-club-nogent.fr)**
+**[contact@volley-club-nogent.fr](mailto:contact@volley-club-nogent.fr)**
 
 Nous nous engageons à vous répondre **dans les plus brefs délais**.
 

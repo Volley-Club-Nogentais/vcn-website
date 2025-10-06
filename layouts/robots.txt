@@ -1,0 +1,7 @@
+# Rule to block all robots
+User-agent: *
+{{- range .Pages -}}
+Disallow: {{ .RelPermalink }}
+{{ end }}
+
+Sitemap: {{ "sitemap.xml" | absLangURL }}

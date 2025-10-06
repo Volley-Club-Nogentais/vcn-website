@@ -1,0 +1,5 @@
+---
+changeFreq: "yearly"
+disable: false
+filename: sitemap.xml
+priority: -1

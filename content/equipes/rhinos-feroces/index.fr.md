@@ -5,7 +5,7 @@ draft: false
 weight: 50
 categories:
   - FSGT
-calendarName: rhinos-feroces
+calendarName: rhinos_feroces
 ---
 
 ### 🏆 L’Épopée de l’Équipe 4x4: De l’Easy à l’Élite !

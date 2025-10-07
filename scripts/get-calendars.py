@@ -14,11 +14,11 @@ WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"
 SEASON_ID = 5
 FSGT = {
-    "rhinos-feroces": 25,
-    "pingouins-manchots": 100,
-    "loups-phoques": 50,
-    "pythons-colles": 74,
-    "fatals-furets": 99,
+    "rhinos_feroces": 25,
+    "pingouins_manchots": 100,
+    "loups_phoques": 50,
+    "pythons_colles": 74,
+    "fatals_furets": 99,
 }
 
 
@@ -93,7 +93,7 @@ def fsgt_next_games_in_weeks(teams: list[str], number_weeks: int = 2):
     # Sort the objects by 'date'
     _output.sort(key=lambda obj: datetime.strptime(obj["date"], "%Y-%m-%d"))
 
-    with open(OUTPUT_FOLDER / "fsgt-next-games.json", "w") as fd:
+    with open(OUTPUT_FOLDER / "fsgt_next_games.json", "w") as fd:
         json.dump(_output, fd, indent=4)
 
 

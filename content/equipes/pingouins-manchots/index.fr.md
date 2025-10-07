@@ -5,5 +5,5 @@ draft: false
 weight: 50
 categories:
   - FSGT
-calendarName: pingouins-manchots
+calendarName: pingouins_manchots
 ---

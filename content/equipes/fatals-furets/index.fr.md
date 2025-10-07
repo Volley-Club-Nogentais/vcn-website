@@ -5,5 +5,5 @@ draft: false
 weight: 50
 categories:
   - FSGT
-calendarName: fatals-furets
+calendarName: fatals_furets
 ---

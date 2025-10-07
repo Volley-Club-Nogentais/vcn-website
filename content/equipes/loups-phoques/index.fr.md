@@ -5,5 +5,5 @@ draft: false
 weight: 50
 categories:
   - FSGT
-calendarName: loups-phoques
+calendarName: loups_phoques
 ---

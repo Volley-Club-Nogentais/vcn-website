@@ -5,12 +5,20 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "proseWrap": "always",
-  "plugins": ["prettier-plugin-go-template"],
+  "plugins": ["prettier-plugin-go-template", "@prettier/plugin-xml"],
   "overrides": [
     {
       "files": "*.html",
       "options": {
         "parser": "go-template"
+      }
+    },
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "xml",
+        "xmlQuoteAttributes": "double",
+        "tabWidth": 2
       }
     }
   ]

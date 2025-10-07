@@ -22,6 +22,17 @@ FSGT = {
 }
 
 
+DATE_LEN = len("00/00/0000")
+
+
+def _extract_date(s: str) -> str | list[str]:
+    if len(s) == DATE_LEN:
+        return datetime.strptime(s, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+    dates = [datetime.strptime(x, "%d/%m/%Y").strftime("%Y-%m-%d") for x in s.split(" au ")]
+    return dates
+
+
 def parse_fsgt_team_calendar(calendar: dict):
     """Reformat the game object.
 
@@ -35,7 +46,7 @@ def parse_fsgt_team_calendar(calendar: dict):
             {
                 "local": game["team_domicile"]["name"],
                 "visitor": game["team_exterieur"]["name"],
-                "date": datetime.strptime(game["date"], "%d/%m/%Y").strftime("%Y-%m-%d"),
+                "date": _extract_date(game["date"]),
                 "location": game["gymnase"],
             }
         )
@@ -71,7 +82,9 @@ def fsgt_next_games_in_weeks(teams: list[str], number_weeks: int = 2):
     # Filter objects by 'date' field
     _output = list(
         filter(
-            lambda obj: today <= datetime.strptime(obj["date"], "%Y-%m-%d") <= weeks_later,
+            lambda obj: today
+            <= datetime.strptime(obj["date"] if type(obj["date"]) is str else obj["date"][0], "%Y-%m-%d")
+            <= weeks_later,
             _input,
         )
     )

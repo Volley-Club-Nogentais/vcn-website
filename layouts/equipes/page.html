@@ -37,12 +37,11 @@
                 <td>{{ .date | time.Format ":date_medium" }}</td>
                 {{ with .location }}
                   <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
-                  <!-- prettier-ignore -->
                   <td>
                     {{ with .voie }}{{ . }}{{ end }}
                     {{ .adresse }},
                     {{ .ville }}
-                    </td>
+                  </td>
                 {{ else }}
                   <td colspan="2">Inconnu</td>
                 {{ end }}

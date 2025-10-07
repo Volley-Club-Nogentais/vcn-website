@@ -1,19 +1,6 @@
-{{ $data := dict }}
-{{ with .Params.calendarName }}
-  {{ $path := printf "calendars/fsgt-next-weeks.json" . }}
-  {{ with resources.Get $path }}
-    {{ with . | transform.Unmarshal }}
-      {{ $data = . }}
-    {{ end }}
-  {{ else }}
-    {{ errorf "Unable to get global resource %q" $path }}
-  {{ end }}
-{{ end }}
-
-
 <section class="next-games">
   <h2>Prochains matchs</h2>
-  {{ with $data }}
+  {{ with .Site.Data.calendars.fsgt_next_games }}
     <table class="table table-hover">
       <thead>
         <tr>
@@ -27,7 +14,7 @@
         {{ range . }}
           <tr>
             <td>{{ .local }} VS {{ .visitor }}</td>
-            <td>{{ .date | time.Format ":date_medium" }}</td>
+            <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
             {{ with .location }}
               <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
               <td>

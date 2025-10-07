@@ -1,10 +1,4 @@
 {{ define "main" }}
-  {{ $data := dict }}
-  {{ if .Params.calendarName }}
-    {{ $data := index .Site.Data.calendars .Params.calendarName }}
-  {{ end }}
-
-
   <article class="team">
     {{ with .Params.image }}
       <div class="text-center">
@@ -20,40 +14,42 @@
 
     <div class="calendar">
       <h2>Calendrier des matchs</h2>
-      {{ with $data }}
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Équipes</th>
-              <th>Date</th>
-              <th>Gymnase</th>
-              <th>Adresse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ range . }}
+      {{ if .Params.calendarName }}
+        {{ with index .Site.Data.calendars .Params.calendarName }}
+          <table class="table table-hover">
+            <thead>
               <tr>
-                <td>{{ .local }} VS {{ .visitor }}</td>
-                <td>{{ .date | time.Format ":date_medium" }}</td>
-                {{ with .location }}
-                  <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
-                  <td>
-                    {{ with .voie }}{{ . }}{{ end }}
-                    {{ .adresse }},
-                    {{ .ville }}
-                  </td>
-                {{ else }}
-                  <td colspan="2">Inconnu</td>
-                {{ end }}
+                <th>Équipes</th>
+                <th>Date</th>
+                <th>Gymnase</th>
+                <th>Adresse</th>
               </tr>
-            {{ end }}
-          </tbody>
-        </table>
-      {{ else }}
-        {{ if in .Params.categories "FSGT" }}
-          <p>Pas de match programmé pour le moment... 😞</p>
+            </thead>
+            <tbody>
+              {{ range . }}
+                <tr>
+                  <td>{{ .local }} VS {{ .visitor }}</td>
+                  <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
+                  {{ with .location }}
+                    <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
+                    <td>
+                      {{ with .voie }}{{ . }}{{ end }}
+                      {{ .adresse }},
+                      {{ .ville }}
+                    </td>
+                  {{ else }}
+                    <td colspan="2">Inconnu</td>
+                  {{ end }}
+                </tr>
+              {{ end }}
+            </tbody>
+          </table>
         {{ else }}
-          <p>Votre développeur favori travaille pour récupérer les matchs depuis les bons sites ❤️</p>
+          {{ if in .Params.categories "FSGT" }}
+            <p>Pas de match programmé pour le moment... 😞</p>
+          {{ else }}
+            <p>Votre développeur favori travaille pour récupérer les matchs depuis les bons sites ❤️</p>
+          {{ end }}
         {{ end }}
       {{ end }}
     </div>

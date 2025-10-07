@@ -27,7 +27,7 @@ DATE_LEN = len("00/00/0000")
 
 def _extract_date(s: str) -> str | list[str]:
     if len(s) == DATE_LEN:
-        return datetime.strptime(s, "%d/%m/%Y").strftime("%Y-%m-%d")
+        return [datetime.strptime(s, "%d/%m/%Y").strftime("%Y-%m-%d")]
 
     dates = [datetime.strptime(x, "%d/%m/%Y").strftime("%Y-%m-%d") for x in s.split(" au ")]
     return dates
@@ -82,16 +82,14 @@ def fsgt_next_games_in_weeks(teams: list[str], number_weeks: int = 2):
     # Filter objects by 'date' field
     _output = list(
         filter(
-            lambda obj: today
-            <= datetime.strptime(obj["date"] if type(obj["date"]) is str else obj["date"][0], "%Y-%m-%d")
-            <= weeks_later,
+            lambda obj: today <= datetime.strptime(obj["date"][0], "%Y-%m-%d") <= weeks_later,
             _input,
         )
     )
     logging.debug(f"Found {len(_output)} games in the next {number_weeks} weeks")
 
     # Sort the objects by 'date'
-    _output.sort(key=lambda obj: datetime.strptime(obj["date"], "%Y-%m-%d"))
+    _output.sort(key=lambda obj: datetime.strptime(obj["date"][0], "%Y-%m-%d"))
 
     with open(OUTPUT_FOLDER / "fsgt_next_games.json", "w") as fd:
         json.dump(_output, fd, indent=4)

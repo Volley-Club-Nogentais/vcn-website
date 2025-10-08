@@ -1,6 +1,10 @@
 ---
 name: "Pre-Commit"
 
+# Disable notification for this workflow
+env:
+  GITHUB_NOTIFICATIONS: "false"
+
 on:
   pull_request:
   push:

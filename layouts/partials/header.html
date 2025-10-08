@@ -1,3 +1,4 @@
+{{ $monthAsIndex := math.Sub (time.Now.Month | int) 1 }}
 <header>
   <!-- Navbar-->
   <nav class="navbar navbar-expand-xl fixed-top w-100 bg-body-tertiary">
@@ -5,7 +6,9 @@
       <!-- Logo and name -->
       <div class="d-flex">
         <a href="{{ .Site.BaseURL }}" class="navbar-brand text-decoration-none">
-          {{ with resources.Get "media/logo.svg" }}
+          {{ with resources.Get (printf "media/%s" (index .Site.Params.logo $monthAsIndex)) }}
+            <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
+          {{ else }}
             <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
           {{ end }}
           VCN

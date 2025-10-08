@@ -15,3 +15,23 @@ socials:
   youtube:
     icon: "youtube"
     url: "https://www.youtube.com/@volleyclubnogent"
+
+logo:
+  # January to May
+  - logo_couleur.svg
+  - logo_couleur.svg
+  - logo_couleur.svg
+  - logo_couleur.svg
+  - logo_couleur.svg
+  # June to August
+  - beach_logo_color.svg
+  - beach_logo_color.svg
+  - beach_logo_color.svg
+  # September
+  - logo_couleur.svg
+  # October
+  - logo_rose.svg
+  # November
+  - logo_couleur.svg
+  # December
+  - logo_couleur.svg

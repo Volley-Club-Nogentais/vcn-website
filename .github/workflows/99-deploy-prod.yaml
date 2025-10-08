@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   schedule:
     # Run every day at 7:15 AM
     - cron: '30 7 * * *'

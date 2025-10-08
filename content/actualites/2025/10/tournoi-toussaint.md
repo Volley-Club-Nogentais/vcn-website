@@ -1,7 +1,7 @@
 ---
 title: '🏐 Tournoi des Vacances de la Toussaint: Inscriptions ouvertes !'
 author: 'Henri Buyse'
-date: 2025-10-11
+date: 2025-10-14
 draft: false
 tags:
   - tournoi

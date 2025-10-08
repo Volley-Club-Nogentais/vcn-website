@@ -1,0 +1,57 @@
+---
+name: Deploy Hugo site to Production
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    # Run every day at 7:15 AM
+    - cron: '30 7 * * *'
+
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do a git checkout including submodules
+        uses: actions/checkout@master
+        with:
+          submodules: true
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Get the calendars
+        run: python scripts/get-calendars.py
+
+      - name: Install npm dependencies
+        run: npm clean-install
+
+      - name: Build
+        run: hugo build --minify
+
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: --archive --verbose --compress --recursive --delete
+          path: public/
+          remote_path: ${{ secrets.VPS_DEPLOY_PATH }}
+          remote_host: ${{ secrets.VPS_DEPLOY_HOST }}
+          remote_user: ${{ secrets.VPS_DEPLOY_USER }}
+          remote_key: ${{ secrets.VPS_DEPLOY_KEY }}

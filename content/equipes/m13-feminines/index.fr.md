@@ -1,13 +1,13 @@
 ---
 title: M13 Féminines
-summary: FFVB M13 Féminines
-draft: false
-weight: 50
+description: ''
 categories:
   - FFVB
   - jeunes
+draft: false
+weight: 50
+summary: FFVB M13 Féminines
 ---
-
 ## Présentation de l'Équipe
 
 Notre équipe féminine de volleyball des moins de 15 ans est un groupe dynamique de jeunes athlètes passionnées et
@@ -58,12 +58,12 @@ partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons contin
 ## M13
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Mardi              | 18:00            | 19:30          |
-| Watteau | Jeudi              | 18:00            | 19:30          |
+| --- | --- | --- | --- |
+| Watteau | Mardi | 18:00 | 19:30 |
+| Watteau | Jeudi | 18:00 | 19:30 |
 
-## M13 2
+## M13 Pratique Encadrée
 
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Samedi             | 10:00            | 12:00          |
+| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
+| --- | --- | --- | --- |
+| Louis Armand | Samedi | 10:00 | 12:00 |

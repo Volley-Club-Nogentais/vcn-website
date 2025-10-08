@@ -15,3 +15,6 @@ main:
   - name: Contact
     url: /contact/
     weight: 50
+  - name: Inscriptions
+    url: /inscriptions/
+    weight: 60

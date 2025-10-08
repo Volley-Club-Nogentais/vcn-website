@@ -31,9 +31,6 @@ de discuter avec vous !
 
 ### ❓ Questions fréquentes
 
-**Comment s’inscrire ?** Les inscriptions se font **en ligne** via [notre formulaire
-dédié]({{% param "adhesionLink" %}}).
-
 **Puis-je venir essayer avant de m’engager ?** Bien sûr ! Nous proposons **deux séances d’essai gratuites** pour
 découvrir le club.
 

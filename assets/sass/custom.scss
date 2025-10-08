@@ -107,6 +107,9 @@ article {
     // Padding to work with the fixed navbar in header
     padding-top: 76px;
   }
+  .home-image {
+    display: none;
+  }
 }
 
 .breadcrumb-item a {
@@ -119,4 +122,45 @@ article {
 
 .pagination-navbar {
   padding: 1.5em;
+}
+
+/* Home page banner */
+.home-image {
+  position: relative;
+  background-color: blue;
+  background-image: url('/media/8774fde28f1480f16e4bacfe21705053-scaled.jpg');
+  height: 400px;
+  width: 100%;
+}
+
+.bottom-div {
+  position: absolute;
+  width: 57.85%;
+  height: 60%;
+  background-color: var(--vcn-blue);
+  left: 5%;
+  top: 12.5%;
+  color: white;
+  padding: 5%;
+}
+
+.home-monogramme {
+  padding: 1%;
+  width: 270px;
+}
+
+.top-div {
+  position: absolute;
+  width: 57.85%;
+  height: 60%;
+  background-color: white;
+  left: 37%;
+  top: 25%;
+  padding: 4%;
+}
+/* End home page banner */
+
+.actus,
+.next-games {
+  margin-top: 20px;
 }

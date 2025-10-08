@@ -2,8 +2,8 @@
 <html class="h-100" lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
   <head>
     {{ partial "head.html" . }}
-    {{ block "head" . }}
-    {{ end }}
+    {{ block "head" . }}{{ end }}
+    {{ block "css" . }}{{ end }}
   </head>
   <body class="d-flex flex-column h-100">
     {{ partial "header.html" . }}

@@ -1,15 +1,28 @@
-{{ define "main" }}
-  {{ if .Site.Params.banner.enable }}
-    {{ $height := 400 }}
-    {{ with resources.Get "media/banner.jpg" }}
-      <div class="text-center">
-        {{ with .Resize (printf "%dx" $height) }}
-          <img class="img-fluid" alt="Banner" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
+{{ define "css" }}
+  <style>
+    .home-image {
+      {{ with resources.Get "media/8774fde28f1480f16e4bacfe21705053-scaled.jpg" }}
+        {{ with .Fill "1600x560" }}
+          background-image: url({{ .RelPermalink }});
         {{ end }}
-      </div>
-    {{ end }}
-  {{ end }}
-  <section class="title-section homepage">
+      {{ end }}
+    }
+  </style>
+{{ end }}
+
+{{ define "main" }}
+  <section class="home-image d-none d-xl-flex">
+    <div class="bottom-div">
+      {{ with resources.Get "media/vcn_monogramme_v1_gold.svg" }}
+        <img class="img-fluid home-monogramme" alt="Club monogramme" src="{{ .RelPermalink }}" />
+      {{ end }}
+    </div>
+    <div class="top-div">
+      <h1 class="text-uppercase">{{ .Title }}</h1>
+      {{ .Content }}
+    </div>
+  </section>
+  <section class="home-text d-xl-none d-xl-flex text-center">
     <h1 class="text-uppercase">{{ .Title }}</h1>
     {{ .Content }}
   </section>

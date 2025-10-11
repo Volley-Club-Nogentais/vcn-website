@@ -11,7 +11,7 @@
       <tbody>
         {{ range . }}
           <tr>
-            <td>{{ .local }} VS {{ .visitor }}</td>
+            <td>{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
             <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
           </tr>
         {{ end }}

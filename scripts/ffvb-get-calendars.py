@@ -47,7 +47,10 @@ def parse_args():
 def setup_logging(verbosity):
     levels = [logging.WARNING, logging.INFO, logging.DEBUG]
     level = levels[min(verbosity, len(levels) - 1)]
-    logging.basicConfig(level=level)
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s - %(levelname)s - %(funcName)s - %(message)s",
+    )
 
 
 def clean(s: str) -> str:
@@ -66,9 +69,6 @@ def parse_one_week(url: str, timestamp: int):
 
     if not r.text:
         raise NoHTMLData
-
-    with open("file.html", "w") as fd:
-        fd.write(r.text)
 
     soup = BeautifulSoup(r.text, "html.parser")
 

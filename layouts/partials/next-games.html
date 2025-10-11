@@ -6,8 +6,6 @@
         <tr>
           <th>Équipes</th>
           <th>Date</th>
-          <th>Gymnase</th>
-          <th>Adresse</th>
         </tr>
       </thead>
       <tbody>
@@ -15,16 +13,6 @@
           <tr>
             <td>{{ .local }} VS {{ .visitor }}</td>
             <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
-            {{ with .location }}
-              <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
-              <td>
-                {{ with .voie }}{{ . }}{{ end }}
-                {{ .adresse }},
-                {{ .ville }}
-              </td>
-            {{ else }}
-              <td colspan="2">Inconnu</td>
-            {{ end }}
           </tr>
         {{ end }}
       </tbody>

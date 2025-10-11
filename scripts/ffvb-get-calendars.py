@@ -108,7 +108,7 @@ def parse_one_week(url: str, timestamp: int):
                 s = datetime.strptime(date, "%d/%m/%Y")
 
             if s > NOW:
-                data["date"] = str(s)
+                data["date"] = [str(s)]
                 break
 
         if data["referee"] and data["referee"].endswith(" / "):

@@ -35,11 +35,9 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.128.0
     steps:
       - name: Do a git checkout including submodules
-        uses: actions/checkout@v4
+        uses: actions/checkout@master
         with:
           submodules: recursive
 

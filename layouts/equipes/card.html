@@ -7,7 +7,7 @@
 <div class="swiper-slide">
   <div class="card freeflow-card shadow-sm">
     {{ with .Resources.Get "main.jpg" }}
-      {{ with .Fill (printf "%dx%d" $height $width) }}
+      {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img
           class="card-img-top"
           alt="{{ $.Title }} image"

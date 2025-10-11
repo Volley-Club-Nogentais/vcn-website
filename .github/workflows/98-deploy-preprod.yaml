@@ -6,9 +6,8 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+      - feat/**
+      - fix/**
   schedule:
     # Run every day at 7:15 AM
     - cron: '15 7 * * *'

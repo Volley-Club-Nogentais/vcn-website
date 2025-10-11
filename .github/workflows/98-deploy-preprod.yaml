@@ -71,6 +71,9 @@ jobs:
       - name: Get the FFVB calendars
         run: python scripts/ffvb-get-calendars.py -v
 
+      - name: Merge the two calendars
+        run: python scripts/merge-next-games.py -v
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

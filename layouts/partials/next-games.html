@@ -1,30 +1,18 @@
 <section class="next-games">
   <h2>Prochains matchs</h2>
-  {{ with .Site.Data.calendars.fsgt_next_games }}
+  {{ with .Site.Data.calendars.next_games }}
     <table class="table table-hover">
       <thead>
         <tr>
           <th>Équipes</th>
           <th>Date</th>
-          <th>Gymnase</th>
-          <th>Adresse</th>
         </tr>
       </thead>
       <tbody>
         {{ range . }}
           <tr>
-            <td>{{ .local }} VS {{ .visitor }}</td>
+            <td>{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
             <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
-            {{ with .location }}
-              <td>{{ with .name }}{{ . }}{{ else }}Inconnu{{ end }}</td>
-              <td>
-                {{ with .voie }}{{ . }}{{ end }}
-                {{ .adresse }},
-                {{ .ville }}
-              </td>
-            {{ else }}
-              <td colspan="2">Inconnu</td>
-            {{ end }}
           </tr>
         {{ end }}
       </tbody>

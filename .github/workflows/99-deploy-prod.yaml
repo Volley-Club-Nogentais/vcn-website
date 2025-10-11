@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.13
+          cache: 'pip'  # caching pip dependencies
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -34,8 +35,17 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Get the calendars
-        run: python scripts/get-calendars.py
+      - name: Install PIP requirements
+        run: pip install -r scripts/requirements.txt
+
+      - name: Get the FSGT calendars
+        run: python scripts/fsgt-get-calendars.py
+
+      - name: Get the FFVB calendars
+        run: python scripts/ffvb-get-calendars.py -v
+
+      - name: Merge the two calendars
+        run: python scripts/merge-next-games.py -v
 
       - name: Install npm dependencies
         run: npm clean-install

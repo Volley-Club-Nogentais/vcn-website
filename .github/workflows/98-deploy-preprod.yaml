@@ -69,7 +69,7 @@ jobs:
         run: python scripts/fsgt-get-calendars.py
 
       - name: Get the FFVB calendars
-        run: python scripts/ffvb-get-calendars.py
+        run: python scripts/ffvb-get-calendars.py -v
 
       - name: Build with Hugo
         env:

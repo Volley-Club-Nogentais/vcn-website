@@ -34,8 +34,8 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Get the calendars
-        run: python scripts/get-calendars.py
+      - name: Get the FSGT calendars
+        run: python scripts/fsgt-get-calendars.py
 
       - name: Install npm dependencies
         run: npm clean-install

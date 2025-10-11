@@ -62,8 +62,11 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
-      - name: Get the calendars
-        run: python scripts/get-calendars.py
+      - name: Get the FSGT calendars
+        run: python scripts/fsgt-get-calendars.py
+
+      - name: Get the FFVB calendars
+        run: python scripts/ffvb-get-calendars.py
 
       - name: Build with Hugo
         env:

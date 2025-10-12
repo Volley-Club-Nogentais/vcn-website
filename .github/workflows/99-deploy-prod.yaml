@@ -69,9 +69,6 @@ jobs:
           name: public
           path: public
 
-      - name: Display structure of downloaded files
-        run: ls -R && echo && ls -R public
-
       - name: Make timestamp
         shell: bash
         run: |

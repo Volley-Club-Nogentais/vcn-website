@@ -45,8 +45,6 @@ Rien de plus simple :
 2. **Téléchargez-le** en haute qualité.
 3. **Appliquez-le** comme fond d’écran sur votre appareil.
 
-_(Les fonds d’écran seront bientôt disponibles sur notre site. Restez connectés !)_
-
 ### 💬 Un grand merci à Mattis !
 
 Un immense merci à **Mattis**, le talentueux créateur de notre logo, pour son travail qui donne une **identité visuelle

@@ -1,7 +1,7 @@
 ---
 title: '🏐 Tournoi des Vacances de la Toussaint: Inscriptions ouvertes !'
 author: 'Henri Buyse'
-date: 2025-10-14
+date: 2025-10-12
 draft: false
 tags:
   - tournoi
@@ -43,8 +43,9 @@ une soirée 100 % volley, convivialité et compétition !
 
 ### 📩 Comment s’inscrire ?
 
-Les inscriptions se font **uniquement en ligne** via [le formulaire dédié](#). **Nombre de places limité**:
-inscrivez-vous vite !
+Les inscriptions se font **uniquement en ligne** via
+[le formulaire dédié](https://docs.google.com/forms/d/e/1FAIpQLSeQcCYejsP4ysITeiy9R4Q9-t18mmRvJNP1jxOlQvwApvN8MA/viewform).
+**Nombre de places limité**: inscrivez-vous vite !
 
 ### ⚠️ Important
 

@@ -6,6 +6,7 @@
     "prettier-plugin-go-template": "^0.0.15"
   },
   "dependencies": {
-    "bootstrap": "^5.3.7"
+    "bootstrap": "^5.3.7",
+    "pagefind": "^1.4.0"
   }
 }

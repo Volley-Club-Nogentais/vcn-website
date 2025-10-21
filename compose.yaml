@@ -1,5 +1,19 @@
 ---
 services:
+  builder:
+    image: hugomods/hugo:exts-non-root
+    volumes:
+      - ./:/src
+    command: build --buildDrafts --buildFuture --enableGitInfo=true
+
+  pagefind:
+    image: theohbrothers/docker-pagefind:20250902.0.0-55d1264-1.4.0
+    depends_on:
+      builder:
+        condition: service_completed_successfully
+    volumes:
+      - ./public:/public
+
   hugo:
     image: hugomods/hugo:exts-non-root
     container_name: volley-hugo
@@ -8,3 +22,6 @@ services:
     volumes:
       - ./:/src
     command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true --disableFastRender
+    depends_on:
+      pagefind:
+        condition: service_completed_successfully

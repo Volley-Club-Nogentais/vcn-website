@@ -19,6 +19,8 @@ FSGT = {
     "loups_phoques": 50,
     "pythons_colles": 74,
     "fatals_furets": 99,
+    "team_glouglou": 77,
+    "coconuts": 78,
 }
 
 

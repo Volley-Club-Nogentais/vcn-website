@@ -6,6 +6,7 @@ weight: 50
 categories:
   - FFVB
   - adultes
+calendarName: regional_feminines
 ---
 
 ## Maintien au Niveau Régional

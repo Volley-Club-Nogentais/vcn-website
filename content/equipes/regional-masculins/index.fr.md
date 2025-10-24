@@ -6,6 +6,7 @@ weight: 50
 categories:
   - FFVB
   - adultes
+calendarName: regional_masculins
 ---
 
 Cette saison a vu naître un tout nouveau groupe, construit autour d’un entraîneur revenu au club. Avec lui, un bel

@@ -6,6 +6,7 @@ weight: 40
 categories:
   - FFVB
   - adultes
+calendarName: departemental_feminines
 ---
 
 # Les entraînements

@@ -14,17 +14,40 @@ from datetime import timedelta
 import niquests
 from bs4 import BeautifulSoup
 
-# Do not ask me why but the timestamp that is used in the URL is the saturday before the week that you want
-# Example: if you want the games from the 13 oct 2025 to 19 oct 2025, the you should put the timestamp of Saturday
-# October 11th 2025...
 CLUB = "0943988"
-URL = "https://www.ffvbbeach.org/ffvbapp/resu/planning_club.php"
+CLUB_URL = "https://www.ffvbbeach.org/ffvbapp/resu/planning_club.php"
+TEAM_URL =  "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php"
 USER_AGENT = "Mozilla/5.0 (MatchScraper/1.0)"
 
 NOW = datetime.now()
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"
+
+SEASON = "2025/2026"
+FFVB = {
+    "departemental_masculins": {
+        "poule": "ARM",
+        "codent": "PTIDF94",
+        "equipe": 20,
+    },
+    "departemental_feminines": {
+        "poule": "ARF",
+        "codent": "PTIDF94",
+        "equipe": 11,
+    },
+    "regional_masculins": {
+        "poule": "2MB",
+        "codent": "LIIDF",
+        "equipe": 9,
+    },
+    "regional_feminines": {
+        "poule": "2FA",
+        "codent": "LIIDF",
+        "equipe": 4,
+    },
+}
+
 
 class NoHTMLData(Exception):
     pass
@@ -35,11 +58,6 @@ def parse_args():
 
     # Argument pour le niveau de verbosité
     parser.add_argument("-v", action="count", default=0, help="Increase verbosity level (can be put multiple times)")
-
-    # Argument pour l'URL
-    parser.add_argument(
-        "--url", type=str, default="https://www.ffvbbeach.org/ffvbapp/resu/planning_club.php", help="URL to use"
-    )
 
     return parser.parse_args()
 
@@ -57,9 +75,9 @@ def clean(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").replace("\xa0", " ").strip())
 
 
-def parse_one_week(url: str, timestamp: int):
+def parse_one_week(timestamp: int):
     r = niquests.get(
-        url=url,
+        url=CLUB_URL,
         params={"date_jour": str(timestamp), "cnclub": CLUB},
         headers={"User-Agent": USER_AGENT},
         timeout=20,
@@ -115,8 +133,87 @@ def parse_one_week(url: str, timestamp: int):
             data["referee"] = data["referee"][:-3]
 
         next_games.append(data)
+        logging.debug(f"Added: {data}")
 
     return next_games
+
+def parse_all_team_calendars(teams):
+    for team, data in teams.items():
+        games = parse_team_calendar(team, data)
+
+        with open(OUTPUT_FOLDER / f"{team}.json", "w") as fd:
+            json.dump(games, fd, indent=4)
+
+
+def parse_team_calendar(team:str, params: dict[str, str]):
+    def extract_score(text):
+        score = list()
+        for x in text.split(", "):
+            local, visitor = x.split(':')
+            score.append((int(local), int(visitor)))
+        return score
+
+    l = list()
+    params["saison"] = SEASON
+    params["calend"] = "COMPLET"
+    r = niquests.get(
+        url=TEAM_URL,
+        params=params,
+        headers={"User-Agent": USER_AGENT},
+        timeout=20,
+    )
+    logging.info(f"Tried the '{team}' URL: {r.url}")
+    r.raise_for_status()
+
+    if not r.text:
+        raise NoHTMLData
+
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    tables = soup.find_all('table')
+    if len(tables) < 4:
+        logging.error("Not enough tables in page")
+
+    games = tables[3].find_all("tr", {"bgcolor": "#EEEEF8"})
+
+    for game in games:
+        tds = game.find_all("td")
+
+        if "xxxxx" in game.text:
+            continue
+
+        # Game played
+        if len(tds) == 12:
+            data = {
+                "level": params["poule"],
+                "id": tds[0].text,
+                "local": tds[3].text,
+                "visitor": tds[5].text,
+                "score": {
+                    "local": int(tds[6].text),
+                    "visitor": int(tds[7].text),
+                    "sets": extract_score(tds[8].text)
+                },
+                "referee": tds[10].text if tds[10] and tds[10].text else None,
+                "date": [str(datetime.strptime(f"{tds[1].text} {tds[2].text}", "%d/%m/%y %H:%M"))]
+            }
+        # Game to be played
+        else:
+            data = {
+                "level": params["poule"],
+                "id": tds[0].text,
+                "local": tds[3].text,
+                "visitor": tds[5].text,
+                "location": {"name": tds[7].text},
+                "referee": tds[10].text if tds[10] and tds[10].text else None,
+                "date": [str(datetime.strptime(f"{tds[1].text} {tds[2].text}", "%d/%m/%y %H:%M"))]
+            }
+
+        logging.debug(f"Found game for '{team}': {data}")
+        l.append(data)
+
+    logging.info(f"Found {len(l)} games")
+    return l
 
 
 def last_friday(date):
@@ -130,13 +227,18 @@ if __name__ == "__main__":
     setup_logging(args.v)
 
     next_games = []
-    for i in range(0, 2):
+    # Need the three next weeks
+    for i in range(0, 3):
         date = NOW + timedelta(weeks=i)
+        # Do not ask me why but the timestamp that is used in the URL is the saturday before the week that you want
+        # Example: if you want the games from the 13 oct 2025 to 19 oct 2025, the you should put the timestamp of
+        # Saturday
+        # October 11th 2025...
         last_f = last_friday(date)
-        week_games = parse_one_week(args.url, int(last_f.timestamp()))
+        week_games = parse_one_week(int(last_f.timestamp()))
         next_games = next_games + week_games
 
-    # Filter objects by 'date' field
+    # Filter objects by 'date' field and get the games in the next two weeeks
     _output = list(
         filter(
             lambda obj: NOW <= datetime.strptime(obj["date"][0][:10], "%Y-%m-%d") <= NOW + timedelta(weeks=2),
@@ -147,3 +249,5 @@ if __name__ == "__main__":
 
     with open(OUTPUT_FOLDER / "ffvb_next_games.json", "w") as fd:
         json.dump(_output, fd, indent=4)
+
+    parse_all_team_calendars(FFVB)

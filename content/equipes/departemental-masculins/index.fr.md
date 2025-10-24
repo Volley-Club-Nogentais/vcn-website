@@ -6,6 +6,7 @@ weight: 40
 categories:
   - FFVB
   - adultes
+calendarName: departemental_masculins
 ---
 
 Cette saison a vu naître un tout nouveau groupe, construit autour d’un entraîneur revenu au club. Avec lui, un bel

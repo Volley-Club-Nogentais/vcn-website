@@ -60,7 +60,7 @@ def clean(s: str) -> str:
 def parse_one_week(url: str, timestamp: int):
     r = niquests.get(
         url=url,
-        params={"aff_semaine": "SUI", "date_jour": str(timestamp), "cnclub": CLUB},
+        params={"date_jour": str(timestamp), "cnclub": CLUB},
         headers={"User-Agent": USER_AGENT},
         timeout=20,
     )
@@ -119,6 +119,11 @@ def parse_one_week(url: str, timestamp: int):
     return next_games
 
 
+def last_friday(date):
+    days_to_remove = (date.weekday() + 3) % 7 + 1  # 3 for friday
+    last_friday = date - timedelta(days=days_to_remove)
+    return last_friday
+
 
 if __name__ == "__main__":
     args = parse_args()
@@ -126,9 +131,19 @@ if __name__ == "__main__":
 
     next_games = []
     for i in range(0, 2):
-        date = NOW - timedelta(days=3) + timedelta(weeks=i)
-        week_games = parse_one_week(args.url, int(date.timestamp()))
+        date = NOW + timedelta(weeks=i)
+        last_f = last_friday(date)
+        week_games = parse_one_week(args.url, int(last_f.timestamp()))
         next_games = next_games + week_games
 
+    # Filter objects by 'date' field
+    _output = list(
+        filter(
+            lambda obj: NOW <= datetime.strptime(obj["date"][0][:10], "%Y-%m-%d") <= NOW + timedelta(weeks=2),
+            next_games,
+        )
+    )
+    logging.debug(f"Found {len(_output)} games in the next 2 weeks")
+
     with open(OUTPUT_FOLDER / "ffvb_next_games.json", "w") as fd:
-        json.dump(next_games, fd, indent=4)
+        json.dump(_output, fd, indent=4)

@@ -7,7 +7,6 @@ import argparse
 import json
 import logging
 import pathlib
-import re
 from datetime import datetime
 from datetime import timedelta
 
@@ -69,10 +68,6 @@ def setup_logging(verbosity):
         level=level,
         format="%(asctime)s - %(levelname)s - %(funcName)s - %(message)s",
     )
-
-
-def clean(s: str) -> str:
-    return re.sub(r"\s+", " ", (s or "").replace("\xa0", " ").strip())
 
 
 def parse_one_week(timestamp: int):

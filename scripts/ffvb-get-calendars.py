@@ -18,7 +18,7 @@ CLUB_URL = "https://www.ffvbbeach.org/ffvbapp/resu/planning_club.php"
 TEAM_URL =  "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php"
 USER_AGENT = "Mozilla/5.0 (MatchScraper/1.0)"
 
-NOW = datetime.now()
+NOW = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"

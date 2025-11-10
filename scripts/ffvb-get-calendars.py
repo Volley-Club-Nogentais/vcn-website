@@ -7,6 +7,7 @@ import argparse
 import json
 import logging
 import pathlib
+import sys
 from datetime import datetime
 from datetime import timedelta
 
@@ -57,6 +58,8 @@ def parse_args():
 
     # Argument pour le niveau de verbosité
     parser.add_argument("-v", action="count", default=0, help="Increase verbosity level (can be put multiple times)")
+    parser.add_argument("-l", action='store_true', help="List possible teams")
+    parser.add_argument("-t", default='all', choices=[*FFVB.keys(), 'all'], help="Get a specific team")
 
     return parser.parse_args()
 
@@ -220,6 +223,12 @@ def last_friday(date):
 if __name__ == "__main__":
     args = parse_args()
     setup_logging(args.v)
+
+    if args.l:
+        print("Available teams:")
+        for team in [*FFVB.keys(), 'all']:
+            print('- ' + team)
+        sys.exit(0)
 
     next_games = []
     # Need the three next weeks

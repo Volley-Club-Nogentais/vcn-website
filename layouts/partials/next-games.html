@@ -4,6 +4,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>Ligue</th>
           <th>Équipes</th>
           <th>Date</th>
         </tr>
@@ -11,6 +12,7 @@
       <tbody>
         {{ range . }}
           <tr>
+            <td>{{ .ligue | upper }}</td>
             <td>{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
             <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
           </tr>

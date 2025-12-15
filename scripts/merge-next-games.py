@@ -13,6 +13,8 @@ if __name__ == "__main__":
     for i in ["ffvb", "fsgt"]:
         with open(OUTPUT_FOLDER / f"{i}_next_games.json") as fd:
             data = json.load(fd)
+            for game in data:
+                game.update({"ligue": i})
             next_games = next_games + data
 
     next_games = sorted(next_games, key=lambda d: d['date'][0])

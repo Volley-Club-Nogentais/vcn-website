@@ -6,6 +6,9 @@ main:
   - name: Équipes
     url: /equipes/
     weight: 20
+  - name: Beach
+    url: /beach/
+    weight: 25
   - name: Histoire
     url: /histoire/
     weight: 30

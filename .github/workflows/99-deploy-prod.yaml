@@ -75,7 +75,7 @@ jobs:
           date > public/deploy_timestamp.txt
 
       - name: rsync deployments
-        uses: burnett01/rsync-deployments@7.0.2
+        uses: burnett01/rsync-deployments@8.0.4
         with:
           switches: --archive --verbose --compress --recursive --delete
           path: public/

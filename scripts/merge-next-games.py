@@ -17,6 +17,7 @@ if __name__ == "__main__":
                 game.update({"ligue": i})
             next_games = next_games + data
 
-    next_games = sorted(next_games, key=lambda d: d['date'][0])
+    # Date is in "%Y-%m-%d" format. It is alphabetically sorted :)
+    next_games.sort(key=lambda d: d["date"][0])
     with open(OUTPUT_FOLDER / "next_games.json", "w") as fd:
         json.dump(next_games, fd, indent=4)

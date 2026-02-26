@@ -6,15 +6,26 @@ banner:
   enable: false
 
 socials:
-  facebook:
-    icon: "facebook-f"
-    url: "https://www.facebook.com/VolleyClubNogent/"
-  instagram:
-    icon: "instagram"
-    url: "https://www.instagram.com/volleyclubnogent/"
-  youtube:
-    icon: "youtube"
-    url: "https://www.youtube.com/@volleyclubnogent"
+  indoor:
+    facebook:
+      icon: "facebook-f"
+      url: "https://www.facebook.com/VolleyClubNogent/"
+    instagram:
+      icon: "instagram"
+      url: "https://www.instagram.com/volleyclubnogent/"
+    youtube:
+      icon: "youtube"
+      url: "https://www.youtube.com/@volleyclubnogent"
+  beach:
+    facebook:
+      icon: "facebook-f"
+      url: "https://www.facebook.com/BEACH-Volley-VCN/"
+    instagram:
+      icon: "instagram"
+      url: "https://www.instagram.com/vcnbeachofficiel/"
+    youtube:
+      icon: "youtube"
+      url: "https://www.youtube.com/@volleyclubnogent"
 
 logo:
   # January to May

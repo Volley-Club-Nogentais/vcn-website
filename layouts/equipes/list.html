@@ -72,15 +72,6 @@
     </div>
   </div>
 
-  <h2>FFVB Beach</h2>
-  <div class="swiper freeflow-swiper mb-4">
-    <div class="swiper-wrapper">
-      {{ range (where $ffvb "Params.categories" "intersect" (slice "beach")).ByTitle }}
-        {{ .Render "card" }}
-      {{ end }}
-    </div>
-  </div>
-
   <h2>FSGT</h2>
   <div class="swiper freeflow-swiper mb-4">
     <div class="swiper-wrapper">

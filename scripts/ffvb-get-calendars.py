@@ -12,8 +12,8 @@ from datetime import datetime
 from datetime import timedelta
 from typing import Any
 from typing import Callable
-
-import niquests
+from urllib import parse
+from urllib import request
 
 CLUB = "0943988"
 EXPORT_URL = "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier_export_club.php"
@@ -142,24 +142,24 @@ def transform_row(row):
 
 def get_all_games() -> list[str]:
     """Retrieve all games in season."""
-    r = niquests.post(
-        url=EXPORT_URL,
-        data={
+    post_data = parse.urlencode(
+        {
             "cnclub": CLUB,
             "cal_saison": SEASON,
             "type": "RES",
             "typ_edition": "E",
-        },
-        headers={"User-Agent": USER_AGENT},
-        timeout=20,
-    )
-    logging.info(f"Tried the URL: {r.url}")
-    r.raise_for_status()
+        }
+    ).encode("utf-8")
 
-    if not r.text:
-        raise NoHTMLData
+    req = request.Request(EXPORT_URL, post_data, {"User-Agent": USER_AGENT})
+    logging.info(f"Tried the URL: {req.get_full_url()}")
 
-    return r.text.splitlines()
+    with request.urlopen(req) as resp:
+        data = resp.read().decode("latin-1")
+
+    logging.warning(data)
+
+    return data.splitlines()
 
 
 def rename_fields(header: str) -> str:

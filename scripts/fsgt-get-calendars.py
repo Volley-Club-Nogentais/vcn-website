@@ -60,8 +60,8 @@ def fsgt_store_calendar(team: str, team_id: int):
     uri = f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}"
     logging.debug(f"Trying '{uri}'")
 
-    with urllib.request.urlopen(uri) as url:
-        data = json.load(url)
+    with urllib.request.urlopen(uri) as resp:
+        data = json.load(resp)
 
     logging.debug(f"Parsing '{team}' schedule")
     output = parse_fsgt_team_calendar(data)

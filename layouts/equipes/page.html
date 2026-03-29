@@ -49,39 +49,11 @@
     {{ $elements := .Resources.Match "images/*.jpg" }}
     {{ with $elements }}
       <h2>Galerie</h2>
-      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          {{ range $index, $img := $elements }}
-            <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-              <div class="carousel-img-wrapper">
-                <img src="{{ $img }}" class="d-block w-100" alt="photo {{ $index }}" />
-              </div>
-            </div>
-          {{ end }}
-
-        </div>
-
-        {{ if ne ($elements | len) 1 }}
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-
-          <div class="carousel-indicators">
-            {{ range $index, $_ := $elements }}
-              <button
-                type="button"
-                data-bs-target="#photoCarousel"
-                data-bs-slide-to="{{ $index }}"
-                class="{{ if eq $index 0 }}active{{ end }}"
-              ></button>
-            {{ end }}
-          </div>
-        {{ end }}
-      </div>
+      {{ partial "carousel.html" (dict
+        "page" $
+        "path" "images/"
+        )
+      }}
     {{ end }}
 
   </article>

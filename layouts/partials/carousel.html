@@ -1,0 +1,44 @@
+{{- $path := .path | default "images" -}}
+{{- $resources := .page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
+
+{{- if not $resources }}
+  {{- warnf "No images found for path: %s/%s" .page.Path $path -}}
+{{- end }}
+
+{{- $id := printf "carousel-%d" now.UnixNano -}}
+
+
+<div id="{{ $id }}" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {{ range $index, $img := $resources }}
+      <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+        <div class="carousel-img-wrapper">
+          <img src="{{ $img }}" class="d-block w-100" alt="photo {{ $index }}" />
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  {{ if gt ($resources | len) 1 }}
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ $id }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ $id }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      {{ range $index, $_ := $resources }}
+        <button
+          type="button"
+          data-bs-target="#{{ $id }}"
+          data-bs-slide-to="{{ $index }}"
+          class="{{ if eq $index 0 }}active{{ end }}"
+        ></button>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

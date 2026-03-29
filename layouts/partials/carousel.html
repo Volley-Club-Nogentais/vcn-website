@@ -1,0 +1,68 @@
+{{- $path := .path | default "images" -}}
+{{- $resources := .page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
+
+{{- if not $resources }}
+  {{- warnf "No images found for path: %s/%s" .page.Path $path -}}
+{{- end }}
+
+{{- $id := printf "carousel-%d" now.UnixNano -}}
+
+
+<div id="{{ $id }}" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {{ range $index, $img := $resources }}
+      {{/* Images responsive */}}
+      {{ $small := $img.Resize "400x webp q70" }}
+      {{ $medium := $img.Resize "800x webp q75" }}
+      {{ $large := $img.Resize "1200x webp q80" }}
+
+      {{/* Mobile carré */}}
+      {{ $mobile := $img.Fit "600x600 webp q75" }}
+
+      {{/* Blur tiny */}}
+      {{ $blur := $img.Resize "20x webp q20" }}
+
+
+      <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+        <div class="carousel-img-wrapper">
+          <picture>
+            <source media="(max-width: 576px)" srcset="{{ $mobile.RelPermalink }}" />
+
+            <img
+              src="{{ $medium.RelPermalink }}"
+              srcset="{{ $small.RelPermalink }} 400w, {{ $medium.RelPermalink }} 800w, {{ $large.RelPermalink }} 1200w"
+              sizes="(max-width: 768px) 100vw, 1200px"
+              class="d-block w-100 blur-up"
+              style="background-image: url('{{ $blur.RelPermalink }}')"
+              alt="photo {{ $index }}"
+              loading="lazy"
+              data-full="{{ $img.RelPermalink }}"
+            />
+          </picture>
+        </div>
+      </div>
+    {{ end }}
+
+  </div>
+
+  {{ if gt (len $resources) 1 }}
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ $id }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ $id }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+    <div class="carousel-indicators">
+      {{ range $index, $_ := $resources }}
+        <button
+          type="button"
+          data-bs-target="#{{ $id }}"
+          data-bs-slide-to="{{ $index }}"
+          class="{{ if eq $index 0 }}active{{ end }}"
+        ></button>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

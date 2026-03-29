@@ -49,36 +49,18 @@
     {{ $elements := .Resources.Match "images/*.jpg" }}
     {{ with $elements }}
       <h2>Galerie</h2>
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          {{ range $index, $element := $elements }}
-            <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
-              {{ with $element.Fill "800x450" }}
-                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" />
-              {{ end }}
-            </div>
-          {{ end }}
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      {{ partial "carousel.html" (dict
+        "page" $
+        "path" "images/"
+        )
+      }}
     {{ end }}
 
   </article>
+{{ end }}
+
+{{ define "foot" }}
+  {{ with resources.Get "js/carousel-zoom-blur.js" }}
+    <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+  {{ end }}
 {{ end }}

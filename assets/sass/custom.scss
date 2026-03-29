@@ -169,6 +169,9 @@ article {
   width: 100%;
   aspect-ratio: 16 / 9; /* desktop par défaut */
   overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .carousel-img-wrapper img {
@@ -182,4 +185,18 @@ article {
   .carousel-img-wrapper {
     aspect-ratio: 1 / 1; /* carré */
   }
+}
+/* Blur-up effect */
+.blur-up {
+  filter: blur(20px);
+  transition: filter 0.4s ease;
+}
+
+.blur-up.loaded {
+  filter: blur(0);
+}
+
+/* Zoom */
+.carousel-img-wrapper img {
+  cursor: zoom-in;
 }

@@ -164,3 +164,22 @@ article {
 .next-games {
   margin-top: 20px;
 }
+
+.carousel-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* desktop par défaut */
+  overflow: hidden;
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 📱 Mobile */
+@media (max-width: 576px) {
+  .carousel-img-wrapper {
+    aspect-ratio: 1 / 1; /* carré */
+  }
+}

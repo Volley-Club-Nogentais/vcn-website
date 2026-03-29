@@ -157,7 +157,7 @@ def get_all_games() -> list[str]:
     with request.urlopen(req) as resp:
         data = resp.read().decode("latin-1")
 
-    logging.warning(data)
+    logging.debug(data)
 
     return data.splitlines()
 

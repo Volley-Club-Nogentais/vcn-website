@@ -60,5 +60,7 @@
 {{ end }}
 
 {{ define "foot" }}
-  <script type="text/javascript" src="/js/carousel-zoom-blur.js"></script>
+  {{ with resources.Get "js/carousel-zoom-blur.js" }}
+    <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+  {{ end }}
 {{ end }}

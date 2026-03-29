@@ -33,9 +33,6 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
-      - name: Install PIP requirements
-        run: pip install -r scripts/requirements.txt
-
       - name: Get the FSGT calendars
         run: python scripts/fsgt-get-calendars.py
 

@@ -19,10 +19,9 @@ jobs:
           submodules: recursive
 
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: 3.13
-          cache: 'pip'  # caching pip dependencies
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -51,7 +50,7 @@ jobs:
             --minify
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: public
           path: public
@@ -61,7 +60,7 @@ jobs:
     needs: build
     steps:
       - name: Download build result
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: public
           path: public
@@ -72,7 +71,7 @@ jobs:
           date > public/deploy_timestamp.txt
 
       - name: rsync deployments
-        uses: burnett01/rsync-deployments@8.0.4
+        uses: burnett01/rsync-deployments@v8
         with:
           switches: --archive --verbose --compress --recursive --delete
           path: public/

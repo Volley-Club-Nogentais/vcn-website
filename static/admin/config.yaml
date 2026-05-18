@@ -131,7 +131,7 @@ collections:
         name: 'image'
         widget: 'image'
         required: false
-        allow_multiple: false
+        multiple: false
         media_folder: "images"
         media_library:
           config:

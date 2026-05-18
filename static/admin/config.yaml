@@ -105,6 +105,10 @@ collections:
         name: 'summary'
         widget: 'string'
         required: true
+      - label: 'Nom du calendrier à afficher'
+        name: 'calendarName'
+        widget: 'string'
+        required: false
       - label: "Categories"
         name: "categories"
         widget: "select"

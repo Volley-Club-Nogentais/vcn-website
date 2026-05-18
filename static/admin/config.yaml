@@ -102,9 +102,9 @@ collections:
         widget: 'string'
         required: true
       - label: 'Description'
-        name: 'description'
+        name: 'summary'
         widget: 'string'
-        required: false
+        required: true
       - label: "Categories"
         name: "categories"
         widget: "select"

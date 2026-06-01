@@ -71,7 +71,7 @@ def fsgt_store_calendar(team: str, team_id: int):
 
 
 def fsgt_next_games_in_weeks(teams: list[str], number_weeks: int = 2):
-    today = datetime.now()
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     weeks_later = today + timedelta(weeks=number_weeks)
 
     _input = []

@@ -33,14 +33,14 @@ Rien de plus simple :
 
 1. **Choisissez votre modèle préféré** dans la liste suivante:
 
-- [Logo du Beach au format paysage](/media/nogent-logo-beach-landscape.png)
-- [Logo du beach au format paysage (couleurs de fond inversées)](/media/nogent-logo-beach-landscape-inverted.png)
-- [Logo du beach au format portrait](/media/nogent-logo-beach-portrait.png)
-- [Logo du beach au format portrait (couleurs de fond inversées)](/media/nogent-logo-beach-portrait-inverted.png)
-- [Logo du club au format paysage](/media/nogent-logo-landscape.png)
-- [Logo du club au format paysage (couleurs de fond inversées)](/media/nogent-logo-landscape-inverted.png)
-- [Logo du club au format portrait](/media/nogent-logo-portrait.png)
-- [Logo du club au format portrait (couleurs de fond inversées)](/media/nogent-logo-portrait-inverted.png)
+- [Logo du beach au format paysage](media/nogent-logo-beach-landscape.png)
+- [Logo du beach au format paysage (couleurs de fond inversées)](media/nogent-logo-beach-landscape-inverted.png)
+- [Logo du beach au format portrait](media/nogent-logo-beach-portrait.png)
+- [Logo du beach au format portrait (couleurs de fond inversées)](media/nogent-logo-beach-portrait-inverted.png)
+- [Logo du club au format paysage](media/nogent-logo-landscape.png)
+- [Logo du club au format paysage (couleurs de fond inversées)](media/nogent-logo-landscape-inverted.png)
+- [Logo du club au format portrait](media/nogent-logo-portrait.png)
+- [Logo du club au format portrait (couleurs de fond inversées)](media/nogent-logo-portrait-inverted.png)
 
 2. **Téléchargez-le** en haute qualité.
 3. **Appliquez-le** comme fond d’écran sur votre appareil.

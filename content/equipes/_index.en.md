@@ -1,4 +1,4 @@
 ---
-title: 'Our teams'
-draft: true
+title: 'Teams'
+draft: false
 ---

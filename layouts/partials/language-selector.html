@@ -1,0 +1,20 @@
+{{ with .Rotate "language" }}
+  <li class="nav-item dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-language" aria-hidden="true"></i>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropLanguages">
+      {{ range . }}
+        <li>
+          <a
+            class="dropdown-item {{ if eq .Language $.Language }}active{{ end }}"
+            href="{{ .RelPermalink }}"
+            hreflang="{{ $.Language }}"
+          >
+            {{ .Language.Label }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </li>
+{{ end }}

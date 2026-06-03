@@ -2,7 +2,7 @@
   {{/* Get the calendar information if possible */}}
   {{ $data := dict }}
   {{ if .Params.calendarName }}
-    {{ $data = index .Site.Data.calendars .Params.calendarName }}
+    {{ $data = index hugo.Data.calendars .Params.calendarName }}
   {{ end }}
 
 

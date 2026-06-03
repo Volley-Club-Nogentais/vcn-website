@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html class="h-100" lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
   <head>
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}

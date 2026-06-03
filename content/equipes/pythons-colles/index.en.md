@@ -1,5 +1,5 @@
 ---
-title: Collared Pythons
+title: Pythons Colles
 summary: FSGT Easy
 draft: false
 weight: 50

@@ -1,5 +1,5 @@
 ---
-title: Wolf Seals
+title: Loups Phoques
 summary: FSGT Hard
 draft: false
 weight: 50

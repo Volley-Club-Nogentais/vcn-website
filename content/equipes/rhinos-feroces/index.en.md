@@ -1,5 +1,5 @@
 ---
-title: Ferocious Rhinos
+title: Rhinos Féroces
 summary: FSGT Elite
 draft: false
 weight: 50

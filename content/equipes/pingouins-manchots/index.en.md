@@ -1,5 +1,5 @@
 ---
-title: Penguin Penguins
+title: Pingouins Manchots
 summary: FSGT Silver
 draft: false
 weight: 50

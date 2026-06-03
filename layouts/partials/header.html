@@ -42,7 +42,9 @@
         <ul class="navbar-nav d-md-flex">
           {{- range site.Menus.main }}
             <li class="nav-item me-3 me-lg-1">
-              <a class="nav-link px-2 {{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ .URL }}">{{ .Name }}</a>
+              <a class="nav-link px-2 {{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ relLangURL .URL }}"
+                >{{ .Name }}</a
+              >
             </li>
           {{- end }}
         </ul>

@@ -1,23 +1,23 @@
 ---
 main:
-  - name: Accueil
+  - name: Home
     url: /
     weight: 10
-  - name: Équipes
+  - name: Teams
     url: /equipes/
     weight: 20
   - name: Beach
     url: /beach/
     weight: 25
-  - name: Histoire
+  - name: History
     url: /histoire/
     weight: 30
-  - name: Actualites
+  - name: Posts
     url: /actualites/
     weight: 40
   - name: Contact
     url: /contact/
     weight: 50
-  - name: Inscription
+  - name: Registration
     url: /inscriptions/
     weight: 60

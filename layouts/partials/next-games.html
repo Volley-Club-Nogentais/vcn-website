@@ -1,12 +1,12 @@
 <section class="next-games">
-  <h2>Prochains matchs</h2>
+  <h2>{{ T "next-games" }}</h2>
   {{ with hugo.Data.calendars.next_games }}
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Ligue</th>
-          <th>Équipes</th>
-          <th>Date</th>
+          <th>{{ T "league" }}</th>
+          <th>{{ T "teams" }}</th>
+          <th>{{ T "date" }}</th>
         </tr>
       </thead>
       <tbody>

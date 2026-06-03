@@ -2,11 +2,11 @@
   <div class="card-body">
     <h4 class="card-title">{{ .Title }}</h4>
     {{ with .Params.author }}
-      <p class="card-subtitle text-muted">par {{ . }}</p>
+      <p class="card-subtitle text-muted">{{ T "by" }} {{ . }}</p>
     {{ end }}
     <p class="card-text mt-3">{{ .Summary }}</p>
     {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
+      <a href="{{ .RelPermalink }}" class="btn stretched-link">{{ T "learn-more" | title }}</a>
     {{ end }}
   </div>
   {{ with .Date }}

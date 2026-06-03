@@ -1,10 +1,22 @@
 ---
 fr:
+  disabled: false
   label: French
   locale: fr-FR
   weight: 10
   params:
     languageISO: FR
+  pagination:
+    disableAliases: false
+    pagerSize: 10
+    path: page
+en:
+  disabled: false
+  label: English
+  locale: en-US
+  weight: 20
+  params:
+    languageISO: EN
   pagination:
     disableAliases: false
     pagerSize: 10

@@ -27,7 +27,7 @@
     {{ .Content }}
   </section>
   <section class="actus">
-    <h2>Dernières actualités</h2>
+    <h2>{{ T "latest-posts" | title }}</h2>
     <div class="grid-section">{{ partial "latest-posts.html" . }}</div>
   </section>
   {{ partial "next-games.html" . }}

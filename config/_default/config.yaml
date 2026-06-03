@@ -5,6 +5,7 @@ author: Henri Buyse
 
 timeZone: Europe/Paris
 locale: fr-fr
+titleCaseStyle: firstupper
 
 # Multilingual
 defaultContentLanguage: fr

@@ -7,9 +7,9 @@
     {{ if or .Date .Params.author }}
       <p class="blog-post-meta text-italic">
         <em>
-          Créé
-          {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}
-          {{ with .Params.author }}par {{ . }}{{ end }}
+          {{ T "created" | title }}
+          {{ with .Date }}{{ T "created-on" }} {{ . | time.Format ":date_medium" }}{{ end }}
+          {{ with .Params.author }}{{ T "by" }} {{ . }}{{ end }}
         </em>
       </p>
     {{ end }}

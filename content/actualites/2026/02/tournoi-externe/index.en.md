@@ -7,7 +7,7 @@ tags:
   - tournament
 ---
 
-Volley Club Nogentais is organizing a **mixed 4x4 tournament** (mandatory).
+Volley Club Nogentais is organizing a **mixed 4x4 tournament**.
 
 <!--more-->
 

@@ -7,7 +7,7 @@ tags:
   - tournoi
 ---
 
-Le **Volley Club Nogentais** organise un **tournoi 4x4 mixte** (obligatoire).
+Le **Volley Club Nogentais** organise un **tournoi 4x4 mixte**.
 
 <!--more-->
 

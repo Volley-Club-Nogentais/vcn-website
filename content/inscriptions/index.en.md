@@ -1,5 +1,5 @@
 ---
-title: 'Registrations'
+title: 'Registration'
 ---
 
 As an adult, to register for **FSGT**, go to our [dedicated HelloAsso]({{% param "adhesionLink" %}}).
@@ -7,4 +7,4 @@ As an adult, to register for **FSGT**, go to our [dedicated HelloAsso]({{% param
 To register for **FFVB**, youth, leisure, competitions or beach volleyball, create your account on
 [myFFvolley](https://my.ffvolley.org/).
 
-For help, find all tutorials on the myFFvolley help page at https://my.ffvolley.org/tutos/.
+For help, find all tutorials on the myFFvolley help page at <https://my.ffvolley.org/tutos/>.

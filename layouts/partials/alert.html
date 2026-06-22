@@ -1,3 +1,7 @@
+{{ if hugo.IsDevelopment }}
+  <div class="alert alert-warning text-center" role="alert">⚠️ Version de pré-production ⚠️</div>
+{{ end }}
+
 {{ with .Site.Params.alert }}
-  <div class="alert alert-warning text-center" role="alert">{{ . }}</div>
+  <div class="alert alert-{{ .level }} text-center" role="alert">{{ .text }}</div>
 {{ end }}

@@ -5,8 +5,9 @@ hasBreadcrumb: false
 banner:
   enable: false
 alert:
-  text: "⚠️ Alerte canicule! ⚠️"
+  text: "⚠️ Alerte canicule! Suspension des entraînements. ⚠️"
   level: danger
+  link: "/actualites/2026/06/alerte-canicule/"
 
 socials:
   indoor:

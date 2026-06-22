@@ -3,5 +3,10 @@
 {{ end }}
 
 {{ with .Site.Params.alert }}
-  <div class="alert alert-{{ .level }} text-center" role="alert">{{ .text }}</div>
+  <div class="alert alert-{{ .level }} text-center" role="alert">
+    {{ .text }}
+    {{ with .link }}
+      <br /><a href="{{ . }}">En savoir plus</a>
+    {{ end }}
+  </div>
 {{ end }}

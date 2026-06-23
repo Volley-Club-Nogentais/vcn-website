@@ -6,7 +6,7 @@
   <div class="alert alert-{{ .level }} text-center" role="alert">
     {{ .text }}
     {{ with .link }}
-      <br /><a href="{{ . }}">En savoir plus</a>
+      <br /><a href="{{ . }}" class="alert-link">En savoir plus</a>
     {{ end }}
   </div>
 {{ end }}

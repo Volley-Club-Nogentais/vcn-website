@@ -4,10 +4,6 @@ adhesionLink: "https://www.helloasso.com/associations/volley-club-nogentais/adhe
 hasBreadcrumb: false
 banner:
   enable: false
-alert:
-  text: "⚠️ Alerte canicule! Suspension des entraînements. ⚠️"
-  level: danger
-  link: "/actualites/2026/06/alerte-canicule/"
 
 socials:
   indoor:

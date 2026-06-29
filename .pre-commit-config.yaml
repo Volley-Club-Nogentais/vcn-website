@@ -30,6 +30,7 @@ repos:
           - markdown
           - html
           - css
+          - scss
           - svg
         entry: |
           npx prettier -w --

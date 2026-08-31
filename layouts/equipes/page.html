@@ -31,22 +31,24 @@
     <div class="calendar">
       {{ with $data }}
         <h2>Calendrier des matchs</h2>
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="border-b border-black/10 text-left">
-              <th class="px-3 py-2">Équipes</th>
-              <th class="px-3 py-2">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ range . }}
-              <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
-                <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
-                <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="border-b border-black/10 text-left">
+                <th class="px-3 py-2">Équipes</th>
+                <th class="px-3 py-2">Date</th>
               </tr>
-            {{ end }}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {{ range . }}
+                <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+                  <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
+                  <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>
+                </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
       {{ else }}
         {{ if in .Params.categories "FSGT" }}
           <h2>Calendrier des matchs</h2>

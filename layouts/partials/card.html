@@ -1,4 +1,6 @@
-<div class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white">
+<div
+  class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white transition-shadow duration-200 hover:shadow-md"
+>
   {{ with .Resources.Get "cover.jpg" }}
     {{ with .Fill "600x300 webp q75" }}
       <img

@@ -1,13 +1,38 @@
-<footer class="mt-auto py-3">
-  <div class="mx-auto w-full max-w-screen-xl px-4 text-center">
+{{ $socials := .Site.Params.socials.indoor }}
+{{ if strings.HasPrefix .Page.RelPermalink "/beach" }}
+  {{ $socials = .Site.Params.socials.beach }}
+{{ end }}
+<footer class="mt-auto border-t border-black/10 bg-vcn-blue text-white">
+  <div
+    class="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-4 px-4 py-5 text-center nav:flex-row nav:justify-between nav:text-left"
+  >
+    <div class="flex items-center gap-2">
+      {{ with resources.Get "media/logo_white.svg" }}
+        <img src="{{ .RelPermalink }}" alt="Logo VCN" class="h-8 w-8" />
+      {{ end }}
+      <p class="font-navbar uppercase">Volley Club Nogentais</p>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
+      {{ range site.Menus.main }}
+        <a class="hover:underline" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <ul class="flex gap-3 text-xl">
+      {{ range $name, $v := $socials }}
+        <li>
+          <a href="{{ $v.url }}" aria-label="{{ $name | title }}">{{ partial "icon.html" (dict "name" $v.icon) }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="border-t border-white/10 py-2 text-center text-xs text-white/70">
     {{ with .Site.Copyright }}
       {{ . | safeHTML }}
     {{ else }}
       &copy; Copyright {{ if eq now.Year 2025 }}2025{{ else }}2025 - {{ now.Year }}{{ end }} Volley Club Nogentais. All
       rights reserved.
     {{ end }}
-    <br />
-    {{ with .GitInfo }}Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
+    {{ with .GitInfo }}· Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
   </div>
 </footer>
 {{ with resources.Get "js/navbar-toggle.js" }}

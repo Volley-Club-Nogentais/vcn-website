@@ -156,6 +156,12 @@ article p {
   }
 }
 
+/* The footer's <p> (club name next to the logo) shouldn't carry the default paragraph
+   bottom margin — it's a single-line label in a flex row, not body text. */
+footer p {
+  margin-bottom: 0;
+}
+
 /* Home page banner */
 .home-image {
   position: relative;

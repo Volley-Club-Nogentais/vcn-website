@@ -74,6 +74,14 @@
     font-family: var(--font-heading);
     font-weight: 800;
     margin-bottom: 0.5rem;
+  }
+
+  /* h6 is intentionally excluded, matching the site's former custom.scss rule. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     text-transform: uppercase;
   }
 

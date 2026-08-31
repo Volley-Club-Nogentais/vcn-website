@@ -33,12 +33,11 @@ Que vous soyez licencié, parent ou simple passionné de volley, ce site est con
 
 - Consultez le site: [volley-club-nogent.fr](https://volley-club-nogent.fr)
 - Restez connectés: suivez-nous sur
-  [{{< fontawesome class="fa-brands fa-facebook-f" font-size="1.5em" >}} Facebook](https://www.facebook.com/VolleyClubNogent/)
-  et
-  [{{< fontawesome class="fa-brands fa-instagram"  font-size="1.5em" >}} Instagram](https://www.instagram.com/volleyclubnogent/)
-  pour des mises à jour en temps réel et
-  [{{< fontawesome class="fa-brands fa-youtube" font-size="1.5em" >}} Youtube](https://www.youtube.com/@volleyclubnogent)
-  pour les rediffusions de match.
+  [{{< fontawesome icon="facebook-f" font-size="1.5em" >}} Facebook](https://www.facebook.com/VolleyClubNogent/) et
+  [{{< fontawesome icon="instagram" font-size="1.5em" >}} Instagram](https://www.instagram.com/volleyclubnogent/) pour
+  des mises à jour en temps réel et
+  [{{< fontawesome icon="youtube" font-size="1.5em" >}} Youtube](https://www.youtube.com/@volleyclubnogent) pour les
+  rediffusions de match.
 
 ### Un projet qui grandit avec vous
 

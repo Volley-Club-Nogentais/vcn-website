@@ -1,0 +1,9 @@
+{{/* Renders a self-hosted icon (assets/icons/<name>.svg) instead of depending on Font Awesome's CDN. */}}
+{{ $name := .name }}
+{{ $class := .class | default "" }}
+{{ $style := .style | default "" }}
+{{ with resources.Get (printf "icons/%s.svg" $name) }}
+  <span class="icon {{ $class }}" style="{{ $style | safeCSS }}" aria-hidden="true">{{ .Content | safeHTML }}</span>
+{{ else }}
+  {{ warnf "icon.html: unknown icon %q" $name }}
+{{ end }}

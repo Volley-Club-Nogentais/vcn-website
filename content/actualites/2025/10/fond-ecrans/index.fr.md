@@ -55,9 +55,9 @@ ambitieux**.
 
 N'hésitez pas à **partager vos écrans personnalisés** sur les réseaux sociaux en nous identifiant:
 
-- **Facebook** {{< fontawesome class="fa-brands fa-facebook-f" font-size="1.5em" >}}:
+- **Facebook** {{< fontawesome icon="facebook-f" font-size="1.5em" >}}:
   [@VolleyClubNogent](https://www.facebook.com/VolleyClubNogent/)
-- **Instagram** {{< fontawesome class="fa-brands fa-instagram"  font-size="1.5em" >}}:
+- **Instagram** {{< fontawesome icon="instagram" font-size="1.5em" >}}:
   [@volleyclubnogent](https://www.instagram.com/volleyclubnogent/)
 
 Utilisez le hashtag **#FierDêtreVCN** pour montrer votre soutien !

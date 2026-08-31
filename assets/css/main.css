@@ -74,6 +74,7 @@
     font-family: var(--font-heading);
     font-weight: 800;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
   }
 
   /* Matches Bootstrap's former default heading scale (not customized by variable-overrides.scss). */

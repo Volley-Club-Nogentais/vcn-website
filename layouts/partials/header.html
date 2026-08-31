@@ -52,7 +52,7 @@
           {{- range site.Menus.main }}
             <li class="mr-3 nav:mr-1">
               <a
-                class="block px-2 py-2 font-navbar font-extrabold text-vcn-blue nav:text-[1.5em] {{ with .Params.class -}}
+                class="block px-[1em] py-2 font-navbar font-extrabold text-vcn-blue text-[1.5em] {{ with .Params.class -}}
                   {{ . }}
                 {{ end -}}"
                 href="{{ .URL }}"
@@ -70,7 +70,7 @@
           {{ range $name, $v := $socials }}
             <li>
               <a
-                class="social-network flex items-center gap-2 px-2 py-1 text-[1.5em] text-vcn-blue"
+                class="social-network font-navbar flex items-center gap-2 px-2 py-1 text-[1.5em] text-vcn-blue"
                 href="{{ $v.url }}"
               >
                 <i class="fa-brands fa-{{ $v.icon }}"></i>
@@ -85,7 +85,7 @@
       <ul class="hidden shrink-0 nav:flex nav:flex-row">
         {{ range $name, $v := $socials }}
           <li class="ml-1">
-            <a class="social-network flex items-center px-2 text-[1.5em] text-vcn-blue" href="{{ $v.url }}">
+            <a class="social-network font-navbar flex items-center px-2 text-[1.5em] text-vcn-blue" href="{{ $v.url }}">
               <i class="fa-brands fa-{{ $v.icon }}"></i>
             </a>
           </li>

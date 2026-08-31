@@ -1,6 +1,8 @@
 {{ define "head" }}
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS (self-hosted, assets/css/vendor/swiper-bundle.min.css) -->
+  {{ with resources.Get "css/vendor/swiper-bundle.min.css" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" />
+  {{ end }}
   <style>
     /* The container stays responsive within the Bootstrap grid */
     .freeflow-swiper {
@@ -27,7 +29,10 @@
 {{ end }}
 
 {{ define "foot" }}
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {{/* Swiper JS (self-hosted, assets/js/vendor/swiper-bundle.min.js) */}}
+  {{ with resources.Get "js/vendor/swiper-bundle.min.js" }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{ end }}
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const swiper = new Swiper('.freeflow-swiper', {

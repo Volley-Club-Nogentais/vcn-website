@@ -1,6 +1,6 @@
 <div class="relative flex flex-col rounded border border-black/10 bg-white">
   <div class="card-body p-4">
-    <h4 class="text-vcn-blue">{{ .Title }}</h4>
+    <h4 class="line-clamp-3 text-lg text-vcn-blue">{{ .Title }}</h4>
     {{ with .Params.author }}
       <p class="-mt-1.5 text-gray-500">par {{ . }}</p>
     {{ end }}

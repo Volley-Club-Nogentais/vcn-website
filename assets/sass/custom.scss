@@ -71,10 +71,10 @@ h5 {
 }
 
 article {
-  // Styles par défaut pour tous les paragraphes
+  // Default styles for all paragraphs
   p {
-    // Styles pour les paragraphes qui contiennent une image
-    // Notez que :has() est une fonctionnalité relativement nouvelle et peut ne pas être supportée dans tous les navigateurs
+    // Styles for paragraphs that contain an image
+    // Note that :has() is a relatively new feature and may not be supported in all browsers
     &:has(img) {
       text-align: center;
     }
@@ -84,10 +84,10 @@ article {
   }
 }
 
-// Styles pour la card
+// Styles for the card
 .card-body {
   img {
-    display: none; // Cela masquera l'image
+    display: none; // This hides the image
   }
 }
 
@@ -167,7 +167,7 @@ article {
 
 .carousel-img-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9; /* desktop par défaut */
+  aspect-ratio: 16 / 9; /* default desktop */
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -183,7 +183,7 @@ article {
 /* 📱 Mobile */
 @media (max-width: 576px) {
   .carousel-img-wrapper {
-    aspect-ratio: 1 / 1; /* carré */
+    aspect-ratio: 1 / 1; /* square */
   }
 }
 /* Blur-up effect */

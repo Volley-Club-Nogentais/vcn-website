@@ -44,7 +44,7 @@ def parse_args():
     """Parse the arguments."""
     parser = argparse.ArgumentParser(description="FFVB games downloader")
 
-    # Argument pour le niveau de verbosité
+    # Verbosity level argument
     parser.add_argument("-v", action="count", default=0, help="Increase verbosity level (can be put multiple times)")
 
     return parser.parse_args()

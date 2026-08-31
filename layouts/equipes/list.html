@@ -2,26 +2,26 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-    /* Le conteneur reste responsive dans la grille Bootstrap */
+    /* The container stays responsive within the Bootstrap grid */
     .freeflow-swiper {
       padding-block: 0.5rem;
     }
 
-    /* Slides en largeur auto pour un vrai “freeflow” */
+    /* Auto-width slides for a true "freeflow" */
     .freeflow-swiper .swiper-slide {
-      width: auto; /* ← clé pour le freeflow */
-      /* Optionnel: un petit spacing visuel */
+      width: auto; /* ← key for the freeflow */
+      /* Optional: a bit of visual spacing */
       margin-right: 0.75rem;
     }
 
-    /* Supprime le dernier margin-right pour un bord propre */
+    /* Removes the last margin-right for a clean edge */
     .freeflow-swiper .swiper-wrapper .swiper-slide:last-child {
       margin-right: 0;
     }
 
-    /* Largeurs mini pour les cards afin d’éviter les reflows */
+    /* Minimum card widths to avoid reflows */
     .freeflow-card {
-      min-width: 220px; /* ajuste selon ton design */
+      min-width: 220px; /* adjust to fit your design */
     }
   </style>
 {{ end }}
@@ -31,19 +31,19 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const swiper = new Swiper('.freeflow-swiper', {
-        slidesPerView: 'auto', // ← essentiel pour largeur auto
-        freeMode: { enabled: true }, // ← mode libre (= freeflow)
+        slidesPerView: 'auto', // ← essential for auto width
+        freeMode: { enabled: true }, // ← free mode (= freeflow)
         mousewheel: { forceToAxis: true },
         grabCursor: true,
-        // (facultatif) pagination & nav
+        // (optional) pagination & nav
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
-        // On ne met PAS de spaceBetween ici, on le gère via CSS (margins)
+        // We do NOT set spaceBetween here, it's handled via CSS (margins)
       })
 
-      // Boutons externes (compatibles BS)
+      // External buttons (BS-compatible)
       document.getElementById('prevBtn')?.addEventListener('click', () => swiper.slidePrev())
       document.getElementById('nextBtn')?.addEventListener('click', () => swiper.slideNext())
     })

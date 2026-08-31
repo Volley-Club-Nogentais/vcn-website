@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ with .Title }}
-    <h1>{{ . }}</h1>
+    <h1 class="uppercase">{{ . }}</h1>
   {{ end }}
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {{ range .Pages }}

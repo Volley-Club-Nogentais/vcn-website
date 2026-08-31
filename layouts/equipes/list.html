@@ -53,7 +53,7 @@
 {{ define "main" }}
   {{ $ffvb := where .Pages "Params.categories" "intersect" (slice "FFVB") }}
   {{ $fsgt := where .Pages "Params.categories" "intersect" (slice "FSGT") }}
-  <h1>{{ .Title }}</h1>
+  <h1 class="uppercase">{{ .Title }}</h1>
   <h2>FFVB Jeunes</h2>
   <div class="swiper freeflow-swiper mb-6">
     <div class="swiper-wrapper">

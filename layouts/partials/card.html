@@ -8,7 +8,7 @@
     {{ if .Truncated }}
       <a
         href="{{ .RelPermalink }}"
-        class="relative inline-block px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-['']"
+        class="relative inline-block rounded border border-vcn-blue px-5 py-2.5 font-bold text-vcn-blue transition-colors before:absolute before:inset-0 before:content-[''] hover:bg-vcn-blue hover:text-white"
         >En savoir plus</a
       >
     {{ end }}

@@ -9,7 +9,7 @@
     {{ with .Resources.Get "main.jpg" }}
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img
-          class="w-full"
+          class="h-[300px] w-[300px] object-cover"
           alt="{{ $.Title }} image"
           src="{{ .RelPermalink }}"
           width="{{ .Width }}"
@@ -18,14 +18,20 @@
       {{ end }}
     {{ else with .Resources.Get "main.svg" }}
       <img
-        class="w-full"
+        class="h-[300px] w-[300px] object-contain"
         alt="{{ $.Title }} image"
         src="{{ .RelPermalink }}"
         width="{{ $width }}"
         height="{{ $height }}"
       />
     {{ else with resources.Get $default_img }}
-      <img class="w-full" src="{{ .RelPermalink }}" width="{{ $width }}" height="{{ $height }}" alt="Logo VCN" />
+      <img
+        class="h-[300px] w-[300px] object-contain"
+        src="{{ .RelPermalink }}"
+        width="{{ $width }}"
+        height="{{ $height }}"
+        alt="Logo VCN"
+      />
     {{ end }}
     <div class="p-4">
       <h5 class="font-heading text-lg font-extrabold text-vcn-blue">{{ .Title }}</h5>
@@ -34,7 +40,7 @@
       {{ end }}
       <a
         href="{{ .RelPermalink }}"
-        class="relative mt-2 inline-block px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-['']"
+        class="relative mt-2 inline-block rounded border border-vcn-blue px-5 py-2.5 font-bold text-vcn-blue transition-colors before:absolute before:inset-0 before:content-[''] hover:bg-vcn-blue hover:text-white"
         >En savoir plus</a
       >
     </div>

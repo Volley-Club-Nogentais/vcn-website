@@ -1,0 +1,43 @@
+{{- $description := .Description -}}
+{{- if not $description }}
+  {{- $description = .Summary | plainify | htmlUnescape | strings.ReplaceRE `\s+` " " | truncate 160 -}}
+{{- end }}
+{{- if not $description }}
+  {{- $description = .Site.Params.description -}}
+{{- end }}
+
+{{- $ogImage := "" -}}
+{{- with .Resources.Get "main.jpg" }}
+  {{- with .Fill "1200x630 webp q80" }}
+    {{- $ogImage = .Permalink -}}
+  {{- end }}
+{{- end }}
+{{- if not $ogImage }}
+  {{- with resources.Get "media/banner.jpg" }}
+    {{- with .Fill "1200x630 webp q80" }}
+      {{- $ogImage = .Permalink -}}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+
+<meta name="description" content="{{ $description }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:locale" content="fr_FR" />
+{{- with $ogImage }}
+  <meta property="og:image" content="{{ . }}" />
+{{- end }}
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+{{- with $ogImage }}
+  <meta name="twitter:image" content="{{ . }}" />
+{{- end }}

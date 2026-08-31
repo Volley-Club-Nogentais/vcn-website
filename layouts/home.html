@@ -1,3 +1,28 @@
+{{ define "head" }}
+  {{ $sameAs := slice }}
+  {{ range $network, $v := .Site.Params.socials.indoor }}
+    {{ $sameAs = $sameAs | append $v.url }}
+  {{ end }}
+  {{ range $network, $v := .Site.Params.socials.beach }}
+    {{ if not (in $sameAs $v.url) }}
+      {{ $sameAs = $sameAs | append $v.url }}
+    {{ end }}
+  {{ end }}
+  {{ $structuredData := dict
+    "@context" "https://schema.org"
+    "@type" "SportsOrganization"
+    "name" .Site.Title
+    "url" .Site.BaseURL
+    "logo" (absURL "media/logo_couleur.svg")
+    "sport" "Volleyball"
+    "email" "contact@volley-club-nogent.fr"
+    "sameAs" $sameAs
+  }}
+  <script type="application/ld+json">
+    {{ $structuredData | jsonify (dict "indent" "  ") | safeJS }}
+  </script>
+{{ end }}
+
 {{ define "css" }}
   <style>
     .home-image {

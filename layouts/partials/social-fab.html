@@ -1,0 +1,30 @@
+{{ $socials := .Site.Params.socials.indoor }}
+{{ if strings.HasPrefix .Page.RelPermalink "/beach" }}
+  {{ $socials = .Site.Params.socials.beach }}
+{{ end }}
+<div class="fixed right-8 bottom-10 z-40" data-social-fab>
+  <ul class="mb-2 flex flex-col items-end gap-2" data-social-fab-list hidden>
+    {{ range $name, $v := $socials }}
+      <li>
+        <a
+          href="{{ $v.url }}"
+          aria-label="{{ $name | title }}"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-vcn-blue text-lg text-white shadow-lg"
+          >{{ partial "icon.html" (dict "name" $v.icon) }}</a
+        >
+      </li>
+    {{ end }}
+  </ul>
+  <button
+    type="button"
+    data-social-fab-toggle
+    aria-expanded="false"
+    aria-label="Afficher les réseaux sociaux"
+    class="flex h-12 w-12 items-center justify-center rounded-full bg-vcn-yellow text-xl text-vcn-blue shadow-lg"
+  >
+    {{ partial "icon.html" (dict "name" "share-nodes") }}
+  </button>
+</div>
+{{ with resources.Get "js/social-fab.js" }}
+  <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+{{ end }}

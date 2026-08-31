@@ -1,7 +1,3 @@
-{{ $socials := .Site.Params.socials.indoor }}
-{{ if strings.HasPrefix .Page.RelPermalink "/beach" }}
-  {{ $socials = .Site.Params.socials.beach }}
-{{ end }}
 <footer class="mt-auto border-t border-black/10 bg-vcn-blue text-white">
   <div
     class="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-4 px-4 py-5 text-center nav:flex-row nav:justify-between nav:text-left"
@@ -17,13 +13,6 @@
         <a class="hover:underline" href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
     </nav>
-    <ul class="flex gap-3 text-xl">
-      {{ range $name, $v := $socials }}
-        <li>
-          <a href="{{ $v.url }}" aria-label="{{ $name | title }}">{{ partial "icon.html" (dict "name" $v.icon) }}</a>
-        </li>
-      {{ end }}
-    </ul>
   </div>
   <div class="border-t border-white/10 py-2 text-center text-xs text-white/70">
     {{ with .Site.Copyright }}

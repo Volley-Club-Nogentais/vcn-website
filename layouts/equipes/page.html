@@ -15,7 +15,7 @@
   <article class="team">
     {{ with .Params.image }}
       <div class="text-center">
-        <img src="{{ . }}" class="h-auto max-w-full rounded" alt="{{ page.Title }} image" />
+        <img src="{{ . }}" class="h-auto max-w-full rounded" alt="Photo de l'équipe {{ page.Title }}" />
       </div>
     {{ end }}
     {{ if .Draft }}

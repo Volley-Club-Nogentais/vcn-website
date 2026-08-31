@@ -1,11 +1,11 @@
 {{ define "main" }}
   <article class="single">
     {{ if .Draft }}
-      <span class="badge bg-warning float-end">Brouillon</span>
+      <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1>{{ .Title }}</h1>
     {{ if or .Date .Params.author }}
-      <p class="blog-post-meta text-italic">
+      <p class="italic">
         <em>
           Créé
           {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}

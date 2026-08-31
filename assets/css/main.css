@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import 'tailwindcss';
+
+@source 'hugo_stats.json';
+
+@theme {
+  --color-vcn-blue: #0e2942;
+  --color-vcn-yellow: #dea441;
+  --color-vcn-secondary: #053574;
+
+  --font-sans: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+  --font-heading: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+  --font-navbar: 'Anton', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
+
+  /* Matches Bootstrap's former navbar-expand-xl breakpoint (burger menu collapse). */
+  --breakpoint-nav: 1200px;
+  /* Matches the site's former custom 600px breakpoint (navbar height offset, logo size). */
+  --breakpoint-content: 600px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-vcn-blue);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Matches Bootstrap's former default heading scale (not customized by variable-overrides.scss). */
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+/* Default styles for all paragraphs in article content */
+article p {
+  /* Styles for paragraphs that contain an image */
+  /* Note that :has() is a relatively new feature and may not be supported in all browsers */
+  &:has(img) {
+    text-align: center;
+  }
+  img {
+    width: 300px;
+  }
+}
+
+/* Hides images that may appear in a card's rendered summary/content */
+.card-body img {
+  display: none;
+}
+
+/* Home page banner */
+.home-image {
+  position: relative;
+  background-color: blue;
+  background-image: url('/media/8774fde28f1480f16e4bacfe21705053-scaled.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 100%;
+}
+
+.bottom-div {
+  position: absolute;
+  width: 57.85%;
+  height: 60%;
+  background-color: var(--color-vcn-blue);
+  left: 5%;
+  top: 12.5%;
+  color: white;
+  padding: 5%;
+}
+
+.top-div {
+  position: absolute;
+  width: 57.85%;
+  height: 60%;
+  background-color: white;
+  left: 37%;
+  top: 25%;
+  padding: 4%;
+}
+/* End home page banner */
+
+.carousel-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* default desktop */
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .carousel-img-wrapper {
+    aspect-ratio: 1 / 1; /* square */
+  }
+}
+
+/* Blur-up effect */
+.blur-up {
+  filter: blur(20px);
+  transition: filter 0.4s ease;
+}

@@ -1,12 +1,25 @@
 {{ if hugo.IsDevelopment }}
-  <div class="alert alert-warning text-center" role="alert">⚠️ Version de pré-production ⚠️</div>
+  <div class="my-2 rounded border border-vcn-yellow/40 bg-vcn-yellow/15 p-3 text-center text-vcn-blue" role="alert">
+    ⚠️ Version de pré-production ⚠️
+  </div>
 {{ end }}
 
 {{ with .Site.Params.alert }}
-  <div class="alert alert-{{ .level }} text-center" role="alert">
+  {{ $levels := dict
+    "primary" "border-vcn-blue/40 bg-vcn-blue/10 text-vcn-blue"
+    "secondary" "border-vcn-secondary/40 bg-vcn-secondary/10 text-vcn-secondary"
+    "success" "border-green-400 bg-green-50 text-green-800"
+    "danger" "border-red-400 bg-red-50 text-red-800"
+    "warning" "border-vcn-yellow/40 bg-vcn-yellow/15 text-vcn-blue"
+    "info" "border-sky-400 bg-sky-50 text-sky-800"
+    "light" "border-gray-200 bg-gray-50 text-gray-800"
+    "dark" "border-gray-700 bg-gray-800 text-white"
+  }}
+  <div class="my-2 rounded border p-3 text-center {{ or (index $levels .level) (index $levels "info") }}" role="alert">
     {{ .text }}
     {{ with .link }}
-      <br /><a href="{{ . }}" class="alert-link">En savoir plus</a>
+      <br />
+      <a href="{{ . }}" class="font-bold underline">En savoir plus</a>
     {{ end }}
   </div>
 {{ end }}

@@ -11,24 +11,24 @@
 {{ end }}
 
 {{ define "main" }}
-  <section class="home-image d-none d-xl-flex">
+  <section class="home-image hidden nav:flex">
     <div class="bottom-div">
       {{ with resources.Get "media/vcn_monogramme_v1_gold.svg" }}
-        <img class="img-fluid home-monogramme" alt="Club monogramme" src="{{ .RelPermalink }}" />
+        <img class="h-auto w-[270px] max-w-full p-[1%]" alt="Club monogramme" src="{{ .RelPermalink }}" />
       {{ end }}
     </div>
     <div class="top-div">
-      <h1 class="text-uppercase">{{ .Title }}</h1>
+      <h1 class="uppercase">{{ .Title }}</h1>
       {{ .Content }}
     </div>
   </section>
-  <section class="home-text d-xl-none d-xl-flex text-center">
-    <h1 class="text-uppercase">{{ .Title }}</h1>
+  <section class="text-center nav:hidden">
+    <h1 class="uppercase">{{ .Title }}</h1>
     {{ .Content }}
   </section>
-  <section class="actus">
+  <section class="mt-5">
     <h2>Dernières actualités</h2>
-    <div class="grid-section">{{ partial "latest-posts.html" . }}</div>
+    {{ partial "latest-posts.html" . }}
   </section>
   {{ partial "next-games.html" . }}
 {{ end }}

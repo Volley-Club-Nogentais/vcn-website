@@ -5,11 +5,11 @@
   {{ $default_img = "media/beach_logo_color.svg" }}
 {{ end }}
 <div class="swiper-slide">
-  <div class="card freeflow-card shadow-sm">
+  <div class="freeflow-card relative flex flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm">
     {{ with .Resources.Get "main.jpg" }}
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img
-          class="card-img-top"
+          class="h-[300px] w-[300px] object-cover"
           alt="{{ $.Title }} image"
           src="{{ .RelPermalink }}"
           width="{{ .Width }}"
@@ -18,21 +18,31 @@
       {{ end }}
     {{ else with .Resources.Get "main.svg" }}
       <img
-        class="card-img-top"
+        class="h-[300px] w-[300px] object-contain"
         alt="{{ $.Title }} image"
         src="{{ .RelPermalink }}"
         width="{{ $width }}"
         height="{{ $height }}"
       />
     {{ else with resources.Get $default_img }}
-      <img class="card-img-top" src="{{ .RelPermalink }}" width="{{ $width }}" height="{{ $height }}" alt="Logo VCN" />
+      <img
+        class="h-[300px] w-[300px] object-contain"
+        src="{{ .RelPermalink }}"
+        width="{{ $width }}"
+        height="{{ $height }}"
+        alt="Logo VCN"
+      />
     {{ end }}
-    <div class="card-body">
-      <h5 class="card-title">{{ .Title }}</h5>
+    <div class="p-4">
+      <h5 class="text-vcn-blue">{{ .Title }}</h5>
       {{ with .Summary }}
-        <p class="card-text">{{ . }}</p>
+        <p class="mt-2">{{ . }}</p>
       {{ end }}
-      <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
+      <a
+        href="{{ .RelPermalink }}"
+        class="relative m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] hover:bg-vcn-yellow/90 hover:underline"
+        >En savoir plus</a
+      >
     </div>
   </div>
 </div>

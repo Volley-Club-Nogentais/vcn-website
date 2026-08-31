@@ -9,25 +9,34 @@
 {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
 
 {{ if gt $paginator.TotalPages 1 }}
-  <nav aria-label="Page navigation" class="pagination-navbar" style="padding: 1.5rem;">
-    <ul class="pagination justify-content-center">
+  <nav aria-label="Page navigation" class="p-6">
+    <ul class="flex flex-wrap items-center justify-center gap-1">
       <!-- First page. -->
-      <li class="page-item">
-        <a class="page-link {{ if eq $paginator.PageNumber 1 }}disabled{{ end }}" href="{{ $paginator.First.URL }}">
+      <li>
+        <a
+          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq $paginator.PageNumber 1 -}}
+            pointer-events-none opacity-40
+          {{- end }}"
+          href="{{ $paginator.First.URL }}"
+        >
           Premier
         </a>
       </li>
 
       <!-- Previous page. -->
       {{ if $paginator.HasPrev }}
-        <li class="page-item">
-          <a class="page-link" href="{{ $paginator.Prev.URL }}" aria-label="Previous">
+        <li>
+          <a
+            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10"
+            href="{{ $paginator.Prev.URL }}"
+            aria-label="Previous"
+          >
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
       {{ else }}
-        <li class="page-item">
-          <a class="page-link disabled" href="#" aria-label="Previous">
+        <li>
+          <a class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
@@ -65,8 +74,13 @@
         {{ end }}
         <!-- Output page numbers. -->
         {{ if eq ($.Scratch.Get "page_number_flag") true }}
-          <li class="page-item {{ if eq . $paginator }}active{{ end }}">
-            <a class="page-link" href="{{ .URL }}">
+          <li>
+            <a
+              class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq . $paginator -}}
+                bg-vcn-blue text-white hover:bg-vcn-blue
+              {{- end }}"
+              href="{{ .URL }}"
+            >
               {{ .PageNumber }}
             </a>
           </li>
@@ -76,14 +90,18 @@
 
       <!-- Previous page. -->
       {{ if $paginator.HasNext }}
-        <li class="page-item">
-          <a class="page-link" href="{{ $paginator.Next.URL }}" aria-label="Next">
+        <li>
+          <a
+            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10"
+            href="{{ $paginator.Next.URL }}"
+            aria-label="Next"
+          >
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
       {{ else }}
-        <li class="page-item">
-          <a class="page-link disabled" href="#" aria-label="Next">
+        <li>
+          <a class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
@@ -91,15 +109,16 @@
 
 
       <!-- Last page. -->
-      <li class="page-item">
+      <li>
         <a
-          class="page-link {{ if eq $paginator.PageNumber $paginator.TotalPages }}disabled{{ end }}"
+          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq $paginator.PageNumber $paginator.TotalPages -}}
+            pointer-events-none opacity-40
+          {{- end }}"
           href="{{ $paginator.Last.URL }}"
         >
           Dernier
         </a>
       </li>
     </ul>
-    <!-- </nav> -->
   </nav>
 {{ end }}

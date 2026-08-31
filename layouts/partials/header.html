@@ -10,51 +10,69 @@
 
 <header>
   <!-- Navbar-->
-  <nav class="navbar navbar-expand-xl fixed-top w-100 bg-body-tertiary">
-    <div class="container-fluid">
+  <nav class="fixed inset-x-0 top-0 z-50 w-full bg-white uppercase">
+    <div class="flex flex-wrap items-center justify-between px-4 py-2 nav:flex-nowrap">
       <!-- Logo and name -->
-      <div class="d-flex">
-        <a href="{{ .Site.BaseURL }}" class="navbar-brand text-decoration-none">
-          {{ with resources.Get $logoPath }}
-            <img src="{{ .RelPermalink }}" width="90" height="90" alt="Logo VCN" />
-          {{ end }}
-          VCN
-          {{ if hugo.IsDevelopment -}}Pré-prod{{ end }}
-        </a>
-      </div>
+      <a
+        href="{{ .Site.BaseURL }}"
+        class="flex shrink-0 items-center gap-2 font-navbar text-2xl text-vcn-blue no-underline"
+      >
+        {{ with resources.Get $logoPath }}
+          <img
+            src="{{ .RelPermalink }}"
+            width="90"
+            height="90"
+            alt="Logo VCN"
+            class="h-[50px] w-[50px] content:h-[90px] content:w-[90px]"
+          />
+        {{ end }}
+        VCN
+        {{ if hugo.IsDevelopment -}}Pré-prod{{ end }}
+      </a>
 
       <!-- Burger menu for small devices -->
       <button
-        class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarVCN"
+        class="shrink-0 px-2 py-1 text-2xl text-vcn-blue nav:hidden"
+        data-navbar-toggle
         aria-controls="navbarVCN"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <i class="fa-solid fa-bars"></i>
       </button>
 
       <!-- Menu and social networks icons-->
-      <div class="collapse navbar-collapse text-uppercase justify-content-xl-center" id="navbarVCN">
+      <div
+        id="navbarVCN"
+        class="hidden w-full basis-full flex-col uppercase nav:flex nav:w-auto nav:basis-auto nav:flex-1 nav:flex-row nav:items-center nav:justify-center"
+      >
         <!-- Menu -->
-        <ul class="navbar-nav d-md-flex">
+        <ul class="flex flex-col nav:flex-row">
           {{- range site.Menus.main }}
-            <li class="nav-item me-3 me-lg-1">
-              <a class="nav-link px-2 {{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ .URL }}">{{ .Name }}</a>
+            <li class="mr-3 nav:mr-1">
+              <a
+                class="block px-[1em] py-2 font-navbar font-extrabold text-vcn-blue text-[1.5em] {{ with .Params.class -}}
+                  {{ . }}
+                {{ end -}}"
+                href="{{ .URL }}"
+                >{{ .Name }}</a
+              >
             </li>
           {{- end }}
         </ul>
 
         <!-- Separator on mobile only -->
-        <hr class="d-xl-none my-2" />
+        <hr class="my-2 border-vcn-blue/20 nav:hidden" />
 
         <!-- Social network icons (only visible in the burger menu) -->
-        <ul class="navbar-nav ms-auto d-xl-none">
+        <ul class="flex flex-col nav:hidden">
           {{ range $name, $v := $socials }}
-            <li class="nav-item me-1 me-lg-1">
-              <a class="nav-link d-sm-flex align-items-sm-center social-network" href="{{ $v.url }}">
+            <li>
+              <a
+                class="social-network font-navbar flex items-center gap-2 px-2 py-1 text-[1.5em] text-vcn-blue"
+                href="{{ $v.url }}"
+              >
                 <i class="fa-brands fa-{{ $v.icon }}"></i>
                 {{ $name }}
               </a>
@@ -64,10 +82,10 @@
       </div>
 
       <!-- Social network icons (only visible on big screens) -->
-      <ul class="navbar-nav flex-row ms-auto d-none d-xl-flex">
+      <ul class="hidden shrink-0 nav:flex nav:flex-row">
         {{ range $name, $v := $socials }}
-          <li class="nav-item me-1 me-lg-1">
-            <a class="nav-link d-sm-flex align-items-sm-center social-network" href="{{ $v.url }}">
+          <li class="ml-1">
+            <a class="social-network font-navbar flex items-center px-2 text-[1.5em] text-vcn-blue" href="{{ $v.url }}">
               <i class="fa-brands fa-{{ $v.icon }}"></i>
             </a>
           </li>

@@ -1,17 +1,21 @@
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">{{ .Title }}</h4>
+<div class="relative flex flex-col rounded border border-black/10 bg-white">
+  <div class="card-body p-4">
+    <h4 class="text-vcn-blue">{{ .Title }}</h4>
     {{ with .Params.author }}
-      <p class="card-subtitle text-muted">par {{ . }}</p>
+      <p class="-mt-1.5 text-gray-500">par {{ . }}</p>
     {{ end }}
-    <p class="card-text mt-3">{{ .Summary }}</p>
+    <p class="mt-3">{{ .Summary }}</p>
     {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}" class="btn stretched-link">En savoir plus</a>
+      <a
+        href="{{ .RelPermalink }}"
+        class="relative m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] hover:bg-vcn-yellow/90 hover:underline"
+        >En savoir plus</a
+      >
     {{ end }}
   </div>
   {{ with .Date }}
-    <div class="card-footer">
-      <small class="text-muted">{{ . | time.Format ":date_long" }}</small>
+    <div class="border-t border-black/10 bg-black/3 px-4 py-2">
+      <small class="text-gray-500">{{ . | time.Format ":date_long" }}</small>
     </div>
   {{ end }}
 </div>

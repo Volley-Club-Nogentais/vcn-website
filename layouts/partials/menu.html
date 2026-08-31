@@ -1,6 +1,18 @@
 {{- range site.Menus.main }}
-  <li><a class="nav-link px-2{{ with .Params.class -}}{{ . }}{{ end -}}" href="{{ .URL }}">{{ .Name }}</a></li>
+  <li>
+    <a
+      class="px-2 font-heading font-extrabold text-vcn-blue{{ with .Params.class -}}
+        {{ . }}
+      {{ end -}}"
+      href="{{ .URL }}"
+      >{{ .Name }}</a
+    >
+  </li>
 {{- end }}
 {{ with .Site.Params.adhesionLink }}
-  <li><a class="nav-link px-2" target="_blank" rel="noopener noreferrer" href="{{ . }}">Inscriptions</a></li>
+  <li>
+    <a class="px-2 font-heading font-extrabold text-vcn-blue" target="_blank" rel="noopener noreferrer" href="{{ . }}"
+      >Inscriptions</a
+    >
+  </li>
 {{ end }}

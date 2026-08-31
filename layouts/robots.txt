@@ -1,7 +1,11 @@
-# Rule to block all robots
-User-agent: *
-{{- range .Pages -}}
-Disallow: {{ .RelPermalink }}
+{{ if hugo.IsProduction }}
+  # Production: allow indexing of the whole site
+  User-agent: *
+  Disallow:
+{{ else }}
+  # Non-production (preprod/dev): block all robots, this content is not meant to be indexed
+  User-agent: *
+  Disallow: /
 {{ end }}
 
 Sitemap: {{ "sitemap.xml" | absLangURL }}

@@ -120,4 +120,4 @@ Pour toute information concernant la section beach volley :
 **Sébastien Bironneau**
 
 - Téléphone : [06 80 92 07 96](tel:0680920796)
-- Email du club : [beach@volley-club-nogent.fr](mailto:beach@volley-club-nogent.fr)
+- Email du club : {{< email "beach@volley-club-nogent.fr" >}}

@@ -1,0 +1,2 @@
+{{ $address := .Get 0 }}
+<span data-email="{{ $address | base64Encode }}">{{ replace (replace $address "@" " [at] ") "." " [dot] " }}</span>

@@ -47,9 +47,25 @@
       {{ .Content }}
     </div>
   </section>
-  <section class="text-center nav:hidden">
-    <h1 class="uppercase">{{ .Title }}</h1>
-    {{ .Content }}
+  <section class="nav:hidden">
+    {{ with resources.Get "media/8774fde28f1480f16e4bacfe21705053-scaled.jpg" }}
+      {{ with .Fill "900x500 webp q75" }}
+        <img
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt=""
+          class="h-56 w-full rounded-b-lg object-cover sm:h-72"
+        />
+      {{ end }}
+    {{ end }}
+    <div class="relative -mt-8 mx-4 rounded-lg bg-vcn-blue p-6 text-center text-white shadow-lg">
+      {{ with resources.Get "media/vcn_monogramme_v1_gold.svg" }}
+        <img class="mx-auto mb-3 h-16 w-auto" alt="Club monogramme" src="{{ .RelPermalink }}" />
+      {{ end }}
+      <h1 class="uppercase">{{ .Title }}</h1>
+      {{ .Content }}
+    </div>
   </section>
   <section class="mt-5">
     <h2>Dernières actualités</h2>

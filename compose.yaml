@@ -1,10 +1,10 @@
 ---
 services:
   hugo:
-    image: hugomods/hugo:non-root
+    image: docker.io/hugomods/hugo:dart-sass-git-non-root-0.164.0@sha256:5ceadbabb254ade4db0349100256cef43ec322199f456c1fa5e07ef4f79fd504
     container_name: volley-hugo
     ports:
       - '1313:1313'
     volumes:
       - ./:/src
-    command: server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts --buildFuture --enableGitInfo=true --disableFastRender
+    command: server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture --enableGitInfo=true --disableFastRender --printI18nWarnings --watch=true

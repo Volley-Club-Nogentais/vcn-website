@@ -1,4 +1,15 @@
-<div class="relative flex flex-col rounded border border-black/10 bg-white">
+<div class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white">
+  {{ with .Resources.Get "cover.jpg" }}
+    {{ with .Fill "600x300 webp q75" }}
+      <img
+        src="{{ .RelPermalink }}"
+        width="{{ .Width }}"
+        height="{{ .Height }}"
+        alt=""
+        class="h-40 w-full object-cover"
+      />
+    {{ end }}
+  {{ end }}
   <div class="card-body p-4">
     <h4 class="line-clamp-3 text-lg text-vcn-blue">{{ .Title }}</h4>
     {{ with .Params.author }}

@@ -147,11 +147,6 @@ article p {
   }
 }
 
-/* Hides images that may appear in a card's rendered summary/content */
-.card-body img {
-  display: none;
-}
-
 /* Home page banner */
 .home-image {
   position: relative;

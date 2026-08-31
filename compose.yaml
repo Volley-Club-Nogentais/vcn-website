@@ -7,4 +7,10 @@ services:
       - '1313:1313'
     volumes:
       - ./:/src
-    command: server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture --enableGitInfo=true --disableFastRender --printI18nWarnings --watch=true
+      # Keep node_modules out of the host bind mount: it's installed on the host (glibc) via `npm ci`
+      # for local tooling, but this image is Alpine/musl, so native deps (e.g. lightningcss) need their
+      # own musl build installed inside the container.
+      - ./.docker/node_modules:/src/node_modules
+    command: >
+      sh -c "npm ci && hugo server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture
+      --enableGitInfo=true --disableFastRender --printI18nWarnings --watch=true"

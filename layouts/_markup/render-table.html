@@ -4,13 +4,14 @@
       {{- printf " %s=%q" $k $v | safeHTMLAttr }}
     {{- end }}
   {{- end }}
-  class="table table-hover"
+  class="w-full border-collapse"
 >
   <thead>
     {{- range .THead }}
-      <tr>
+      <tr class="border-b border-black/10 text-left">
         {{- range . }}
           <th
+            class="px-3 py-2"
             {{- with .Alignment }}
               {{- printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}
             {{- end -}}
@@ -23,9 +24,10 @@
   </thead>
   <tbody>
     {{- range .TBody }}
-      <tr>
+      <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
         {{- range . }}
           <td
+            class="px-3 py-2"
             {{- with .Alignment }}
               {{- printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}
             {{- end -}}

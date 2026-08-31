@@ -1,20 +1,20 @@
-<section class="next-games">
+<section class="mt-5">
   <h2>Prochains matchs</h2>
   {{ with hugo.Data.calendars.next_games }}
-    <table class="table table-hover">
+    <table class="w-full border-collapse">
       <thead>
-        <tr>
-          <th>Ligue</th>
-          <th>Équipes</th>
-          <th>Date</th>
+        <tr class="border-b border-black/10 text-left">
+          <th class="px-3 py-2">Ligue</th>
+          <th class="px-3 py-2">Équipes</th>
+          <th class="px-3 py-2">Date</th>
         </tr>
       </thead>
       <tbody>
         {{ range . }}
-          <tr>
-            <td>{{ .ligue | upper }}</td>
-            <td>{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
-            <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
+          <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+            <td class="px-3 py-2">{{ .ligue | upper }}</td>
+            <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
+            <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>
           </tr>
         {{ end }}
       </tbody>

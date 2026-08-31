@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="h-100" lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<html class="h-full" lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
   <head>
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}
     {{ block "css" . }}{{ end }}
   </head>
-  <body class="d-flex flex-column h-100">
+  <body class="flex h-full min-h-screen flex-col bg-white text-vcn-blue">
     {{ partial "header.html" . }}
-    <main class="flex-shrink-0 container">
+    <main class="mx-auto w-full max-w-screen-xl shrink-0 px-4 pt-[76px] content:pt-[116px]">
       {{ partial "alert.html" . }}
       {{ if .Site.Params.hasBreadcrumb }}
         {{ partial "breadcrumbs.html" . }}

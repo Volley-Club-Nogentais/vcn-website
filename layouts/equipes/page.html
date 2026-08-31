@@ -1,3 +1,9 @@
+{{ define "head" }}
+  {{ if .Resources.Match "images/*.jpg" }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  {{ end }}
+{{ end }}
+
 {{ define "main" }}
   {{/* Get the calendar information if possible */}}
   {{ $data := dict }}
@@ -9,31 +15,31 @@
   <article class="team">
     {{ with .Params.image }}
       <div class="text-center">
-        <img src="{{ . }}" class="rounded img-fluid" alt="{{ page.Title }} image" />
+        <img src="{{ . }}" class="h-auto max-w-full rounded" alt="{{ page.Title }} image" />
       </div>
     {{ end }}
     {{ if .Draft }}
-      <span class="badge bg-warning float-end">Brouillon</span>
+      <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
-    <h1>{{ .Title }}</h1>
+    <h1 class="uppercase">{{ .Title }}</h1>
     {{ .Content }}
 
 
     <div class="calendar">
       {{ with $data }}
         <h2>Calendrier des matchs</h2>
-        <table class="table table-hover">
+        <table class="w-full border-collapse">
           <thead>
-            <tr>
-              <th>Équipes</th>
-              <th>Date</th>
+            <tr class="border-b border-black/10 text-left">
+              <th class="px-3 py-2">Équipes</th>
+              <th class="px-3 py-2">Date</th>
             </tr>
           </thead>
           <tbody>
             {{ range . }}
-              <tr>
-                <td>{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
-                <td>{{ index .date 0 | time.Format ":date_medium" }}</td>
+              <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+                <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
+                <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>
               </tr>
             {{ end }}
           </tbody>
@@ -62,5 +68,23 @@
 {{ define "foot" }}
   {{ with resources.Get "js/carousel-zoom-blur.js" }}
     <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+  {{ end }}
+  {{ if .Resources.Match "images/*.jpg" }}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.gallery-swiper', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        })
+      })
+    </script>
   {{ end }}
 {{ end }}

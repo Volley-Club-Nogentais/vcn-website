@@ -1,18 +1,19 @@
 {{ if not .IsHome }}
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+  <nav aria-label="breadcrumb" class="py-2 text-sm">
+    <ol class="flex flex-wrap items-center gap-2 text-vcn-blue">
       {{- range .Ancestors.Reverse }}
-        <li class="breadcrumb-item">
-          <a href="{{ .RelPermalink }}">
+        <li class="flex items-center gap-2">
+          <a class="hover:underline" href="{{ .RelPermalink }}">
             {{ if .IsHome }}
               <i class="fa-solid fa-house"></i>
             {{ else }}
               {{ .Title }}
             {{- end }}
           </a>
+          <span aria-hidden="true" class="text-vcn-secondary/50">/</span>
         </li>
       {{- end }}
-      <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+      <li class="font-bold" aria-current="page">{{ .Title }}</li>
     </ol>
   </nav>
 {{- end }}

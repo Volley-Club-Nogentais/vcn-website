@@ -10,7 +10,7 @@
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img
           class="h-[300px] w-[300px] object-cover"
-          alt="{{ $.Title }} image"
+          alt="Photo de l'équipe {{ $.Title }}"
           src="{{ .RelPermalink }}"
           width="{{ .Width }}"
           height="{{ .Height }}"
@@ -19,7 +19,7 @@
     {{ else with .Resources.Get "main.svg" }}
       <img
         class="h-[300px] w-[300px] object-contain"
-        alt="{{ $.Title }} image"
+        alt="Illustration de l'équipe {{ $.Title }}"
         src="{{ .RelPermalink }}"
         width="{{ $width }}"
         height="{{ $height }}"

@@ -1,8 +1,9 @@
 {{- $path := .path | default "images" -}}
-{{- $resources := .page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
+{{- $page := .page -}}
+{{- $resources := $page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
 
 {{- if not $resources }}
-  {{- warnf "No images found for path: %s/%s" .page.Path $path -}}
+  {{- warnf "No images found for path: %s/%s" $page.Path $path -}}
 {{- end }}
 
 {{- $id := printf "carousel-%d" now.UnixNano -}}
@@ -34,7 +35,7 @@
               sizes="(max-width: 768px) 100vw, 1200px"
               class="blur-up block w-full"
               style="background-image: url('{{ $blur.RelPermalink }}')"
-              alt="photo {{ $index }}"
+              alt="Photo {{ add $index 1 }} de la galerie {{ $page.Title }}"
               loading="lazy"
               data-full="{{ $img.RelPermalink }}"
             />

@@ -206,6 +206,21 @@ article p {
   }
 }
 
+/* Self-hosted icons (assets/icons/*.svg, rendered through the icon.html partial), sized like a
+   glyph so they drop into text the same way Font Awesome's icon font used to. */
+.icon {
+  display: inline-block;
+  line-height: 1;
+}
+
+.icon svg {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.125em;
+  fill: currentcolor;
+}
+
 /* Blur-up effect */
 .blur-up {
   filter: blur(20px);

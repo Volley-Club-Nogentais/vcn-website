@@ -1,11 +1,23 @@
-<i
-  class="{{ .Get "class" }}"
-  style="
-  {{ with .Get "font-size" }}font-size:{{ . }}{{ end }};
-  {{ with .Get "border" }}border:{{ . }}{{ end }};
-  {{ with .Get "padding" }}padding:{{ . }}{{ end }};
-  {{ with .Get "border-radius" }}border-radius:{{ . }}{{ end }};
-  {{ with .Get "margin" }}margin:{{ . }}{{ end }};
-  {{ with .Get "color" }}color: {{ . | safeCSS }};{{ end }}
-  {{ with .Get "background-color" }}background-color: {{ . | safeCSS }};{{ end }}"
-></i>
+{{ $parts := slice }}
+{{ with .Get "font-size" }}
+  {{ $parts = $parts | append (printf "font-size:%s" .) }}
+{{ end }}
+{{ with .Get "border" }}
+  {{ $parts = $parts | append (printf "border:%s" .) }}
+{{ end }}
+{{ with .Get "padding" }}
+  {{ $parts = $parts | append (printf "padding:%s" .) }}
+{{ end }}
+{{ with .Get "border-radius" }}
+  {{ $parts = $parts | append (printf "border-radius:%s" .) }}
+{{ end }}
+{{ with .Get "margin" }}
+  {{ $parts = $parts | append (printf "margin:%s" .) }}
+{{ end }}
+{{ with .Get "color" }}
+  {{ $parts = $parts | append (printf "color:%s" .) }}
+{{ end }}
+{{ with .Get "background-color" }}
+  {{ $parts = $parts | append (printf "background-color:%s" .) }}
+{{ end }}
+{{ partial "icon.html" (dict "name" (.Get "icon") "style" (delimit $parts "; ")) }}

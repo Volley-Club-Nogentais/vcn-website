@@ -39,7 +39,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fa-solid fa-bars"></i>
+        {{ partial "icon.html" (dict "name" "bars") }}
       </button>
 
       <!-- Menu and social networks icons-->
@@ -73,7 +73,7 @@
                 class="social-network font-navbar flex items-center gap-2 px-2 py-1 text-[1.5em] text-vcn-blue"
                 href="{{ $v.url }}"
               >
-                <i class="fa-brands fa-{{ $v.icon }}"></i>
+                {{ partial "icon.html" (dict "name" $v.icon) }}
                 {{ $name }}
               </a>
             </li>
@@ -86,7 +86,7 @@
         {{ range $name, $v := $socials }}
           <li class="ml-1">
             <a class="social-network font-navbar flex items-center px-2 text-[1.5em] text-vcn-blue" href="{{ $v.url }}">
-              <i class="fa-brands fa-{{ $v.icon }}"></i>
+              {{ partial "icon.html" (dict "name" $v.icon) }}
             </a>
           </li>
         {{ end }}

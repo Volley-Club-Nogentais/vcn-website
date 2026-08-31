@@ -5,7 +5,7 @@
         <li class="flex items-center gap-2">
           <a class="hover:underline" href="{{ .RelPermalink }}">
             {{ if .IsHome }}
-              <i class="fa-solid fa-house"></i>
+              {{ partial "icon.html" (dict "name" "house") }}
             {{ else }}
               {{ .Title }}
             {{- end }}

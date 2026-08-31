@@ -3,6 +3,17 @@
     {{ if .Draft }}
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
+    {{ with .Resources.Get "cover.jpg" }}
+      {{ with .Fill "1200x500 webp q80" }}
+        <img
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt=""
+          class="mb-4 h-auto w-full rounded object-cover"
+        />
+      {{ end }}
+    {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
     {{ if or .Date .Params.author }}
       <p class="italic">

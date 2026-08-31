@@ -96,6 +96,18 @@
   h6 {
     font-size: 1rem;
   }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  /* Tailwind's preflight strips list bullets/numbers by default. Restore them for markdown content
+     (rendered lists never carry a class), while structural/nav lists (which are always classed) stay bare. */
+  ul:not([class]),
+  ol:not([class]) {
+    list-style: revert;
+    padding-inline-start: revert;
+  }
 }
 
 /* Default styles for all paragraphs in article content */

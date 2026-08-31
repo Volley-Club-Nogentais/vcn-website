@@ -25,7 +25,8 @@
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
-    <div class="max-w-[70ch]">{{ .Content }}</div>
+    {{ .Content }}
+
 
     <div class="calendar">
       {{ with $data }}

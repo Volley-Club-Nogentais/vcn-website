@@ -5,7 +5,9 @@
   {{ $default_img = "media/beach_logo_color.svg" }}
 {{ end }}
 <div class="swiper-slide">
-  <div class="freeflow-card relative flex flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm">
+  <div
+    class="freeflow-card relative flex flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+  >
     {{ with .Resources.Get "main.jpg" }}
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img

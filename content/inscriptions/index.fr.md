@@ -1,5 +1,5 @@
 ---
-title: '📝 Comment s'inscrire au Volley Club Nogentais ?'
+title: "📝 Comment s'inscrire au Volley Club Nogentais ?"
 ---
 
 Vous souhaitez nous rejoindre ? **Bienvenue !** Voici un guide simple pour vous inscrire selon votre catégorie et votre

@@ -15,13 +15,23 @@
     </nav>
   </div>
   <div class="border-t border-white/10 py-2 text-center text-xs text-white/70">
-    {{ with .Site.Copyright }}
-      {{ . | safeHTML }}
-    {{ else }}
-      &copy; Copyright {{ if eq now.Year 2025 }}2025{{ else }}2025 - {{ now.Year }}{{ end }} Volley Club Nogentais. All
-      rights reserved.
-    {{ end }}
-    {{ with .GitInfo }}· Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
+    <p>
+      {{ with .Site.Copyright }}
+        {{ . | safeHTML }}
+      {{ else }}
+        &copy; Copyright {{ if eq now.Year 2025 }}2025{{ else }}2025 - {{ now.Year }}{{ end }} Volley Club Nogentais.
+        All rights reserved.
+      {{ end }}
+      {{ with .GitInfo }}· Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
+    </p>
+    <p class="mt-1">
+      Fait avec <span aria-hidden="true">❤️</span> avec
+      <a class="hover:underline" href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+      et
+      <a class="hover:underline" href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"
+        >Tailwind CSS</a
+      >
+    </p>
   </div>
 </footer>
 {{ with resources.Get "js/navbar-toggle.js" }}

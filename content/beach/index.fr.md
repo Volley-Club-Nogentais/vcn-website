@@ -5,6 +5,15 @@ draft: false
 categories:
   - FFVB
   - beach
+gallery:
+  - images/beach-1.jpeg
+  - images/beach-2.jpeg
+  - images/beach-check.jpeg
+  - images/beach-dive.jpeg
+  - images/beach-marne.jpeg
+  - images/beach-net-fight.jpeg
+  - images/beach-serve.jpeg
+  - images/beach-setting-net.jpeg
 ---
 
 Reprise de la saison : première semaine de septembre.

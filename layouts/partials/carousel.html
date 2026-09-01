@@ -23,9 +23,19 @@
       {{/* Blur tiny */}}
       {{ $blur := $img.Resize "20x webp q20" }}
 
+      {{/* Blurred backdrop, fills the gutters left by portrait/landscape images that don't match the slide's box ratio */}}
+      {{ $backdrop := $img.Resize "300x webp q40" }}
+
 
       <div class="swiper-slide">
         <div class="carousel-img-wrapper">
+          <img
+            class="carousel-img-backdrop"
+            src="{{ $backdrop.RelPermalink }}"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
           <picture>
             <source media="(max-width: 576px)" srcset="{{ $mobile.RelPermalink }}" />
 

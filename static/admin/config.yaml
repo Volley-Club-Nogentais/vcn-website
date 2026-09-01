@@ -224,6 +224,16 @@ collections:
               - "adultes"
               - "jeunes"
               - "beach"
+          - label: 'Galerie'
+            name: 'gallery'
+            widget: 'image'
+            multiple: true
+            required: false
+            media_folder: 'images'
+            public_folder: 'images'
+            media_library:
+              config:
+                max_file_size: 2048000
           - label: 'Contenu'
             name: 'body'
             widget: 'markdown'
@@ -330,6 +340,16 @@ collections:
         multiple: false
         media_folder: "images"
         public_folder: "images"
+        media_library:
+          config:
+            max_file_size: 2048000
+      - label: 'Galerie'
+        name: 'gallery'
+        widget: 'image'
+        multiple: true
+        required: false
+        media_folder: 'images'
+        public_folder: 'images'
         media_library:
           config:
             max_file_size: 2048000

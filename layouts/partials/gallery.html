@@ -1,9 +1,17 @@
-{{- $path := .path | default "images" -}}
 {{- $page := .page -}}
-{{- $resources := $page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
+{{- $paths := .paths | default slice -}}
+
+{{- $resources := slice -}}
+{{- range $paths }}
+  {{- with $page.Resources.Get . }}
+    {{- $resources = $resources | append . }}
+  {{- else }}
+    {{- warnf "Gallery image not found: %s/%s" $page.Path . -}}
+  {{- end }}
+{{- end }}
 
 {{- if not $resources }}
-  {{- warnf "No images found for path: %s/%s" $page.Path $path -}}
+  {{- warnf "No gallery images found for: %s" $page.Path -}}
 {{- end }}
 
 

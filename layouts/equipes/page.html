@@ -77,12 +77,11 @@
       {{ end }}
     </div>
 
-    {{ $elements := .Resources.Match "images/*.jpg" }}
-    {{ with $elements }}
+    {{ with .Params.gallery }}
       <h2>Galerie</h2>
       {{ partial "gallery.html" (dict
         "page" $
-        "path" "images/"
+        "paths" .
         )
       }}
     {{ end }}
@@ -91,7 +90,7 @@
 {{ end }}
 
 {{ define "foot" }}
-  {{ if or (.Resources.Match "images/*.jpg") (.Resources.Get "main.jpg") (.Resources.Get "main.svg") }}
+  {{ if or .Params.gallery (.Resources.Get "main.jpg") (.Resources.Get "main.svg") }}
     {{ with resources.Get "js/gallery-zoom-blur.js" }}
       <script type="text/javascript" src="{{ .RelPermalink }}"></script>
     {{ end }}

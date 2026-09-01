@@ -21,7 +21,7 @@ Il faut aussi souligner que, dans la plupart des rencontres, nous affrontions de
 plus élevée, ce qui n'a pas empêché nos jeunes joueurs de se battre et de montrer un bel état d'esprit. Cette saison a
 posé de solides fondations, et laisse entrevoir de belles perspectives pour la suite.
 
-# Les entraînements
+## Les entraînements
 
 ## M15
 

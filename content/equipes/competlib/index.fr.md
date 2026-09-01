@@ -35,7 +35,7 @@ montrent qu'avec de la passion et un bon état d'esprit, il est possible de cont
 après une carrière en compétition. Les Canards Boiteux rappellent à tous que le sport est avant tout une question de
 plaisir, de partage et de dépassement de soi.
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

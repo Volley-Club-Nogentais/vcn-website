@@ -26,7 +26,7 @@ L'histoire ne s'arrête pas là. Avec quelques arrivées et départs, le groupe 
 belle dynamique et aller chercher, pourquoi pas, une deuxième montée consécutive. Plus qu'une équipe, c'est un collectif
 qui vit bien et qui avance ensemble, animé par la même passion et les mêmes objectifs.
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------- | ------------------ | ---------------- | -------------- |

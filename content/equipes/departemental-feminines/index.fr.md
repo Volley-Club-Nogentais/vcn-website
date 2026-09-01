@@ -9,7 +9,7 @@ categories:
 calendarName: departemental_feminines
 ---
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

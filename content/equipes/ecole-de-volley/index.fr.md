@@ -35,7 +35,7 @@ ans et moins de 18 ans, qui nous ont tous impressionnés par leur travail et leu
 Les jeunes ont également su se démarquer durant leurs compétitions annuelles, allant jusqu'en compétition régionale pour
 les garçons en 2025 et en phase finale de coupe départementale pour les filles !!
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------- | ------------------ | ---------------- | -------------- |

@@ -30,7 +30,7 @@ renforcer. Les joueuses sont désormais déterminées à consolider leur place a
 encore plus ambitieux. Cette saison réussie est une source de motivation pour l'ensemble de l'équipe, qui est plus que
 jamais prête à relever de nouveaux défis et à écrire de belles pages de l'histoire du volley féminin.
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------------ | ------------------ | ---------------- | -------------- |

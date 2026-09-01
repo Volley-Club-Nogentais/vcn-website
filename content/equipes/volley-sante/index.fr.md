@@ -8,7 +8,7 @@ categories:
   - adultes
 ---
 
-# Les entraînements
+## Les entraînements
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------- | ------------------ | ---------------- | -------------- |

@@ -9,7 +9,7 @@ weight: 10
 image: ''
 ---
 
-# Les créneaux
+## Les créneaux
 
 | Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
 | ------- | ------------------ | ---------------- | -------------- |

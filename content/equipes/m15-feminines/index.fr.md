@@ -53,7 +53,7 @@ contributions nous permettent de disposer des meilleures installations et équip
 compétitions de haut niveau. Nous croyons en l'importance de la communauté et nous sommes fières de représenter nos
 partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons continuer à grandir et à réussir.
 
-# Les entraînements
+## Les entraînements
 
 ## M15
 

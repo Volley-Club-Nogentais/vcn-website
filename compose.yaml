@@ -12,6 +12,6 @@ services:
       # own musl build installed inside the container.
       - ./.docker/node_modules:/src/node_modules
     command: >
-      sh -c "npm ci && hugo server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture --enableGitInfo=true
-      --disableFastRender --printI18nWarnings --watch=true"
+      sh -c "npm ci --loglevel info && hugo server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture
+      --enableGitInfo=true --disableFastRender --printI18nWarnings --watch=true"
     network_mode: bridge

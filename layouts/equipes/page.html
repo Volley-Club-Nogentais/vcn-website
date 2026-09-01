@@ -43,7 +43,15 @@
     <div class="calendar">
       {{ with $data }}
         <h2>Calendrier des matchs</h2>
-        <div class="overflow-x-auto">
+        <div class="content:hidden flex flex-col gap-2">
+          {{ range . }}
+            <div class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3">
+              <p class="font-bold text-vcn-blue">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</p>
+              <p class="text-sm text-gray-500">{{ index .date 0 | time.Format ":date_medium" }}</p>
+            </div>
+          {{ end }}
+        </div>
+        <div class="hidden overflow-x-auto content:block">
           <table class="w-full border-collapse">
             <thead>
               <tr class="border-b border-black/10 text-left">

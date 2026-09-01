@@ -5,7 +5,7 @@
         {{- printf " %s=%q" $k $v | safeHTMLAttr }}
       {{- end }}
     {{- end }}
-    class="w-full border-collapse"
+    class="responsive-table w-full border-collapse"
   >
     <thead>
       {{- range .THead }}
@@ -24,16 +24,20 @@
       {{- end }}
     </thead>
     <tbody>
+      {{- $headers := index .THead 0 }}
       {{- range .TBody }}
         <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
-          {{- range . }}
+          {{- range $i, $cell := . }}
             <td
               class="px-3 py-2"
-              {{- with .Alignment }}
+              {{- with index $headers $i }}
+                {{- printf " data-label=%q" .Text | safeHTMLAttr }}
+              {{- end }}
+              {{- with $cell.Alignment }}
                 {{- printf " style=%q" (printf "text-align: %s" .) | safeHTMLAttr }}
               {{- end -}}
             >
-              {{- .Text -}}
+              {{- $cell.Text -}}
             </td>
           {{- end }}
         </tr>

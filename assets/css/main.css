@@ -313,3 +313,48 @@ footer p {
 .blur-up.loaded {
   filter: blur(0);
 }
+
+/* Below this, markdown tables (layouts/_markup/render-table.html) turn into a stack of
+   label/value cards instead of a cramped, horizontally-scrolling grid. Each td's data-label
+   (the matching header's text) is printed via ::before. */
+@media (max-width: 599px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table,
+  .responsive-table tbody,
+  .responsive-table tr,
+  .responsive-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .responsive-table tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .responsive-table tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgb(0 0 0 / 6%);
+  }
+
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--color-vcn-blue);
+  }
+}

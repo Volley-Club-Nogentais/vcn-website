@@ -116,8 +116,8 @@ Ce stage permet de préparer la saison et retrouver les sensations du jeu sur sa
 
 Les informations concernant les entraînements, tournois, stages et permanences sont publiées sur :
 
-- [Instagram du club](https://www.instagram.com/vcnbeachofficiel/) : @vcnbeachofficiel
-- [Facebook du club](https://www.facebook.com/profile.php?id=61587544581811&locale=fr_FR) : BEACH-Volley-VCN
+- Instagram du club : [@vcnbeachofficiel](https://www.instagram.com/vcnbeachofficiel/)
+- Facebook du club : [BEACH-Volley-VCN](https://www.facebook.com/profile.php?id=61587544581811&locale=fr_FR)
 
 ## Contact section Beach Volley
 

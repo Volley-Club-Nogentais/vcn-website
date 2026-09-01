@@ -44,6 +44,191 @@ i18n:
 publish_mode: "editorial_workflow"
 
 collections:
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - name: 'accueil'
+        label: 'Accueil'
+        file: 'content/_index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Date'
+            name: 'date'
+            widget: 'datetime'
+            required: true
+          - label: 'Brouillon'
+            name: 'draft'
+            widget: 'boolean'
+            default: false
+            required: true
+          - label: 'Plan du site'
+            name: 'sitemap'
+            widget: 'object'
+            required: false
+            collapsed: true
+            fields:
+              - label: 'Priorité'
+                name: 'priority'
+                widget: 'number'
+                value_type: 'float'
+                min: 0
+                max: 1
+                required: false
+              - label: 'Fréquence de changement'
+                name: 'changeFreq'
+                widget: 'select'
+                options: ['always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never']
+                required: false
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
+      - name: 'club'
+        label: 'Le Club'
+        file: 'content/club/_index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
+      - name: 'histoire'
+        label: "Histoire du club"
+        file: 'content/histoire.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Brouillon'
+            name: 'draft'
+            widget: 'boolean'
+            default: false
+            required: true
+          - label: 'Images'
+            name: 'image'
+            widget: 'list'
+            required: false
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: true
+
+      - name: 'contact'
+        label: 'Contact'
+        file: 'content/contact/index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
+      - name: 'inscriptions'
+        label: 'Inscriptions'
+        file: 'content/inscriptions/index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
+      - name: 'actualites_index'
+        label: "Actualités (page d'index)"
+        file: 'content/actualites/_index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Date'
+            name: 'date'
+            widget: 'datetime'
+            required: true
+          - label: 'Plan du site'
+            name: 'sitemap'
+            widget: 'object'
+            required: false
+            collapsed: true
+            fields:
+              - label: 'Priorité'
+                name: 'priority'
+                widget: 'number'
+                value_type: 'float'
+                min: 0
+                max: 1
+                required: false
+              - label: 'Fréquence de changement'
+                name: 'changeFreq'
+                widget: 'select'
+                options: ['always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never']
+                required: false
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
+      - name: 'equipes_index'
+        label: "Équipes (page d'index)"
+        file: 'content/equipes/_index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Brouillon'
+            name: 'draft'
+            widget: 'boolean'
+            default: false
+            required: true
+
+      - name: 'beach'
+        label: 'Beach Volley'
+        file: 'content/beach/index.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Résumé'
+            name: 'summary'
+            widget: 'string'
+            required: false
+          - label: 'Brouillon'
+            name: 'draft'
+            widget: 'boolean'
+            default: false
+            required: true
+          - label: "Categories"
+            name: "categories"
+            widget: "select"
+            multiple: true
+            options:
+              - "FFVB"
+              - "FSGT"
+              - "adultes"
+              - "jeunes"
+              - "beach"
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: false
+
   - name: 'actualites'
     label: 'Actualités'
     folder: 'content/actualites'
@@ -63,6 +248,7 @@ collections:
         name: 'summary'
         widget: 'string'
         required: false
+        hint: "Optionnel : remplace le résumé automatiquement généré avant le séparateur '<!--more-->'."
       - label: 'Date'
         name: 'date'
         widget: 'datetime'
@@ -83,6 +269,8 @@ collections:
         name: 'image'
         widget: 'image'
         required: false
+        media_folder: 'media'
+        public_folder: 'media'
         media_library:
           config:
             max_file_size: 2048000
@@ -90,6 +278,8 @@ collections:
         name: 'body'
         widget: 'markdown'
         required: true
+        hint: "Ajoutez '<!--more-->' à l'endroit où le résumé de l'article doit s'arrêter."
+
   - name: 'equipes'
     label: 'Équipes'
     folder: 'content/equipes'
@@ -101,8 +291,8 @@ collections:
         name: 'title'
         widget: 'string'
         required: true
-      - label: 'Description'
-        name: 'description'
+      - label: 'Résumé'
+        name: 'summary'
         widget: 'string'
         required: false
       - label: "Categories"
@@ -114,6 +304,7 @@ collections:
           - "FSGT"
           - "adultes"
           - "jeunes"
+          - "beach"
       - label: 'Brouillon'
         name: 'draft'
         widget: 'boolean'
@@ -127,12 +318,18 @@ collections:
         min: 0
         max: 100
         required: false
+      - label: 'Nom du calendrier'
+        name: 'calendarName'
+        widget: 'string'
+        required: false
+        hint: "Doit correspondre à une entrée du calendrier importé dans data/calendars (ex: regional_feminines)."
       - label: 'Image principale'
         name: 'image'
         widget: 'image'
         required: false
         multiple: false
         media_folder: "images"
+        public_folder: "images"
         media_library:
           config:
             max_file_size: 2048000

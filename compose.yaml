@@ -2,7 +2,6 @@
 services:
   hugo:
     image: docker.io/hugomods/hugo:dart-sass-node-git-non-root-0.164.0
-    container_name: volley-hugo
     ports:
       - '1313:1313'
     volumes:

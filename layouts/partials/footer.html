@@ -16,6 +16,9 @@
   </div>
   <div class="border-t border-white/10 py-2 text-center text-xs text-white/70">
     <p class="mt-1">
+      {{/* safeHTML is safe here only because Site.Copyright is set by trusted CMS editors with
+        GitHub write access, not from untrusted/public input.
+      */}}
       {{ with .Site.Copyright }}
         {{ . | safeHTML }}
       {{ else }}

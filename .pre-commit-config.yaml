@@ -20,6 +20,21 @@ repos:
         types:
           - file
         files: \.en\.(md|html|toml)$
+  - repo: https://github.com/mit-d/check-unicode
+    rev: v0.6.0
+    hooks:
+      - id: check-unicode
+        args:
+          - --allow-category
+          - Ll  # Allow Letter lowercase (including accents)
+          - --allow-category
+          - Lu  # Allow Letter uppercase (including accents)
+          - --allow-category
+          - So  # Emojis
+          - --allow-codepoint
+          - U+00B7  # Allow MiddleDot
+          - --allow-codepoint
+          - U+20AC  # Allow Euro symbol
   - repo: local
     hooks:
       - id: app-prettier

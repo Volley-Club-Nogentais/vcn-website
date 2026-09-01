@@ -1,5 +1,5 @@
 ---
-title: '📝 Comment s’inscrire au Volley Club Nogentais ?'
+title: '📝 Comment s'inscrire au Volley Club Nogentais ?'
 ---
 
 Vous souhaitez nous rejoindre ? **Bienvenue !** Voici un guide simple pour vous inscrire selon votre catégorie et votre
@@ -22,13 +22,13 @@ Si vous êtes **adulte** et souhaitez vous inscrire en **FSGT** :
 Pour les inscriptions en **FFVB** (jeunes, loisirs, compétitions ou beach-volley) :
 
 1. **Créez votre compte** sur [myFFvolley](https://my.ffvolley.org/).
-2. Sélectionnez le **Volley Club Nogentais** comme club d’affiliation.
+2. Sélectionnez le **Volley Club Nogentais** comme club d'affiliation.
 3. Choisissez votre **catégorie** et finalisez votre inscription.
 
-💡 **Besoin d’aide ?** Consultez les **[tutoriels officiels MyFFVolley](https://my.ffvolley.org/tutos/)** pour un
+💡 **Besoin d'aide ?** Consultez les **[tutoriels officiels MyFFVolley](https://my.ffvolley.org/tutos/)** pour un
 accompagnement pas à pas.
 
-## 🔹 Besoin d’accompagnement ?
+## 🔹 Besoin d'accompagnement ?
 
 Nous sommes là pour vous aider !
 
@@ -37,18 +37,18 @@ Nous sommes là pour vous aider !
 
 ## ❓ Questions fréquentes
 
-###### 📌 Puis-je essayer avant de m’inscrire ?
+###### 📌 Puis-je essayer avant de m'inscrire ?
 
-Oui ! Une **séance d’essai gratuite** est proposée pour découvrir le club.
+Oui ! Une **séance d'essai gratuite** est proposée pour découvrir le club.
 
 ###### 📌 Quels documents fournir ?
 
 - Un **certificat médical** (obligatoire pour les compétitions).
-- Une **photo d’identité** (pour la licence FFVB).
+- Une **photo d'identité** (pour la licence FFVB).
 
 ###### 📌 Quand les inscriptions ferment-elles ?
 
-Les inscriptions sont ouvertes jusqu’au _20 septembre 2026_.
+Les inscriptions sont ouvertes jusqu'au _20 septembre 2026_.
 
 **Attention** : les places sont limitées !
 

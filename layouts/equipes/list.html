@@ -9,7 +9,7 @@
 
     /* Auto-width slides for a true "freeflow" */
     .freeflow-swiper .swiper-slide {
-      width: auto; /* ← key for the freeflow */
+      width: auto; /* <- key for the freeflow */
       /* Optional: a bit of visual spacing */
       margin-right: 0.75rem;
     }
@@ -31,8 +31,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const swiper = new Swiper('.freeflow-swiper', {
-        slidesPerView: 'auto', // ← essential for auto width
-        freeMode: { enabled: true }, // ← free mode (= freeflow)
+        slidesPerView: 'auto', // <- essential for auto width
+        freeMode: { enabled: true }, // <- free mode (= freeflow)
         mousewheel: { forceToAxis: true },
         grabCursor: true,
         // (optional) pagination & nav

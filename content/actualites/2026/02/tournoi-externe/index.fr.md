@@ -22,7 +22,7 @@ Le **Volley Club Nogentais** organise un **tournoi 4x4 mixte** (obligatoire).
 - **Prix**: 44 euros par équipe
 - Restauration sur place
 
-### 📩 Comment s’inscrire ?
+### 📩 Comment s'inscrire ?
 
 Les inscriptions se font **uniquement en ligne** via
 [le formulaire dédié](https://www.helloasso.com/associations/volley-club-nogentais/evenements/tournoi-1er-mars).

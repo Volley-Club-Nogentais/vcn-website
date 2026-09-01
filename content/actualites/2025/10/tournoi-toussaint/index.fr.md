@@ -37,11 +37,11 @@ une soirée 100 % volley, convivialité et compétition !
 
 ### 📢 Pourquoi participer ?
 
-- Pour **s’amuser** et rencontrer d’autres passionnés de volley.
+- Pour **s'amuser** et rencontrer d'autres passionnés de volley.
 - Pour **défier** des adversaires dans une ambiance détendue.
 - Pour **célébrer** la Toussaint en mode sportif !
 
-### 📩 Comment s’inscrire ?
+### 📩 Comment s'inscrire ?
 
 Les inscriptions se font **uniquement en ligne** via
 [le formulaire dédié](https://docs.google.com/forms/d/e/1FAIpQLSeQcCYejsP4ysITeiy9R4Q9-t18mmRvJNP1jxOlQvwApvN8MA/viewform).
@@ -50,7 +50,7 @@ Les inscriptions se font **uniquement en ligne** via
 ### ⚠️ Important
 
 - **Présence obligatoire à 20h00** pour la composition des équipes.
-- **Pas de volley sans bonne humeur !** Fair-play et esprit d’équipe sont de rigueur.
+- **Pas de volley sans bonne humeur !** Fair-play et esprit d'équipe sont de rigueur.
 
 ### 💬 Questions ?
 

@@ -1,5 +1,5 @@
 ---
-title: Beach volley à Nogent-sur-Marne – Section Beach du VCN
+title: Beach volley à Nogent-sur-Marne - Section Beach du VCN
 summary: Beach volley à Nogent-sur-Marne
 draft: false
 categories:
@@ -8,15 +8,15 @@ categories:
 ---
 
 La section **beach volley** permet de pratiquer le **beach volley 2v2 en bord de Marne**, sur deux terrains dédiés,
-accessibles facilement depuis Paris et toute l’Île-de-France.
+accessibles facilement depuis Paris et toute l'Île-de-France.
 
-La section accueille joueurs et joueuses souhaitant s’entraîner, jouer librement ou participer à des événements sportifs
-et conviviaux tout au long de l’année.
+La section accueille joueurs et joueuses souhaitant s'entraîner, jouer librement ou participer à des événements sportifs
+et conviviaux tout au long de l'année.
 
 ## Les terrains de beach volley
 
 - Deux terrains en sable situés en bord de Marne
-- Site agréable et accessible depuis toute l’Île-de-France
+- Site agréable et accessible depuis toute l'Île-de-France
 - Environ 10 minutes à pied du RER A Nogent-sur-Marne
 
 **Adresse des terrains :**
@@ -29,24 +29,24 @@ techniquement et physiquement dans une ambiance sportive et conviviale.
 
 ### Filles niveau avancé & garçons niveau intermédiaire
 
-🗓 Lundi 🕢 19h30 – 21h30
+🗓 Lundi 🕢 19h30 - 21h30
 
 Tarif : **150 € licence comprise** (début avril)
 
 ### Garçons niveau avancé
 
-🗓 Mercredi 🕢 19h30 – 21h30
+🗓 Mercredi 🕢 19h30 - 21h30
 
 Tarif : **150 € licence comprise** (début avril)
 
-## Jeu libre – accès aux terrains
+## Jeu libre - accès aux terrains
 
 Le club propose également un **accès libre aux terrains de beach volley**.
 
 Les membres peuvent venir jouer **librement en soirée et le week-end**, sauf lorsque les terrains sont occupés par les
 entraînements :
 
-❌ Pas d’accès le lundi soir et mercredi soir (créneaux entraînement)
+❌ Pas d'accès le lundi soir et mercredi soir (créneaux entraînement)
 
 ### Fonctionnement
 
@@ -56,7 +56,7 @@ entraînements :
 - Accès illimité aux créneaux disponibles
 - Tarif : **60 euros** (début avril)
 
-### Permanences d’accueil
+### Permanences d'accueil
 
 Des permanences seront assurées **certains samedis de 14h à 18h** afin de :
 
@@ -71,12 +71,12 @@ Les dates sont communiquées sur les réseaux sociaux du club.
 ## Raccoon Tour
 
 Le **Raccoon Tour** est le **tournoi convivial de la section beach volley du VCN**, organisé **un vendredi soir sur
-deux**. C’est un moment phare de la vie du club, permettant aux joueurs et joueuses de se retrouver sur le sable dans
-une ambiance sportive et détendue autour d’un apéritif.
+deux**. C'est un moment phare de la vie du club, permettant aux joueurs et joueuses de se retrouver sur le sable dans
+une ambiance sportive et détendue autour d'un apéritif.
 
 ### **Format du tournoi**
 
-🕕 Horaires : **18h45 – 21h30**
+🕕 Horaires : **18h45 - 21h30**
 
 Équipes **masculines, féminines ou mixtes**
 
@@ -87,7 +87,7 @@ Tournoi ouvert aux membres du club et aux externes
 - Gratuit pour les membres du club
 - **10 € par équipe pour les externes**
 
-Après le tournoi, les participant.e.s peuvent prolonger la soirée autour d’un **apéritif convivial**, devenu un
+Après le tournoi, les participant.e.s peuvent prolonger la soirée autour d'un **apéritif convivial**, devenu un
 rendez-vous apprécié des joueurs et joueuses.
 
 ➡️ Inscriptions via
@@ -104,7 +104,7 @@ Dates et inscriptions sur le [site officiel](http://bvs.ffvbbeach.org/mixte/page
 Des stages sont proposés au cours de la saison pour permettre aux joueurs et joueuses de progresser ou préparer la
 reprise.
 
-### Stage de printemps – 28 & 29 mars
+### Stage de printemps - 28 & 29 mars
 
 Stage intensif destiné aux joueurs et joueuses **intermédiaires et avancés**.
 
@@ -112,7 +112,7 @@ Ce stage permet de préparer la saison et retrouver les sensations du jeu sur sa
 
 👉 Une affiche avec toutes les informations
 
-## Suivre l’actualité beach volley du club
+## Suivre l'actualité beach volley du club
 
 Les informations concernant les entraînements, tournois, stages et permanences sont publiées sur :
 

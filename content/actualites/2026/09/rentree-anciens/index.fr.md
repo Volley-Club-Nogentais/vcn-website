@@ -1,5 +1,5 @@
 ---
-title: '🏐 Reprise pour les anciens adhérents – Saison 2026-2027'
+title: '🏐 Reprise pour les anciens adhérents - Saison 2026-2027'
 author: 'Henri Buyse'
 date: '2026-08-23 14:45:00'
 draft: false
@@ -23,24 +23,24 @@ Retrouvez ci-dessous l'ensemble des dates, horaires et lieux de reprise pour la 
 
 | Équipe / Section        | Date de reprise       | Horaire       | Lieu         |
 | ----------------------- | --------------------- | ------------- | ------------ |
-| **Régionale G**         | Lundi 24 août         | 20h00 – 22h30 | Maudry       |
-| **M13G** (2014 - 2015)  | Mardi 1er septembre   | 18h00 – 19h30 | Watteau      |
-| **M13F** (2014 - 2015)  | Mardi 1er septembre   | 18h00 – 19h30 | Watteau      |
-| **M15F** (2012 - 2013)  | Mardi 1er septembre   | 18h00 – 19h30 | Watteau      |
-| **M15G** (2012 - 2013)  | Mardi 1er septembre   | 19h30 – 21h00 | Watteau      |
-| **M18F1** (2009 - 2011) | Mardi 1er septembre   | 19h30 – 21h00 | Watteau      |
-| **M18G1** (2009 - 2011) | Mardi 1er septembre   | 19h30 – 21h00 | Watteau      |
-| **M18F2** (2009 - 2011) | Mardi 1er septembre   | 18h30 – 20h00 | Louis Armand |
-| **M18G2** (2009 - 2011) | Mardi 1er septembre   | 18h30 – 20h00 | Louis Armand |
-| **DEP.F1**              | Mardi 1er septembre   | 20h00 – 22h30 | Louis Armand |
-| **DEP.F2**              | Mardi 1er septembre   | 20h00 – 22h30 | Louis Armand |
-| **Loisirs**             | Mardi 1er septembre   | 21h00 – 22h30 | Watteau      |
-| **DEP.G**               | Jeudi 3 septembre     | 21h00 – 22h30 | Watteau      |
-| **Loisirs FFVB**        | Vendredi 4 septembre  | 21h00 – 22h30 | Louis Armand |
-| **École de volley**     | Samedi 5 septembre    | 9h30 – 11h00  | Maudry       |
-| **FSGT**                | Jeudi 10 septembre    | 20h00 – 22h30 | Louis Armand |
-| **M15/M18 Loisirs F/G** | Dimanche 13 septembre | 10h00 – 12h00 | Watteau      |
-| **Volley Santé**        | Dimanche 13 septembre | 10h00 – 12h00 | Watteau      |
+| **Régionale G**         | Lundi 24 août         | 20h00 - 22h30 | Maudry       |
+| **M13G** (2014 - 2015)  | Mardi 1er septembre   | 18h00 - 19h30 | Watteau      |
+| **M13F** (2014 - 2015)  | Mardi 1er septembre   | 18h00 - 19h30 | Watteau      |
+| **M15F** (2012 - 2013)  | Mardi 1er septembre   | 18h00 - 19h30 | Watteau      |
+| **M15G** (2012 - 2013)  | Mardi 1er septembre   | 19h30 - 21h00 | Watteau      |
+| **M18F1** (2009 - 2011) | Mardi 1er septembre   | 19h30 - 21h00 | Watteau      |
+| **M18G1** (2009 - 2011) | Mardi 1er septembre   | 19h30 - 21h00 | Watteau      |
+| **M18F2** (2009 - 2011) | Mardi 1er septembre   | 18h30 - 20h00 | Louis Armand |
+| **M18G2** (2009 - 2011) | Mardi 1er septembre   | 18h30 - 20h00 | Louis Armand |
+| **DEP.F1**              | Mardi 1er septembre   | 20h00 - 22h30 | Louis Armand |
+| **DEP.F2**              | Mardi 1er septembre   | 20h00 - 22h30 | Louis Armand |
+| **Loisirs**             | Mardi 1er septembre   | 21h00 - 22h30 | Watteau      |
+| **DEP.G**               | Jeudi 3 septembre     | 21h00 - 22h30 | Watteau      |
+| **Loisirs FFVB**        | Vendredi 4 septembre  | 21h00 - 22h30 | Louis Armand |
+| **École de volley**     | Samedi 5 septembre    | 9h30 - 11h00  | Maudry       |
+| **FSGT**                | Jeudi 10 septembre    | 20h00 - 22h30 | Louis Armand |
+| **M15/M18 Loisirs F/G** | Dimanche 13 septembre | 10h00 - 12h00 | Watteau      |
+| **Volley Santé**        | Dimanche 13 septembre | 10h00 - 12h00 | Watteau      |
 
 > ⚠️ **À noter :** Hatem (coach M18G1) sera absent durant la première semaine pour le groupe **M18G1** et sera remplacé.
 
@@ -56,14 +56,14 @@ Une belle occasion pour les enfants de retrouver le terrain et de découvrir ou 
 
 La plupart des équipes jeunes reprennent dès le **mardi 1er septembre** au Gymnase Watteau ou au Gymnase Louis Armand.
 
-- **M13G** : 18h00 – 19h30, Gymnase Watteau - Coach : Raphaël
-- **M13F** : 18h00 – 19h30, Gymnase Watteau - Coach : Christian
-- **M15F** : 18h00 – 19h30, Gymnase Watteau - Coach : Alex
-- **M15G** : 19h30 – 21h00, Gymnase Watteau - Coach : Vincent
-- **M18F1** : 19h30 – 21h00, Gymnase Watteau - Coach : Mattis
-- **M18G1** : 19h30 – 21h00, Gymnase Watteau - Coach : Hatem (non présent la première semaine)
-- **M18F2** : 18h30 – 20h00, Gymnase Louis Armand - Coach : Tristan
-- **M18G2** : 18h30 – 20h00, Gymnase Louis Armand - Coach : Elias
+- **M13G** : 18h00 - 19h30, Gymnase Watteau - Coach : Raphaël
+- **M13F** : 18h00 - 19h30, Gymnase Watteau - Coach : Christian
+- **M15F** : 18h00 - 19h30, Gymnase Watteau - Coach : Alex
+- **M15G** : 19h30 - 21h00, Gymnase Watteau - Coach : Vincent
+- **M18F1** : 19h30 - 21h00, Gymnase Watteau - Coach : Mattis
+- **M18G1** : 19h30 - 21h00, Gymnase Watteau - Coach : Hatem (non présent la première semaine)
+- **M18F2** : 18h30 - 20h00, Gymnase Louis Armand - Coach : Tristan
+- **M18G2** : 18h30 - 20h00, Gymnase Louis Armand - Coach : Elias
 
 ## 🏆 Les équipes séniors (nés en 2008 et avant)
 
@@ -83,11 +83,11 @@ Le volley, c'est aussi le plaisir de jouer ensemble sans forcément rechercher l
 
 Les groupes loisirs retrouveront les terrains à partir du mois de septembre :
 
-- **Loisirs** : mardi 1er septembre, 21h00 – 22h30 au Gymnase Watteau
-- **Loisirs FFVB** : vendredi 4 septembre, 21h00 – 22h30 au Gymnase Louis Armand - Coach : Benoît
-- **M15/M18 Loisirs F/G** : dimanche 13 septembre, 10h00 – 12h00 au Gymnase Watteau - Coaches : Wissem et Charles
-- **Volley Santé** : dimanche 13 septembre, 10h00 – 12h00 au Gymnase Watteau - Coach : Tristan
-- **FSGT** : jeudi 10 septembre, 20h00 – 22h30 au Gymnase Louis Armand
+- **Loisirs** : mardi 1er septembre, 21h00 - 22h30 au Gymnase Watteau
+- **Loisirs FFVB** : vendredi 4 septembre, 21h00 - 22h30 au Gymnase Louis Armand - Coach : Benoît
+- **M15/M18 Loisirs F/G** : dimanche 13 septembre, 10h00 - 12h00 au Gymnase Watteau - Coaches : Wissem et Charles
+- **Volley Santé** : dimanche 13 septembre, 10h00 - 12h00 au Gymnase Watteau - Coach : Tristan
+- **FSGT** : jeudi 10 septembre, 20h00 - 22h30 au Gymnase Louis Armand
 
 Pour le groupe **FSGT**, les loisirs sont bien sûr les bienvenus !
 

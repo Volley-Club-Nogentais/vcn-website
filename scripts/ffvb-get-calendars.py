@@ -18,6 +18,7 @@ from urllib import request
 CLUB = "0943988"
 EXPORT_URL = "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier_export_club.php"
 USER_AGENT = "Mozilla/5.0 (MatchScraper/1.0)"
+REQUEST_TIMEOUT_SECONDS = 15
 
 NOW = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -154,7 +155,7 @@ def get_all_games() -> list[str]:
     req = request.Request(EXPORT_URL, post_data, {"User-Agent": USER_AGENT})
     logging.info(f"Tried the URL: {req.get_full_url()}")
 
-    with request.urlopen(req) as resp:
+    with request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
         data = resp.read().decode("latin-1")
 
     logging.debug(data)

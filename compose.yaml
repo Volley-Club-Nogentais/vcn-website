@@ -14,3 +14,4 @@ services:
     command: >
       sh -c "npm ci && hugo server --bind 0.0.0.0 --baseURL=http://localhost:1313/ --buildDrafts --buildFuture --enableGitInfo=true
       --disableFastRender --printI18nWarnings --watch=true"
+    network_mode: bridge

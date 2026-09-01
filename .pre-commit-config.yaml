@@ -13,6 +13,10 @@ repos:
         args:
           - '--maxkb=4096'
       - id: check-merge-conflict
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:

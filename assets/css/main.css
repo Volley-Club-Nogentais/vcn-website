@@ -144,6 +144,16 @@ article h3 {
   padding-left: 0.75rem;
 }
 
+/* When content opens with a heading right after the article title (no paragraph in between),
+   skip that top margin: otherwise it leaves an oversized gap and, on team pages, misaligns the
+   heading with the top of the team photo floated next to it. */
+article h1 + h2,
+article h1 + h3,
+article h1 + img + h2,
+article h1 + img + h3 {
+  margin-top: 0;
+}
+
 /* Default styles for all paragraphs in article content */
 article p {
   /* Styles for paragraphs that contain an image */

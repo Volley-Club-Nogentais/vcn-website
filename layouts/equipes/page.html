@@ -12,22 +12,29 @@
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
     {{ with .Resources.Get "main.jpg" }}
-      {{ with .Fill "500x500 center webp q80" }}
-        <img
-          class="mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
-          alt="Photo de l'équipe {{ $.Title }}"
-          src="{{ .RelPermalink }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-        />
+      {{ $medium := .Fill "500x500 center webp q80" }}
+      {{ $dominant := "var(--color-vcn-blue)" }}
+      {{ with .Colors }}
+        {{ $dominant = index . 0 }}
       {{ end }}
+      <img
+        class="zoomable blur-up mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        style="background-color: {{ $dominant }}"
+        alt="Photo de l'équipe {{ $.Title }}"
+        src="{{ $medium.RelPermalink }}"
+        width="{{ $medium.Width }}"
+        height="{{ $medium.Height }}"
+        loading="lazy"
+        data-full="{{ .RelPermalink }}"
+      />
     {{ else with .Resources.Get "main.svg" }}
       <img
-        class="mb-4 h-auto w-full rounded object-contain sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        class="zoomable mb-4 h-auto w-full rounded object-contain sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
         alt="Illustration de l'équipe {{ $.Title }}"
         src="{{ .RelPermalink }}"
         width="400"
         height="400"
+        data-full="{{ .RelPermalink }}"
       />
     {{ end }}
     {{ .Content }}
@@ -76,7 +83,7 @@
 {{ end }}
 
 {{ define "foot" }}
-  {{ if .Resources.Match "images/*.jpg" }}
+  {{ if or (.Resources.Match "images/*.jpg") (.Resources.Get "main.jpg") (.Resources.Get "main.svg") }}
     {{ with resources.Get "js/gallery-zoom-blur.js" }}
       <script type="text/javascript" src="{{ .RelPermalink }}"></script>
     {{ end }}

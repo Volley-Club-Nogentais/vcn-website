@@ -209,6 +209,11 @@ footer p {
   cursor: zoom-in;
 }
 
+/* Any image opening the fullscreen lightbox on click, whether or not it's part of a gallery grid */
+.zoomable {
+  cursor: zoom-in;
+}
+
 @media (max-width: 576px) {
   .gallery-justified-img {
     height: 130px;

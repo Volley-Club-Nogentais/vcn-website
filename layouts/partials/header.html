@@ -9,7 +9,7 @@
 <header>
   <!-- Navbar-->
   <nav class="fixed inset-x-0 top-0 z-50 w-full bg-white uppercase">
-    <div class="flex flex-wrap items-center justify-between px-4 py-2 nav:flex-nowrap">
+    <div class="flex flex-wrap items-center justify-between px-4 py-1.5 nav:flex-nowrap">
       <!-- Logo and name -->
       <a
         href="{{ .Site.BaseURL }}"
@@ -21,7 +21,7 @@
             width="90"
             height="90"
             alt="Logo VCN"
-            class="h-[50px] w-[50px] content:h-[90px] content:w-[90px]"
+            class="h-11 w-11 content:h-16 content:w-16"
           />
         {{ end }}
         VCN
@@ -70,12 +70,7 @@
         here either. -->
       <div class="invisible hidden shrink-0 items-center gap-2 font-navbar text-2xl nav:flex" aria-hidden="true">
         {{ with resources.Get $logoPath }}
-          <img
-            src="{{ .RelPermalink }}"
-            width="90"
-            height="90"
-            class="h-[50px] w-[50px] content:h-[90px] content:w-[90px]"
-          />
+          <img src="{{ .RelPermalink }}" width="90" height="90" class="h-11 w-11 content:h-16 content:w-16" />
         {{ end }}
         VCN
       </div>

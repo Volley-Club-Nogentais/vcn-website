@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Zoom fullscreen with prev/next navigation
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-justified-img'))
+    const galleryImages = Array.from(document.querySelectorAll('[data-full]'))
     if (galleryImages.length === 0) return
 
     let currentIndex = 0

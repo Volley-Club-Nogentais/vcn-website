@@ -215,6 +215,65 @@ footer p {
   }
 }
 
+/* Fullscreen lightbox opened when clicking a gallery photo */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.gallery-lightbox-img {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.gallery-lightbox-close,
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 15%);
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-lightbox-close:hover,
+.gallery-lightbox-prev:hover,
+.gallery-lightbox-next:hover {
+  background: rgb(255 255 255 / 30%);
+}
+
+.gallery-lightbox-close {
+  top: 16px;
+  right: 16px;
+}
+
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-lightbox-prev {
+  left: 16px;
+}
+
+.gallery-lightbox-next {
+  right: 16px;
+}
+
 /* Self-hosted icons (assets/icons/*.svg, rendered through the icon.html partial), sized like a
    glyph so they drop into text the same way Font Awesome's icon font used to. */
 .icon {

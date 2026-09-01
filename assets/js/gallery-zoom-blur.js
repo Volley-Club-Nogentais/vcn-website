@@ -10,35 +10,84 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-    // Zoom fullscreen
-    document.querySelectorAll('.gallery-justified-img').forEach(img => {
-        img.addEventListener('click', () => {
-            const src = img.dataset.full
+    // Zoom fullscreen with prev/next navigation
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-justified-img'))
+    if (galleryImages.length === 0) return
 
-            const overlay = document.createElement('div')
-            overlay.style.position = 'fixed'
-            overlay.style.top = 0
-            overlay.style.left = 0
-            overlay.style.width = '100%'
-            overlay.style.height = '100%'
-            overlay.style.background = 'rgba(0,0,0,0.9)'
-            overlay.style.display = 'flex'
-            overlay.style.alignItems = 'center'
-            overlay.style.justifyContent = 'center'
-            overlay.style.zIndex = 9999
+    let currentIndex = 0
+    let overlay = null
+    let fullImg = null
 
-            const fullImg = document.createElement('img')
-            fullImg.src = src
-            fullImg.style.maxWidth = '95%'
-            fullImg.style.maxHeight = '95%'
+    function showImage(index) {
+        currentIndex = (index + galleryImages.length) % galleryImages.length
+        fullImg.src = galleryImages[currentIndex].dataset.full
+    }
 
-            overlay.appendChild(fullImg)
+    function closeOverlay() {
+        if (!overlay) return
+        document.removeEventListener('keydown', onKeydown)
+        overlay.remove()
+        overlay = null
+        fullImg = null
+    }
 
-            overlay.addEventListener('click', () => {
-                overlay.remove()
-            })
+    function onKeydown(e) {
+        if (e.key === 'Escape') closeOverlay()
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1)
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1)
+    }
 
-            document.body.appendChild(overlay)
+    function openOverlay(index) {
+        overlay = document.createElement('div')
+        overlay.className = 'gallery-lightbox'
+        overlay.addEventListener('click', closeOverlay)
+
+        fullImg = document.createElement('img')
+        fullImg.className = 'gallery-lightbox-img'
+        fullImg.addEventListener('click', e => e.stopPropagation())
+        overlay.appendChild(fullImg)
+
+        const closeBtn = document.createElement('button')
+        closeBtn.className = 'gallery-lightbox-close'
+        closeBtn.type = 'button'
+        closeBtn.setAttribute('aria-label', 'Fermer')
+        closeBtn.textContent = '\u00D7'
+        closeBtn.addEventListener('click', e => {
+            e.stopPropagation()
+            closeOverlay()
         })
+        overlay.appendChild(closeBtn)
+
+        if (galleryImages.length > 1) {
+            const prevBtn = document.createElement('button')
+            prevBtn.className = 'gallery-lightbox-prev'
+            prevBtn.type = 'button'
+            prevBtn.setAttribute('aria-label', 'Photo précédente')
+            prevBtn.textContent = '\u2039'
+            prevBtn.addEventListener('click', e => {
+                e.stopPropagation()
+                showImage(currentIndex - 1)
+            })
+            overlay.appendChild(prevBtn)
+
+            const nextBtn = document.createElement('button')
+            nextBtn.className = 'gallery-lightbox-next'
+            nextBtn.type = 'button'
+            nextBtn.setAttribute('aria-label', 'Photo suivante')
+            nextBtn.textContent = '\u203A'
+            nextBtn.addEventListener('click', e => {
+                e.stopPropagation()
+                showImage(currentIndex + 1)
+            })
+            overlay.appendChild(nextBtn)
+        }
+
+        document.body.appendChild(overlay)
+        document.addEventListener('keydown', onKeydown)
+        showImage(index)
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => openOverlay(index))
     })
 })

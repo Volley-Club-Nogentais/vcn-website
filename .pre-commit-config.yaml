@@ -35,6 +35,8 @@ repos:
           - U+00B7  # Allow MiddleDot
           - --allow-codepoint
           - U+20AC  # Allow Euro symbol
+          - --allow-codepoint
+          - U+FE0F  # Allow one variation selector
   - repo: local
     hooks:
       - id: app-prettier

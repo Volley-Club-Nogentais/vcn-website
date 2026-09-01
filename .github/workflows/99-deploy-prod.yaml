@@ -19,7 +19,7 @@ jobs:
           submodules: recursive
 
       - name: Setup python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: 3.14
 
@@ -71,7 +71,7 @@ jobs:
           date > public/deploy_timestamp.txt
 
       - name: rsync deployments
-        uses: burnett01/rsync-deployments@v8
+        uses: burnett01/rsync-deployments@v9
         with:
           switches: --archive --verbose --compress --recursive --delete
           path: public/

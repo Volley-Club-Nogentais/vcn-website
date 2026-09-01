@@ -1,0 +1,21 @@
+{{ $src := .Get "src" | default (.Get 0) }}
+{{ $alt := .Get "alt" }}
+{{ $position := .Get "position" | default "left" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $floatClasses := cond (eq $position "right") "float-right ml-4 mb-2" "float-left mr-4 mb-2" }}
+{{ $style := slice }}
+{{ with $width }}
+  {{ $style = $style | append (printf "width:%s" .) }}
+{{ end }}
+{{ with $height }}
+  {{ $style = $style | append (printf "height:%s" .) }}
+{{ end }}
+<img
+  src="{{ $src }}"
+  alt="{{ $alt }}"
+  class="{{ $floatClasses }} max-w-full h-auto"
+  {{- with $style }}
+    style="{{ delimit . "; " | safeCSS }}"
+  {{- end }}
+/>

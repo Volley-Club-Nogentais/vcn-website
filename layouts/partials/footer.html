@@ -37,6 +37,12 @@
     <p class="mt-1">
       {{ with .GitInfo }}Version {{ .AbbreviatedHash }} by {{ .AuthorName }}{{ end }}
     </p>
+    {{/* Only linked once the page is completed and published (draft: false), see AGENTS.md/CMS. */}}
+    {{ with site.GetPage "/mentions-legales" }}
+      {{ if not .Draft }}
+        <p class="mt-1"><a class="hover:underline" href="{{ .RelPermalink }}">Mentions légales</a></p>
+      {{ end }}
+    {{ end }}
   </div>
 </footer>
 {{ with resources.Get "js/navbar-toggle.js" }}

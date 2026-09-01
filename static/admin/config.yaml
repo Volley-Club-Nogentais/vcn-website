@@ -122,6 +122,25 @@ collections:
             widget: 'markdown'
             required: true
 
+      - name: 'mentions_legales'
+        label: 'Mentions légales'
+        file: 'content/mentions-legales.fr.md'
+        fields:
+          - label: 'Titre'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Brouillon'
+            name: 'draft'
+            widget: 'boolean'
+            default: true
+            required: true
+            hint: "Laisser sur 'oui' tant que les champs [À COMPLÉTER] du contenu n'ont pas été remplis."
+          - label: 'Contenu'
+            name: 'body'
+            widget: 'markdown'
+            required: true
+
       - name: 'contact'
         label: 'Contact'
         file: 'content/contact/index.fr.md'

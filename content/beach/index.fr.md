@@ -7,6 +7,8 @@ categories:
   - beach
 ---
 
+Reprise de la saison : première semaine de septembre.
+
 La section **beach volley** permet de pratiquer le **beach volley 2v2 en bord de Marne**, sur deux terrains dédiés,
 accessibles facilement depuis Paris et toute l'Île-de-France.
 
@@ -31,13 +33,13 @@ techniquement et physiquement dans une ambiance sportive et conviviale.
 
 🗓 Lundi 🕢 19h30 - 21h30
 
-Tarif : **150 € licence comprise** (début avril)
+Tarif : **200 €, licence comprise**
 
 ### Garçons niveau avancé
 
 🗓 Mercredi 🕢 19h30 - 21h30
 
-Tarif : **150 € licence comprise** (début avril)
+Tarif : **200 €, licence comprise**
 
 ## Jeu libre - accès aux terrains
 
@@ -54,7 +56,7 @@ entraînements :
 - Pas de réservation nécessaire
 - Jeu non encadré
 - Accès illimité aux créneaux disponibles
-- Tarif : **60 euros** (début avril)
+- Tarif : **100 €, licence loisir comprise**
 
 ### Permanences d'accueil
 
@@ -109,8 +111,6 @@ reprise.
 Stage intensif destiné aux joueurs et joueuses **intermédiaires et avancés**.
 
 Ce stage permet de préparer la saison et retrouver les sensations du jeu sur sable.
-
-👉 Une affiche avec toutes les informations
 
 ## Suivre l'actualité beach volley du club
 

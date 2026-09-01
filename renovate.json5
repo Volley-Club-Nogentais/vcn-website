@@ -1,0 +1,87 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ]
+
+    // Automatically request reviews
+    reviewers: ['hbuyse'],
+
+    // Keep Renovate PRs manageable
+    prConcurrentLimit: 5,
+    branchConcurrentLimit: 5,
+
+    // Enable the Dependency Dashboard
+    dependencyDashboard: true,
+
+    // Automatically rebase PRs when the base branch has moved
+    rebaseWhen: 'behind-base-branch',
+
+    // Use GitHub Pull Requests for automerge
+    automergeType: 'pr',
+    automergeStrategy: 'fast-forward',
+
+    // Add labels to Renovate PRs
+    labels: ['dependencies', 'renovate'],
+
+    // Keep lock files up-to-date
+    lockFileMaintenance: {
+        enabled: true,
+        automerge: true,
+    },
+
+    // Use vulnerability alerts from osv.dev
+    osvVulnerabilityAlerts: true,
+
+    packageRules: [
+        {
+            description: 'Require a 3-day minimumReleaseAge for version updates (major/minor/patch)',
+            matchUpdateTypes: ['major', 'minor', 'patch'],
+            minimumReleaseAge: '3 days',
+        },
+        {
+            description: 'Automatically merge all non-major updates (except pre-1.0.0)',
+            matchUpdateTypes: ['minor', 'patch'],
+            matchCurrentVersion: '>=1.0.0',
+            automerge: true,
+        },
+        {
+            description: 'Auto-merge pin & digest updates (>= 1.0.0) immediately',
+            matchUpdateTypes: ['pin', 'digest'],
+            matchCurrentVersion: '>=1.0.0',
+            automerge: true,
+        },
+        {
+            description: 'Require manual approval for major updates',
+            matchUpdateTypes: ['major'],
+            dependencyDashboardApproval: true,
+            labels: ['breaking-change'],
+        },
+        {
+            description: 'Group GitHub Actions updates',
+            matchManagers: ['github-actions'],
+            groupName: 'GitHub Actions',
+        },
+        {
+            description: 'Group Docker image updates',
+            matchDatasources: ['docker'],
+            groupName: 'Docker images',
+        },
+        {
+            description: 'Group NPM updates',
+            matchDatasources: ['npm'],
+            groupName: 'NPM',
+        },
+        {
+            description: 'Group HTML updates',
+            matchDatasources: ['html'],
+            groupName: 'HTML',
+        },
+        {
+            // upload-artifact@v4+ and download-artifact@v4+ are not currently supported on GHES
+            matchManagers: ['github-actions'],
+            matchPackageNames: ['actions/upload-artifact', 'actions/download-artifact'],
+            allowedVersions: '<4',
+        },
+    ],
+}

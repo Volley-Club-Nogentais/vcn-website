@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Do a git checkout including submodules
-        uses: actions/checkout@master
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 

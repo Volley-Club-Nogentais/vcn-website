@@ -7,15 +7,29 @@
 
 
   <article class="team">
-    {{ with .Params.image }}
-      <div class="text-center">
-        <img src="{{ . }}" class="h-auto max-w-full rounded" alt="Photo de l'équipe {{ page.Title }}" />
-      </div>
-    {{ end }}
     {{ if .Draft }}
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
+    {{ with .Resources.Get "main.jpg" }}
+      {{ with .Fill "500x500 center webp q80" }}
+        <img
+          class="mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+          alt="Photo de l'équipe {{ $.Title }}"
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+        />
+      {{ end }}
+    {{ else with .Resources.Get "main.svg" }}
+      <img
+        class="mb-4 h-auto w-full rounded object-contain sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        alt="Illustration de l'équipe {{ $.Title }}"
+        src="{{ .RelPermalink }}"
+        width="400"
+        height="400"
+      />
+    {{ end }}
     {{ .Content }}
 
 

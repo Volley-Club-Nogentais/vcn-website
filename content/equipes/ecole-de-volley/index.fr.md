@@ -17,10 +17,12 @@ du passage au niveau supérieur en équipe moins de 13 ans, dans l'enthousiasme 
 club : faire découvrir la beauté du sport en acquérant des bases solides. Tout en s'amusant bien sûr ! Nous les guidons
 également jusqu'en match pour qu'ils découvrent toutes les facettes du volley.
 
-Nos valeurs Nous entraînons nos jeunes dans un environnement de respect, de discipline et d'esprit d'équipe. Nous
-souhaitons qu'ils évoluent dans le sport en respectant leurs coéquipiers et leurs adversaires, leurs arbitres et leurs
-entraîneurs. Nous les poussons à constamment s'améliorer, tout en gardant de l'amusement, afin de former une grande
-équipe soudée qui évoluera au cours des années avec les coéquipiers actuels et à venir.
+## Nos valeurs
+
+Nous entraînons nos jeunes dans un environnement de respect, de discipline et d'esprit d'équipe. Nous souhaitons qu'ils
+évoluent dans le sport en respectant leurs coéquipiers et leurs adversaires, leurs arbitres et leurs entraîneurs. Nous
+les poussons à constamment s'améliorer, tout en gardant de l'amusement, afin de former une grande équipe soudée qui
+évoluera au cours des années avec les coéquipiers actuels et à venir.
 
 ## Nos entraîneurs
 

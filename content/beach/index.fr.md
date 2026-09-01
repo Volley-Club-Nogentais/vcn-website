@@ -29,17 +29,11 @@ et conviviaux tout au long de l'année.
 La section propose des entraînements encadrés par des entraîneurs diplômés. Ces séances permettent de progresser
 techniquement et physiquement dans une ambiance sportive et conviviale.
 
-### Filles niveau avancé & garçons niveau intermédiaire
-
-🗓 Lundi 🕢 19h30 - 21h30
-
-Tarif : **200 €, licence comprise**
-
-### Garçons niveau avancé
-
-🗓 Mercredi 🕢 19h30 - 21h30
-
-Tarif : **200 €, licence comprise**
+| Catégorie                    | Jour de la semaine | Horaire de début | Horaire de fin | Tarifs |
+| ---------------------------- | ------------------ | ---------------- | -------------- | ------ |
+| Filles niveau avancé         | Lundi              | 19:30            | 21:30          | 200 €  |
+| Garçons niveau intermédiaire | Lundi              | 19:30            | 21:30          | 200 €  |
+| Garçons niveau avancé        | Mercredi           | 19:30            | 21:30          | 200 €  |
 
 ## Jeu libre - accès aux terrains
 

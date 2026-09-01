@@ -84,6 +84,9 @@ jobs:
 
   # Deployment job
   deploy:
+    # Never deploy a pull request coming from a fork: the build job above already ran the fork's
+    # code, but this job also carries pages:write/id-token:write and must not publish it.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

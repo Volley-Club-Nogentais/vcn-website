@@ -195,22 +195,23 @@ footer p {
 }
 /* End home page banner */
 
-.carousel-img-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* default desktop */
-  overflow: hidden;
-  position: relative;
+.gallery-justified {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
-.carousel-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.gallery-justified-img {
+  height: 220px;
+  max-width: 500px;
+  flex-grow: 1;
+  object-fit: cover;
+  cursor: zoom-in;
 }
 
 @media (max-width: 576px) {
-  .carousel-img-wrapper {
-    aspect-ratio: 1 / 1; /* square */
+  .gallery-justified-img {
+    height: 130px;
   }
 }
 

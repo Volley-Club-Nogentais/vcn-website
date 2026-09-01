@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Zoom fullscreen
-    document.querySelectorAll('.carousel-img-wrapper img').forEach(img => {
+    document.querySelectorAll('.gallery-justified-img').forEach(img => {
         img.addEventListener('click', () => {
             const src = img.dataset.full
 

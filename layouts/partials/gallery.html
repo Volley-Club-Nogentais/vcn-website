@@ -1,0 +1,34 @@
+{{- $path := .path | default "images" -}}
+{{- $page := .page -}}
+{{- $resources := $page.Resources.Match (printf "%s/*.{jpg,jpeg,png,webp}" (path.Dir $path)) -}}
+
+{{- if not $resources }}
+  {{- warnf "No images found for path: %s/%s" $page.Path $path -}}
+{{- end }}
+
+
+<div class="gallery-justified">
+  {{ range $index, $img := $resources }}
+    {{/* Responsive images */}}
+    {{ $small := $img.Resize "400x webp q70" }}
+    {{ $medium := $img.Resize "800x webp q75" }}
+
+    {{/* Dominant color, shown as an instant placeholder while the photo loads */}}
+    {{ $dominant := "var(--color-vcn-blue)" }}
+    {{ with $img.Colors }}
+      {{ $dominant = index . 0 }}
+    {{ end }}
+
+
+    <img
+      src="{{ $medium.RelPermalink }}"
+      srcset="{{ $small.RelPermalink }} 400w, {{ $medium.RelPermalink }} 800w"
+      sizes="(max-width: 576px) 50vw, 300px"
+      class="gallery-justified-img blur-up"
+      style="background-color: {{ $dominant }}"
+      alt="Photo {{ add $index 1 }} de la galerie {{ $page.Title }}"
+      loading="lazy"
+      data-full="{{ $img.RelPermalink }}"
+    />
+  {{ end }}
+</div>

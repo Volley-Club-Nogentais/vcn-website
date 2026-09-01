@@ -18,13 +18,20 @@
       <p class="-mt-1.5 text-gray-500">par {{ . }}</p>
     {{ end }}
     <p class="mt-3">{{ .Summary | replaceRE `<img[^>]*>` "" | safeHTML }}</p>
-    {{ if .Truncated }}
-      <a
-        href="{{ .RelPermalink }}"
-        class="relative m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] hover:bg-vcn-yellow/90 hover:underline"
-        >En savoir plus</a
-      >
-    {{ end }}
+    <a
+      href="{{ .RelPermalink }}"
+      class="{{ if .Truncated -}}
+        m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue hover:bg-vcn-yellow/90
+        hover:underline
+      {{- else -}}
+        sr-only
+      {{- end }} before:absolute before:inset-0 before:content-['']"
+      >{{- if .Truncated -}}
+        En savoir plus
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}</a
+    >
   </div>
   {{ with .Date }}
     <div class="border-t border-black/10 bg-black/3 px-4 py-2">

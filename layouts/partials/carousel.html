@@ -20,9 +20,6 @@
       {{/* Mobile square */}}
       {{ $mobile := $img.Fit "600x600 webp q75" }}
 
-      {{/* Blur tiny */}}
-      {{ $blur := $img.Resize "20x webp q20" }}
-
       {{/* Dominant color, fills the gutters left by portrait/landscape images that don't match the slide's box ratio */}}
       {{ $dominant := "var(--color-vcn-blue)" }}
       {{ with $img.Colors }}
@@ -40,7 +37,6 @@
               srcset="{{ $small.RelPermalink }} 400w, {{ $medium.RelPermalink }} 800w, {{ $large.RelPermalink }} 1200w"
               sizes="(max-width: 768px) 100vw, 1200px"
               class="blur-up block w-full"
-              style="background-image: url('{{ $blur.RelPermalink }}')"
               alt="Photo {{ add $index 1 }} de la galerie {{ $page.Title }}"
               loading="lazy"
               data-full="{{ $img.RelPermalink }}"

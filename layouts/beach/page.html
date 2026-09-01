@@ -1,0 +1,75 @@
+{{ define "head" }}
+  {{ if .Resources.Match "images/*.{jpg,jpeg,png,webp}" }}
+    {{/* Swiper CSS (self-hosted, assets/css/vendor/swiper-bundle.min.css) */}}
+    {{ with resources.Get "css/vendor/swiper-bundle.min.css" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  <article class="single">
+    {{ if .Draft }}
+      <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
+    {{ end }}
+    {{ with .Resources.Get "cover.jpg" }}
+      {{ with .Fill "1200x500 webp q80" }}
+        <img
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt=""
+          class="mb-4 h-auto w-full rounded object-cover"
+        />
+      {{ end }}
+    {{ end }}
+    <h1 class="uppercase">{{ .Title }}</h1>
+    {{ if or .Date .Params.author }}
+      <p class="italic">
+        <em>
+          Créé
+          {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}
+          {{ with .Params.author }}par {{ . }}{{ end }}
+        </em>
+      </p>
+    {{ end }}
+    {{ .Content }}
+
+    {{ $elements := .Resources.Match "images/*.{jpg,jpeg,png,webp}" }}
+    {{ with $elements }}
+      <h2>Galerie</h2>
+      {{ partial "carousel.html" (dict
+        "page" $
+        "path" "images/"
+        )
+      }}
+    {{ end }}
+  </article>
+{{ end }}
+
+{{ define "foot" }}
+  {{ if .Resources.Match "images/*.{jpg,jpeg,png,webp}" }}
+    {{ with resources.Get "js/carousel-zoom-blur.js" }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    {{ end }}
+    {{/* Swiper JS (self-hosted, assets/js/vendor/swiper-bundle.min.js) */}}
+    {{ with resources.Get "js/vendor/swiper-bundle.min.js" }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.gallery-swiper', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        })
+      })
+    </script>
+  {{ end }}
+{{ end }}

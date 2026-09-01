@@ -368,3 +368,6 @@ tags
 # End of https://www.toptal.com/developers/gitignore/api/hugo,node,vim,visualstudiocode,python
 
 data/calendars/*.json
+
+### Claude Code ###
+.claude/

@@ -236,3 +236,7 @@ footer p {
   filter: blur(20px);
   transition: filter 0.4s ease;
 }
+
+.blur-up.loaded {
+  filter: blur(0);
+}

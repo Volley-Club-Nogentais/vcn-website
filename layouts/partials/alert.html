@@ -1,9 +1,3 @@
-{{ if hugo.IsDevelopment }}
-  <div class="my-2 rounded border border-vcn-yellow/40 bg-vcn-yellow/15 p-3 text-center text-vcn-blue" role="alert">
-    ⚠️ Version de pré-production ⚠️
-  </div>
-{{ end }}
-
 {{ with .Site.Params.alert }}
   {{ $levels := dict
     "primary" "border-vcn-blue/40 bg-vcn-blue/10 text-vcn-blue"

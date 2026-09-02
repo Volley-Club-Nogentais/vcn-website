@@ -1,13 +1,13 @@
 {{ with .Site.Params.alert }}
   {{ $levels := dict
-    "primary" "border-vcn-blue/40 bg-vcn-blue/10 text-vcn-blue"
-    "secondary" "border-vcn-secondary/40 bg-vcn-secondary/10 text-vcn-secondary"
-    "success" "border-green-400 bg-green-50 text-green-800"
-    "danger" "border-red-400 bg-red-50 text-red-800"
-    "warning" "border-vcn-yellow/40 bg-vcn-yellow/15 text-vcn-blue"
-    "info" "border-sky-400 bg-sky-50 text-sky-800"
-    "light" "border-gray-200 bg-gray-50 text-gray-800"
-    "dark" "border-gray-700 bg-gray-800 text-white"
+    "primary" "border-vcn-blue/40 bg-vcn-blue/10 text-vcn-blue dark:border-(--color-dark-border) dark:bg-(--color-dark-hover) dark:text-(--color-dark-fg)"
+    "secondary" "border-vcn-secondary/40 bg-vcn-secondary/10 text-vcn-secondary dark:border-(--color-dark-border) dark:bg-(--color-dark-hover) dark:text-(--color-dark-fg-muted)"
+    "success" "border-green-400 bg-green-50 text-green-800 dark:border-green-700 dark:bg-green-900/30 dark:text-green-300"
+    "danger" "border-red-400 bg-red-50 text-red-800 dark:border-red-700 dark:bg-red-900/30 dark:text-red-300"
+    "warning" "border-vcn-yellow/40 bg-vcn-yellow/15 text-vcn-blue dark:border-vcn-yellow/40 dark:bg-vcn-yellow/15 dark:text-vcn-yellow"
+    "info" "border-sky-400 bg-sky-50 text-sky-800 dark:border-sky-700 dark:bg-sky-900/30 dark:text-sky-300"
+    "light" "border-gray-200 bg-gray-50 text-gray-800 dark:border-(--color-dark-border) dark:bg-(--color-dark-surface) dark:text-(--color-dark-fg)"
+    "dark" "border-gray-700 bg-gray-800 text-white dark:border-(--color-dark-border) dark:bg-(--color-dark-bg) dark:text-(--color-dark-fg)"
   }}
   <div class="my-2 rounded border p-3 text-center {{ or (index $levels .level) (index $levels "info") }}" role="alert">
     {{ .text }}

@@ -59,6 +59,25 @@
   --breakpoint-content: 600px;
 }
 
+/* Dark theme neutral palette. Kept as plain custom properties (rather than @theme tokens) so a
+   different color proposal only needs to change the values here - every "dark:bg-(--color-dark-*)"
+   utility across the templates stays the same. The brand colors above (vcn-blue/yellow/secondary)
+   are intentionally not redefined here: they keep working as accents against these neutrals. */
+:root {
+  --color-dark-bg: #0b1420;
+  --color-dark-surface: #162335;
+  --color-dark-surface-alt: #1e3049;
+  --color-dark-fg: #e7edf5;
+  --color-dark-fg-muted: #93a2b8;
+  --color-dark-border: rgb(255 255 255 / 12%);
+  --color-dark-hover: rgb(255 255 255 / 6%);
+}
+
+/* Drives every `dark:` utility from the `data-theme="dark"` attribute set on <html> by the inline
+   theme-init script (see layouts/_default/baseof.html), instead of Tailwind's default
+   `prefers-color-scheme` media query - required since the toggle button overrides the OS preference. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 @layer base {
   body {
     font-family: var(--font-sans);
@@ -214,6 +233,11 @@ footer p {
   top: 25%;
   padding: 4%;
 }
+
+[data-theme='dark'] .top-div {
+  background-color: var(--color-dark-surface);
+  color: var(--color-dark-fg);
+}
 /* End home page banner */
 
 .gallery-justified {
@@ -348,6 +372,10 @@ footer p {
     overflow: hidden;
   }
 
+  [data-theme='dark'] .responsive-table tr {
+    border-color: var(--color-dark-border);
+  }
+
   .responsive-table tr:last-child {
     margin-bottom: 0;
   }
@@ -359,6 +387,10 @@ footer p {
     border-bottom: 1px solid rgb(0 0 0 / 6%);
   }
 
+  [data-theme='dark'] .responsive-table td {
+    border-bottom-color: var(--color-dark-border);
+  }
+
   .responsive-table td:last-child {
     border-bottom: none;
   }
@@ -367,5 +399,9 @@ footer p {
     content: attr(data-label);
     font-weight: 700;
     color: var(--color-vcn-blue);
+  }
+
+  [data-theme='dark'] .responsive-table td::before {
+    color: var(--color-dark-fg);
   }
 }

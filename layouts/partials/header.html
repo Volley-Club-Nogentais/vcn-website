@@ -8,12 +8,14 @@
 
 <header>
   <!-- Navbar-->
-  <nav class="fixed inset-x-0 top-0 z-50 w-full border-b-1 border-vcn-yellow bg-white uppercase">
+  <nav
+    class="fixed inset-x-0 top-0 z-50 w-full border-b-1 border-vcn-yellow bg-white uppercase dark:bg-(--color-dark-surface)"
+  >
     <div class="flex flex-wrap items-center justify-between px-4 py-1.5 nav:flex-nowrap">
       <!-- Logo and name -->
       <a
         href="{{ .Site.BaseURL }}"
-        class="relative flex shrink-0 items-center gap-2 font-navbar text-2xl text-vcn-blue no-underline"
+        class="relative flex shrink-0 items-center gap-2 font-navbar text-2xl text-vcn-blue no-underline dark:text-(--color-dark-fg)"
       >
         {{ with resources.Get $logoPath }}
           <img
@@ -32,17 +34,20 @@
         {{ end }}
       </a>
 
-      <!-- Burger menu for small devices -->
-      <button
-        type="button"
-        class="shrink-0 px-2 py-1 text-2xl text-vcn-blue nav:hidden"
-        data-navbar-toggle
-        aria-controls="navbarVCN"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        {{ partial "icon.html" (dict "name" "bars") }}
-      </button>
+      <!-- Theme toggle and burger menu for small devices -->
+      <div class="flex items-center nav:hidden">
+        {{ partial "theme-toggle-button.html" (dict "size" "text-2xl") }}
+        <button
+          type="button"
+          class="shrink-0 px-2 py-1 text-2xl text-vcn-blue dark:text-(--color-dark-fg)"
+          data-navbar-toggle
+          aria-controls="navbarVCN"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          {{ partial "icon.html" (dict "name" "bars") }}
+        </button>
+      </div>
 
       <!-- Menu -->
       <div
@@ -67,12 +72,16 @@
       <!-- Invisible spacer mirroring the logo, so the centered menu above is centered on the
         whole navbar rather than on the space left of a right-aligned logo. The dev-only
         "Pré-prod" badge is absolutely positioned on the real logo, so it doesn't need mirroring
-        here either. -->
+        here either. The theme toggle after it is real (not mirrored): it nudges the menu's
+        centering by half its own width, which is small enough to not be worth balancing. -->
       <div class="invisible hidden shrink-0 items-center gap-2 font-navbar text-2xl nav:flex" aria-hidden="true">
         {{ with resources.Get $logoPath }}
           <img src="{{ .RelPermalink }}" width="90" height="90" class="h-11 w-11 content:h-16 content:w-16" />
         {{ end }}
         VCN
+      </div>
+      <div class="hidden shrink-0 nav:block">
+        {{ partial "theme-toggle-button.html" (dict "size" "text-xl") }}
       </div>
     </div>
   </nav>

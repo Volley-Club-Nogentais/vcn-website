@@ -1,5 +1,5 @@
 <div
-  class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white transition-shadow duration-200 hover:shadow-md"
+  class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white transition-shadow duration-200 hover:shadow-md dark:border-(--color-dark-border) dark:bg-(--color-dark-surface)"
 >
   {{ partial "news-cover.html" (dict "page" . "class" "h-40 w-full" "fill" "600x300") }}
   <div class="card-body p-4">
@@ -8,15 +8,15 @@
         {{ range first 3 . }}
           <a
             href="{{ .RelPermalink }}"
-            class="rounded-full bg-vcn-blue/8 px-2.5 py-0.5 text-xs font-bold uppercase text-vcn-blue hover:bg-vcn-yellow/40"
+            class="rounded-full bg-vcn-blue/8 px-2.5 py-0.5 text-xs font-bold uppercase text-vcn-blue hover:bg-vcn-yellow/40 dark:bg-(--color-dark-hover) dark:text-(--color-dark-fg) dark:hover:bg-vcn-yellow/40"
             >{{ .Title }}</a
           >
         {{ end }}
       </div>
     {{ end }}
-    <h4 class="line-clamp-3 text-lg text-vcn-blue">{{ .Title }}</h4>
+    <h4 class="line-clamp-3 text-lg text-vcn-blue dark:text-(--color-dark-fg)">{{ .Title }}</h4>
     {{ with .Params.author }}
-      <p class="-mt-1.5 text-gray-500">par {{ . }}</p>
+      <p class="-mt-1.5 text-gray-500 dark:text-(--color-dark-fg-muted)">par {{ . }}</p>
     {{ end }}
     {{/* safeHTML is safe here only because .Summary comes from Markdown authored by trusted CMS
       editors with GitHub write access, not from untrusted/public input.
@@ -37,8 +37,10 @@
     >
   </div>
   {{ with .Date }}
-    <div class="border-t border-black/10 bg-black/3 px-4 py-2">
-      <small class="text-gray-500">{{ . | time.Format ":date_long" }}</small>
+    <div
+      class="border-t border-black/10 bg-black/3 px-4 py-2 dark:border-(--color-dark-border) dark:bg-(--color-dark-surface-alt)"
+    >
+      <small class="text-gray-500 dark:text-(--color-dark-fg-muted)">{{ . | time.Format ":date_long" }}</small>
     </div>
   {{ end }}
 </div>

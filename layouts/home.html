@@ -36,7 +36,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <section class="home-image hidden nav:flex">
+  <section class="home-image hidden nav:flex rounded-lg">
     <div class="bottom-div">
       {{ with resources.Get "media/vcn_monogramme_v1_gold.svg" }}
         <img class="h-auto w-[270px] max-w-full p-[1%]" alt="Club monogramme" src="{{ .RelPermalink }}" />
@@ -55,7 +55,7 @@
           width="{{ .Width }}"
           height="{{ .Height }}"
           alt=""
-          class="h-56 w-full rounded-b-lg object-cover sm:h-72"
+          class="h-56 w-full rounded-lg object-cover sm:h-72"
         />
       {{ end }}
     {{ end }}

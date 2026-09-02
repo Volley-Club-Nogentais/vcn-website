@@ -3,26 +3,26 @@
     {{ if .Draft }}
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
-    {{ with .Resources.Get "cover.jpg" }}
-      {{ with .Fill "1200x500 webp q80" }}
-        <img
-          src="{{ .RelPermalink }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          alt=""
-          class="mb-4 h-auto w-full rounded object-cover"
-        />
-      {{ end }}
-    {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
-    {{ if or .Date .Params.author }}
-      <p class="italic">
-        <em>
-          Créé
-          {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}
-          {{ with .Params.author }}par {{ . }}{{ end }}
-        </em>
-      </p>
+    {{ with .Resources.Get "main.jpg" }}
+      {{ partial "image.html" (dict
+        "resource" .
+        "alt" (printf "Photo de l'équipe %s" $.Title)
+        "class" "mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        "fill" "500x500 center webp q80"
+        "zoomable" true
+        )
+      }}
+    {{ else with .Resources.Get "main.svg" }}
+      {{ partial "image.html" (dict
+        "resource" .
+        "alt" (printf "Illustration de l'équipe %s" $.Title)
+        "class" "mb-4 h-auto w-full rounded object-contain sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        "width" 400
+        "height" 400
+        "zoomable" true
+        )
+      }}
     {{ end }}
     {{ .Content }}
 

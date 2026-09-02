@@ -1,7 +1,7 @@
 {{- range site.Menus.main }}
   <li>
     <a
-      class="px-2 font-heading font-extrabold text-vcn-blue dark:text-(--color-dark-fg) {{ with .Params.class -}}
+      class="px-2 font-heading font-extrabold text-vcn-blue{{ with .Params.class -}}
         {{ . }}
       {{ end -}}"
       href="{{ .URL }}"
@@ -11,11 +11,7 @@
 {{- end }}
 {{ with .Site.Params.adhesionLink }}
   <li>
-    <a
-      class="px-2 font-heading font-extrabold text-vcn-blue dark:text-(--color-dark-fg)"
-      target="_blank"
-      rel="noopener noreferrer"
-      href="{{ . }}"
+    <a class="px-2 font-heading font-extrabold text-vcn-blue" target="_blank" rel="noopener noreferrer" href="{{ . }}"
       >Inscriptions</a
     >
   </li>

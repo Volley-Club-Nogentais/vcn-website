@@ -1,0 +1,62 @@
+{{- $resource := .resource -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $style := .style | default slice -}}
+{{- $fill := .fill -}}
+{{- $width := .width -}}
+{{- $height := .height -}}
+{{- $zoomable := .zoomable | default false -}}
+{{- $loading := .loading | default "lazy" -}}
+
+{{- $img := $resource -}}
+{{- $classes := slice -}}
+{{- with $class -}}
+  {{- $classes = $classes | append . -}}
+{{- end -}}
+
+{{- with $fill -}}
+  {{- $img = $resource.Fill . -}}
+  {{- $dominant := "var(--color-vcn-blue)" -}}
+  {{- with $resource.Colors -}}
+    {{- $dominant = index . 0 -}}
+  {{- end -}}
+  {{- $style = $style | append (printf "background-color:%s" $dominant) -}}
+  {{- $classes = $classes | append "blur-up" -}}
+{{- end -}}
+
+{{- if $zoomable -}}
+  {{- $classes = $classes | append "zoomable" -}}
+{{- end -}}
+
+{{- /* Vector resources (SVG) don't support .Width/.Height at all (calling them errors out),
+  so only fall back to the resource's own metadata for raster images. */
+-}}
+{{- $isRaster := ne $img.MediaType.SubType "svg+xml" -}}
+{{- $imgWidth := $width -}}
+{{- $imgHeight := $height -}}
+{{- if and (not $imgWidth) $isRaster -}}
+  {{- $imgWidth = $img.Width -}}
+{{- end -}}
+{{- if and (not $imgHeight) $isRaster -}}
+  {{- $imgHeight = $img.Height -}}
+{{- end -}}
+
+
+<img
+  src="{{ $img.RelPermalink }}"
+  {{- with $imgWidth }}
+    width="{{ . }}"
+  {{- end }}
+  {{- with $imgHeight }}
+    height="{{ . }}"
+  {{- end }}
+  alt="{{ $alt }}"
+  class="{{ delimit $classes " " }}"
+  {{- with $style }}
+    style="{{ delimit . "; " | safeCSS }}"
+  {{- end }}
+  loading="{{ $loading }}"
+  {{- if $zoomable }}
+    data-full="{{ $resource.RelPermalink }}"
+  {{- end }}
+/>

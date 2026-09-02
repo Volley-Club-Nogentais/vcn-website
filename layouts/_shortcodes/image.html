@@ -1,21 +1,30 @@
-{{ $src := .Get "src" | default (.Get 0) }}
-{{ $alt := .Get "alt" }}
-{{ $position := .Get "position" | default "left" }}
-{{ $width := .Get "width" }}
-{{ $height := .Get "height" }}
-{{ $floatClasses := cond (eq $position "right") "float-right ml-4 mb-2" "float-left mr-4 mb-2" }}
-{{ $style := slice }}
-{{ with $width }}
-  {{ $style = $style | append (printf "width:%s" .) }}
-{{ end }}
-{{ with $height }}
-  {{ $style = $style | append (printf "height:%s" .) }}
-{{ end }}
-<img
-  src="{{ $src }}"
-  alt="{{ $alt }}"
-  class="{{ $floatClasses }} max-w-full h-auto"
-  {{- with $style }}
-    style="{{ delimit . "; " | safeCSS }}"
-  {{- end }}
-/>
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $alt := .Get "alt" -}}
+{{- $position := .Get "position" | default "left" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+
+{{- $resource := .Page.Resources.Get $src -}}
+{{- if not $resource -}}
+  {{- warnf "image shortcode: resource not found: %s (in %s)" $src .Page.Path -}}
+{{- end -}}
+
+{{- $floatClass := cond (eq $position "right") "float-right ml-4 mb-2" "float-left mr-4 mb-2" -}}
+
+{{- $style := slice -}}
+{{- with $width -}}
+  {{- $style = $style | append (printf "width:%s" .) -}}
+{{- end -}}
+{{- with $height -}}
+  {{- $style = $style | append (printf "height:%s" .) -}}
+{{- end -}}
+
+{{- with $resource -}}
+  {{ partial "image.html" (dict
+    "resource" .
+    "alt" $alt
+    "class" (printf "%s max-w-full h-auto" $floatClass)
+    "style" $style
+    )
+  }}
+{{- end -}}

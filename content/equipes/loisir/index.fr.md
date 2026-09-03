@@ -7,11 +7,13 @@ categories:
 draft: false
 weight: 10
 image: ''
+schedule:
+  - gym: 'watteau'
+    day: 'Mardi'
+    start: '21:00'
+    end: '22:30'
+  - gym: 'watteau'
+    day: 'Vendredi'
+    start: '21:00'
+    end: '22:30'
 ---
-
-## Les créneaux
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Mardi              | 21:00            | 22:30          |
-| Watteau | Vendredi           | 21:00            | 22:30          |

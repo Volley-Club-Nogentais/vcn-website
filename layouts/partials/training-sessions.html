@@ -1,0 +1,46 @@
+{{/* Aggregates every team's `schedule` front matter by gym, so visitors can see at a glance who
+  trains where and when instead of opening each team page one by one.
+*/}}
+{{- $dayOrder := dict "Lundi" 1 "Mardi" 2 "Mercredi" 3 "Jeudi" 4 "Vendredi" 5 "Samedi" 6 "Dimanche" 7 -}}
+{{- $teams := (site.GetPage "/equipes").Pages -}}
+
+
+<div class="flex flex-col gap-4">
+  {{- range site.Params.gyms }}
+    {{- $gym := . -}}
+    {{- $sessions := slice -}}
+    {{- range $teams }}
+      {{- $team := . -}}
+      {{- range .Params.schedule }}
+        {{- if eq .gym $gym.slug }}
+          {{- $sessions = $sessions | append (dict
+            "team" $team.Title
+            "url" $team.RelPermalink
+            "day" .day
+            "order" (index $dayOrder .day | default 8)
+            "start" .start
+            "end" .end
+            )
+          -}}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    {{- if $sessions }}
+      {{- $sessions = sort $sessions "order" }}
+      <div class="rounded border border-black/10 p-4">
+        <h3 class="text-vcn-blue">{{ $gym.name }}</h3>
+        <p class="mt-1 text-sm text-gray-500">{{ $gym.address }}</p>
+        <ul class="mt-3 flex flex-col gap-2">
+          {{- range $sessions }}
+            <li
+              class="flex flex-wrap items-baseline justify-between gap-x-3 border-t border-black/5 pt-2 first:border-t-0 first:pt-0"
+            >
+              <a class="font-bold text-vcn-blue hover:underline" href="{{ .url }}">{{ .team }}</a>
+              <span class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</span>
+            </li>
+          {{- end }}
+        </ul>
+      </div>
+    {{- end }}
+  {{- end }}
+</div>

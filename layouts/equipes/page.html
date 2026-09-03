@@ -45,6 +45,48 @@
     {{ end }}
     {{ .Content }}
 
+    {{ with .Params.schedule }}
+      <div class="training">
+        <h2>Les entraînements</h2>
+        <div class="content:hidden flex flex-col gap-2">
+          {{ range . }}
+            {{ $gymName := .gym }}
+            {{ with where site.Params.gyms "slug" .gym }}
+              {{ $gymName = (index . 0).name }}
+            {{ end }}
+            <div class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3">
+              <p class="font-bold text-vcn-blue">{{ $gymName }}</p>
+              <p class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</p>
+            </div>
+          {{ end }}
+        </div>
+        <div class="hidden overflow-x-auto content:block">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="border-b border-black/10 text-left">
+                <th class="px-3 py-2">Gymnase</th>
+                <th class="px-3 py-2">Jour</th>
+                <th class="px-3 py-2">Horaires</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{ range . }}
+                {{ $gymName := .gym }}
+                {{ with where site.Params.gyms "slug" .gym }}
+                  {{ $gymName = (index . 0).name }}
+                {{ end }}
+                <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+                  <td class="px-3 py-2">{{ $gymName }}</td>
+                  <td class="px-3 py-2">{{ .day }}</td>
+                  <td class="px-3 py-2">{{ .start }}-{{ .end }}</td>
+                </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{ end }}
+
 
     <div class="calendar">
       {{ with $data }}

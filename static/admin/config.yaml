@@ -372,6 +372,38 @@ collections:
         media_library:
           config:
             max_file_size: 2048000
+      - label: 'Entraînements'
+        name: 'schedule'
+        widget: 'list'
+        required: false
+        hint: "Affiché sur la page équipe et récapitulé sur la page Contact."
+        fields:
+          - label: 'Gymnase'
+            name: 'gym'
+            widget: 'select'
+            options:
+              - { label: 'Maudry', value: 'maudry' }
+              - { label: 'Watteau', value: 'watteau' }
+              - { label: 'Louis Armand', value: 'louis-armand' }
+          - label: 'Jour de la semaine'
+            name: 'day'
+            widget: 'select'
+            options:
+              - 'Lundi'
+              - 'Mardi'
+              - 'Mercredi'
+              - 'Jeudi'
+              - 'Vendredi'
+              - 'Samedi'
+              - 'Dimanche'
+          - label: 'Horaire de début'
+            name: 'start'
+            widget: 'string'
+            hint: "Format HH:MM (ex: 20:00)."
+          - label: 'Horaire de fin'
+            name: 'end'
+            widget: 'string'
+            hint: "Format HH:MM (ex: 22:30)."
       - label: 'Contenu'
         name: 'body'
         widget: 'markdown'

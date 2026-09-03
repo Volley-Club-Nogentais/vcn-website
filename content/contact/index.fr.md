@@ -7,7 +7,8 @@ nous contacter !
 
 ### 📍 Où nous trouver ?
 
-En fonction de la section, vous pouvez nous retrouver aux différents gymnases aux horaires indiqués.
+Chaque équipe s'entraîne dans l'un de nos **trois gymnases** à Nogent-sur-Marne. Retrouvez la liste des gymnases et des
+créneaux par équipe dans la section **"Où et quand s'entraîner ?"** en bas de cette page.
 
 ### 📧 Nous envoyer un message
 

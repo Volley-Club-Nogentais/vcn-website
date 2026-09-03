@@ -146,11 +146,14 @@ article h3 {
 
 /* When content opens with a heading right after the article title (no paragraph in between),
    skip that top margin: otherwise it leaves an oversized gap and, on team pages, misaligns the
-   heading with the top of the team photo floated next to it. */
+   heading with the top of the team photo (an <img>) or the monogram fallback (a <div>) floated
+   next to it. */
 article h1 + h2,
 article h1 + h3,
 article h1 + img + h2,
-article h1 + img + h3 {
+article h1 + img + h3,
+article h1 + div + h2,
+article h1 + div + h3 {
   margin-top: 0;
 }
 

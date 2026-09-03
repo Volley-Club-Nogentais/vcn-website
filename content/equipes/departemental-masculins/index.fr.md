@@ -7,6 +7,15 @@ categories:
   - FFVB
   - adultes
 calendarName: departemental_masculins
+schedule:
+  - gym: 'louis-armand'
+    day: 'Lundi'
+    start: '20:00'
+    end: '22:30'
+  - gym: 'watteau'
+    day: 'Jeudi'
+    start: '21:00'
+    end: '22:30'
 ---
 
 Cette saison a vu naître un tout nouveau groupe, construit autour d'un entraîneur revenu au club. Avec lui, un bel
@@ -25,10 +34,3 @@ L'ambiance de vestiaire et l'investissement de chacun ont été de véritables f
 L'histoire ne s'arrête pas là. Avec quelques arrivées et départs, le groupe repart avec ambition : surfer sur cette
 belle dynamique et aller chercher, pourquoi pas, une deuxième montée consécutive. Plus qu'une équipe, c'est un collectif
 qui vit bien et qui avance ensemble, animé par la même passion et les mêmes objectifs.
-
-## Les entraînements
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Lundi              | 20:00            | 22:30          |
-| Watteau      | Jeudi              | 21:00            | 22:30          |

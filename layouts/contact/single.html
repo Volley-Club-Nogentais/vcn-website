@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <article class="single">
+    <h1 class="uppercase">{{ .Title }}</h1>
+    {{ .Content }}
+
+
+    <h2>Où et quand s'entraîner ?</h2>
+    {{ partial "training-sessions.html" . }}
+  </article>
+{{ end }}

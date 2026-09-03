@@ -27,6 +27,17 @@ socials:
       icon: "youtube"
       url: "https://www.youtube.com/@volleyclubnogent"
 
+gyms:
+  - slug: "maudry"
+    name: "Maudry"
+    address: "5-7 rue Jean Monnet, 94130 Nogent-sur-Marne"
+  - slug: "watteau"
+    name: "Watteau"
+    address: "37 rue Lequesne, 94130 Nogent-sur-Marne"
+  - slug: "louis-armand"
+    name: "Louis Armand"
+    address: "173 Bd de Strasbourg, 94130 Nogent-sur-Marne"
+
 logo:
   # January to May
   - logo_couleur.svg

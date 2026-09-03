@@ -7,6 +7,11 @@ categories:
   - FFVB
   - adultes
 calendarName: compet_lib
+schedule:
+  - gym: 'louis-armand'
+    day: 'Vendredi'
+    start: '20:30'
+    end: '22:30'
 ---
 
 L'équipe des **Canards Boiteux** est une formation emblématique de volley masculin 4x4, composée principalement
@@ -34,9 +39,3 @@ que le volley est un sport accessible à tous, peu importe l'âge ou le niveau. 
 montrent qu'avec de la passion et un bon état d'esprit, il est possible de continuer à pratiquer et à progresser, même
 après une carrière en compétition. Les Canards Boiteux rappellent à tous que le sport est avant tout une question de
 plaisir, de partage et de dépassement de soi.
-
-## Les entraînements
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Vendredi           | 20:30            | 22:30          |

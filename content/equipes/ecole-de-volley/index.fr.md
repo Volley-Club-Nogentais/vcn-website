@@ -10,6 +10,11 @@ gallery:
   - images/1.jpg
   - images/2.jpg
   - images/3.jpg
+schedule:
+  - gym: 'maudry'
+    day: 'Samedi'
+    start: '09:30'
+    end: '11:00'
 ---
 
 ## Présentation du groupe
@@ -40,9 +45,3 @@ Au cours des dernières années, l'école de volley a été une excellente forma
 ans et moins de 18 ans, qui nous ont tous impressionnés par leur travail et leurs performances. Et ce n'est pas tout !
 Les jeunes ont également su se démarquer durant leurs compétitions annuelles, allant jusqu'en compétition régionale pour
 les garçons en 2025 et en phase finale de coupe départementale pour les filles !!
-
-## Les entraînements
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Maudry  | Samedi             | 09:30            | 11:00          |

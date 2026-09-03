@@ -6,10 +6,9 @@ weight: 10
 categories:
   - FFVB
   - adultes
+schedule:
+  - gym: 'watteau'
+    day: 'Dimanche'
+    start: '10:00'
+    end: '12:00'
 ---
-
-## Les entraînements
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Dimanche           | 10:00            | 12:00          |

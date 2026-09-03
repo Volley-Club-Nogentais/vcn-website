@@ -1,5 +1,5 @@
 ---
-title: Régional Fémininines
+title: Régional Féminines
 summary: FFVB Régional Féminines
 draft: false
 weight: 50

@@ -1,17 +1,7 @@
 <div
   class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white transition-shadow duration-200 hover:shadow-md"
 >
-  {{ with .Resources.Get "cover.jpg" }}
-    {{ with .Fill "600x300 webp q75" }}
-      <img
-        src="{{ .RelPermalink }}"
-        width="{{ .Width }}"
-        height="{{ .Height }}"
-        alt=""
-        class="h-40 w-full object-cover"
-      />
-    {{ end }}
-  {{ end }}
+  {{ partial "news-cover.html" (dict "page" . "class" "h-40 w-full" "fill" "600x300") }}
   <div class="card-body p-4">
     <h4 class="line-clamp-3 text-lg text-vcn-blue">{{ .Title }}</h4>
     {{ with .Params.author }}

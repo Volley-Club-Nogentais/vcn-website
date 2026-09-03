@@ -1,0 +1,31 @@
+{{/* Renders a news card's cover image, or a branded gradient fallback with the VCN monogram when the
+  article has no cover.jpg resource (currently true of every actualites article).
+  Params: page (the article Page), class (sizing/layout classes), fill (Hugo image processing spec, e.g. "600x300").
+*/}}
+{{ $page := .page }}
+{{ $class := .class }}
+{{ with $page.Resources.Get "cover.jpg" }}
+  {{ with .Fill (printf "%s webp q75" $.fill) }}
+    <img
+      src="{{ .RelPermalink }}"
+      width="{{ .Width }}"
+      height="{{ .Height }}"
+      alt=""
+      class="{{ $class }} object-cover"
+    />
+  {{ end }}
+{{ else }}
+  <div
+    class="{{ $class }} flex items-center justify-center overflow-hidden bg-gradient-to-br from-vcn-secondary to-vcn-blue"
+  >
+    {{/* The monogram's viewBox-less width/height attributes are in mm, so the SVG must be forced to
+      the wrapper's size via CSS - width/height set only on the wrapping span have no effect, since a
+      span is inline and ignores the width property.
+    */}}
+    {{ with resources.Get "media/vcn_monogramme_v1_white.svg" }}
+      <span class="block w-1/3 opacity-80 [&>svg]:h-auto [&>svg]:w-full" aria-hidden="true"
+        >{{ .Content | safeHTML }}</span
+      >
+    {{ end }}
+  </div>
+{{ end }}

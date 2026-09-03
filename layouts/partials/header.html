@@ -51,12 +51,23 @@
       >
         <ul class="flex flex-col nav:flex-row">
           {{- range site.Menus.main }}
+            {{- $isCurrent := false }}
+            {{- if eq .URL "/" }}
+              {{- $isCurrent = $.Page.IsHome }}
+            {{- else }}
+              {{- $isCurrent = strings.HasPrefix $.Page.RelPermalink .URL }}
+            {{- end }}
             <li class="mr-3 nav:mr-1">
               <a
-                class="block px-[1em] py-2 font-navbar font-extrabold text-vcn-blue text-[1.5em] {{ with .Params.class -}}
+                class="block px-[1em] py-2 font-navbar font-extrabold text-[1.5em] {{ if $isCurrent -}}
+                  text-vcn-yellow underline
+                {{- else -}}
+                  text-vcn-blue
+                {{- end }} {{ with .Params.class -}}
                   {{ . }}
                 {{ end -}}"
                 href="{{ .URL }}"
+                {{ if $isCurrent }}aria-current="page"{{ end }}
                 >{{ .Name }}</a
               >
             </li>

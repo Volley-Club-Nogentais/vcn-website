@@ -48,6 +48,11 @@
   --color-vcn-blue: #0e2942;
   --color-vcn-yellow: #dea441;
   --color-vcn-secondary: #053574;
+  /* A light tint of --color-vcn-yellow mixed into white, used as the page background instead of
+     plain white: a stark white background is harsher on the eyes than a slightly warmed one, at
+     essentially the same contrast/legibility. Surfaces (navbar, cards) stay pure white so they
+     still read as slightly "raised" above the page. */
+  --color-cream: #fcf6ec;
 
   --font-sans: 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;
   --font-heading: 'Montserrat', 'Open Sans', 'Roboto', 'Segoe UI', sans-serif;

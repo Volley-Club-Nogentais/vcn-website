@@ -12,7 +12,7 @@ backend:
     uploadMedia: "feat(media): upload '{{path}}' by {{author-login}}"
     deleteMedia: "feat(media): delete '{{path}}' by {{author-login}}"
     openAuthoring: '{{message}}'
-  # When using the Editorial Workflow with the github or GitHub-connected git-gateway backends, Decap CMS creates a
+  # When using the Editorial Workflow with the github or GitHub-connected git-gateway backends, Sveltia CMS creates a
   # pull request for each unpublished entry. Every time the unpublished entry is changed and saved, a new commit is
   # added to the pull request. When the entry is published, the pull request is merged, and all of those commits are
   # added to your project commit history in a merge commit.

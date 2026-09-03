@@ -27,8 +27,12 @@ leisure, beach, etc.), news, registrations, contact, club history.
   - `ffvb-get-calendars.py` - FFVB calendars (French Volleyball Federation / beach volley).
   - `fsgt-get-calendars.py` - FSGT calendars.
   - `merge-next-games.py` - merges both sources into a single data file consumed by the site.
-- `static/admin/` - **Decap CMS** (formerly Netlify CMS) configuration, GitHub backend with editorial workflow (one PR
-  per entry). This is the content-editing interface used by non-developers at the club.
+- `static/admin/` - **[Sveltia CMS](https://github.com/sveltia/sveltia-cms)** configuration, GitHub backend with
+  editorial workflow (one PR per entry). This is the content-editing interface used by non-developers at the club.
+  Sveltia is a drop-in replacement for Decap CMS (formerly Netlify CMS): it reads the same `config.yaml` format.
+- `docs/` - guides for club members and contributors: editing pages through `/admin`
+  ([docs/editing-pages.md](docs/editing-pages.md)), the month-based logo ([docs/monthly-logo.md](docs/monthly-logo.md)),
+  and adding a training gym ([docs/gyms.md](docs/gyms.md)).
 - `public/` - Hugo build output, generated, do not hand-edit or commit manual changes to it.
 
 ## Dev environment
@@ -101,25 +105,30 @@ pre-commit run --all-files
 
 Both build workflows always run, in this order: fetch FSGT -> fetch FFVB -> merge -> `hugo build`.
 
-## Content editing (Decap CMS)
+## Content editing (Sveltia CMS)
 
 `static/admin/config.yaml` defines the collections editable through the site's `/admin` UI (GitHub backend, one PR per
 edited entry, `multiple_files` i18n structure). Any change to the content structure (new fields, new collections) must
-stay consistent with the front matter expected by the templates in `layouts/`.
+stay consistent with the front matter expected by the templates in `layouts/`. See
+[docs/editing-pages.md](docs/editing-pages.md) for the editor-facing walkthrough.
+
+Some `select` fields duplicate data that also lives in `config/_default/params.yaml` (e.g. the list of gyms used for
+team training schedules) because Sveltia can't read the Hugo site config at build time - see
+[docs/gyms.md](docs/gyms.md) for the concrete example and what to keep in sync when adding an option.
 
 ## Things to watch out for
 
-- The local `.env` file (gitignored) holds a GitHub token used by the Decap CMS backend locally - never commit or log
+- The local `.env` file (gitignored) holds a GitHub token used by the Sveltia CMS backend locally - never commit or log
   it.
 - `data/calendars/` and `public/` are generated: any change should go through the source scripts or `hugo build`, not
   direct edits.
 - The site is single-language (`fr`) despite the presence of `languages.yaml` and `404.en.html` - check before adding
   any English-language content.
 - The `assets` -> `static` mount in `config/_default/config.yaml` publishes the whole `assets/` tree as static
-  passthrough files (used e.g. so Decap CMS's uploaded media is served directly). This means `assets/css/main.css` (the
-  raw, unprocessed Tailwind source) is also published as-is at `/css/main.css` - harmless, but don't confuse it with the
-  actual compiled stylesheet, which [layouts/partials/stylesheet.html](layouts/partials/stylesheet.html) deliberately
-  outputs to a different path (`css/style.css`) via `resources.Copy` to avoid the two colliding.
+  passthrough files (used e.g. so Sveltia CMS's uploaded media is served directly). This means `assets/css/main.css`
+  (the raw, unprocessed Tailwind source) is also published as-is at `/css/main.css` - harmless, but don't confuse it
+  with the actual compiled stylesheet, which [layouts/partials/stylesheet.html](layouts/partials/stylesheet.html)
+  deliberately outputs to a different path (`css/style.css`) via `resources.Copy` to avoid the two colliding.
 - Tailwind's class detection reads `hugo_stats.json` (a build-generated list of every class used in the rendered HTML),
   which is why the module mounts and `build.buildStats`/`build.cachebusters` config exist, and why the stylesheet
   partial is wrapped in `templates.Defer` in [layouts/partials/head.html](layouts/partials/head.html) - the stats file

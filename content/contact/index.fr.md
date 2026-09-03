@@ -5,19 +5,19 @@ title: '📞 Contactez le Volley Club Nogentais'
 Vous souhaitez **nous rejoindre**, **obtenir des informations** ou **participer à nos événements** ? N'hésitez pas à
 nous contacter !
 
-### 📍 Où nous trouver ?
+## 📍 Où nous trouver ?
 
 Chaque équipe s'entraîne dans l'un de nos **trois gymnases** à Nogent-sur-Marne. Retrouvez la liste des gymnases et des
 créneaux par équipe dans la section **"Où et quand s'entraîner ?"** en bas de cette page.
 
-### 📧 Nous envoyer un message
+## 📧 Nous envoyer un message
 
 Pour toute question, demande d'inscription ou partenariat, vous pouvez nous écrire à: 📩
 **{{< email "contact@volley-club-nogent.fr" >}}**
 
 Nous nous engageons à vous répondre **dans les plus brefs délais**.
 
-### 📱 Suivez-nous sur les réseaux sociaux
+## 📱 Suivez-nous sur les réseaux sociaux
 
 Restez informés de nos actualités, résultats et événements en nous suivant sur:
 
@@ -25,12 +25,12 @@ Restez informés de nos actualités, résultats et événements en nous suivant 
 - **[Instagram](https://www.instagram.com/volleyclubnogent/)**
 - **[Youtube](https://www.youtube.com/@volleyclubnogent)**
 
-### 🗣️ Vous préférez nous parler en direct ?
+## 🗣️ Vous préférez nous parler en direct ?
 
 Retrouvez-nous **aux horaires d'entraînement** ou lors de nos **événements** (tournois, matchs, etc.). Nous serons ravis
 de discuter avec vous !
 
-### ❓ Questions fréquentes
+## ❓ Questions fréquentes
 
 **Puis-je venir essayer avant de m'engager ?** Bien sûr ! Nous proposons **deux séances d'essai gratuites** pour
 découvrir le club.

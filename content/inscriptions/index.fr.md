@@ -37,16 +37,16 @@ Nous sommes là pour vous aider !
 
 ## ❓ Questions fréquentes
 
-###### 📌 Puis-je essayer avant de m'inscrire ?
+### 📌 Puis-je essayer avant de m'inscrire ?
 
 Oui ! Une **séance d'essai gratuite** est proposée pour découvrir le club.
 
-###### 📌 Quels documents fournir ?
+### 📌 Quels documents fournir ?
 
 - Un **certificat médical** (obligatoire pour les compétitions).
 - Une **photo d'identité** (pour la licence FFVB).
 
-###### 📌 Quand les inscriptions ferment-elles ?
+### 📌 Quand les inscriptions ferment-elles ?
 
 Les inscriptions sont ouvertes jusqu'au _20 septembre 2026_.
 

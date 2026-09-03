@@ -13,7 +13,7 @@ il est désormais en ligne pour vous tenir informés de toute l'actualité du cl
 
 <!--more-->
 
-### Un site statique, mais toujours à jour
+## Un site statique, mais toujours à jour
 
 Même si le site est statique, nous nous engageons à le mettre régulièrement à jour pour vous offrir :
 
@@ -22,14 +22,14 @@ Même si le site est statique, nous nous engageons à le mettre régulièrement 
 - **Les résultats**: suivez les performances de vos équipes préférées.
 - **Les infos pratiques**: horaires des entraînements, contacts, et tout ce qu'il faut savoir pour nous rejoindre.
 
-### Un outil au service des joueurs et des supporters
+## Un outil au service des joueurs et des supporters
 
 Que vous soyez licencié, parent ou simple passionné de volley, ce site est conçu pour vous :
 
 - **Accès rapide aux informations**: plus besoin de chercher, tout est centralisé.
 - **Liens utiles**: un accès direct au formulaire d'inscription (via un site partenaire) et aux ressources du club.
 
-### Comment nous suivre ?
+## Comment nous suivre ?
 
 - Consultez le site: [volley-club-nogent.fr](https://volley-club-nogent.fr)
 - Restez connectés: suivez-nous sur
@@ -39,12 +39,12 @@ Que vous soyez licencié, parent ou simple passionné de volley, ce site est con
   [{{< fontawesome icon="youtube" font-size="1.5em" >}} Youtube](https://www.youtube.com/@volleyclubnogent) pour les
   rediffusions de match.
 
-### Un projet qui grandit avec vous
+## Un projet qui grandit avec vous
 
 Ce site est une première étape. Nous comptons sur vos retours pour l'enrichir et l'améliorer. N'hésitez pas à nous
 envoyer vos suggestions ou vos idées !
 
-### Merci à tous !
+## Merci à tous !
 
 Un grand merci à tous ceux qui ont participé à la création de ce site, ainsi qu'à nos partenaires et bénévoles.
 Ensemble, faisons vivre le volley à Nogent !

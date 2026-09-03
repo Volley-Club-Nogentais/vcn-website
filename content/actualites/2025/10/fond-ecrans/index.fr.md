@@ -13,13 +13,13 @@ avec nos **fonds d'écran exclusifs** mettant en avant notre logo, créé par **
 
 <!--more-->
 
-### 🎨 Un logo unique, une identité forte
+## 🎨 Un logo unique, une identité forte
 
 Notre logo, imaginé par **Mattis**, incarne **l'énergie, la passion et l'esprit d'équipe** du Volley Club Nogentais.
 Avec ses couleurs dynamiques et son design moderne, il est parfait pour **afficher votre attachement au club** au
 quotidien.
 
-### 📲🖥️ Des fonds d'écran pour tous vos appareils
+## 📲🖥️ Des fonds d'écran pour tous vos appareils
 
 Que vous utilisiez un **smartphone, une tablette ou un ordinateur**, nous avons ce qu'il vous faut :
 
@@ -27,7 +27,7 @@ Que vous utilisiez un **smartphone, une tablette ou un ordinateur**, nous avons 
 - **Plusieurs versions**: logo du club ou logo du beach.
 - **Disponibles en format horizontal et vertical**.
 
-### 📥 Comment les télécharger ?
+## 📥 Comment les télécharger ?
 
 Rien de plus simple :
 
@@ -45,13 +45,13 @@ Rien de plus simple :
 2. **Téléchargez-le** en haute qualité.
 3. **Appliquez-le** comme fond d'écran sur votre appareil.
 
-### 💬 Un grand merci à Mattis !
+## 💬 Un grand merci à Mattis !
 
 Un immense merci à **Mattis**, le talentueux créateur de notre logo, pour son travail qui donne une **identité visuelle
 forte** à notre club. Son design reflète parfaitement **l'esprit du Volley Club Nogentais**: **dynamique, convivial et
 ambitieux**.
 
-### 📢 Partagez votre passion !
+## 📢 Partagez votre passion !
 
 N'hésitez pas à **partager vos écrans personnalisés** sur les réseaux sociaux en nous identifiant:
 

@@ -30,6 +30,18 @@
         "zoomable" true
         )
       }}
+    {{ else }}
+      <div class="mb-4 flex justify-center rounded bg-vcn-blue p-8 sm:float-right sm:mb-4 sm:ml-6 sm:w-64">
+        {{ with resources.Get "media/vcn_monogramme_v1_gold.svg" }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="Monogramme du Volley Club Nogentais"
+            class="h-auto w-32"
+            width="400"
+            height="400"
+          />
+        {{ end }}
+      </div>
     {{ end }}
     {{ .Content }}
 

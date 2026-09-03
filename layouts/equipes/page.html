@@ -51,12 +51,17 @@
         <div class="content:hidden flex flex-col gap-2">
           {{ range . }}
             {{ $gymName := .gym }}
+            {{ $gymAddress := "" }}
             {{ with where site.Params.gyms "slug" .gym }}
               {{ $gymName = (index . 0).name }}
+              {{ $gymAddress = (index . 0).address }}
             {{ end }}
             <div class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3">
               <p class="font-bold text-vcn-blue">{{ $gymName }}</p>
               <p class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</p>
+              {{ with $gymAddress }}
+                <p class="text-sm">{{ partial "maps-link.html" . }}</p>
+              {{ end }}
             </div>
           {{ end }}
         </div>
@@ -72,11 +77,19 @@
             <tbody>
               {{ range . }}
                 {{ $gymName := .gym }}
+                {{ $gymAddress := "" }}
                 {{ with where site.Params.gyms "slug" .gym }}
                   {{ $gymName = (index . 0).name }}
+                  {{ $gymAddress = (index . 0).address }}
                 {{ end }}
                 <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
-                  <td class="px-3 py-2">{{ $gymName }}</td>
+                  <td class="px-3 py-2">
+                    {{ $gymName }}
+                    {{ with $gymAddress }}
+                      ·
+                      {{ partial "maps-link.html" . }}
+                    {{ end }}
+                  </td>
                   <td class="px-3 py-2">{{ .day }}</td>
                   <td class="px-3 py-2">{{ .start }}-{{ .end }}</td>
                 </tr>

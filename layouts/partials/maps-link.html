@@ -1,0 +1,13 @@
+{{/* Renders a "Voir sur la carte" link to a Google Maps search for the given address string.
+  Context (`.`) is the address itself, e.g. partial "maps-link.html" "37 rue Lequesne, 94130 Nogent-sur-Marne".
+  The address is interpolated directly into the query string without any manual escaping: Hugo's
+  html/template output recognizes this as a URL query position and percent-encodes it automatically.
+*/}}
+{{- $address := . -}}
+<a
+  class="whitespace-nowrap text-vcn-blue hover:underline"
+  href="https://www.google.com/maps/search/?api=1&query={{ $address }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  >Voir sur la carte</a
+>

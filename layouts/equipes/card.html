@@ -1,9 +1,45 @@
 {{ $width := 300 }}
 {{ $height := 300 }}
-{{ $default_img := "media/logo.svg" }}
-{{ if in .Params.categories "beach" }}
-  {{ $default_img = "media/beach_logo_color.svg" }}
+
+{{/* Short, deterministic label for the fallback avatar: the age category (M13/M15/M18) when the
+  title leads with one, otherwise the first letter of its first two meaningful words (short
+  connectors like "de"/"des" are skipped so e.g. "École de Volley" reads "ÉV", not "ÉD").
+*/}}
+{{ $stopwords := slice "de" "du" "des" "le" "la" "les" "et" }}
+{{ $words := split .Title " " }}
+{{ $meaningful := slice }}
+{{ range $words }}
+  {{ if not (in $stopwords (lower .)) }}
+    {{ $meaningful = $meaningful | append . }}
+  {{ end }}
 {{ end }}
+{{ if lt (len $meaningful) 2 }}
+  {{ $meaningful = $words }}
+{{ end }}
+
+{{ $label := "" }}
+{{ if gt (len $meaningful) 1 }}
+  {{ $first := index $meaningful 0 }}
+  {{ if in (slice "M13" "M15" "M18") $first }}
+    {{ $label = $first }}
+  {{ else }}
+    {{ $label = upper (print (substr $first 0 1) (substr (index $meaningful 1) 0 1)) }}
+  {{ end }}
+{{ else }}
+  {{ $label = upper (substr .Title 0 2) }}
+{{ end }}
+
+{{/* Fallback avatar color follows the same grouping as the equipes list page. */}}
+{{ $avatarBg := "bg-vcn-blue" }}
+{{ $avatarFg := "text-white" }}
+{{ if in .Params.categories "jeunes" }}
+  {{ $avatarBg = "bg-vcn-yellow" }}
+  {{ $avatarFg = "text-vcn-blue" }}
+{{ else if in .Params.categories "FSGT" }}
+  {{ $avatarBg = "bg-vcn-secondary" }}
+{{ end }}
+
+
 <div class="swiper-slide">
   <div
     class="freeflow-card relative flex max-w-[300px] flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
@@ -26,14 +62,13 @@
         width="{{ $width }}"
         height="{{ $height }}"
       />
-    {{ else with resources.Get $default_img }}
-      <img
-        class="h-[300px] w-[300px] object-contain"
-        src="{{ .RelPermalink }}"
-        width="{{ $width }}"
-        height="{{ $height }}"
-        alt="Logo VCN"
-      />
+    {{ else }}
+      <div
+        class="flex h-[300px] w-[300px] items-center justify-center {{ $avatarBg }} {{ $avatarFg }} font-navbar text-6xl"
+        aria-hidden="true"
+      >
+        {{ $label }}
+      </div>
     {{ end }}
     <div class="p-4">
       <h5 class="text-vcn-blue">{{ .Title }}</h5>

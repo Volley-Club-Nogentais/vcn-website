@@ -59,10 +59,10 @@
             {{- end }}
             <li class="mr-3 nav:mr-1">
               <a
-                class="block px-[1em] py-2 font-navbar font-extrabold text-[1.5em] {{ if $isCurrent -}}
-                  text-vcn-yellow underline
+                class="block border-b-2 px-[1em] py-2 font-navbar font-extrabold text-[1.5em] text-vcn-blue {{ if $isCurrent -}}
+                  border-vcn-yellow
                 {{- else -}}
-                  text-vcn-blue
+                  border-transparent
                 {{- end }} {{ with .Params.class -}}
                   {{ . }}
                 {{ end -}}"

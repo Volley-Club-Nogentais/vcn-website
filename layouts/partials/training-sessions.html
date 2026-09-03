@@ -16,6 +16,7 @@
           {{- $sessions = $sessions | append (dict
             "team" $team.Title
             "url" $team.RelPermalink
+            "label" .label
             "day" .day
             "order" (index $dayOrder .day | default 8)
             "start" .start
@@ -38,7 +39,9 @@
             <li
               class="flex flex-wrap items-baseline justify-between gap-x-3 border-t border-black/5 pt-2 first:border-t-0 first:pt-0"
             >
-              <a class="font-bold text-vcn-blue hover:underline" href="{{ .url }}">{{ .team }}</a>
+              <a class="font-bold text-vcn-blue hover:underline" href="{{ .url }}"
+                >{{ .team }}{{ with .label }}<span class="font-normal text-gray-500">({{ . }})</span>{{ end }}</a
+              >
               <span class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</span>
             </li>
           {{- end }}

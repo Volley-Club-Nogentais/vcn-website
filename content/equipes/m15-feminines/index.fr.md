@@ -6,6 +6,22 @@ weight: 50
 categories:
   - FFVB
   - jeunes
+schedule:
+  - label: 'Entraînement'
+    gym: 'louis-armand'
+    day: 'Mardi'
+    start: '18:00'
+    end: '20:00'
+  - label: 'Entraînement'
+    gym: 'louis-armand'
+    day: 'Jeudi'
+    start: '18:00'
+    end: '20:00'
+  - label: 'Pratique encadrée'
+    gym: 'louis-armand'
+    day: 'Samedi'
+    start: '10:00'
+    end: '12:00'
 ---
 
 ## Présentation de l'Équipe
@@ -52,18 +68,3 @@ Nous sommes reconnaissantes envers nos partenaires qui nous soutiennent dans not
 contributions nous permettent de disposer des meilleures installations et équipements, et de participer à des
 compétitions de haut niveau. Nous croyons en l'importance de la communauté et nous sommes fières de représenter nos
 partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons continuer à grandir et à réussir.
-
-## Les entraînements
-
-## M15
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Mardi              | 18:00            | 20:00          |
-| Louis Armand | Jeudi              | 18:00            | 20:00          |
-
-## M15 Pratique Encadrée
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Samedi             | 10:00            | 12:00          |

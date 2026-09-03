@@ -14,7 +14,7 @@ schedule:
     end: '22:30'
   - gym: 'maudry'
     day: 'Vendredi'
-    start: '21:00'
+    start: '20:00'
     end: '22:30'
 ---
 

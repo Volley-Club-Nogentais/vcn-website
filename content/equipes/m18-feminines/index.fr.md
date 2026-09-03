@@ -12,14 +12,31 @@ gallery:
   - images/3.jpg
   - images/4.jpg
 schedule:
-  - gym: 'louis-armand'
-    day: 'Lundi'
-    start: '20:00'
-    end: '22:30'
-  - gym: 'louis-armand'
+  - label: 'Entraînement F1'
+    gym: 'watteau'
+    day: 'Mardi'
+    start: '19:30'
+    end: '21:00'
+  - label: 'Entraînement F1'
+    gym: 'watteau'
     day: 'Jeudi'
-    start: '20:00'
-    end: '22:30'
+    start: '19:30'
+    end: '21:00'
+  - label: 'Entraînement F2'
+    gym: 'louis-armand'
+    day: 'Mardi'
+    start: '18:30'
+    end: '20:00'
+  - label: 'Entraînement F2'
+    gym: 'louis-armand'
+    day: 'Jeudi'
+    start: '18:30'
+    end: '20:00'
+  - label: 'Loisirs'
+    gym: 'watteau'
+    day: 'Dimance'
+    start: '10:00'
+    end: '12:00'
 ---
 
 ## Présentation de l'Équipe

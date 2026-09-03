@@ -17,7 +17,7 @@ schedule:
     day: 'Jeudi'
     start: '18:00'
     end: '19:30'
-  - label: 'Pratique encadrée'
+  - label: 'Débutant'
     gym: 'louis-armand'
     day: 'Samedi'
     start: '10:00'

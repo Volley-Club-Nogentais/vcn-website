@@ -1,0 +1,50 @@
+{{/* Large "à la une" card for the most recent actualité, used above the regular card grid on page 1. */}}
+<div
+  class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md md:flex-row"
+>
+  <div class="relative shrink-0 overflow-hidden md:w-2/5">
+    {{ partial "news-cover.html" (dict "page" . "class" "h-56 w-full md:h-full" "fill" "700x500") }}
+    <span class="absolute top-3 left-3 rounded-full bg-vcn-yellow px-3 py-1 text-xs font-bold uppercase text-vcn-blue">
+      À la une
+    </span>
+  </div>
+  <div class="flex flex-1 flex-col justify-center p-6 md:p-8">
+    {{ with .GetTerms "tags" }}
+      <div class="relative z-10 mb-2 flex flex-wrap gap-1.5">
+        {{ range first 3 . }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="rounded-full bg-vcn-blue/8 px-2.5 py-1 text-xs font-bold uppercase text-vcn-blue hover:bg-vcn-yellow/40"
+            >{{ .Title }}</a
+          >
+        {{ end }}
+      </div>
+    {{ end }}
+    <h2 class="text-2xl text-vcn-blue">{{ .Title }}</h2>
+    {{ with .Params.author }}
+      <p class="-mt-2 text-gray-500">par {{ . }}</p>
+    {{ end }}
+    {{/* safeHTML is safe here only because .Summary comes from Markdown authored by trusted CMS
+      editors with GitHub write access, not from untrusted/public input.
+    */}}
+    <p class="mt-3 line-clamp-4">{{ .Summary | replaceRE `<img[^>]*>` "" | safeHTML }}</p>
+    <div class="mt-4 flex flex-wrap items-center gap-4">
+      <a
+        href="{{ .RelPermalink }}"
+        class="{{ if .Truncated -}}
+          relative z-10 inline-block rounded-md bg-vcn-yellow px-6 py-3 font-bold text-vcn-blue hover:bg-vcn-yellow/80
+        {{- else -}}
+          sr-only
+        {{- end }} before:absolute before:inset-0 before:content-[''] nav:before:content-none"
+        >{{- if .Truncated -}}
+          En savoir plus
+        {{- else -}}
+          {{ .Title }}
+        {{- end -}}</a
+      >
+      {{ with .Date }}
+        <small class="text-gray-500">{{ . | time.Format ":date_long" }}</small>
+      {{ end }}
+    </div>
+  </div>
+</div>

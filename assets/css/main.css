@@ -154,6 +154,13 @@ article h1 + img + h3 {
   margin-top: 0;
 }
 
+/* Gym names inside the Contact page's training-sessions cards (layouts/partials/training-sessions.html)
+   are small card headers, not section breaks: skip the big spacing above without losing the yellow
+   accent that keeps them visually consistent with the rest of the page's headings. */
+.training-session-gym {
+  margin-top: 0;
+}
+
 /* Default styles for all paragraphs in article content */
 article p {
   /* Styles for paragraphs that contain a standalone image (not one floated next to text

@@ -62,13 +62,16 @@
 /* Dark theme neutral palette. Kept as plain custom properties (rather than @theme tokens) so a
    different color proposal only needs to change the values here - every "dark:bg-(--color-dark-*)"
    utility across the templates stays the same. The brand colors above (vcn-blue/yellow/secondary)
-   are intentionally not redefined here: they keep working as accents against these neutrals. */
+   are intentionally not redefined here: they keep working as accents against these neutrals.
+   --color-dark-fg/-fg-muted are a warm ivory/khaki (a light tint of --color-vcn-yellow mixed into
+   white/gray) rather than a cold near-white: plain white text on a dark background is harsher on
+   the eyes than a slightly warmed one, at essentially the same contrast/legibility. */
 :root {
   --color-dark-bg: #0b1420;
   --color-dark-surface: #162335;
   --color-dark-surface-alt: #1e3049;
-  --color-dark-fg: #e7edf5;
-  --color-dark-fg-muted: #93a2b8;
+  --color-dark-fg: #fbf4e8;
+  --color-dark-fg-muted: #ae9f86;
   --color-dark-border: rgb(255 255 255 / 12%);
   --color-dark-hover: rgb(255 255 255 / 6%);
 }

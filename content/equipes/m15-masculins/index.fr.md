@@ -6,6 +6,22 @@ weight: 50
 categories:
   - FFVB
   - jeunes
+schedule:
+  - label: 'Entraînement'
+    gym: 'louis-armand'
+    day: 'Mardi'
+    start: '18:00'
+    end: '20:00'
+  - label: 'Entraînement'
+    gym: 'louis-armand'
+    day: 'Jeudi'
+    start: '18:00'
+    end: '20:00'
+  - label: 'Pratique encadrée'
+    gym: 'louis-armand'
+    day: 'Samedi'
+    start: '10:00'
+    end: '12:00'
 ---
 
 Cette saison a été celle de la découverte pour ce tout jeune groupe, composé en grande partie de débutants, accompagnés
@@ -20,18 +36,3 @@ construction et encore en apprentissage, il s'agit d'une très belle performance
 Il faut aussi souligner que, dans la plupart des rencontres, nous affrontions des adversaires avec une moyenne d'âge
 plus élevée, ce qui n'a pas empêché nos jeunes joueurs de se battre et de montrer un bel état d'esprit. Cette saison a
 posé de solides fondations, et laisse entrevoir de belles perspectives pour la suite.
-
-## Les entraînements
-
-## M15
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Mardi              | 18:00            | 20:00          |
-| Louis Armand | Jeudi              | 18:00            | 20:00          |
-
-## M15 Pratique Encadrée
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Samedi             | 10:00            | 12:00          |

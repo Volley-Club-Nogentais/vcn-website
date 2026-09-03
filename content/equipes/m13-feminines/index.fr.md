@@ -7,6 +7,22 @@ categories:
 draft: false
 weight: 50
 summary: FFVB M13 Féminines
+schedule:
+  - label: 'Entraînement'
+    gym: 'watteau'
+    day: 'Mardi'
+    start: '18:00'
+    end: '19:30'
+  - label: 'Entraînement'
+    gym: 'watteau'
+    day: 'Jeudi'
+    start: '18:00'
+    end: '19:30'
+  - label: 'Pratique encadrée'
+    gym: 'louis-armand'
+    day: 'Samedi'
+    start: '10:00'
+    end: '12:00'
 ---
 
 ## Présentation de l'Équipe
@@ -53,18 +69,3 @@ Nous sommes reconnaissantes envers nos partenaires qui nous soutiennent dans not
 contributions nous permettent de disposer des meilleures installations et équipements, et de participer à des
 compétitions de haut niveau. Nous croyons en l'importance de la communauté et nous sommes fières de représenter nos
 partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons continuer à grandir et à réussir.
-
-## Les entraînements
-
-## M13
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Mardi              | 18:00            | 19:30          |
-| Watteau | Jeudi              | 18:00            | 19:30          |
-
-## M13 Pratique Encadrée
-
-| Gymnase      | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------------ | ------------------ | ---------------- | -------------- |
-| Louis Armand | Samedi             | 10:00            | 12:00          |

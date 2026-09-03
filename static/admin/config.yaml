@@ -378,6 +378,12 @@ collections:
         required: false
         hint: "Affiché sur la page équipe et récapitulé sur la page Contact."
         fields:
+          - label: 'Nom de la séance'
+            name: 'label'
+            widget: 'string'
+            required: false
+            hint: "Optionnel : à remplir seulement si l'équipe a plusieurs types de séances (ex: 'Entraînement' /
+              'Pratique encadrée'). Laisser vide sinon."
           - label: 'Gymnase'
             name: 'gym'
             widget: 'select'

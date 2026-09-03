@@ -6,6 +6,17 @@ weight: 50
 categories:
   - FFVB
   - jeunes
+schedule:
+  - label: 'Entraînement'
+    gym: 'watteau'
+    day: 'Mardi'
+    start: '19:30'
+    end: '21:00'
+  - label: 'Pratique encadrée'
+    gym: 'watteau'
+    day: 'Dimanche'
+    start: '10:00'
+    end: '12:00'
 ---
 
 ## Présentation de l'Équipe
@@ -51,18 +62,3 @@ Nous sommes reconnaissants envers nos partenaires qui nous soutiennent dans notr
 contributions nous permettent de disposer des meilleures installations et équipements, et de participer à des
 compétitions de haut niveau. Nous croyons en l'importance de la communauté et nous sommes fiers de représenter nos
 partenaires avec intégrité et professionnalisme. Ensemble, nous pouvons continuer à grandir et à réussir.
-
-## Les entraînements
-
-## M18
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Mardi              | 19:30            | 21:00          |
-| Watteau | Mardi              | 19:30            | 21:00          |
-
-## M18 - Pratique encadrée
-
-| Gymnase | Jour de la semaine | Horaire de début | Horaire de fin |
-| ------- | ------------------ | ---------------- | -------------- |
-| Watteau | Dimanche           | 10:00            | 12:00          |

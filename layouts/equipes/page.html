@@ -46,6 +46,12 @@
     {{ .Content }}
 
     {{ with .Params.schedule }}
+      {{ $hasLabels := false }}
+      {{ range . }}
+        {{ if .label }}
+          {{ $hasLabels = true }}
+        {{ end }}
+      {{ end }}
       <div class="training">
         <h2>Les entraînements</h2>
         <div class="content:hidden flex flex-col gap-2">
@@ -57,7 +63,12 @@
               {{ $gymAddress = (index . 0).address }}
             {{ end }}
             <div class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3">
-              <p class="font-bold text-vcn-blue">{{ $gymName }}</p>
+              <p class="font-bold text-vcn-blue">
+                {{ $gymName }}
+                {{ with .label }}
+                  <span class="font-normal text-gray-500">· {{ . }}</span>
+                {{ end }}
+              </p>
               <p class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</p>
               {{ with $gymAddress }}
                 <p class="text-sm">{{ partial "maps-link.html" . }}</p>
@@ -70,6 +81,9 @@
             <thead>
               <tr class="border-b border-black/10 text-left">
                 <th class="px-3 py-2">Gymnase</th>
+                {{ if $hasLabels }}
+                  <th class="px-3 py-2">Séance</th>
+                {{ end }}
                 <th class="px-3 py-2">Jour</th>
                 <th class="px-3 py-2">Horaires</th>
               </tr>
@@ -90,6 +104,9 @@
                       {{ partial "maps-link.html" . }}
                     {{ end }}
                   </td>
+                  {{ if $hasLabels }}
+                    <td class="px-3 py-2">{{ .label | default "Entraînement" }}</td>
+                  {{ end }}
                   <td class="px-3 py-2">{{ .day }}</td>
                   <td class="px-3 py-2">{{ .start }}-{{ .end }}</td>
                 </tr>

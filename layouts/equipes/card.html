@@ -44,7 +44,7 @@
   <div
     class="freeflow-card relative flex max-w-[300px] flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
   >
-    {{ with .Resources.Get "main.jpg" }}
+    {{ with .Resources.Get "cover.jpg" }}
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
         <img
           class="h-[300px] w-[300px] object-cover"
@@ -54,7 +54,7 @@
           height="{{ .Height }}"
         />
       {{ end }}
-    {{ else with .Resources.Get "main.svg" }}
+    {{ else with .Resources.Get "cover.svg" }}
       <img
         class="h-[300px] w-[300px] object-contain"
         alt="Illustration de l'équipe {{ $.Title }}"

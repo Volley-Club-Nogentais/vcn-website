@@ -113,10 +113,6 @@ collections:
             widget: 'boolean'
             default: false
             required: true
-          - label: 'Images'
-            name: 'image'
-            widget: 'list'
-            required: false
           - label: 'Contenu'
             name: 'body'
             widget: 'markdown'
@@ -233,6 +229,17 @@ collections:
             widget: 'boolean'
             default: false
             required: true
+          - label: 'Photo principale'
+            name: 'photo'
+            widget: 'image'
+            required: false
+            media_folder: ''
+            public_folder: ''
+            hint: "Nommez le fichier exactement 'cover.jpg' (photo) ou 'cover.svg' (illustration) lors de l'import,
+              sinon il ne sera pas affiché sur le site."
+            media_library:
+              config:
+                max_file_size: 2048000
           - label: "Categories"
             name: "categories"
             widget: "select"
@@ -294,12 +301,14 @@ collections:
         name: 'tags'
         widget: 'list'
         required: false
-      - label: 'Image principale'
-        name: 'image'
+      - label: 'Couverture'
+        name: 'cover'
         widget: 'image'
         required: false
-        media_folder: 'media'
-        public_folder: 'media'
+        media_folder: ''
+        public_folder: ''
+        hint: "Nommez le fichier exactement 'cover.jpg' lors de l'import (dans la boîte de dialogue d'upload),
+          sinon il ne sera pas affiché sur le site."
         media_library:
           config:
             max_file_size: 2048000
@@ -352,13 +361,14 @@ collections:
         widget: 'string'
         required: false
         hint: "Doit correspondre à une entrée du calendrier importé dans data/calendars (ex: regional_feminines)."
-      - label: 'Image principale'
-        name: 'image'
+      - label: "Photo de l'équipe"
+        name: 'photo'
         widget: 'image'
         required: false
-        multiple: false
-        media_folder: "images"
-        public_folder: "images"
+        media_folder: ''
+        public_folder: ''
+        hint: "Nommez le fichier exactement 'cover.jpg' (photo) ou 'cover.svg' (illustration) lors de l'import,
+          sinon il ne sera pas affiché sur le site."
         media_library:
           config:
             max_file_size: 2048000

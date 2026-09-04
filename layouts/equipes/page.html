@@ -11,7 +11,7 @@
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
-    {{ with .Resources.Get "main.jpg" }}
+    {{ with .Resources.Get "cover.jpg" }}
       {{ partial "image.html" (dict
         "resource" .
         "alt" (printf "Photo de l'équipe %s" $.Title)
@@ -20,7 +20,7 @@
         "zoomable" true
         )
       }}
-    {{ else with .Resources.Get "main.svg" }}
+    {{ else with .Resources.Get "cover.svg" }}
       {{ partial "image.html" (dict
         "resource" .
         "alt" (printf "Illustration de l'équipe %s" $.Title)
@@ -168,7 +168,7 @@
 {{ end }}
 
 {{ define "foot" }}
-  {{ if or .Params.gallery (.Resources.Get "main.jpg") (.Resources.Get "main.svg") }}
+  {{ if or .Params.gallery (.Resources.Get "cover.jpg") (.Resources.Get "cover.svg") }}
     {{ with resources.Get "js/gallery-zoom-blur.js" }}
       <script type="text/javascript" src="{{ .RelPermalink }}"></script>
     {{ end }}

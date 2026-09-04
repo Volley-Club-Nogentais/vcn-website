@@ -3,6 +3,7 @@ title: M18 Masculins
 summary: FFVB M18 Masculins
 draft: false
 weight: 50
+price: 180
 categories:
   - FFVB
   - jeunes

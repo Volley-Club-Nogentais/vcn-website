@@ -3,6 +3,7 @@ title: Régional Masculins
 summary: FFVB Régional Masculins
 draft: false
 weight: 50
+price: 220
 categories:
   - FFVB
   - adultes

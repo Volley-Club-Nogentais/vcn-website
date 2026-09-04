@@ -11,6 +11,9 @@
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
+    {{ with .Params.price }}
+      <p class="mb-4 inline-block rounded bg-vcn-yellow/20 px-3 py-1 text-sm font-bold text-vcn-blue">{{ . }} €</p>
+    {{ end }}
     {{ with .Resources.Get "cover.jpg" }}
       {{ partial "image.html" (dict
         "resource" .

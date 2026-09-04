@@ -3,6 +3,7 @@ title: Départemental Masculins
 summary: FFVB Départemental Masculins
 draft: false
 weight: 40
+price: 220
 categories:
   - FFVB
   - adultes

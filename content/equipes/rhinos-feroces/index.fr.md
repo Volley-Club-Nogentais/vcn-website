@@ -3,6 +3,7 @@ title: Rhinos Féroces
 summary: FSGT Elite
 draft: false
 weight: 50
+price: 180
 categories:
   - FSGT
 calendarName: rhinos_feroces

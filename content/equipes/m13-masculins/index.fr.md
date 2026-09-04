@@ -3,6 +3,7 @@ title: M13 Masculins
 summary: FFVB M13 Masculins
 draft: false
 weight: 50
+price: 180
 categories:
   - FFVB
   - jeunes

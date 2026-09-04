@@ -6,6 +6,7 @@ categories:
   - adultes
 draft: false
 weight: 10
+price: 160
 schedule:
   - gym: 'watteau'
     day: 'Mardi'

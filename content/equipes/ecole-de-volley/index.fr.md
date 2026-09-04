@@ -3,6 +3,7 @@ title: École de Volley
 summary: Le volley de 7 à 11 ans
 draft: false
 weight: 50
+price: 150
 categories:
   - FFVB
   - jeunes

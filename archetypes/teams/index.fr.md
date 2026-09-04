@@ -4,6 +4,7 @@ draft: true
 title: Régional Masculins
 description: 'FFVB {{ replace .File.ContentBaseName "-" " " | title }}'
 weight: 50
+price: 0 # TODO: prix annuel à renseigner (en €)
 categories:
   - FFVB
   - FSGT

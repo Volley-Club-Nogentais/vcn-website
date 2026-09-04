@@ -3,6 +3,7 @@ title: Régional Masculins
 summary: FFVB Régional Masculins
 draft: false
 weight: 50
+price: 0 # TODO: prix annuel à renseigner (en €)
 categories:
   - FFVB
   - adultes

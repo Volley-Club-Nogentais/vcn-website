@@ -3,6 +3,7 @@ title: Compét'Lib 4x4
 summary: Du 4x4 avec les plus vieux
 draft: false
 weight: 40
+price: 0 # TODO: prix annuel à renseigner (en €)
 categories:
   - FFVB
   - adultes

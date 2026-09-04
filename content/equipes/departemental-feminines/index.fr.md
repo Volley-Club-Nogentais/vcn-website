@@ -3,6 +3,7 @@ title: Départemental Féminines
 summary: FFVB Départemental Féminines
 draft: false
 weight: 40
+price: 0 # TODO: prix annuel à renseigner (en €)
 categories:
   - FFVB
   - adultes

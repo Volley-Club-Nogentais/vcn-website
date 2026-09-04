@@ -6,6 +6,7 @@ categories:
   - adultes
 draft: false
 weight: 10
+price: 0 # TODO: prix annuel à renseigner (en €)
 schedule:
   - gym: 'watteau'
     day: 'Mardi'

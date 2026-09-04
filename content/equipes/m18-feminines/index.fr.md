@@ -3,6 +3,7 @@ title: M18 Féminines
 summary: FFVB Féminines
 draft: false
 weight: 50
+price: 0 # TODO: prix annuel à renseigner (en €)
 categories:
   - FFVB
   - jeunes

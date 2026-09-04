@@ -75,6 +75,9 @@
       {{ with .Summary }}
         <p class="mt-2">{{ . }}</p>
       {{ end }}
+      {{ with .Params.price }}
+        <p class="mt-2 inline-block rounded bg-vcn-yellow/20 px-2 py-0.5 text-xs font-bold text-vcn-blue">{{ . }} €</p>
+      {{ end }}
       <a
         href="{{ .RelPermalink }}"
         class="m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] nav:before:content-none hover:bg-vcn-yellow/90 hover:underline"

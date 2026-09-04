@@ -1,28 +1,22 @@
 {{ define "main" }}
+  {{/* A landscape cover sits above the title as a banner, like on any other single page. A portrait
+    cover floats beside the title and the start of the article instead - as on an équipe page - but
+    keeps its natural aspect ratio rather than being cropped to a square.
+  */}}
+  {{ $cover := .Resources.Get "cover.jpg" }}
+  {{ $portrait := false }}
+  {{ with $cover }}
+    {{ if gt .Height .Width }}
+      {{ $portrait = true }}
+    {{ end }}
+  {{ end }}
+
+
   <article class="single">
     {{ if .Draft }}
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
-    {{/* A landscape cover sits above the title as a banner, like on any other single page. A portrait
-      cover floats beside the title and the start of the article instead - as on an équipe page - but
-      keeps its natural aspect ratio rather than being cropped to a square.
-    */}}
-    {{ $cover := .Resources.Get "cover.jpg" }}
-    {{ $portrait := false }}
-    {{ with $cover }}
-      {{ if gt .Height .Width }}
-        {{ $portrait = true }}
-      {{ end }}
-    {{ end }}
-    {{ if $portrait }}
-      {{ partial "image.html" (dict
-        "resource" $cover
-        "class" "mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
-        "resize" "500x webp q80"
-        "zoomable" true
-        )
-      }}
-    {{ else }}
+    {{ if not $portrait }}
       {{ with $cover }}
         {{ partial "image.html" (dict
           "resource" .
@@ -42,6 +36,15 @@
           {{ with .Params.author }}par {{ . }}{{ end }}
         </em>
       </p>
+    {{ end }}
+    {{ if $portrait }}
+      {{ partial "image.html" (dict
+        "resource" $cover
+        "class" "mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        "resize" "500x webp q80"
+        "zoomable" true
+        )
+      }}
     {{ end }}
     {{ .Content }}
   </article>

@@ -1,0 +1,59 @@
+{{ define "main" }}
+  {{/* A landscape cover sits above the title as a banner, like on any other single page. A portrait
+    cover floats beside the title and the start of the article instead - as on an équipe page - but
+    keeps its natural aspect ratio rather than being cropped to a square.
+  */}}
+  {{ $cover := .Resources.Get "cover.jpg" }}
+  {{ $portrait := false }}
+  {{ with $cover }}
+    {{ if gt .Height .Width }}
+      {{ $portrait = true }}
+    {{ end }}
+  {{ end }}
+
+
+  <article class="single">
+    {{ if .Draft }}
+      <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
+    {{ end }}
+    {{ if not $portrait }}
+      {{ with $cover }}
+        {{ partial "image.html" (dict
+          "resource" .
+          "class" "mb-4 h-auto w-full rounded object-cover"
+          "fill" "1200x500 webp q80"
+          "zoomable" true
+          )
+        }}
+      {{ end }}
+    {{ end }}
+    <h1 class="uppercase">{{ .Title }}</h1>
+    {{ if or .Date .Params.author }}
+      <p class="italic">
+        <em>
+          Créé
+          {{ with .Date }}le {{ . | time.Format ":date_medium" }}{{ end }}
+          {{ with .Params.author }}par {{ . }}{{ end }}
+        </em>
+      </p>
+    {{ end }}
+    {{ if $portrait }}
+      {{ partial "image.html" (dict
+        "resource" $cover
+        "class" "mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        "resize" "500x webp q80"
+        "zoomable" true
+        )
+      }}
+    {{ end }}
+    {{ .Content }}
+  </article>
+{{ end }}
+
+{{ define "foot" }}
+  {{ if .Resources.Get "cover.jpg" }}
+    {{ with resources.Get "js/gallery-zoom-blur.js" }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    {{ end }}
+  {{ end }}
+{{ end }}

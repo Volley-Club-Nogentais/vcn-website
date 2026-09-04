@@ -1,18 +1,19 @@
 <div
   class="relative flex flex-col overflow-hidden rounded border border-black/10 bg-white transition-shadow duration-200 hover:shadow-md"
 >
-  {{ with .Resources.Get "cover.jpg" }}
-    {{ with .Fill "600x300 webp q75" }}
-      <img
-        src="{{ .RelPermalink }}"
-        width="{{ .Width }}"
-        height="{{ .Height }}"
-        alt=""
-        class="h-40 w-full object-cover"
-      />
-    {{ end }}
-  {{ end }}
+  {{ partial "news-cover.html" (dict "page" . "class" "h-40 w-full" "fill" "600x300") }}
   <div class="card-body p-4">
+    {{ with .GetTerms "tags" }}
+      <div class="relative z-10 mb-1.5 flex flex-wrap gap-1.5">
+        {{ range first 3 . }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="rounded-full bg-vcn-blue/8 px-2.5 py-0.5 text-xs font-bold uppercase text-vcn-blue hover:bg-vcn-yellow/40"
+            >{{ .Title }}</a
+          >
+        {{ end }}
+      </div>
+    {{ end }}
     <h4 class="line-clamp-3 text-lg text-vcn-blue">{{ .Title }}</h4>
     {{ with .Params.author }}
       <p class="-mt-1.5 text-gray-500">par {{ . }}</p>
@@ -24,8 +25,7 @@
     <a
       href="{{ .RelPermalink }}"
       class="{{ if .Truncated -}}
-        m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue hover:bg-vcn-yellow/90
-        hover:underline
+        m-[5px] inline-block rounded-md bg-vcn-yellow px-5 py-2.5 font-bold text-vcn-blue hover:bg-vcn-yellow/80
       {{- else -}}
         sr-only
       {{- end }} before:absolute before:inset-0 before:content-[''] nav:before:content-none"

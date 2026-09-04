@@ -15,7 +15,7 @@
 {{- end }}
 
 
-<div class="gallery-justified">
+<div class="gallery-grid">
   {{ range $index, $img := $resources }}
     {{/* Responsive images */}}
     {{ $small := $img.Resize "400x webp q70" }}
@@ -32,7 +32,7 @@
       src="{{ $medium.RelPermalink }}"
       srcset="{{ $small.RelPermalink }} 400w, {{ $medium.RelPermalink }} 800w"
       sizes="(max-width: 576px) 50vw, 300px"
-      class="gallery-justified-img blur-up"
+      class="gallery-grid-img blur-up"
       style="background-color: {{ $dominant }}"
       alt="Photo {{ add $index 1 }} de la galerie {{ $page.Title }}"
       loading="lazy"

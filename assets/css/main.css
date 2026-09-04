@@ -216,29 +216,28 @@ footer p {
 }
 /* End home page banner */
 
-.gallery-justified {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
 }
 
-.gallery-justified-img {
-  height: 220px;
-  max-width: 500px;
-  flex-grow: 1;
+.gallery-grid-img {
+  width: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
   cursor: zoom-in;
+  border-radius: 0.375rem;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid-img:hover {
+  transform: scale(1.02);
 }
 
 /* Any image opening the fullscreen lightbox on click, whether or not it's part of a gallery grid */
 .zoomable {
   cursor: zoom-in;
-}
-
-@media (max-width: 576px) {
-  .gallery-justified-img {
-    height: 130px;
-  }
 }
 
 /* Fullscreen lightbox opened when clicking a gallery photo */

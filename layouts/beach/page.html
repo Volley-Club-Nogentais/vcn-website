@@ -4,7 +4,7 @@
       <span class="float-right rounded bg-vcn-yellow px-2 py-1 text-xs font-bold text-vcn-blue">Brouillon</span>
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
-    {{ with .Resources.Get "main.jpg" }}
+    {{ with .Resources.Get "cover.jpg" }}
       {{ partial "image.html" (dict
         "resource" .
         "alt" (printf "Photo de l'équipe %s" $.Title)
@@ -13,7 +13,7 @@
         "zoomable" true
         )
       }}
-    {{ else with .Resources.Get "main.svg" }}
+    {{ else with .Resources.Get "cover.svg" }}
       {{ partial "image.html" (dict
         "resource" .
         "alt" (printf "Illustration de l'équipe %s" $.Title)

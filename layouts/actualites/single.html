@@ -15,26 +15,22 @@
       {{ end }}
     {{ end }}
     {{ if $portrait }}
-      {{ with $cover.Resize "500x webp q80" }}
-        <img
-          src="{{ .RelPermalink }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          alt=""
-          class="mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
-        />
-      {{ end }}
+      {{ partial "image.html" (dict
+        "resource" $cover
+        "class" "mb-4 h-auto w-full rounded sm:float-right sm:mb-4 sm:ml-6 sm:w-64"
+        "resize" "500x webp q80"
+        "zoomable" true
+        )
+      }}
     {{ else }}
       {{ with $cover }}
-        {{ with .Fill "1200x500 webp q80" }}
-          <img
-            src="{{ .RelPermalink }}"
-            width="{{ .Width }}"
-            height="{{ .Height }}"
-            alt=""
-            class="mb-4 h-auto w-full rounded object-cover"
-          />
-        {{ end }}
+        {{ partial "image.html" (dict
+          "resource" .
+          "class" "mb-4 h-auto w-full rounded object-cover"
+          "fill" "1200x500 webp q80"
+          "zoomable" true
+          )
+        }}
       {{ end }}
     {{ end }}
     <h1 class="uppercase">{{ .Title }}</h1>
@@ -49,4 +45,12 @@
     {{ end }}
     {{ .Content }}
   </article>
+{{ end }}
+
+{{ define "foot" }}
+  {{ if .Resources.Get "cover.jpg" }}
+    {{ with resources.Get "js/gallery-zoom-blur.js" }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    {{ end }}
+  {{ end }}
 {{ end }}

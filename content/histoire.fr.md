@@ -1,7 +1,6 @@
 ---
 title: "L'histoire du club"
 draft: false
-image: ['logo.svg']
 ---
 
 En 1972, une poignée d'enthousiastes de volleyball a décidé de se réunir pour fonder un club dédié à ce sport dynamique

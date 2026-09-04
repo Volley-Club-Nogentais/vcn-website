@@ -6,7 +6,6 @@ categories:
   - adultes
 draft: false
 weight: 10
-image: ''
 schedule:
   - gym: 'watteau'
     day: 'Mardi'

@@ -1,6 +1,6 @@
 {{ if not .IsHome }}
   <nav aria-label="breadcrumb" class="py-2 text-sm">
-    <ol class="flex flex-wrap items-center gap-2 text-vcn-blue">
+    <ol class="flex flex-wrap items-center gap-2 text-vcn-blue dark:text-(--color-dark-fg)">
       {{- range .Ancestors.Reverse }}
         <li class="flex items-center gap-2">
           <a class="hover:underline" href="{{ .RelPermalink }}">
@@ -10,7 +10,7 @@
               {{ .Title }}
             {{- end }}
           </a>
-          <span aria-hidden="true" class="text-vcn-secondary/50">/</span>
+          <span aria-hidden="true" class="text-vcn-secondary/50 dark:text-(--color-dark-fg-muted)">/</span>
         </li>
       {{- end }}
       <li class="font-bold" aria-current="page">{{ .Title }}</li>

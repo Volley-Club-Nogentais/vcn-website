@@ -3,7 +3,7 @@ title: Départemental Masculins
 summary: FFVB Départemental Masculins
 draft: false
 weight: 40
-price: 0 # TODO: prix annuel à renseigner (en €)
+price: 220
 categories:
   - FFVB
   - adultes

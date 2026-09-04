@@ -3,7 +3,7 @@ title: M18 Masculins
 summary: FFVB M18 Masculins
 draft: false
 weight: 50
-price: 0 # TODO: prix annuel à renseigner (en €)
+price: 180
 categories:
   - FFVB
   - jeunes

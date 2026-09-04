@@ -3,7 +3,7 @@ title: Pingouins Manchots
 summary: FSGT Argent
 draft: false
 weight: 50
-price: 0 # TODO: prix annuel à renseigner (en €)
+price: 180
 categories:
   - FSGT
 calendarName: pingouins_manchots

@@ -6,7 +6,7 @@ categories:
   - jeunes
 draft: false
 weight: 50
-price: 0 # TODO: prix annuel à renseigner (en €)
+price: 180
 summary: FFVB M13 Féminines
 schedule:
   - label: 'Entraînement'

@@ -3,7 +3,7 @@ title: M15 Féminines
 summary: FFVB M15 Féminines
 draft: false
 weight: 50
-price: 0 # TODO: prix annuel à renseigner (en €)
+price: 180
 categories:
   - FFVB
   - jeunes

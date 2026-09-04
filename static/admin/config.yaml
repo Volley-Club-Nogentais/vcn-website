@@ -235,7 +235,7 @@ collections:
             required: false
             media_folder: ''
             public_folder: ''
-            hint: "Nommez le fichier exactement 'main.jpg' (photo) ou 'main.svg' (illustration) lors de l'import,
+            hint: "Nommez le fichier exactement 'cover.jpg' (photo) ou 'cover.svg' (illustration) lors de l'import,
               sinon il ne sera pas affiché sur le site."
             media_library:
               config:
@@ -367,7 +367,7 @@ collections:
         required: false
         media_folder: ''
         public_folder: ''
-        hint: "Nommez le fichier exactement 'main.jpg' (photo) ou 'main.svg' (illustration) lors de l'import,
+        hint: "Nommez le fichier exactement 'cover.jpg' (photo) ou 'cover.svg' (illustration) lors de l'import,
           sinon il ne sera pas affiché sur le site."
         media_library:
           config:

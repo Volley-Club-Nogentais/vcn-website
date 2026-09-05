@@ -142,6 +142,10 @@
     text-decoration: underline;
     text-underline-offset: 0.15em;
   }
+
+  a:not([class]):hover {
+    color: var(--color-vcn-blue);
+  }
 }
 
 /* Break up long runs of prose (team/history/article pages) with a visual marker on each

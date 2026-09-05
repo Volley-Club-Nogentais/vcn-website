@@ -143,6 +143,10 @@
     text-underline-offset: 0.15em;
   }
 
+  a:not([class]):visited {
+    color: color-mix(in srgb, var(--color-vcn-secondary), black 30%);
+  }
+
   a:not([class]):hover {
     color: var(--color-vcn-blue);
   }

@@ -133,6 +133,32 @@
     list-style: revert;
     padding-inline-start: revert;
   }
+
+  /* Tailwind's preflight makes links inherit the surrounding text's color and drop the underline,
+     so markdown content (rendered without any class) is otherwise indistinguishable from body text.
+     Nav/footer/card links stay untouched here since they're always classed. */
+  a:not([class]) {
+    color: var(--color-vcn-secondary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  a:not([class]):visited {
+    color: color-mix(in srgb, var(--color-vcn-secondary), black 30%);
+  }
+
+  a:not([class]):hover {
+    color: var(--color-vcn-blue);
+  }
+
+  /* No link anywhere (nav, footer, cards, content) had a focus style, making keyboard navigation
+     impossible to follow. currentColor keeps the outline readable against both the light content
+     background and the footer's dark one, without a fixed color risking low contrast on either. */
+  a:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
 
 /* Break up long runs of prose (team/history/article pages) with a visual marker on each

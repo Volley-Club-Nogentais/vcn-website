@@ -133,6 +133,15 @@
     list-style: revert;
     padding-inline-start: revert;
   }
+
+  /* Tailwind's preflight makes links inherit the surrounding text's color and drop the underline,
+     so markdown content (rendered without any class) is otherwise indistinguishable from body text.
+     Nav/footer/card links stay untouched here since they're always classed. */
+  a:not([class]) {
+    color: var(--color-vcn-secondary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
 }
 
 /* Break up long runs of prose (team/history/article pages) with a visual marker on each

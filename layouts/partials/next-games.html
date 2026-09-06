@@ -3,17 +3,26 @@
   {{ with hugo.Data.calendars.next_games }}
     <div class="content:hidden flex flex-col gap-2">
       {{ range . }}
-        <div class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3">
-          <p class="text-xs font-bold text-vcn-blue/70 uppercase">{{ .ligue | upper }}</p>
-          <p class="font-bold text-vcn-blue">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</p>
-          <p class="text-sm text-gray-500">{{ index .date 0 | time.Format ":date_medium" }}</p>
+        <div
+          class="rounded border border-black/10 border-l-4 border-l-vcn-yellow p-3 dark:border-(--color-dark-border) dark:border-l-vcn-yellow"
+        >
+          <p class="text-xs font-bold text-vcn-blue/70 uppercase dark:text-(--color-dark-fg-muted)">
+            {{ .ligue | upper }}
+          </p>
+          <p class="font-bold text-vcn-blue dark:text-(--color-dark-fg)">
+            {{ .local | lower | title }} VS
+            {{ .visitor | lower | title }}
+          </p>
+          <p class="text-sm text-gray-500 dark:text-(--color-dark-fg-muted)">
+            {{ index .date 0 | time.Format ":date_medium" }}
+          </p>
         </div>
       {{ end }}
     </div>
     <div class="hidden overflow-x-auto content:block">
       <table class="w-full border-collapse">
         <thead>
-          <tr class="border-b border-black/10 text-left">
+          <tr class="border-b border-black/10 text-left dark:border-(--color-dark-border)">
             <th class="px-3 py-2">Ligue</th>
             <th class="px-3 py-2">Équipes</th>
             <th class="px-3 py-2">Date</th>
@@ -21,7 +30,9 @@
         </thead>
         <tbody>
           {{ range . }}
-            <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+            <tr
+              class="border-b border-black/10 hover:bg-vcn-blue/5 dark:border-(--color-dark-border) dark:hover:bg-(--color-dark-hover)"
+            >
               <td class="px-3 py-2">{{ .ligue | upper }}</td>
               <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
               <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>

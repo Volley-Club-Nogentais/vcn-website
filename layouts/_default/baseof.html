@@ -1,11 +1,22 @@
 <!doctype html>
 <html class="h-full" lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
   <head>
+    {{/* Runs before anything else in <head> so the right theme is set before first paint - no flash
+      of the wrong theme while the rest of the page (and the compiled stylesheet, deferred behind
+      hugo_stats.json) loads. See assets/js/theme-init.js.
+    */}}
+    {{ with resources.Get "js/theme-init.js" }}
+      <script>
+        {{ .Content | safeJS }}
+      </script>
+    {{ end }}
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}
     {{ block "css" . }}{{ end }}
   </head>
-  <body class="flex h-full min-h-screen flex-col bg-white text-vcn-blue">
+  <body
+    class="flex h-full min-h-screen flex-col bg-white text-vcn-blue dark:bg-(--color-dark-bg) dark:text-(--color-dark-fg)"
+  >
     <a
       href="#main-content"
       class="sr-only rounded bg-vcn-blue px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100]"

@@ -1,0 +1,15 @@
+{{/* Light/dark toggle. Two copies of this partial are used in header.html - one for the mobile
+  layout (next to the burger menu) and one for the desktop layout (at the end of the navbar) - kept
+  in sync by assets/js/theme-toggle.js, which targets every [data-theme-toggle] element.
+  "size" (a text-size utility, e.g. "text-2xl") lets each copy match the icons around it.
+*/}}
+<button
+  type="button"
+  class="shrink-0 px-2 py-1 {{ .size | default `text-xl` }} text-vcn-blue dark:text-(--color-dark-fg)"
+  data-theme-toggle
+  aria-pressed="false"
+  aria-label="Activer le thème sombre"
+>
+  <span class="dark:hidden">{{ partial "icon.html" (dict "name" "moon") }}</span>
+  <span class="hidden dark:inline-block">{{ partial "icon.html" (dict "name" "sun") }}</span>
+</button>

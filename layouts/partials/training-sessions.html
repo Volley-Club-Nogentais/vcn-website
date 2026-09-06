@@ -28,21 +28,25 @@
     {{- end }}
     {{- if $sessions }}
       {{- $sessions = sort $sessions "order" }}
-      <div class="rounded border border-black/10 p-4">
-        <h3 class="training-session-gym text-vcn-blue">{{ $gym.name }}</h3>
-        <p class="mt-1 text-sm text-gray-500">
+      <div class="rounded border border-black/10 p-4 dark:border-(--color-dark-border)">
+        <h3 class="training-session-gym text-vcn-blue dark:text-(--color-dark-fg)">{{ $gym.name }}</h3>
+        <p class="mt-1 text-sm text-gray-500 dark:text-(--color-dark-fg-muted)">
           {{ $gym.address }} ·
           {{ partial "maps-link.html" $gym.address }}
         </p>
         <ul class="mt-3 flex flex-col gap-2">
           {{- range $sessions }}
             <li
-              class="flex flex-wrap items-baseline justify-between gap-x-3 border-t border-black/5 pt-2 first:border-t-0 first:pt-0"
+              class="flex flex-wrap items-baseline justify-between gap-x-3 border-t border-black/5 pt-2 first:border-t-0 first:pt-0 dark:border-(--color-dark-border)"
             >
-              <a class="font-bold text-vcn-blue hover:underline" href="{{ .url }}"
-                >{{ .team }}{{ with .label }}<span class="font-normal text-gray-500">({{ . }})</span>{{ end }}</a
+              <a class="font-bold text-vcn-blue hover:underline dark:text-(--color-dark-fg)" href="{{ .url }}"
+                >{{ .team }}{{ with .label }}
+                  <span class="font-normal text-gray-500 dark:text-(--color-dark-fg-muted)">({{ . }})</span>
+                {{ end }}</a
               >
-              <span class="text-sm text-gray-500">{{ .day }} · {{ .start }}-{{ .end }}</span>
+              <span class="text-sm text-gray-500 dark:text-(--color-dark-fg-muted)"
+                >{{ .day }} · {{ .start }}-{{ .end }}</span
+              >
             </li>
           {{- end }}
         </ul>

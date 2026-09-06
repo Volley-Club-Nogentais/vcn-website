@@ -8,52 +8,65 @@
 
 <header>
   <!-- Navbar-->
-  <nav class="fixed inset-x-0 top-0 z-50 w-full border-b-1 border-vcn-yellow bg-white uppercase">
+  <nav
+    class="fixed inset-x-0 top-0 z-50 w-full border-b-1 border-vcn-yellow bg-white uppercase dark:bg-(--color-dark-surface)"
+  >
     <div class="flex flex-wrap items-center justify-between px-4 py-1.5 nav:flex-nowrap">
-      <!-- Logo and name -->
-      <a
-        href="{{ .Site.BaseURL }}"
-        class="relative flex shrink-0 items-center gap-2 font-navbar text-2xl text-vcn-blue no-underline"
-      >
-        {{ with resources.Get $logoPath }}
-          <img
-            src="{{ .RelPermalink }}"
-            width="90"
-            height="90"
-            alt="Logo VCN"
-            class="h-11 w-11 content:h-16 content:w-16"
-          />
-        {{ end }}
-        VCN
-        {{ if hugo.IsDevelopment }}
-          <!-- Absolutely positioned so this dev-only badge never affects the navbar's flex width
-            (and therefore never throws off the centered menu's balance against the logo). -->
-          <span class="absolute -bottom-3 left-0 text-xs whitespace-nowrap normal-case">Pré-prod</span>
-        {{ end }}
-      </a>
+      <!-- Logo and name. At the nav breakpoint this is the left column of a 3-column layout
+        (this / menu / theme toggle): both this column and the theme toggle's column below grow
+        equally (nav:grow nav:basis-0), so whatever space is left over after the menu's own content
+        width is split evenly between them - the menu ends up centered on the whole navbar no matter
+        how wide the logo or the toggle actually are, with no JS measurement needed. -->
+      <div class="flex shrink-0 items-center nav:grow nav:shrink nav:basis-0">
+        <a
+          href="{{ .Site.BaseURL }}"
+          class="relative flex items-center gap-2 font-navbar text-2xl text-vcn-blue no-underline dark:text-(--color-dark-fg)"
+        >
+          {{ with resources.Get $logoPath }}
+            <img
+              src="{{ .RelPermalink }}"
+              width="90"
+              height="90"
+              alt="Logo VCN"
+              class="h-11 w-11 content:h-16 content:w-16"
+            />
+          {{ end }}
+          VCN
+          {{ if hugo.IsDevelopment }}
+            <!-- Absolutely positioned so this dev-only badge never affects the navbar's flex width
+              (and therefore never throws off the centered menu's balance). -->
+            <span class="absolute -bottom-3 left-0 text-xs whitespace-nowrap normal-case">Pré-prod</span>
+          {{ end }}
+        </a>
+      </div>
 
-      <!-- Burger menu for small devices -->
-      <button
-        type="button"
-        class="shrink-0 px-2 py-1 text-2xl text-vcn-blue nav:hidden"
-        data-navbar-toggle
-        aria-controls="navbarVCN"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        {{ partial "icon.html" (dict "name" "bars") }}
-      </button>
+      <!-- Theme toggle and burger menu for small devices -->
+      <div class="flex items-center nav:hidden">
+        {{ partial "theme-toggle-button.html" (dict "size" "text-2xl") }}
+        <button
+          type="button"
+          class="shrink-0 px-2 py-1 text-2xl text-vcn-blue dark:text-(--color-dark-fg)"
+          data-navbar-toggle
+          aria-controls="navbarVCN"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          {{ partial "icon.html" (dict "name" "bars") }}
+        </button>
+      </div>
 
-      <!-- Menu -->
+      <!-- Menu. Sized to its own content (not flex-1) at the nav breakpoint, so the two equally
+        grown columns on either side (logo, theme toggle) end up centering it - see the comment on
+        the logo column above. -->
       <div
         id="navbarVCN"
-        class="hidden w-full basis-full flex-col uppercase nav:flex nav:w-auto nav:basis-auto nav:flex-1 nav:flex-row nav:items-center nav:justify-center"
+        class="hidden w-full basis-full flex-col uppercase nav:flex nav:w-auto nav:basis-auto nav:flex-row nav:items-center"
       >
         <ul class="flex flex-col nav:flex-row">
           {{- range site.Menus.main }}
             <li class="mr-3 nav:mr-1">
               <a
-                class="block px-[1em] py-2 font-navbar font-extrabold text-vcn-blue text-[1.5em] {{ with .Params.class -}}
+                class="block px-[1em] py-2 font-navbar font-extrabold text-vcn-blue text-[1.5em] dark:text-(--color-dark-fg) {{ with .Params.class -}}
                   {{ . }}
                 {{ end -}}"
                 href="{{ .URL }}"
@@ -64,15 +77,10 @@
         </ul>
       </div>
 
-      <!-- Invisible spacer mirroring the logo, so the centered menu above is centered on the
-        whole navbar rather than on the space left of a right-aligned logo. The dev-only
-        "Pré-prod" badge is absolutely positioned on the real logo, so it doesn't need mirroring
-        here either. -->
-      <div class="invisible hidden shrink-0 items-center gap-2 font-navbar text-2xl nav:flex" aria-hidden="true">
-        {{ with resources.Get $logoPath }}
-          <img src="{{ .RelPermalink }}" width="90" height="90" class="h-11 w-11 content:h-16 content:w-16" />
-        {{ end }}
-        VCN
+      <!-- Right column: mirrors the logo column's nav:grow nav:basis-0 so both sides grow equally,
+        with justify-end to keep the toggle flush against the navbar's right edge. -->
+      <div class="hidden items-center nav:flex nav:grow nav:basis-0 nav:justify-end">
+        {{ partial "theme-toggle-button.html" (dict "size" "text-xl") }}
       </div>
     </div>
   </nav>

@@ -9,7 +9,7 @@
   >
     <thead>
       {{- range .THead }}
-        <tr class="border-b border-black/10 text-left">
+        <tr class="border-b border-black/10 text-left dark:border-(--color-dark-border)">
           {{- range . }}
             <th
               class="px-3 py-2"
@@ -26,7 +26,9 @@
     <tbody>
       {{- $headers := index .THead 0 }}
       {{- range .TBody }}
-        <tr class="border-b border-black/10 hover:bg-vcn-blue/5">
+        <tr
+          class="border-b border-black/10 hover:bg-vcn-blue/5 dark:border-(--color-dark-border) dark:hover:bg-(--color-dark-hover)"
+        >
           {{- range $i, $cell := . }}
             <td
               class="px-3 py-2"

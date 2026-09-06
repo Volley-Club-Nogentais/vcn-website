@@ -42,7 +42,7 @@
 
 <div class="swiper-slide">
   <div
-    class="freeflow-card relative flex max-w-[300px] flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+    class="freeflow-card relative flex max-w-[300px] flex-col overflow-hidden rounded border border-black/10 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-(--color-dark-border) dark:bg-(--color-dark-surface)"
   >
     {{ with .Resources.Get "cover.jpg" }}
       {{ with .Fill (printf "%dx%d center webp" $height $width) }}
@@ -71,13 +71,13 @@
       </div>
     {{ end }}
     <div class="p-4">
-      <h5 class="text-vcn-blue">{{ .Title }}</h5>
+      <h5 class="text-vcn-blue dark:text-(--color-dark-fg)">{{ .Title }}</h5>
       {{ with .Summary }}
         <p class="mt-2">{{ . }}</p>
       {{ end }}
       <a
         href="{{ .RelPermalink }}"
-        class="m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] nav:before:content-none hover:bg-vcn-yellow/90 hover:underline"
+        class="m-[5px] inline-block rounded-md bg-vcn-blue/15 px-5 py-2.5 font-bold text-vcn-blue before:absolute before:inset-0 before:content-[''] nav:before:content-none hover:bg-vcn-yellow/90 hover:underline dark:bg-(--color-dark-hover) dark:text-(--color-dark-fg) dark:hover:bg-vcn-yellow/90 dark:hover:text-vcn-blue"
         >En savoir plus</a
       >
     </div>

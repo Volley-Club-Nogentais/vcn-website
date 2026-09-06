@@ -14,7 +14,7 @@
       <!-- First page. -->
       <li>
         <a
-          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq $paginator.PageNumber 1 -}}
+          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 dark:text-(--color-dark-fg) dark:hover:bg-(--color-dark-hover) {{ if eq $paginator.PageNumber 1 -}}
             pointer-events-none opacity-40
           {{- end }}"
           href="{{ $paginator.First.URL }}"
@@ -27,7 +27,7 @@
       {{ if $paginator.HasPrev }}
         <li>
           <a
-            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10"
+            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 dark:text-(--color-dark-fg) dark:hover:bg-(--color-dark-hover)"
             href="{{ $paginator.Prev.URL }}"
             aria-label="Previous"
           >
@@ -36,7 +36,11 @@
         </li>
       {{ else }}
         <li>
-          <a class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40" href="#" aria-label="Previous">
+          <a
+            class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40 dark:text-(--color-dark-fg)"
+            href="#"
+            aria-label="Previous"
+          >
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
@@ -76,8 +80,8 @@
         {{ if eq ($.Scratch.Get "page_number_flag") true }}
           <li>
             <a
-              class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq . $paginator -}}
-                bg-vcn-blue text-white hover:bg-vcn-blue
+              class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 dark:text-(--color-dark-fg) dark:hover:bg-(--color-dark-hover) {{ if eq . $paginator -}}
+                bg-vcn-blue text-white hover:bg-vcn-blue dark:bg-vcn-yellow dark:text-vcn-blue dark:hover:bg-vcn-yellow
               {{- end }}"
               href="{{ .URL }}"
             >
@@ -92,7 +96,7 @@
       {{ if $paginator.HasNext }}
         <li>
           <a
-            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10"
+            class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 dark:text-(--color-dark-fg) dark:hover:bg-(--color-dark-hover)"
             href="{{ $paginator.Next.URL }}"
             aria-label="Next"
           >
@@ -101,7 +105,11 @@
         </li>
       {{ else }}
         <li>
-          <a class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40" href="#" aria-label="Next">
+          <a
+            class="pointer-events-none rounded px-3 py-1.5 text-vcn-blue opacity-40 dark:text-(--color-dark-fg)"
+            href="#"
+            aria-label="Next"
+          >
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
@@ -111,7 +119,7 @@
       <!-- Last page. -->
       <li>
         <a
-          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 {{ if eq $paginator.PageNumber $paginator.TotalPages -}}
+          class="rounded px-3 py-1.5 text-vcn-blue hover:bg-vcn-blue/10 dark:text-(--color-dark-fg) dark:hover:bg-(--color-dark-hover) {{ if eq $paginator.PageNumber $paginator.TotalPages -}}
             pointer-events-none opacity-40
           {{- end }}"
           href="{{ $paginator.Last.URL }}"

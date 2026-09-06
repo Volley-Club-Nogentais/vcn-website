@@ -67,13 +67,13 @@
    white/gray) rather than a cold near-white: plain white text on a dark background is harsher on
    the eyes than a slightly warmed one, at essentially the same contrast/legibility. */
 :root {
-  --color-dark-bg: #0b1420;
-  --color-dark-surface: #162335;
-  --color-dark-surface-alt: #1e3049;
+  --color-dark-bg: #050d18;
+  --color-dark-surface: #0e2942;
+  --color-dark-surface-alt: #123354;
   --color-dark-fg: #fbf4e8;
   --color-dark-fg-muted: #ae9f86;
-  --color-dark-border: rgb(255 255 255 / 12%);
-  --color-dark-hover: rgb(255 255 255 / 6%);
+  --color-dark-border: rgb(255 255 255 / 14%);
+  --color-dark-hover: rgb(255 255 255 / 8%);
 }
 
 /* Drives every `dark:` utility from the `data-theme="dark"` attribute set on <html> by the inline

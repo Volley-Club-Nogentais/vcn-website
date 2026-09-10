@@ -2,7 +2,9 @@
   Sponsors are configured in config/_default/params.yaml (Site.Params.sponsors). Renders nothing when
   the list is empty. The track is duplicated once below so animating it by exactly -50% (see the
   ".sponsors-marquee-track" keyframes in assets/css/main.css) loops seamlessly; the duplicate is
-  hidden from assistive tech to avoid announcing every sponsor twice.
+  hidden from assistive tech to avoid announcing every sponsor twice. It only actually scrolls once
+  assets/js/sponsors-marquee.js measures that the logos are wider than the container - otherwise the
+  band stays a static, centered row.
 */}}
 {{ $sponsors := .Site.Params.sponsors }}
 {{ if $sponsors }}
@@ -60,4 +62,7 @@
       </div>
     </div>
   </section>
+  {{ with resources.Get "js/sponsors-marquee.js" }}
+    <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+  {{ end }}
 {{ end }}

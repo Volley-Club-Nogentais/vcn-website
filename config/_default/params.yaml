@@ -45,15 +45,15 @@ gyms:
 # placeholder SVGs in assets/media/sponsors/ once real logos are added.
 sponsors:
   - name: "Sponsor Exemple 1"
-    logo: "sponsor-exemple-1.svg"
+    logo: "logoipsum-289.svg"
     url: "https://example.com"
   - name: "Sponsor Exemple 2"
-    logo: "sponsor-exemple-2.svg"
+    logo: "logoipsum-220.svg"
     url: "https://example.com"
   - name: "Sponsor Exemple 3"
-    logo: "sponsor-exemple-3.svg"
+    logo: "logoipsum-343.svg"
   - name: "Sponsor Exemple 4"
-    logo: "sponsor-exemple-4.svg"
+    logo: "logoipsum-432.svg"
     url: "https://example.com"
 
 logo:

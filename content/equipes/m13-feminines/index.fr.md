@@ -1,29 +1,26 @@
 ---
 title: M13 Féminines
-description: ''
+summary: FFVB M13 Féminines
 categories:
   - FFVB
   - jeunes
 draft: false
 weight: 50
-price: 180
-summary: FFVB M13 Féminines
+calendarName: ''
+photo: ''
 schedule:
-  - label: 'Entraînement'
-    gym: 'watteau'
-    day: 'Mardi'
-    start: '18:00'
-    end: '19:30'
-  - label: 'Entraînement'
-    gym: 'watteau'
-    day: 'Jeudi'
-    start: '18:00'
-    end: '19:30'
-  - label: 'Débutant'
-    gym: 'louis-armand'
-    day: 'Samedi'
-    start: '10:00'
-    end: '12:00'
+  - label: Entraînement
+    gym: watteau
+    day: Mardi
+    start: 18:00
+    end: 19:30
+  - label: Entraînement
+    gym: watteau
+    day: Jeudi
+    start: 18:00
+    end: 19:30
+description: ''
+price: 180
 ---
 
 ## Présentation de l'Équipe

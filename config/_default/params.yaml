@@ -38,6 +38,24 @@ gyms:
     name: "Louis Armand"
     address: "173 Bd de Strasbourg, 94130 Nogent-sur-Marne"
 
+# Sponsors shown in the scrolling band above the footer (layouts/partials/sponsors.html).
+# - logo: filename under assets/media/sponsors/ (SVG or PNG, transparent background recommended)
+# - url: optional, opens the sponsor's website in a new tab
+# These are placeholder entries: replace name/logo/url with the real sponsors, and delete the
+# placeholder SVGs in assets/media/sponsors/ once real logos are added.
+sponsors:
+  - name: "Sponsor Exemple 1"
+    logo: "sponsor-exemple-1.svg"
+    url: "https://example.com"
+  - name: "Sponsor Exemple 2"
+    logo: "sponsor-exemple-2.svg"
+    url: "https://example.com"
+  - name: "Sponsor Exemple 3"
+    logo: "sponsor-exemple-3.svg"
+  - name: "Sponsor Exemple 4"
+    logo: "sponsor-exemple-4.svg"
+    url: "https://example.com"
+
 logo:
   # January to May
   - logo_couleur.svg

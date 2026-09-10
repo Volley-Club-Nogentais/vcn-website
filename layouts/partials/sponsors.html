@@ -1,0 +1,63 @@
+{{/* Scrolling band of sponsor logos shown above the footer (see layouts/_default/baseof.html).
+  Sponsors are configured in config/_default/params.yaml (Site.Params.sponsors). Renders nothing when
+  the list is empty. The track is duplicated once below so animating it by exactly -50% (see the
+  ".sponsors-marquee-track" keyframes in assets/css/main.css) loops seamlessly; the duplicate is
+  hidden from assistive tech to avoid announcing every sponsor twice.
+*/}}
+{{ $sponsors := .Site.Params.sponsors }}
+{{ if $sponsors }}
+  <section
+    class="border-t border-black/10 bg-gray-50 py-6 dark:border-(--color-dark-border) dark:bg-(--color-dark-surface)"
+    aria-label="Nos sponsors"
+  >
+    <h2 class="mb-4 text-center font-navbar text-lg text-vcn-blue uppercase dark:text-(--color-dark-fg)">
+      Nos sponsors
+    </h2>
+    <div class="sponsors-marquee mx-auto max-w-screen-xl overflow-hidden">
+      <div class="sponsors-marquee-track">
+        {{ range $i := seq 2 }}
+          {{ $hidden := ne $i 1 }}
+          <div class="flex shrink-0 items-center gap-10 pr-10 pl-10" {{ if $hidden }}aria-hidden="true"{{ end }}>
+            {{ range $sponsor := $sponsors }}
+              {{ with resources.Get (printf "media/sponsors/%s" $sponsor.logo) }}
+                {{/* A white card behind every logo keeps it legible regardless of the page's light/dark
+                  theme or the logo's own colors (most sponsor logos assume a white background).
+                */}}
+                {{ if $sponsor.url }}
+                  <a
+                    href="{{ $sponsor.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="{{ $sponsor.name }}"
+                    {{ if $hidden }}tabindex="-1"{{ end }}
+                    class="flex h-20 w-36 shrink-0 items-center justify-center rounded-lg bg-white p-3 shadow-sm transition-shadow duration-200 hover:shadow-md md:h-24 md:w-44"
+                  >
+                    <img
+                      src="{{ .RelPermalink }}"
+                      alt="{{ $sponsor.name }}"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </a>
+                {{ else }}
+                  <div
+                    class="flex h-20 w-36 shrink-0 items-center justify-center rounded-lg bg-white p-3 shadow-sm md:h-24 md:w-44"
+                  >
+                    <img
+                      src="{{ .RelPermalink }}"
+                      alt="{{ $sponsor.name }}"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                {{ end }}
+              {{ else }}
+                {{ warnf "sponsors.html: logo not found for sponsor %q (media/sponsors/%s)" $sponsor.name $sponsor.logo }}
+              {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

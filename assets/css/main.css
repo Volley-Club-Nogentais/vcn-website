@@ -352,6 +352,36 @@ footer p {
   filter: blur(0);
 }
 
+/* Sponsors band (layouts/partials/sponsors.html): the track is duplicated once in the template,
+   so animating it by exactly -50% loops seamlessly from the duplicate back to the original. */
+.sponsors-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: sponsors-marquee 25s linear infinite;
+}
+
+.sponsors-marquee:hover .sponsors-marquee-track,
+.sponsors-marquee:focus-within .sponsors-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes sponsors-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect the user's motion preference: show the logos wrapped in a static row instead of scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+  }
+}
+
 /* Below this, markdown tables (layouts/_markup/render-table.html) turn into a stack of
    label/value cards instead of a cramped, horizontally-scrolling grid. Each td's data-label
    (the matching header's text) is printed via ::before. */

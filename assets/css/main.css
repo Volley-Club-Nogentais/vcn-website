@@ -352,16 +352,33 @@ footer p {
   filter: blur(0);
 }
 
-/* Sponsors band (layouts/partials/sponsors.html): the track is duplicated once in the template,
-   so animating it by exactly -50% loops seamlessly from the duplicate back to the original. */
+/* Sponsors band (layouts/partials/sponsors.html): the track is duplicated once in the template so
+   animating it by exactly -50% loops seamlessly from the duplicate back to the original, but that
+   duplicate (and the animation) only makes sense once the logos are wider than the container -
+   assets/js/sponsors-marquee.js measures that and toggles ".is-scrolling" on ".sponsors-marquee"
+   accordingly. Until then (or if JS is unavailable) the band shows a single, centered, static row. */
 .sponsors-marquee-track {
   display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.sponsors-marquee-track > [aria-hidden='true'] {
+  display: none;
+}
+
+.sponsors-marquee.is-scrolling .sponsors-marquee-track {
   width: max-content;
+  justify-content: flex-start;
   animation: sponsors-marquee 25s linear infinite;
 }
 
-.sponsors-marquee:hover .sponsors-marquee-track,
-.sponsors-marquee:focus-within .sponsors-marquee-track {
+.sponsors-marquee.is-scrolling .sponsors-marquee-track > [aria-hidden='true'] {
+  display: flex;
+}
+
+.sponsors-marquee.is-scrolling:hover .sponsors-marquee-track,
+.sponsors-marquee.is-scrolling:focus-within .sponsors-marquee-track {
   animation-play-state: paused;
 }
 
@@ -376,9 +393,15 @@ footer p {
 
 /* Respect the user's motion preference: show the logos wrapped in a static row instead of scrolling. */
 @media (prefers-reduced-motion: reduce) {
-  .sponsors-marquee-track {
-    animation: none;
+  .sponsors-marquee.is-scrolling .sponsors-marquee-track {
+    width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
+    animation: none;
+  }
+
+  .sponsors-marquee.is-scrolling .sponsors-marquee-track > [aria-hidden='true'] {
+    display: none;
   }
 }
 

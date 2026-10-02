@@ -12,7 +12,6 @@ from datetime import timedelta
 
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"
-SEASON_ID = 5
 REQUEST_TIMEOUT_SECONDS = 15
 FSGT = {
     "rhinos_feroces": 25,
@@ -26,6 +25,10 @@ FSGT = {
 
 
 DATE_LEN = len("00/00/0000")
+
+
+class SeasonIdNotFound(Exception):
+    pass
 
 
 def _extract_date(s: str) -> str | list[str]:
@@ -57,8 +60,29 @@ def parse_fsgt_team_calendar(calendar: dict):
     return output
 
 
-def fsgt_store_calendar(team: str, team_id: int):
-    uri = f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{SEASON_ID}"
+def fsgt_get_active_season():
+    season_id = 0
+
+    uri = "https://volley-fsgt94.fr/api/seasons/list"
+    logging.debug(f"Trying '{uri}'")
+
+    with urllib.request.urlopen(uri, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
+        data = json.load(resp)
+
+    for item in data:
+        if item.get("saison_active"):
+            season_id = item["id"]
+
+    if season_id == 0:
+        raise SeasonIdNotFound("Could not extract season id")
+
+    logging.debug(f"Setting season id to {season_id}")
+
+    return season_id
+
+
+def fsgt_store_calendar(team: str, team_id: int, season_id: int):
+    uri = f"https://volley-fsgt94.fr/api/games/list/team/{team_id}/season/{season_id}"
     logging.debug(f"Trying '{uri}'")
 
     with urllib.request.urlopen(uri, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
@@ -99,8 +123,10 @@ def fsgt_next_games_in_weeks(teams: list[str], number_weeks: int = 2):
 
 
 def main():
+    season_id = fsgt_get_active_season()
+
     for team, team_id in FSGT.items():
-        fsgt_store_calendar(team, team_id)
+        fsgt_store_calendar(team, team_id, season_id)
 
     fsgt_next_games_in_weeks(FSGT.keys(), 2)
 

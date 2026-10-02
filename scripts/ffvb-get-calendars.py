@@ -25,13 +25,13 @@ NOW = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 WORKSPACE_PATH = pathlib.Path(__file__).parent.parent.resolve()
 OUTPUT_FOLDER = WORKSPACE_PATH / "data" / "calendars"
 
-SEASON = "2025/2026"
+SEASON = "2026/2027"
 FFVB = {
-    "departemental_masculins": ["ARM"],
-    "departemental_feminines": ["ARF"],
-    "regional_masculins": ["2MB"],
-    "regional_feminines": ["2FA"],
-    "compet_lib": ["LOMA", "LMAA"],
+    "departemental_masculins": ["DMA"],
+    "departemental_feminines": ["DFA"],
+    "accession_regionale_feminines": ["ARF"],
+    "regional_masculins": ["2MA"],
+    # "compet_lib": ["LOMA", "LMAA"],
 }
 
 

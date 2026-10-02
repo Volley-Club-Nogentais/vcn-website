@@ -1,6 +1,21 @@
 #! /usr/bin/env python3
 
-"""Download the FSGT calendars and generate the next weeks calendar."""
+"""Download the FSGT calendars and generate the next weeks calendar.
+
+Seasons
+- GET /api/seasons/list - api_season_list - liste toutes les saisons (id, name, saison_active)
+- GET /api/seasons/get/{id} - api_season_get - une saison par id
+Clubs
+- GET /api/clubs/list - api_club_list - liste tous les clubs (id, name, city)
+- GET /api/clubs/get/{id} - api_club_get - un club par id (avec ses teams)
+Teams
+- GET /api/teams/list - api_team_list - liste toutes les équipes (id, name, format, club)
+- GET /api/teams/get/{id} - api_team_get - une équipe par id
+Games
+- GET /api/games/list - api_game_list - liste tous les matchs (format compact)
+- GET /api/games/get/{id} - api_game_get - un match par id (format détaillé)
+- GET /api/games/list/team/{team}/season/{season} - api_game_list_team - matchs d'une équipe sur une saison
+"""
 
 import json
 import logging

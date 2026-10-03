@@ -140,3 +140,14 @@ team training schedules) because Sveltia can't read the Hugo site config at buil
 - Tailwind ships no JS: the mobile navbar burger menu is a small hand-written script
   ([assets/js/navbar-toggle.js](assets/js/navbar-toggle.js)), and the team photo galleries use Swiper (already a
   dependency for the teams list carousel) instead of Bootstrap's JS carousel.
+- Dark mode has no external library either: [assets/js/theme-init.js](assets/js/theme-init.js) is inlined into `<head>`
+  (see [layouts/_default/baseof.html](layouts/_default/baseof.html)) and runs synchronously before first paint to set
+  `data-theme` from `localStorage` (falling back to the OS preference) and avoid a light-theme flash;
+  [assets/js/theme-toggle.js](assets/js/theme-toggle.js) handles the toggle button afterwards. Dark-theme colors are
+  separate CSS custom properties in `assets/css/main.css` (`--color-dark-surface`, `--color-dark-border`,
+  `--color-dark-fg`, etc.), applied via Tailwind's `dark:` variant.
+- The scrolling sponsors band above the footer ([layouts/partials/sponsors.html](layouts/partials/sponsors.html)) is
+  configured via the `sponsors` list (name/logo/url) in `config/_default/params.yaml` and reads logos from
+  `assets/media/sponsors/`; it only animates once [assets/js/sponsors-marquee.js](assets/js/sponsors-marquee.js)
+  measures that the logos overflow the container, otherwise it renders as a static centered row. It currently ships with
+  placeholder logos (`logoipsum-*.svg`) - replace them with real sponsor logos when available.

@@ -13,6 +13,8 @@ Website for **Volley Club Nogentais**, built with the [Hugo](https://gohugo.io/)
   Hugo's native `css.TailwindCSS` pipe (no separate build step, no CDN).
 - Self-hosted SVG icons (`assets/icons/`, originally sourced from Font Awesome Free) rendered via the `fontawesome`
   shortcode - no CDN or icon-font dependency.
+- Dark mode with OS-preference detection and a manual toggle (`assets/js/theme-init.js`, `assets/js/theme-toggle.js`) -
+  no external theme library.
 - **[Swiper 11](https://swiperjs.com/)** - carousel/slider, self-hosted (`assets/js/vendor/`, `assets/css/vendor/`),
   used for the teams list and photo galleries.
 - **[Sveltia CMS](https://github.com/sveltia/sveltia-cms)** - content-editing UI at `/admin`, a drop-in replacement for

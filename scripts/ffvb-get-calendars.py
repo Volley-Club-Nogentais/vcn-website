@@ -124,6 +124,14 @@ def rework_place(row: dict[str, Any]) -> dict[str, Any]:
     return row
 
 
+def rework_id_to_pool(row: dict[str, Any]) -> dict[str, Any]:
+    if "id" not in row:
+        return row
+
+    row["pool"] = row["id"][:-3]
+    return row
+
+
 def transform_row(row):
     """Execute a list of rules that will transform the CSV row."""
     rules: list[Callable[[dict[str, Any]], dict[str, Any]]] = [
@@ -133,6 +141,7 @@ def transform_row(row):
         rework_score,
         rework_referees,
         rework_place,
+        rework_id_to_pool,
     ]
 
     for rule in rules:

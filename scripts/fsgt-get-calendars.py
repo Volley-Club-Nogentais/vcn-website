@@ -70,6 +70,7 @@ def parse_fsgt_team_calendar(calendar: dict):
                 "visitor": game["team_exterieur"]["name"],
                 "date": _extract_date(game["date"]),
                 "location": game["gymnase"],
+                "pool": game["type"],
             }
         )
 

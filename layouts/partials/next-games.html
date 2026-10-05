@@ -24,6 +24,7 @@
         <thead>
           <tr class="border-b border-black/10 text-left dark:border-(--color-dark-border)">
             <th class="px-3 py-2">Ligue</th>
+            <th class="px-3 py-2">Poule</th>
             <th class="px-3 py-2">Équipes</th>
             <th class="px-3 py-2">Date</th>
           </tr>
@@ -34,6 +35,7 @@
               class="border-b border-black/10 hover:bg-vcn-blue/5 dark:border-(--color-dark-border) dark:hover:bg-(--color-dark-hover)"
             >
               <td class="px-3 py-2">{{ .ligue | upper }}</td>
+              <td class="px-3 py-2">{{ .pool }}</td>
               <td class="px-3 py-2">{{ .local | lower | title }} VS {{ .visitor | lower | title }}</td>
               <td class="px-3 py-2">{{ index .date 0 | time.Format ":date_medium" }}</td>
             </tr>

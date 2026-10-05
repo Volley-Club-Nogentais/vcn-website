@@ -43,18 +43,18 @@ gyms:
 # - url: optional, opens the sponsor's website in a new tab
 # These are placeholder entries: replace name/logo/url with the real sponsors, and delete the
 # placeholder SVGs in assets/media/sponsors/ once real logos are added.
-sponsors:
-  - name: "Sponsor Exemple 1"
-    logo: "logoipsum-289.svg"
-    url: "https://example.com"
-  - name: "Sponsor Exemple 2"
-    logo: "logoipsum-220.svg"
-    url: "https://example.com"
-  - name: "Sponsor Exemple 3"
-    logo: "logoipsum-343.svg"
-  - name: "Sponsor Exemple 4"
-    logo: "logoipsum-432.svg"
-    url: "https://example.com"
+# sponsors:
+#   - name: "Sponsor Exemple 1"
+#     logo: "logoipsum-289.svg"
+#     url: "https://example.com"
+#   - name: "Sponsor Exemple 2"
+#     logo: "logoipsum-220.svg"
+#     url: "https://example.com"
+#   - name: "Sponsor Exemple 3"
+#     logo: "logoipsum-343.svg"
+#   - name: "Sponsor Exemple 4"
+#     logo: "logoipsum-432.svg"
+#     url: "https://example.com"
 
 logo:
   # January to May
